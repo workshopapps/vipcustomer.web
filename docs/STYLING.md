@@ -1,6 +1,6 @@
 # Styling in Vip Customer App
 
-To avoid style clashes use css modules when styling in Zuri Main
+To avoid style clashes use css modules when styling in Vip Customer App
 for example
 
 ```ts
