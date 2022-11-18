@@ -25,11 +25,15 @@ const Label = styled.label`
   font-size: 1.4rem;
   font-weight: 400;
   color: black;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const InputStyles = styled.input`
   display: block;
-  margin-top: 0.7rem;
+  margin-block: 0.6rem;
   border: 1px solid #adb1bf;
   border-radius: 8px;
   padding: 1rem 1.6rem;
@@ -37,6 +41,10 @@ const InputStyles = styled.input`
   width: 100%;
   color: black;
   font-size: 1.4rem;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 
   &:focus {
     border: 1px solid #091540;
@@ -52,4 +60,8 @@ const Error = styled.p`
   font-size: 1.4rem;
   color: #ff414e;
   font-weight: 400;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
