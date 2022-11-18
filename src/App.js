@@ -11,12 +11,20 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
+import Input from "./components/auth/Input";
 
 function App() {
   const { theme } = Store();
 
   return (
     <ThemeProvider theme={theme ? Themes.light : Themes.dark}>
+      <Input
+        label="Name"
+        id="name"
+        isError
+        errorMessage="wrong name, try again"
+        placeholder="ldjljfalj"
+      />
       <GLobalStyles />
       <BrowserRouter>
         <Routes>
