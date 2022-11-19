@@ -186,6 +186,7 @@ export const Left = styled.div`
     font-weight: 700;
     font-size: 3.2rem;
     margin-top: 12rem;
+    color: white;
   }
 
   @media only screen and (max-width: 768px) {
