@@ -14,7 +14,7 @@ function Input({ label, id, errorMessage, isError, ...rest }) {
 
 Input.propTypes = {
   label: PropTypes.string.isRequired,
-  id: PropTypes.any.isRequired,
+  id: PropTypes.string.isRequired,
   errorMessage: PropTypes.string,
   isError: PropTypes.bool
 };
