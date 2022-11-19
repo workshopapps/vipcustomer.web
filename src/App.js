@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
+import Login from "./pages/auth/Login";
 
 function App() {
   const { theme } = Store();
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/example" element={<Example />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/docs/*" element={<Docs />} />
         </Routes>
