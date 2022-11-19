@@ -60,6 +60,7 @@ export const MainWrapper = styled.div`
   p {
     color: #121212;
     padding-top: 16px;
+    margin-bottom: 3.2rem;
   }
 
   @media (min-width: 481px) {
@@ -76,21 +77,11 @@ export const MainWrapper = styled.div`
 export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-
-  label {
-    color: #121212;
-    font-size: 12px;
-    margin-top: 10px;
-    margin-bottom: 6px;
-  }
+  text-align: start;
 
   input {
-    border: 1px solid #adb1bf;
-    font-size: 14px;
     margin-bottom: 24px;
-    color: black;
-    height: 40px;
-    border-radius: 6px;
+    margin-bottom: 4.8rem;
   }
 
   @media (min-width: 481px) {
@@ -102,6 +93,8 @@ export const AnchorWrapper = styled.a`
   padding: 8.5px 85px;
   border-radius: 6px;
   margin-bottom: 96px;
+  color: white;
+  text-align: center;
 
   // div {
   //   width: 100%;
@@ -114,6 +107,9 @@ export const AnchorWrapper = styled.a`
 export const BottomWrapper = styled.small`
   color: #121212;
   display: flex;
+  justify-content: center;
+  margin-bottom: 13px;
+  font-size: 1.4rem;
   text-align: center;
   @media (min-width: 481px) {
   }

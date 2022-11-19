@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
-import PasswordRecovery from "./components/password-recovery/PasswordRecovery";
+import PasswordRecovery from "./pages/PasswordRecovery";
 
 function App() {
   const { theme } = Store();
@@ -25,7 +25,9 @@ function App() {
           <Route path="/example" element={<Example />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/docs/*" element={<Docs />} />
-          <Route path="/password-recovery" element={<PasswordRecovery />} />
+          <Route path="/password-recovery">
+            <Route index element={<PasswordRecovery />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
