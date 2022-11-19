@@ -23,9 +23,10 @@ const GLobalStyles = createGlobalStyle`
 /* example */
 body {
     background-color: ${({ theme }) => theme.bg};
-    max-width:1440px;
+    max-width:1605px;
     margin:0 auto;
-    font-size:1.6rem;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
     color: ${({ theme }) => theme.color};
     transition:color 0.2s linear, background-color 0.2s linear;
 
