@@ -72,6 +72,10 @@ const Home = () => {
         <Link className="btn" to="/docs/somethingelse">
           Something Else
         </Link>
+        <Link className="btn" to="/login">
+          Login
+        </Link>
+
         {/* NOTE this is temporary */}
         <Link className="btn" to="/faq">
           FAQ
