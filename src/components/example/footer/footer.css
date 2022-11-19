@@ -14,16 +14,3 @@
   padding: 10px 30px;
   background-color: teal;
 }
-
-p {
-  font-size: 0.7em;
-  color: yellow;
-}
-
-p.dark {
-  color: pink;
-}
-
-h4 {
-  color: lemonchiffon;
-}
