@@ -1,7 +1,12 @@
 import Navbar from "../general/navbar/Navbar";
 import React, { useState } from "react";
 import Input from "../auth/Input";
-import { BtnContainer, ConsultStyled, FormStyled } from "./Consultation.styled";
+import {
+  BtnContainer,
+  ConsultPageWrap,
+  ConsultStyled,
+  FormStyled
+} from "./Consultation.styled";
 import tick from "./assets/small.png";
 import { Link } from "react-router-dom";
 
@@ -85,7 +90,7 @@ const Consultation = () => {
   };
 
   return (
-    <div>
+    <ConsultPageWrap>
       <Navbar />
       <Link to="/demo">Back</Link>
       <ConsultStyled>
@@ -148,7 +153,7 @@ const Consultation = () => {
           </BtnContainer>
         </FormStyled>
       </ConsultStyled>
-    </div>
+    </ConsultPageWrap>
   );
 };
 

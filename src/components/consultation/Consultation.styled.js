@@ -1,15 +1,24 @@
 import styled from "styled-components";
-// import pic from "../../assests/images/consultation-bg.png";
+import tick from "./assets/consultation-bg.png";
+
+export const ConsultPageWrap = styled.div`
+  background-image: url(${tick});
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  padding-bottom: 10rem;
+  background-size: 30%;
+`;
 
 export const FormStyled = styled.form`
   border: 1px solid #848a9f;
   padding: 1.25rem 1.875rem 3.125rem;
+  border-radius: 8px;
 `;
 
 export const ConsultStyled = styled.section`
   width: 80%;
   margin: 4rem auto 0;
-  background-image: url("./assets/consultation-bg.png");
 
   @media only screen and (min-width: 768px) {
     width: 70%;
@@ -31,7 +40,7 @@ export const ConsultStyled = styled.section`
 `;
 
 export const BtnContainer = styled.div`
-  margin-top: 2.34rem;
+  margin-block: 2.5rem 3.5rem;
   display: grid;
   gap: 2rem;
 
