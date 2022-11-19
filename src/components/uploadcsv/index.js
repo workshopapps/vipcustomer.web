@@ -37,8 +37,8 @@ function UploadCsv() {
               case 1:
                 return <Almost onNext={onNext} step={step} />;
 
-              // case 2:
-              //   return <Won  />;
+              case 2:
+                return <Almost onNext={onNext} step={step} />;
               default:
                 return null;
             }
