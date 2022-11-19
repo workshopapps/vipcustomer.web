@@ -28,10 +28,10 @@ const LogoWrapper = styled.div`
     mobile ? "48.9%" : tablet ? "73.46%" : "164.63px"};
   height: ${({ mobile, tablet }) =>
     mobile ? "48.9%" : tablet ? "73.46%" : "49px"};
-  & > img{
-    width:100%;
-    height:100%
-    object-fit:cover;
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;
 
@@ -61,7 +61,7 @@ const MobileNavWrapper = styled.div`
   gap: 10px;
   top: 100%;
   font-weight: 500;
-  font-size: 10px;
+  font-size: 1.6rem;
   line-height: 28px;
   overflow-x: hidden;
   transition: 300ms 0.2s all ease-in-out;
@@ -69,7 +69,7 @@ const MobileNavWrapper = styled.div`
   padding-inline: ${({ mobile, tablet }) =>
     mobile ? "40px" : tablet ? "78.9px" : "120px"};
   &.open {
-    height: 180px;
+    height: 195px;
     max-height: fit-content;
   }
   & > a.active {

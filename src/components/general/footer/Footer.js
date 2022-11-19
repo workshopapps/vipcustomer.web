@@ -1,83 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import LOGO from "../assests/icons/logo.svg";
-import PropTypes from "prop-types";
+import FooterWrapper from "./footer.styled";
+import axeLogo from "./images/logos.png";
+import Linkbtn from "./LinkBtn";
 
-import {
-  FooterContainer,
-  FooterWrapper,
-  FooterHeader,
-  FooterText,
-  SectionWrapper,
-  LogoWrapper
-} from "./footer.styled";
-
-const Footer = ({ mobile, tablet }) => {
+const Footer = () => {
   return (
-    <FooterContainer>
-      <FooterWrapper tablet={tablet}>
-        <SectionWrapper logo>
-          <Link>
-            {" "}
-            <LogoWrapper tablet={tablet} mobile={mobile}>
-              <img src={LOGO} alt="axeapi logo" />
-            </LogoWrapper>
-          </Link>
-        </SectionWrapper>
-        <div className="wrapper">
-          <SectionWrapper>
-            <FooterHeader tablet={tablet} mobile={mobile}>
-              <Link>Features</Link>
-            </FooterHeader>
-            <FooterText tablet={tablet} mobile={mobile}>
-              <Link>AXE API Feature</Link>
-            </FooterText>
-            <FooterText tablet={tablet} mobile={mobile}>
-              <Link>How it works</Link>
-            </FooterText>
-          </SectionWrapper>
-          <SectionWrapper>
-            <FooterHeader tablet={tablet} mobile={mobile}>
-              <Link>Help & Support</Link>
-            </FooterHeader>
-            <FooterText tablet={tablet} mobile={mobile}>
-              <Link>FAQ</Link>
-            </FooterText>
-            <FooterText tablet={tablet} mobile={mobile}>
-              <Link>Help center</Link>
-            </FooterText>
-          </SectionWrapper>
-          <SectionWrapper>
-            <FooterHeader tablet={tablet} mobile={mobile}>
-              <Link>Terms &amp; condition</Link>
-            </FooterHeader>
-            <FooterText tablet={tablet} mobile={mobile}>
-              <Link>Privacy</Link>
-            </FooterText>
-          </SectionWrapper>
-          <SectionWrapper>
-            <FooterHeader tablet={tablet} mobile={mobile}>
-              <Link>Company</Link>
-            </FooterHeader>
-            <FooterText tablet={tablet} mobile={mobile}>
-              <Link>About Us</Link>
-            </FooterText>
-            <FooterText tablet={tablet} mobile={mobile}>
-              <Link>Meet Our Team</Link>
-            </FooterText>
-            <FooterText tablet={tablet} mobile={mobile}>
-              <Link>Vision and Mission</Link>
-            </FooterText>
-          </SectionWrapper>
+    <FooterWrapper>
+      <div>
+        <img src={axeLogo} alt="Axe API" />
+      </div>
+      <div className="footbar">
+        <div className="footbarone">
+          <h4>Features</h4>
+          <Linkbtn href="#" child="Axe API Feature" classname="footlink" />
+          <Linkbtn href="#" child="How it works" classname="footlink" />
         </div>
-      </FooterWrapper>
-    </FooterContainer>
+        <div className="footbarone">
+          <h4>Help & Support</h4>
+          <Linkbtn href="#" child="FAQ" classname="footlink" />
+          <Linkbtn href="#" child="Help Center" classname="footlink" />
+        </div>
+        <div className="footbarone">
+          <h4>Terms & Condition</h4>
+          <Linkbtn href="#" child="Privacy Policy" classname="footlink" />
+        </div>
+        <div className="footbarone">
+          <h4>Company</h4>
+          <Linkbtn href="#" child="About us" classname="footlink" />
+          <Linkbtn href="#" child="Meet our team" classname="footlink" />
+          <Linkbtn href="#" child="Vision & Mission" classname="footlink" />
+        </div>
+      </div>
+    </FooterWrapper>
   );
 };
 
 export default Footer;
-
-Footer.propTypes = {
-  mobile: PropTypes.bool.isRequired,
-  tablet: PropTypes.bool.isRequired
-};
