@@ -25,6 +25,7 @@ export const ConsultStyled = styled.section`
 
   p {
     padding-block: 1.1rem 2rem;
+    font-size: 1.75rem;
   }
 `;
 
