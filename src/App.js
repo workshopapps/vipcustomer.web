@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
-
+import CsvUpload from "pages/CsvUpload";
 import HelpCenter from "pages/helpCenter/HelpCenter";
 import SignUp from "./pages/auth/SignUp";
 import Terms from "./pages/Terms";
@@ -30,6 +30,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/docs/*" element={<Docs />} />
+          <Route path="/csv-upload" element={<CsvUpload />} />
           <Route path="/help" element={<HelpCenter />} />
         </Routes>
       </BrowserRouter>
