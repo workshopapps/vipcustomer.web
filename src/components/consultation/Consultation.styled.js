@@ -9,6 +9,7 @@ export const FormStyled = styled.form`
 export const ConsultStyled = styled.section`
   width: 80%;
   margin: 4rem auto 0;
+  background-image: url("assests/images/consultation-bg");
 
   @media only screen and (min-width: 768px) {
     width: 70%;
