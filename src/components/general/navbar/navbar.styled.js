@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const NavWrapper = styled.nav`
   position: sticky;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 500;
   display: flex;
   height: 81px;
