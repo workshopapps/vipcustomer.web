@@ -31,7 +31,7 @@ const HelpCenter = () => {
         <div className={styles.category_div}>
           <h5 className={styles.headings}>Browse the Categories</h5>
           <div className={styles.cards}>
-            <Link to="/faqs">
+            <Link to="/faq">
               <div className={styles.card}>
                 <TiMessages className={styles.icons} />
                 <h6>FAQs</h6>
