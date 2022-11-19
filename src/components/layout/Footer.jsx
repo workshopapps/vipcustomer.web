@@ -1,12 +1,10 @@
 import React from "react";
-import LOGO from "../../assests/icons/logo.svg";
+// import LOGO from "../../assests/icons/logo.svg";
 
 const Footer = () => {
   return (
     <div className="footer">
-      <div>
-        <img src={LOGO} alt="" />
-      </div>
+      <div>{/* <img src={LOGO} alt="" /> */}</div>
       <div>
         <h3 className="features">Features</h3>
         <h4>AXE API Feature</h4>
