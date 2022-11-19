@@ -1,0 +1,17 @@
+.title{
+  background-color: #091540;
+}
+.container{
+  margin: auto;
+  text-align: center;
+  width: 80%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.hi{
+  color: #FFFFFF;
+}
+.mainCont{
+  margin: auto;
+  width: 80%;
+}
