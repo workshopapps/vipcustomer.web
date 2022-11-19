@@ -1,12 +1,13 @@
 import React from "react";
-import styles from "./About.module.css";
+// import styles from "./aboutTop.module.css";
+import styles from "./aboutTop.module.css";
 
 const Abouttop = () => {
   return (
-    <div className={styles.title}>
+    <div className={styles.wrapper}>
       <div className={styles.container}>
-        <h1 className={styles.h1}>About Us</h1>
-        <p className={styles.hi}>
+        <h1 className={styles.header}>About Us</h1>
+        <p className={styles.paragraph}>
           Axe API is a reliable service that can be used for VIP Customer
           identification. We help you understand your website Traffic and make
           sense of who is visiting your page. Wherther it is to improve your

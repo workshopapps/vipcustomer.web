@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./About.module.css";
-
+import mainImage from "./main.png";
 const Aboutmain = () => {
   return (
     <div>
-      <div className={styles.mainCont}>
+      <div className={styles.wrapper}>
         <h2 className={styles.mainHeading}>Our Benefits</h2>
-        <div className={styles.main}>
-          <div className={styles.textMain}>
+        <div className={styles.container}>
+          <div className={styles.textContainer}>
             <div className={styles.textCont}>
               <h2 className={styles.h2Main}>
                 Simple software that identifies VIPs
@@ -33,7 +33,9 @@ const Aboutmain = () => {
               </p>
             </div>
           </div>
-          <div className={styles.imgCont}></div>
+          <div className={styles.imgContainer}>
+            <img src={mainImage} alt="main image " />
+          </div>
         </div>
       </div>
     </div>
