@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 const NavWrapper = styled.nav`
-  position: sticky;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 10;
   font-size: 1.6rem;
   font-weight: 500;
   display: flex;
