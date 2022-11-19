@@ -43,6 +43,9 @@ const Home = () => {
         <Link className="btn" to="/docs/somethingelse">
           Something Else
         </Link>
+        <Link className="btn" to="/password-recovery">
+          recover pw
+        </Link>
       </div>
     </div>
   );
