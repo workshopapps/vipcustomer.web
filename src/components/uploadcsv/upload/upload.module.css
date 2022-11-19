@@ -1,11 +1,9 @@
 .upload {
   width: 100%;
   margin: 0 auto;
-  border: 1px solid black;
 }
 
 .welcome__header {
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: flex-start;

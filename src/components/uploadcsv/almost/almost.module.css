@@ -1,11 +1,9 @@
-.upload {
+.almost {
   width: 100%;
   margin: 0 auto;
-  border: 1px solid black;
 }
 
 .almost__header {
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -53,6 +51,7 @@
 .waiting {
   width: 90%;
   max-width: 394px;
+  margin: 0 auto;
   padding: 10px;
   background: #ffffff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14);
@@ -62,6 +61,7 @@
 .success_container {
   width: 90%;
   max-width: 394px;
+  margin: 0 auto;
 }
 
 .success {
