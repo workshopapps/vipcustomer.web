@@ -1,4 +1,5 @@
 /* import font family here */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 *,
 *::before,
@@ -6,6 +7,20 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --color-dark: #121212;
+  --color-orange: #f05d23;
+  --color-lightBlue: #323c60;
+  --color-darkBlue: #091540;
+  --color-neutral: #f9f9ff;
+  --mobile: 600px;
+  --tablet: 900px;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 a,
@@ -19,4 +34,21 @@ li {
   background-color: transparent;
   cursor: pointer;
   text-decoration: none;
+}
+
+/* sets default margin of header elements and paragraph tag to zero */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
