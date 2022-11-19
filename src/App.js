@@ -15,6 +15,7 @@ import CsvUpload from "pages/CsvUpload";
 import HelpCenter from "pages/helpCenter/HelpCenter";
 import SignUp from "./pages/auth/SignUp";
 import Terms from "./pages/Terms";
+import Mission from "pages/Mission";
 
 function App() {
   const { theme } = Store();
@@ -30,6 +31,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/docs/*" element={<Docs />} />
+          <Route path="/mission" element={<Mission />} />
           <Route path="/csv-upload" element={<CsvUpload />} />
           <Route path="/help" element={<HelpCenter />} />
         </Routes>

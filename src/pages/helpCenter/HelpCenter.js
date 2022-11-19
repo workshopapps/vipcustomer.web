@@ -5,7 +5,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { RiFileList2Line } from "react-icons/ri";
 import { TiMessages } from "react-icons/ti";
 import { MdOutlineSettings } from "react-icons/md";
-import { Navbar } from "components/general/navbar";
+import { Navbar } from "components/general";
 
 const HelpCenter = () => {
   return (
