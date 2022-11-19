@@ -31,14 +31,14 @@ const HelpCenter = () => {
         <div className={styles.category_div}>
           <h5 className={styles.headings}>Browse the Categories</h5>
           <div className={styles.cards}>
-            <Link to="">
+            <Link to="/faqs">
               <div className={styles.card}>
                 <TiMessages className={styles.icons} />
                 <h6>FAQs</h6>
                 <p>Get answers to questions frequently asked by users</p>
               </div>
             </Link>
-            <Link to="">
+            <Link to="/docs">
               <div className={styles.card}>
                 <RiFileList2Line className={styles.icons} />
                 <h6>API Documentation</h6>
