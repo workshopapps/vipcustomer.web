@@ -15,17 +15,17 @@
 }
 .img {
   width: 30%;
-  height: 21.4rem;
+  height: 336px;
 }
 
 .p {
-  max-width: 40rem;
+  max-width: 640px;
   /* height: 46.55px; */
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 15px;
   color: #091540;
-  margin-top: 1.3rem;
+  margin-top: 20.8px;
 }
 
 .connect > h2 {
@@ -47,8 +47,8 @@
 }
 .h2 {
   font-weight: 600;
-  font-size: 2.3rem;
-  line-height: 2.8rem;
+  font-size: 36.8px;
+  line-height: 44.8px;
   color: #091540;
 }
 
@@ -87,7 +87,7 @@
 
 .ul > li {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
   align-items: flex-end;
 }
 
@@ -95,7 +95,7 @@
   margin-top: 10px;
   width: 46.55px;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 15px;
   color: #091540;
 }
@@ -108,7 +108,7 @@
     float: right;
     width: 40%;
     margin-left: 20px;
-    height: 20rem;
+    height: 320px;
   }
   .h2 {
     font-size: 22.9895px;
@@ -130,8 +130,8 @@
   }
   .h2 {
     font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
+    font-size: 19.2px;
+    line-height: 28.8px;
     color: #091540;
   }
   .p {

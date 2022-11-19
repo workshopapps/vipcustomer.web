@@ -9,23 +9,23 @@
 
 .img {
   max-width: 30%;
-  height: 21.4rem;
+  height: 342.4px;
 }
 .h2 {
   font-weight: 600;
-  font-size: 2.3rem;
-  line-height: 2.8rem;
-  color: #091540;
+  font-size: 36.8px;
+  line-height: 44.8px;
+  color: var(--blue);
   margin-top: 20px;
 }
 .p {
-  max-width: 35rem;
+  max-width: 560px;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 26px;
 
-  color: #091540;
-  margin-top: 1.3rem;
+  color: var(--blue);
+  margin-top: 20.8px;
 }
 
 .button {
@@ -35,8 +35,8 @@
   gap: 10px;
   width: 160px;
   height: 43px;
-  background: #091540;
-  border: 1px solid #091540;
+  background: var(--blue);
+  border: 1px solid var(--blue);
   border-radius: 8px;
   margin-top: 35px;
 }
@@ -49,7 +49,7 @@
     float: right;
     width: 40%;
     margin-left: 20px;
-    height: 20rem;
+    height: 320px;
     /* border: solid 2px red; */
   }
   .h2 {

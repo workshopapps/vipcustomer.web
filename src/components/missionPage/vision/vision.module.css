@@ -11,7 +11,7 @@
 } */
 .img {
   max-width: 40%;
-  height: 21.4rem;
+  height: 342.4px;
   float: right;
   padding: 30px;
   margin-right: -20px;
@@ -19,19 +19,19 @@
 }
 .h2 {
   font-weight: 600;
-  font-size: 2.3rem;
-  line-height: 2.8rem;
+  font-size: 36.8px;
+  line-height: 44.8px;
   color: var(--blue);
   margin-top: 150px;
 }
 .p {
-  max-width: 40rem;
+  max-width: 640px;
   /* height: 46.55px; */
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 20px;
   color: var(--blue);
-  margin-top: 1.3rem;
+  margin-top: 20.8px;
 }
 @media screen and (max-width: 840px) {
   .vision {
@@ -43,7 +43,7 @@
     float: right;
     /* width: 60%; */
     margin-left: 20px;
-    height: 20rem;
+    height: 320px;
     margin-bottom: -20px;
     /* border: solid 2px red; */
   }
@@ -73,8 +73,8 @@
   }
   .h2 {
     font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
+    font-size: 19.2px;
+    line-height: 28.8px;
     color: var(--blue);
     margin: 0;
   }

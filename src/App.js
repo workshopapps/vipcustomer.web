@@ -13,6 +13,7 @@ import Example from "./pages/Example";
 import Docs from "./pages/Docs";
 import SignUp from "./pages/auth/SignUp";
 import Terms from "./pages/Terms";
+import Mission from "pages/Mission";
 
 function App() {
   const { theme } = Store();
