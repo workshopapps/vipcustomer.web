@@ -13,7 +13,6 @@ const listTwo = PrivacyListTwo.map((plist, idx) => (
 ));
 const Privacy = () => (
   <>
-    {/* <Header /> */}
     <Navbar />
     <PrivacyWrapper>
       <section>
