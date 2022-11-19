@@ -92,6 +92,8 @@
   font-size: 14px;
   line-height: 23px;
   color: #121212;
+  margin-left: 9.5%;
+  text-align: left;
 }
 .modal-header-success {
   display: flex;
@@ -167,4 +169,13 @@
     margin-top: 30px;
     margin-left: 36.5px;
   }
+  .modal-box-success {
+    width: 283.03px;
+  }
+  .modal-box-success p {
+    margin-left: 13.5%;
+  }
+  .cancel-success {
+    margin-left: 49%;
+}
 }

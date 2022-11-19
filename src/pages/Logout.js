@@ -14,9 +14,9 @@ const Logout = (props) => {
   const logout = (e) => {
     e.preventDefault();
     setIsActive(current => !current);
-    setLogoutSuccess(status => !status);
     localStorage.clear();
     sessionStorage.clear();
+    setLogoutSuccess(status => !status);
     navigate("/");
   }
 
