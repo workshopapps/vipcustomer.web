@@ -11,13 +11,15 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
-<<<<<<< HEAD
 import PasswordRecovery from "./pages/PasswordRecovery";
-=======
+import FAQ from "./pages/FAQ";
+import CsvUpload from "pages/CsvUpload";
+import HelpCenter from "pages/helpCenter/HelpCenter";
 import SignUp from "./pages/auth/SignUp";
->>>>>>> db6a46e7e96fa90c6cd9ad16e9f0beb32045ee93
 import Terms from "./pages/Terms";
 import PasswordChange from "./pages/PasswordChange";
+import Privacy from "./pages/Privacy";
+import Mission from "pages/Mission";
 
 function App() {
   const { theme } = Store();
@@ -37,6 +39,11 @@ function App() {
             <Route index element={<PasswordRecovery />} />
             <Route path="change" element={<PasswordChange />} />
           </Route>
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/mission" element={<Mission />} />
+          <Route path="/csv-upload" element={<CsvUpload />} />
+          <Route path="/help" element={<HelpCenter />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

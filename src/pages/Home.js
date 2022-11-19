@@ -5,7 +5,7 @@ import { Store } from "../store/contexts/AppContext";
 import { sayHello_a } from "../store/actions/appActions";
 import Logout from "./Logout";
 import { Button } from "react-bootstrap";
-
+// import Navbar from "../../src/components/general/navbar";
 const Home = () => {
   const { greet, dispatch, changeTheme, theme } = Store();
 
@@ -18,6 +18,7 @@ const Home = () => {
 
   return (
     <div>
+      {/* <Navbar /> */}
       <h1>Home Page</h1>
       <h1>{greet}</h1>
 
@@ -58,8 +59,10 @@ const Home = () => {
         <Link className="btn" to="/docs/somethingelse">
           Something Else
         </Link>
-        <Link className="btn" to="/password-recovery">
-          recover pw
+        <Link className="btn" to="/password-recovery">Passwor recovery </Link>
+        {/* NOTE this is temporary */}
+        <Link className="btn" to="/faq">
+          FAQ
         </Link>
       </div>
     </div>
