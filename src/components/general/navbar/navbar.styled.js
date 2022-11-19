@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const NavWrapper = styled.nav`
+  color: white;
   position: sticky;
   font-size: 1.6rem;
   font-weight: 500;
