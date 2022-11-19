@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Store } from "../store/contexts/AppContext";
 import { sayHello_a } from "../store/actions/appActions";
+import { Navbar } from "../components/general/navbar";
 
 const Home = () => {
   const { greet, dispatch, changeTheme, theme } = Store();
@@ -13,6 +14,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navbar />
       <h1>Home Page</h1>
       <h1>{greet}</h1>
 
