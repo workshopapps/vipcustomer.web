@@ -9,7 +9,7 @@ import {
   Button
 } from "./shell.styled";
 
-export default function Shell({ title, buttonText, extra, children }) {
+export default function Shell({ title, buttonText, children }) {
   return (
     <Container>
       <div>

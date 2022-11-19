@@ -13,6 +13,7 @@ import Example from "./pages/Example";
 import Docs from "./pages/Docs";
 import PasswordRecovery from "./pages/PasswordRecovery";
 import Terms from "./pages/Terms";
+import PasswordChange from "./pages/PasswordChange";
 
 function App() {
   const { theme } = Store();
@@ -29,6 +30,7 @@ function App() {
           <Route path="/docs/*" element={<Docs />} />
           <Route path="/password-recovery">
             <Route index element={<PasswordRecovery />} />
+            <Route path="change" element={<PasswordChange />} />
           </Route>
         </Routes>
       </BrowserRouter>
