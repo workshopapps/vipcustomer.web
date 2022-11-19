@@ -11,7 +11,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.6"
   },
   "scripts": {
@@ -42,11 +42,15 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.27.0",
+    "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-prettier": "^4.2.1",
+<<<<<<< HEAD
     "eslint-plugin-react": "^7.31.10",
+=======
+    "eslint-plugin-react": "^7.31.11",
+>>>>>>> bd47dcd5afba281a91785f1f7434f735626da2d2
     "husky": "^8.0.0",
     "prettier": "^2.7.1"
   }
