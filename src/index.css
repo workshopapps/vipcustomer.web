@@ -1,4 +1,5 @@
 /* import font family here */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 *,
 *::before,
@@ -16,6 +17,10 @@
   --color-neutral: #f9f9ff;
   --mobile: 600px;
   --tablet: 900px;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 a,
@@ -41,4 +46,9 @@ h5,
 h6,
 p {
   margin: 0;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
