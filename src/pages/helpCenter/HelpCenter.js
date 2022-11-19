@@ -5,12 +5,13 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { RiFileList2Line } from "react-icons/ri";
 import { TiMessages } from "react-icons/ti";
 import { MdOutlineSettings } from "react-icons/md";
-import { Navbar } from "components/general";
+import Header from "components/layout/Header";
+import Footer from "components/layout/Footer";
 
 const HelpCenter = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <div className={styles.help_center}>
         <div>
           <h3 className={styles.headings}>We are here to help you</h3>
@@ -82,6 +83,7 @@ const HelpCenter = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
