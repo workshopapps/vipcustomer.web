@@ -34,11 +34,7 @@ const Demo = () => {
               </label>
               <label>
                 Gender
-                <select>
-                  <option value=""></option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
+                <input type="text" />
               </label>
               <label>
                 Career/Industry
@@ -65,13 +61,11 @@ const Demo = () => {
           </p>
           <ul>
             <li>
-              {" "}
               <img src={checkmark} />
               Automatic VIP level tagging and categorization with relevant
               keyword extraction
             </li>
             <li>
-              {" "}
               <img src={checkmark} />
               Real-time data collection so that you can make decisions on how to
               improve high ranking customer satisfaction levels.
