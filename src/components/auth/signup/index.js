@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { SlSocialInstagram, SlSocialTwitter } from "react-icons/sl";
-import { ReactComponent as Logo } from "../../../assests/icons/logo.svg";
+// import { ReactComponent as Logo } from "../../../assests/icons/logo.svg";
+import { ReactComponent as Logo } from "../../general/assests/icons/logo.svg";
 import Checkbox from "./Checkbox";
 import Input from "../Input";
 import {
