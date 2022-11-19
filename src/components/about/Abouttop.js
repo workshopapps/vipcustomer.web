@@ -5,7 +5,7 @@ const Abouttop = () => {
   return (
     <div className={styles.title}>
       <div className={styles.container}>
-        <h1 className={styles.hi}>About Us</h1>
+        <h1 className={styles.h1}>About Us</h1>
         <p className={styles.hi}>
           Axe API is a reliable service that can be used for VIP Customer
           identification. We help you understand your website Traffic and make

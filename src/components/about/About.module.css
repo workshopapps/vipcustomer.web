@@ -1,17 +1,70 @@
 .title{
   background-color: #091540;
+  
 }
 .container{
   margin: auto;
   text-align: center;
   width: 80%;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.h1{
+  color: #FFFFFF;
+  font-weight: 600;
+font-size: 4.8rem;
 }
 .hi{
   color: #FFFFFF;
+  font-weight: 500;
+  font-size: 2rem;
 }
 .mainCont{
   margin: auto;
   width: 80%;
+}
+.mainHeading{
+  text-align: center;
+  color: #091540;
+  margin-top: 5rem;
+  font-weight: 600;
+font-size: 40px;
+}
+.main{
+  display: flex;
+  gap: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  
+}
+.textCont{
+  color: #091540;
+  margin-bottom: 5rem;
+}
+.h2Main{
+  font-weight: 500;
+  font-size: 40px;
+}
+.para{
+  color: #091540;
+  margin-top: 20px;
+  font-size: 1.8rem;
+}
+.imgCont{
+ margin-right: -100px;
+  width: 60%;
+  
+  height: 66rem;
+  background-image: url(./main.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:100%;
+}
+.textMain{
+  width: 40%;
+  
+}
+.imgMain{
+ 
+  
 }
