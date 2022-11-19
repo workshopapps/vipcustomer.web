@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 /*
-This is a reusable Button Component 
+This is a reusable Button Component
 
 Button component takes in props
 
 
 @PROPS TYPE - STRINGS
 
- fw - font-weight, 
- fz - font-size, 
- bg - background, 
+ fw - font-weight,
+ fz - font-size,
+ bg - background,
  fw - font-weight,
  padding - padding - (sides),
  border - border -(width,weight,color),
