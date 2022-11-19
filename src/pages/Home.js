@@ -59,6 +59,10 @@ const Home = () => {
         <Link className="btn" to="/docs/somethingelse">
           Something Else
         </Link>
+        {/* NOTE this is temporary */}
+        <Link className="btn" to="/faq">
+          FAQ
+        </Link>
       </div>
     </div>
   );
