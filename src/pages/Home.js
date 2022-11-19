@@ -5,7 +5,7 @@ import { Store } from "../store/contexts/AppContext";
 import { sayHello_a } from "../store/actions/appActions";
 import Logout from "./Logout";
 import { Button } from "react-bootstrap";
-
+// import Navbar from "../../src/components/general/navbar";
 const Home = () => {
   const { greet, dispatch, changeTheme, theme } = Store();
 
@@ -18,6 +18,7 @@ const Home = () => {
 
   return (
     <div>
+      {/* <Navbar /> */}
       <h1>Home Page</h1>
       <h1>{greet}</h1>
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const NavWrapper = styled.nav`
+  color: white;
   position: sticky;
   font-size: 1.6rem;
   font-weight: 500;
@@ -24,10 +25,10 @@ const LogoWrapper = styled.div`
     mobile ? "48.9%" : tablet ? "73.46%" : "164.63px"};
   height: ${({ mobile, tablet }) =>
     mobile ? "48.9%" : tablet ? "73.46%" : "49px"};
-  & > img{
-    width:100%;
-    height:100%
-    object-fit:cover;
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;
 
