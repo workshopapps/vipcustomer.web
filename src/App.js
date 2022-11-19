@@ -27,7 +27,7 @@ function App() {
       <GLobalStyles />
       <BrowserRouter>
         <Routes>
-          <Route path="/*" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/example" element={<Example />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<SignUp />} />

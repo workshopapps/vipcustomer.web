@@ -4,8 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Store } from "../store/contexts/AppContext";
 import { sayHello_a } from "../store/actions/appActions";
-import { Navbar } from "../components/general/navbar";
-import Footer from "../components/general/footer/Footer";
+import { Navbar } from "../components/general";
+import Footer from "../components/general/otherfooter/Footer";
 import LandingPage from "../components/landingpage/LandingPage";
 import useScreenSize from "../hooks/useScreenSize";
 

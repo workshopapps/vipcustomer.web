@@ -10,9 +10,6 @@ import {
   HeaderButton
 } from "./header.styled";
 
-import Button from "../general/Button";
-import { Navbar } from "components/general/navbar";
-
 const Header = () => {
   return (
     <HeaderWrapper>

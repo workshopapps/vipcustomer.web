@@ -10,7 +10,7 @@ const Themes = {
     //.. others
   },
   dark: {
-    color: "#ffffff",
+    color: "#000000",
     bg: "#ffffff",
     example: "pink"
 
