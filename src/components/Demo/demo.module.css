@@ -1,0 +1,150 @@
+/* styling for parent_container starts */
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3em;
+    column-gap: 3em;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* styling for parent_container ends*/
+
+
+/* styling for first div starts */
+
+.grid_container>div:first-child>h1,
+.grid_container>div:first-child>h1>strong {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 59px;
+    color: #121212;
+}
+
+.grid_container>div:first-child>h1>strong {
+    color: #F05D23;
+}
+
+
+/* styling for first_div ends */
+
+
+/* styling for second_div starts */
+
+.grid_container>div:nth-of-type(2) {
+    width: 100%;
+    height: 0;
+}
+
+.grid_container>div:nth-of-type(2)>article {
+    border: 1px solid #CED0D9;
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.12));
+    border-radius: 4px;
+    padding: 1em 4em;
+    position: relative;
+}
+
+.grid_container>div:nth-of-type(2)>article>h2 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 38px;
+    color: #091540;
+    text-align: center;
+}
+
+.grid_container>div:nth-of-type(2)>article>p {
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: #121212;
+    width: 90%;
+    font-size: 16px;
+}
+
+.grid_container>div:nth-of-type(2)>article>form>label {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #121212;
+    margin: 1.3em 0;
+}
+
+.grid_container>div:nth-of-type(2)>article>form>label>span {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.grid_container>div:nth-of-type(2)>article>form>label>input,
+.grid_container>div:nth-of-type(2)>article>form>label>select {
+    display: block;
+    width: 100%;
+    height: 48px;
+    border: 1px solid #ADB1BF;
+    border-radius: 8px;
+    padding: 0 1em;
+    margin: .2em 0;
+}
+
+.grid_container>div:nth-of-type(2)>article>form>button {
+    height: 48px;
+    width: 139px;
+    height: 48px;
+    background: #091540;
+    border-radius: 8px;
+    color: white;
+}
+
+.grid_container>div:nth-of-type(2)>article>form>span {
+    color: #C04A1C;
+    display: inline-block;
+    padding-left: 1em;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.grid_container>div:last-child>h2,
+.grid_container>div:last-child>p {
+    line-height: 42px;
+    color: #121212;
+}
+
+.grid_container>div:last-child>h2 {
+    font-weight: 600;
+    font-size: 32px;
+    padding-top: .6em;
+}
+
+.grid_container>div:last-child>p {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.grid_container>div:last-child>ul>li {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.grid_container>div:last-child>ul>li>img {
+    width: 26.67px;
+    height: 26.67px;
+}
+
+
+/* styling for second_div starts */
+
+@media (min-width:480px) and (max-width:768px) {
+    .grid_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 3em;
+        column-gap: 3em;
+        font-family: 'Poppins', sans-serif;
+    }
+}
