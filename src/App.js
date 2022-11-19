@@ -11,6 +11,8 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
+
+import HelpCenter from "pages/helpCenter/HelpCenter";
 import SignUp from "./pages/auth/SignUp";
 import Terms from "./pages/Terms";
 import Mission from "pages/Mission";
@@ -30,6 +32,7 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/docs/*" element={<Docs />} />
           <Route path="/mission" element={<Mission />} />
+          <Route path="/help" element={<HelpCenter />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
