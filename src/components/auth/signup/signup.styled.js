@@ -33,7 +33,7 @@ export const LinkStyles = styled(Link)`
 export const Names = styled.form`
   display: flex;
   align-items: center;
-  gap: 4.5rem;
+  gap: 3.2rem;
 
   & > * {
     flex: 1;
