@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+export const NavBarWrapper = styled.div`
+  display: none;
+  color: white;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
+`;
+
 export const SignUpBtn = styled.button`
   width: 100%;
   background-color: #091540;
@@ -10,6 +19,10 @@ export const SignUpBtn = styled.button`
   padding: 1rem;
   border-radius: 8px;
   cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 export const LinkStyles = styled(Link)`
@@ -187,6 +200,8 @@ export const Left = styled.div`
 `;
 
 export const LogoWrapper = styled.div`
+  cursor: pointer;
+
   @media only screen and (max-width: 768px) {
     display: none;
   }

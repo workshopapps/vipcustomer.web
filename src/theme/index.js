@@ -24,7 +24,6 @@ const GLobalStyles = createGlobalStyle`
 body {
     font-family:poppins;
     background-color: ${({ theme }) => theme.bg};
-     max-width:1440px;
     margin:0 auto;
     font-family: "Poppins", sans-serif;
     font-size:1.6rem;
