@@ -11,6 +11,8 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
+import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
 
 function App() {
   const { theme } = Store();
@@ -23,6 +25,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/example" element={<Example />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/docs/*" element={<Docs />} />
         </Routes>
       </BrowserRouter>
