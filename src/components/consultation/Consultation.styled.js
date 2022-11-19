@@ -1,4 +1,5 @@
 import styled from "styled-components";
+// import pic from "../../assests/images/consultation-bg.png";
 
 export const FormStyled = styled.form`
   border: 1px solid #848a9f;
@@ -7,7 +8,7 @@ export const FormStyled = styled.form`
 
 export const ConsultStyled = styled.section`
   width: 80%;
-  margin-inline: auto;
+  margin: 4rem auto 0;
 
   @media only screen and (min-width: 768px) {
     width: 70%;
@@ -54,6 +55,14 @@ export const BtnContainer = styled.div`
     &.reset {
       border: 1px solid #848aa0;
       color: #848aa0;
+    }
+
+    &:disabled {
+      background: #adb1bf;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14);
+      border-radius: 4.67164px;
+      color: #fff;
+      cursor: not-allowed;
     }
   }
 `;
