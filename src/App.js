@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
-import Profile from "./pages/profilePage/Profile";
+import FAQ from "./pages/faq/FAQ";
 
 function App() {
   const { theme } = Store();
@@ -25,7 +25,7 @@ function App() {
           <Route path="/example" element={<Example />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/docs/*" element={<Docs />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
