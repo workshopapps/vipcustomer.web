@@ -11,7 +11,7 @@
   background: #FFFFFF;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14);
   border-radius: 8px;
-  width: 55.375rem;
+  width: 886px;
   height: 362px;
   margin: 219px auto;
   text-align: center;
@@ -21,7 +21,7 @@
 }
 .modal-title {
   padding-top: 48px;
-  font-family: 'Poppins';
+  font-family: 'Poppins' !important;
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
@@ -48,7 +48,7 @@
   height: 44px;
   border-radius: 8px;
   margin-right: 41px;
-  font-family: 'Poppins';
+  font-family: 'Poppins' !important;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -86,7 +86,7 @@
   animation-fill-mode: forwards;
 }
 .modal-box-success p {
-  font-family: 'Poppins';
+  font-family: 'Poppins' !important; 
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -97,7 +97,7 @@
   display: flex;
 }
 .modal-header-success p {
-  font-family: 'Poppins';
+  font-family: 'Poppins' !important;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
