@@ -9,7 +9,7 @@ export const HeaderTextWrapper = styled.p`
 
 export const TextWrapper = styled.p`
   padding: 10px 0px 10px 10px;
-  border-top: 1px solid #adb1bf;
+  border-top: 1.7px solid #b5b7c0;
   color: #091540;
   font-weight: 400;
   font-size: 1.6rem;
