@@ -92,7 +92,9 @@ const Consultation = () => {
   return (
     <ConsultPageWrap>
       <Navbar />
-      <Link to="/demo">Back</Link>
+      <Link to="/demo" className="back-btn">
+        Back
+      </Link>
       <ConsultStyled>
         <h1>Schedule a consultation</h1>
         <p>Complete form to schedule a consultation with us</p>

@@ -2,12 +2,24 @@ import styled from "styled-components";
 import tick from "./assets/consultation-bg.png";
 
 export const ConsultPageWrap = styled.div`
-  background-image: url(${tick});
+  /* background-image: url(${tick}); */
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
   padding-bottom: 10rem;
   background-size: 30%;
+  .back-btn {
+    background: #091540;
+    box-shadow: 0px 1.16791px 2.33582px rgba(0, 0, 0, 0.14);
+    color: #fff;
+    padding: 0.5rem 1.43rem;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    margin: 2rem 3rem;
+    position: relative;
+    top: 2rem;
+  }
 `;
 
 export const FormStyled = styled.form`
