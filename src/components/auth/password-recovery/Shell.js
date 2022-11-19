@@ -9,7 +9,7 @@ import {
   Button
 } from "./shell.styled";
 
-export default function Shell({ title, buttonText, children }) {
+export default function Shell({ title, buttonText, children, onBtnClick }) {
   return (
     <Container>
       <div>
@@ -17,7 +17,7 @@ export default function Shell({ title, buttonText, children }) {
         <White>
           <ContentWrapper>
             <div>{children}</div>
-            <Button>{buttonText}</Button>
+            <Button onClick={onBtnClick}>{buttonText}</Button>
           </ContentWrapper>
         </White>
       </div>
@@ -28,6 +28,6 @@ export default function Shell({ title, buttonText, children }) {
 Shell.propTypes = {
   title: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  extra: PropTypes.string.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
+  onBtnClick: PropTypes.func
 };

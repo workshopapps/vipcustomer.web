@@ -32,6 +32,11 @@ export const Title = styled.div`
   font-size: 4rem;
   margin-bottom: 6.4rem;
   text-align: center;
+
+  @media screen and (max-width: 480px) {
+    font-size: 2rem;
+    margin-bottom: 3.2rem;
+  }
 `;
 
 export const White = styled.div`
@@ -56,9 +61,14 @@ export const White = styled.div`
     font-size: 1.6rem;
     margin-bottom: 3.2rem;
   }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 5.8rem;
+    padding-bottom: 16rem;
+  }
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   background-color: #091540;
   text-align: center;
   width: 100%;
@@ -66,4 +76,9 @@ export const Button = styled.div`
   padding: 1rem;
   border-radius: 8px;
   margin-top: 5.8rem;
+  cursor: pointer;
+
+  @media screen and (max-width: 480px) {
+    font-size: 1.4rem;
+  }
 `;
