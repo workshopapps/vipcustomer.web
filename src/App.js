@@ -25,7 +25,6 @@ function App() {
 
   return (
     <>
-      <Demo />
       <ThemeProvider theme={theme ? Themes.light : Themes.dark}>
         <GLobalStyles />
 
