@@ -48,8 +48,10 @@ const Demo = () => {
                 Country
                 <input type="text" />
               </label>
-              <button type="submit">Analyse</button>
-              <span>Advanced options</span>
+              <article>
+                <button type="submit">Analyse</button>
+                <span>Advanced options</span>
+              </article>
             </form>
           </article>
         </div>
