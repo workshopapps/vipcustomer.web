@@ -9,7 +9,7 @@ export const FormStyled = styled.form`
 export const ConsultStyled = styled.section`
   width: 80%;
   margin: 4rem auto 0;
-  background-image: url("assests/images/consultation-bg");
+  background-image: url("./assets/consultation-bg.png");
 
   @media only screen and (min-width: 768px) {
     width: 70%;
@@ -45,13 +45,16 @@ export const BtnContainer = styled.div`
   button {
     padding: 0.5rem 1.43rem;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 14px;
     border-radius: 8px;
 
     &.submit {
       background: #091540;
       box-shadow: 0px 1.16791px 2.33582px rgba(0, 0, 0, 0.14);
       color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     &.reset {

@@ -2,6 +2,8 @@ import Navbar from "../general/navbar/Navbar";
 import React, { useState } from "react";
 import Input from "../auth/Input";
 import { BtnContainer, ConsultStyled, FormStyled } from "./Consultation.styled";
+import tick from "./assets/small.png";
+import { Link } from "react-router-dom";
 
 const Consultation = () => {
   const [formDetails, setFormDetails] = useState({
@@ -85,6 +87,7 @@ const Consultation = () => {
   return (
     <div>
       <Navbar />
+      <Link to="/demo">Back</Link>
       <ConsultStyled>
         <h1>Schedule a consultation</h1>
         <p>Complete form to schedule a consultation with us</p>
@@ -137,7 +140,7 @@ const Consultation = () => {
           />
           <BtnContainer>
             <button type="submit" className="submit">
-              Schedule a call
+              Schedule a call <img src={tick} alt="" />
             </button>
             <button type="reset" className="reset" disabled={true}>
               Reset
