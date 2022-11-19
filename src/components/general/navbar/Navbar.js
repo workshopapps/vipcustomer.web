@@ -7,8 +7,8 @@ import {
   Items,
   MobileNavWrapper
 } from "./navbar.styled";
-import { Button } from "../Button";
-import LOGO from "../../../assests/icons/logo.svg";
+import Button from "../Button";
+import LOGO from "../assests/icons/logo.svg";
 import MenuBtn from "./MenuBtn";
 import { Link } from "react-router-dom";
 
@@ -74,12 +74,9 @@ implementation should be changed
           <Link>
             {/* this a reusable button component */}
             <Button
-              padding="12px 24px"
-              border="1px solid #FFFAFB"
-              width="150px"
-              fw="700">
-              Get Started
-            </Button>
+              style={{ padding: "12px 24px", fontWeight: "700" }}
+              text="Get Started"
+            />
           </Link>
         </Items>
       </NavItemsWrapper>
