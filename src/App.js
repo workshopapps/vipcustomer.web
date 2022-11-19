@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
-import FAQ from "./pages/faq/FAQ";
+import FAQ from "./pages/FAQ";
 
 function App() {
   const { theme } = Store();

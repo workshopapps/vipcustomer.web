@@ -29,10 +29,10 @@ const Questions = ({ styles, text, icon, alt, p }) => {
   );
 };
 
-Questions.prototype = {
-  styles: PropTypes.string.isRequired,
+Questions.propTypes = {
+  styles: PropTypes.object.isRequired,
   text: PropTypes.string.isRequired,
-  icon: PropTypes.element.isRequired, /// I didn't know what proptype I should use here
+  icon: PropTypes.object.isRequired, /// I didn't know what proptype I should use here
   alt: PropTypes.string,
   p: PropTypes.string
 };
