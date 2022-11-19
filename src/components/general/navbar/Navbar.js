@@ -68,6 +68,7 @@ implementation should be changed
           <Link>Products</Link>
           <Link>Resourses</Link>
           <Link>About Us</Link>
+          <Link to={'/team'}>The Team</Link>
         </Items>
         <Items className="nav--link--items" tablet={tablet}>
           <Link>Log in</Link>
@@ -89,6 +90,7 @@ implementation should be changed
           <Link>Products</Link>
           <Link>Resourses</Link>
           <Link>About Us</Link>
+          <Link to={'/team'}>The Team</Link>
           <Link>Log in</Link>
           <Link>Get Started</Link>
         </MobileNavWrapper>
