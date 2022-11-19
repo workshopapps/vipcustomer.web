@@ -33,7 +33,7 @@ export const LinkStyles = styled(Link)`
 export const Names = styled.form`
   display: flex;
   align-items: center;
-  gap: 4.5rem;
+  gap: 3.2rem;
 
   & > * {
     flex: 1;
@@ -47,10 +47,10 @@ export const Names = styled.form`
 `;
 
 export const Form = styled.form`
-  margin-top: 3.7rem;
+  margin-top: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 4.2rem;
+  gap: 2.4rem;
 
   @media only screen and (max-width: 768px) {
     margin-top: 2rem;
@@ -61,7 +61,7 @@ export const Form = styled.form`
 export const OrDemarcation = styled.div`
   text-align: center;
   position: relative;
-  margin-top: 6rem;
+  margin-top: 2rem;
   font-size: 2.5rem;
   color: #121212;
 
@@ -126,7 +126,7 @@ export const Right = styled.div`
   flex: 1.2;
   display: grid;
   place-items: center;
-  padding: 11.2rem;
+  padding: 7rem;
 
   @media only screen and (max-width: 1024px) {
     padding: 8rem 4.2rem;
@@ -146,7 +146,7 @@ export const Socials = styled.div`
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-top: 11.2rem;
+  margin-top: 7rem;
 
   @media only screen and (max-width: 768px) {
     margin: 1.3rem 0 3.3rem;
@@ -155,7 +155,7 @@ export const Socials = styled.div`
 
 export const LoginText = styled.div`
   font-size: 1.8rem;
-  margin-top: 9.3rem;
+  margin-top: 7rem;
 
   @media only screen and (max-width: 768px) {
     margin-top: 1rem;
@@ -177,7 +177,7 @@ export const Left = styled.div`
   background-color: #091540;
   display: flex;
   justify-content: center;
-  padding-top: 35.2vh;
+  padding-top: 30vh;
   padding-inline: 4.2rem;
   text-align: center;
   color: white;
@@ -185,7 +185,8 @@ export const Left = styled.div`
   h3 {
     font-weight: 700;
     font-size: 3.2rem;
-    margin-top: 12rem;
+    margin-top: 7rem;
+    color: white;
   }
 
   @media only screen and (max-width: 768px) {
