@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/profile/Header";
 import { NavLink } from "react-router-dom";
 import Arrow from "../assets/images/arrow.png";
@@ -15,10 +15,23 @@ import ProfileMobileNav from "../components/profile/ProfileMobileNav";
 const Profile = () => {
   const [mobileActive, setMobileActive] = useState(false);
 
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
+
+  function openNav() {
+    setMobileActive(true);
+    console.log("nav open");
+  }
+
+  function closeNav() {
+    setMobileActive(false);
+  }
+
   return (
     <>
       <main className="profile-page">
-        <Header setMobileActive={setMobileActive} />
+        <Header openNav={openNav} />
         <section className="profile-content">
           <div className="side-nav">
             <div className="side-nav-head">
@@ -176,7 +189,8 @@ const Profile = () => {
           </div>
         </section>
       </main>
-      {mobileActive && <ProfileMobileNav setMobileActive={setMobileActive} />}
+
+      <ProfileMobileNav mobileActive={mobileActive} closeNav={closeNav} />
     </>
   );
 };

@@ -12,13 +12,14 @@ import Help from "../../assets/images/help.png";
 import Logout from "../../assets/images/logout.png";
 import Pen from "../../assets/images/pen.png";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const ProfileMobileNav = () => {
+const ProfileMobileNav = ({ mobileActive, closeNav }) => {
   return (
-    <div className="profile-mobile-nav active">
+    <div className={`profile-mobile-nav ${mobileActive ? "active" : ""}`}>
       <div className="profile-nav-head">
         <img src={Logo} alt="" />
-        <FaTimes />
+        <FaTimes onClick={closeNav} />
       </div>
       <div>
         <input
@@ -105,6 +106,11 @@ const ProfileMobileNav = () => {
       </ul>
     </div>
   );
+};
+
+ProfileMobileNav.propTypes = {
+  closeNav: PropTypes.func,
+  mobileActive: PropTypes.bool
 };
 
 export default ProfileMobileNav;

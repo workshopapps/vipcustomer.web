@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/profile/Header";
 import { NavLink } from "react-router-dom";
 import Arrow from "../assets/images/arrow.png";
@@ -9,14 +9,30 @@ import Logout from "../assets/images/logout.png";
 import Girl from "../assets/images/girl.png";
 import Pen from "../assets/images/pen.png";
 import ProfileMobileNav from "../components/profile/ProfileMobileNav";
+import Check from "../assets/images/check.png";
 
 const EditProfile = () => {
   const [mobileActive, setMobileActive] = useState(false);
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
+
+  function openNav() {
+    setMobileActive(true);
+    console.log("nav open");
+  }
+
+  function closeNav() {
+    setMobileActive(false);
+  }
 
   return (
     <>
       <main className="profile-page">
-        <Header setMobileActive={setMobileActive} />
+        <Header openNav={openNav} />
         <section className="profile-content">
           <div className="side-nav">
             <div className="side-nav-head">
@@ -108,10 +124,27 @@ const EditProfile = () => {
                   <input type="text" placeholder="Timmy" />
                 </div>
               </div>
-
               <div className="single-input">
                 <label htmlFor="">Company Email</label>
-                <input type="email" placeholder="axe.business@gmail.com" />
+                <div style={{ position: "relative" }}>
+                  <input
+                    type="email"
+                    placeholder="axe.business@gmail.com"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  {email.length >= 8 && (
+                    <img
+                      src={Check}
+                      alt=""
+                      width="25"
+                      style={{
+                        position: "absolute",
+                        top: "16px",
+                        right: "10px"
+                      }}
+                    />
+                  )}
+                </div>
               </div>
 
               <div className="single-input">
@@ -149,7 +182,25 @@ const EditProfile = () => {
 
               <div className="single-input">
                 <label htmlFor="">Password</label>
-                <input type="password" placeholder="sbdfbnd65sfdvb s" />
+                <div style={{ position: "relative" }}>
+                  <input
+                    type="password"
+                    placeholder="sbdfbnd65sfdvb s"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  {password.length >= 8 && (
+                    <img
+                      src={Check}
+                      alt=""
+                      width="25"
+                      style={{
+                        position: "absolute",
+                        top: "16px",
+                        right: "10px"
+                      }}
+                    />
+                  )}
+                </div>
               </div>
 
               <div className="profile-form-buttons">
@@ -160,7 +211,8 @@ const EditProfile = () => {
           </div>
         </section>
       </main>
-      {mobileActive && <ProfileMobileNav setMobileActive={setMobileActive} />}
+
+      <ProfileMobileNav mobileActive={mobileActive} closeNav={closeNav} />
     </>
   );
 };

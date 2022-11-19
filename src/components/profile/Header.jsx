@@ -3,28 +3,29 @@ import Logo from "../../assets/images/logo.png";
 import Girl from "../../assets/images/girl.png";
 import House from "../../assets/images/house.png";
 import Bolt from "../../assets/images/bolt.png";
-import Calender from "../../assets/images/calender.png";
+import Calender from "../../assets/images/calender2.png";
 import Bell from "../../assets/images/bell.png";
 import { FaBars } from "react-icons/fa";
+import Search from "../../assets/images/search.png";
+import PropTypes from "prop-types";
 
-const Header = () => {
+const Header = ({ openNav }) => {
   return (
     <header>
       <div className="logo-div">
         <img src={Logo} className="profile-logo" alt="axes logo" />
       </div>
       <div className="icon-box">
-        <div className="header-search">
-          <input
-            type="search"
-            name=""
-            placeholder="Search"
-            style={{ position: "relative" }}
-            id=""
+        <div className="header-search" style={{ position: "relative" }}>
+          <input type="search" name="" placeholder="Search" id="search" />
+          <img
+            src={Search}
+            style={{ position: "absolute", top: "7px", left: "7px" }}
+            alt=""
           />
         </div>
-        <div className="hamburger">
-          <FaBars style={{ marginBottom: "0" }} />
+        <div className="hamburger" onClick={openNav}>
+          <FaBars />
         </div>
         <div className="header-icon-box">
           <span>
@@ -51,6 +52,10 @@ const Header = () => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  openNav: PropTypes.func
 };
 
 export default Header;
