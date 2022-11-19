@@ -7,6 +7,20 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --color-dark: #121212;
+    --color-orange: #f05d23;
+    --color-lightBlue: #323c60;
+    --color-darkBlue: #091540;
+    --color-neutral: #f9f9ff;
+    --Primary-color500: #323c60;
+    --Default-121212: #121212;
+    --Primary-colour200: #adb1bf;
+    --mobile: 600px;
+    --tablet: 900px;
 }
 
 html {
