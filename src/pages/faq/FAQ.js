@@ -60,7 +60,7 @@ const FAQ = () => {
           icon={icon}
           alt={"icon"}
           p={
-            "Making sure your account is safe is our biggest priority. We're committed to protecting your account with the highest standards of security available. We use state-of-the-art data encryption and two-factor authentication (2FA) protection when handling your financial information."
+            "Making sure your account is safe is our biggest priority. We're committed to protecting your account with the highest standards of security available. We use state-of-the-art data encryption and two-factor authentication (2FA) protection when handling your financial information"
           }
         />
       </div>
