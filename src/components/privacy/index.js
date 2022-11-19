@@ -3,8 +3,7 @@ import PrivacyWrapper from "./privacy.styled";
 import PrivacyCard from "./body/PrivacyCard";
 import PrivacyList from "./body/PrivacyList";
 import PrivacyListTwo from "./body/PrivacyListTwo";
-import Header from "./header/Header";
-import Footer from "./footer/Footer";
+import { Navbar, Footer } from "components/general";
 
 const list = PrivacyList.map((plist, idx) => (
   <PrivacyCard key={idx} plist={plist} />
@@ -14,7 +13,8 @@ const listTwo = PrivacyListTwo.map((plist, idx) => (
 ));
 const Privacy = () => (
   <>
-    <Header />
+    {/* <Header /> */}
+    <Navbar />
     <PrivacyWrapper>
       <section>
         <h2>PRIVACY POLICY</h2>
