@@ -111,7 +111,7 @@
 .signupBtn{
   background-color: #091540;
   border-radius: 8px;
-  width: 45%;
+  width: 55%;
 height: 5.6rem;
 font-size: 1.5rem;
 color: #FFFFFF;
@@ -120,9 +120,10 @@ color: #FFFFFF;
   width: 50%;
 }
 
-@media only screen and (max-width: 600px) {
 
-  /*Mobile styling for Abouttop component*/
+@media only screen and (max-width: 768px) {
+
+  /*  Tablet styling for Abouttop component*/
   .h1 {
 
     font-weight: 600;
@@ -133,6 +134,99 @@ color: #FFFFFF;
 
     font-weight: 500;
     font-size: 1.2rem;
+  }
+
+  .container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  /*Tablet styling for Aboutmain component*/
+  .mainCont {
+    margin: auto;
+    width: 80%;
+  }
+  .mainHeading {
+    font-size: 2.8rem;
+  }
+
+  .main {
+    display: flex;
+    gap: 5rem;
+    margin-top: 5rem;
+   
+;
+
+  }
+
+  .imgCont {
+    margin-bottom: -2rem;
+    width: 50%;
+    height: 30.0rem;
+    background-size: 100%;
+  }
+
+  .h2Main {
+    font-size: 2.8rem;
+  }
+
+  .para {
+    color: #091540;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: -2rem;
+  }
+
+  .textMain {
+    width: 50%;
+
+  }
+
+  /*Tablet styling foor Aboutbottom component*/
+  .bottCont {
+    background-color: #FDE7DE;
+  }
+  .bottom {
+    flex-direction: column;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+  .bottomImg {
+    background-size: 100%;
+    height: 40rem;
+    width: 100%;
+  }
+  .textDiv{
+    width: 100%;
+    display: flex;
+  }
+  .bottText{
+    width: 70%;
+    margin-bottom: 6rem;
+    margin-top: -5rem;
+  }
+  .signupBtn{
+margin-top: 10rem;
+    width: 30%;
+  height: 5.6rem;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  /*Mobile styling for Abouttop component*/
+  .h1 {
+
+    font-weight: 600;
+    font-size: 4.8rem;
+  }
+
+  .hi {
+
+    font-weight: 500;
+    font-size: 1.8rem;
   }
 
   .container {
@@ -178,7 +272,7 @@ color: #FFFFFF;
 
   }
 
-  /*General styling foor Aboutbottom component*/
+  /*Mobile styling foor Aboutbottom component*/
   .bottCont {
     background-color: #FDE7DE;
   }
@@ -194,6 +288,8 @@ color: #FFFFFF;
   }
   .textDiv{
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
   .bottText{
     margin-bottom: 6rem;
