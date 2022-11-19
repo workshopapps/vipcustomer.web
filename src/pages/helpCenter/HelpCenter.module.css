@@ -92,7 +92,7 @@
 .forms_div{
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 1.7rem;
 }
 .forms_div > input{
     border: 0.08rem solid var(--primary-color600);
