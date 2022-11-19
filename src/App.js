@@ -11,7 +11,12 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
+<<<<<<< HEAD
 import FAQ from "./pages/FAQ";
+=======
+import SignUp from "./pages/auth/SignUp";
+import Terms from "./pages/Terms";
+>>>>>>> 4064be71ede20d854e7c200e9b44af6c98d6657f
 
 function App() {
   const { theme } = Store();
@@ -24,6 +29,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/example" element={<Example />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/docs/*" element={<Docs />} />
           <Route path="/faq" element={<FAQ />} />
         </Routes>
