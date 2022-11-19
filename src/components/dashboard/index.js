@@ -1,5 +1,5 @@
 import React from "react";
-import VipResult from "./VipResult";
+import VipResult from "./vip-result";
 const Dashboard = () => {
   return (
     <div>
