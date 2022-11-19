@@ -22,17 +22,11 @@ const GLobalStyles = createGlobalStyle`
 /* style general classes here that needs theeming */
 /* example */
 body {
-    background-color: ${({ theme }) => theme.bg};
-<<<<<<< HEAD
     max-width:1605px;
-=======
->>>>>>> e949d6732ae49cef7936296680eb6f9686331be4
     margin:0 auto;
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
-    color: ${({ theme }) => theme.color};
     transition:color 0.2s linear, background-color 0.2s linear;
-
   }
 
 .btn{
