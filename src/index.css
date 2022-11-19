@@ -29,15 +29,14 @@ li {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
 :root {
   --Primary-color500: #323c60;
   --Default-121212: #121212;
   --Primary-colour200: #adb1bf;
-=======
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
->>>>>>> 4064be71ede20d854e7c200e9b44af6c98d6657f
 }

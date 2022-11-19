@@ -3,6 +3,7 @@ import styles from "../components/faq/asset/faq.module.css";
 import Add from "../components/faq/asset/add.svg";
 import Remove from "../components/faq/asset/remove.svg";
 import Questions from "../components/faq/Questions";
+import { useState } from "react";
 
 const data = [
   {
@@ -43,31 +44,30 @@ const FAQ = () => {
     closed: Add
   };
 
-  const question_list = data;
-  // const [question_list, setQuestion_list] = useState(data);
+  // const question_list = data;
+  const [question_list, setQuestion_list] = useState(data);
 
   // const [user_input, setUser_input] = useState("");
 
-  // function filter_(input) {
-  //   if (input.target.value.length === 0) {
-  //     console.log("ifjhb");
-  //     setQuestion_list(data);
-  //   } else {
-  //     const query = input.target.value;
-  //     let newList = [...question_list];
-  //     newList = newList.filter((item) => {
-  //       return !item.text.includes(query); //// This is returning an error
-  //     });
-  //     setQuestion_list(newList);
-  //   }
-  // }
-  // onChange = { filter_ };
+  function filter_(input) {
+    const query = input.target.value;
+    // let newList = [...question_list];
+    if (query.length === 0) {
+      console.log("ifjhb");
+      setQuestion_list(data);
+    } else {
+      const newList = question_list.filter((item) => {
+        return !item.text.includes(query); //// This is returning an error
+      });
+      setQuestion_list(newList);
+    }
+  }
 
   return (
     <div className={styles.faq}>
       <div className={styles.top}>
         <h1>Frequently Asked Question</h1> <h1>FAQ</h1>
-        <input type="text" placeholder="Search results" />
+        <input type="text" placeholder="Search results" onChange={filter_} />
       </div>
       <div className={styles.main}>
         {question_list.map((item) => (

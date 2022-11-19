@@ -3,20 +3,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.5rem;
-  padding: 3rem 6rem;
+  gap: 4rem;
+  padding: 3rem 8rem;
 }
 
 .faq .top {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   width: 100%;
 }
 
 .faq .top h1 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
@@ -66,19 +66,20 @@
 }
 
 .faq .main > div div h3 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: var(--Default-121212);
   cursor: pointer;
 }
 
 .faq .main > div div img {
-  width: 1rem;
+  width: 1.3rem;
+  cursor: pointer;
 }
 
 .faq .main > div .ques_p {
   color: var(--Primary-color500);
-  font-size: 0.8rem;
+  font-size: 1.4rem;
   width: 78%;
   align-self: start;
 }
@@ -98,7 +99,7 @@
   }
 
   .faq .top h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
   }
 
@@ -111,11 +112,11 @@
   }
 
   .faq .main > div div h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .faq .main > div .ques_p {
-    font-size: 0.68rem;
+    font-size: 1rem;
   }
 }
 
@@ -134,15 +135,15 @@
   }
 
   .faq .main > div div h3 {
-    font-size: 0.7.5rem;
+    font-size: 1.4rem;
   }
 
   .faq .main > div div img {
-    width: 1rem;
+    width: 1.4rem;
   }
 
   .faq .main > div .ques_p {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     width: 100%;
   }
 }
