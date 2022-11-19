@@ -64,12 +64,18 @@ implementation should be changed
             <MenuBtn menuopen={menuopen} />
           </Items>
         )}
-        <Items className="nav--link--items" tablet={tablet}>
+        <Items
+          className="nav--link--items"
+          style={{ color: "#fff" }}
+          tablet={tablet}>
           <Link>Products</Link>
           <Link>Resourses</Link>
           <Link>About Us</Link>
         </Items>
-        <Items className="nav--link--items" tablet={tablet}>
+        <Items
+          className="nav--link--items"
+          tablet={tablet}
+          style={{ color: "#fff" }}>
           <Link>Log in</Link>
           <Link>
             {/* this a reusable button component */}
@@ -85,6 +91,7 @@ implementation should be changed
         <MobileNavWrapper
           tablet={tablet}
           mobile={mobile}
+          style={{ color: "#fff" }}
           className={`${menuopen && "open"} nav--link--items`}>
           <Link>Products</Link>
           <Link>Resourses</Link>

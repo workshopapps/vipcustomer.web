@@ -4,6 +4,8 @@ import Add from "../components/faq/asset/add.svg";
 import Remove from "../components/faq/asset/remove.svg";
 import Questions from "../components/faq/Questions";
 import { useState } from "react";
+import { Navbar } from "components/general/navbar";
+import Footer from "components/layout/Footer";
 
 const data = [
   {
@@ -64,25 +66,29 @@ const FAQ = () => {
   }
 
   return (
-    <div className={styles.faq}>
-      <div className={styles.top}>
-        <h1>Frequently Asked Question</h1> <h1>FAQ</h1>
-        <input type="text" placeholder="Search results" onChange={filter_} />
+    <>
+      <Navbar />
+      <div className={styles.faq}>
+        <div className={styles.top}>
+          <h1>Frequently Asked Question</h1> <h1>FAQ</h1>
+          <input type="text" placeholder="Search results" onChange={filter_} />
+        </div>
+        <div className={styles.main}>
+          {question_list.map((item) => (
+            <Questions
+              key={item.id}
+              // user_data={user_input}
+              styles={styles}
+              text={item.text}
+              icon={icon}
+              p={item.p}
+              alt={"icon"}
+            />
+          ))}
+        </div>
       </div>
-      <div className={styles.main}>
-        {question_list.map((item) => (
-          <Questions
-            key={item.id}
-            // user_data={user_input}
-            styles={styles}
-            text={item.text}
-            icon={icon}
-            p={item.p}
-            alt={"icon"}
-          />
-        ))}
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
