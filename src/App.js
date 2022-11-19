@@ -18,29 +18,34 @@ import SignUp from "./pages/auth/SignUp";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
+import Demo from "components/Demo/Demo";
 
 function App() {
   const { theme } = Store();
 
   return (
-    <ThemeProvider theme={theme ? Themes.light : Themes.dark}>
-      <GLobalStyles />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/example" element={<Example />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/docs/*" element={<Docs />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/mission" element={<Mission />} />
-          <Route path="/csv-upload" element={<CsvUpload />} />
-          <Route path="/help" element={<HelpCenter />} />
-          <Route path="/privacy" element={<Privacy />} />
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <>
+      <Demo />
+      <ThemeProvider theme={theme ? Themes.light : Themes.dark}>
+        <GLobalStyles />
+
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/example" element={<Example />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/docs/*" element={<Docs />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/mission" element={<Mission />} />
+            <Route path="/csv-upload" element={<CsvUpload />} />
+            <Route path="/help" element={<HelpCenter />} />
+            <Route path="/privacy" element={<Privacy />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </>
   );
 }
 
