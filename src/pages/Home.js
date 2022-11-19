@@ -3,12 +3,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Store } from "../store/contexts/AppContext";
 import { sayHello_a } from "../store/actions/appActions";
-<<<<<<< HEAD
-import { Navbar } from "../components/general/navbar";
-=======
 import Logout from "./Logout";
 import { Button } from "react-bootstrap";
->>>>>>> e949d6732ae49cef7936296680eb6f9686331be4
 
 const Home = () => {
   const { greet, dispatch, changeTheme, theme } = Store();
