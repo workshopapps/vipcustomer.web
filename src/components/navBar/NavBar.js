@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "./assets/logo.png";
 
@@ -8,7 +9,9 @@ function NavBar() {
   return (
     <NavDiv>
       <div className="Navbar">
-        <img src={logo} alt="" className="logo" />
+        <Link to="/">
+          <img src={logo} alt="" className="logo" />
+        </Link>
         <div className={`nav-items ${isOpen && "open"}`}>
           <span className="nav-links">
             <a href="/products">Products</a>

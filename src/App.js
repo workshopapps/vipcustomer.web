@@ -22,7 +22,7 @@ function App() {
     <ThemeProvider theme={theme ? Themes.light : Themes.dark}>
       <GLobalStyles />
       <BrowserRouter>
-       <NavBar />
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/example" element={<Example />} />
