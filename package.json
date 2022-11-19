@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
@@ -45,7 +46,11 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-prettier": "^4.2.1",
+<<<<<<< HEAD
+    "eslint-plugin-react": "^7.31.10",
+=======
     "eslint-plugin-react": "^7.31.11",
+>>>>>>> bd47dcd5afba281a91785f1f7434f735626da2d2
     "husky": "^8.0.0",
     "prettier": "^2.7.1"
   }
