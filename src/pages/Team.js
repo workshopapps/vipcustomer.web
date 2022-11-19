@@ -1,11 +1,14 @@
 import React from "react";
 import "../components/team/styles/components/Team.css";
 import { Card } from "../components/team/Card";
+import { Navbar } from "../components/general";
 
 
 function Team(props) {
   return (
     <>
+      <Navbar />
+
       <div className={"team__container"}>
         <h1> Meet The Team </h1>
         <p>Get to know the face behind the product.</p>
@@ -19,7 +22,8 @@ function Team(props) {
                 position={"Backend"} />
           <Card img_url={require("../components/team/assets/team/IMG-20221119-WA0007.jpg")} name={"Okolo Enemona"}
                 position={"Product Designer"} />
-          <Card img_url={require("../components/team/assets/team/IMG-20221119-WA0008.jpg")} name={"Iruoma Valerie Oby-Ezeani"}
+          <Card img_url={require("../components/team/assets/team/IMG-20221119-WA0008.jpg")}
+                name={"Iruoma Valerie Oby-Ezeani"}
                 position={"Project Manager"} />
         </div>
       </div>
