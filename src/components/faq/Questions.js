@@ -6,10 +6,8 @@ const Questions = ({ styles, text, icon, alt, p }) => {
 
   function clicked() {
     if (opened === true) {
-      console.log("clicked");
       setOpened(false);
     } else {
-      console.log("clicked");
       setOpened(true);
     }
   }
@@ -17,7 +15,11 @@ const Questions = ({ styles, text, icon, alt, p }) => {
     <div className={styles.closed}>
       <div>
         <h3 onClick={clicked}>{text}</h3>
-        <img src={`${opened ? icon.opened : icon.closed}`} alt={alt} />
+        <img
+          onClick={clicked}
+          src={`${opened ? icon.opened : icon.closed}`}
+          alt={alt}
+        />
       </div>
       <p
         className={`${styles.ques_p} ${
