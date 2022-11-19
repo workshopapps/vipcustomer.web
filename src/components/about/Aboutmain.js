@@ -1,5 +1,4 @@
 import React from "react";
-import image1 from "../about/main.png";
 import styles from "./About.module.css";
 
 const Aboutmain = () => {
@@ -19,7 +18,7 @@ const Aboutmain = () => {
               </p>
             </div>
             <div className={styles.textCont}>
-              <h2>Strict privacy policy</h2>
+              <h2 className={styles.h2Main}>Strict privacy policy</h2>
               <p className={styles.para}>
                 Our rigorous privacy policy prevents us from disclosing consumer
                 information to any outside parties. Therefore you can rest easy,
@@ -27,7 +26,7 @@ const Aboutmain = () => {
               </p>
             </div>
             <div className={styles.textCont}>
-              <h2>Helping business generate sales</h2>
+              <h2 className={styles.h2Main}>Helping business generate sales</h2>
               <p className={styles.para}>
                 We give you all the information you need to better serve your
                 customers the type of special offers and services they require
