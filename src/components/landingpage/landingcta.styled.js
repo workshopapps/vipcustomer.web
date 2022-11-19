@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const LandingCtaWraper = styled.aside`
+  color: white;
   max-width: 732px;
   margin: 68px auto;
   display: flex;

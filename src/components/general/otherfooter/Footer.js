@@ -13,21 +13,41 @@ import {
 } from "./footer.styled";
 
 const Footer = ({ mobile, tablet }) => {
+  const footerLinks = document.querySelectorAll(".footer-links-wrapper  a");
+
+  const footerLogo = document.querySelector(".footer--link");
+  const removeClass = (items) => {
+    items.forEach((item) => {
+      item.classList.remove("active");
+    });
+  };
+  //loop through links
+  footerLinks.forEach((link) => {
+    //add a click listener to each
+    link.addEventListener("click", (e) => {
+      //onclick
+      removeClass(footerLinks);
+      e.currentTarget.classList.add("active");
+    });
+  });
+
+  footerLogo?.addEventListener("click", () => removeClass(footerLinks));
+
   return (
     <FooterContainer>
       <FooterWrapper tablet={tablet}>
         <SectionWrapper logo>
-          <Link>
+          <Link className="footer--link">
             {" "}
             <LogoWrapper tablet={tablet} mobile={mobile}>
               <img src={LOGO} alt="axeapi logo" />
             </LogoWrapper>
           </Link>
         </SectionWrapper>
-        <div className="wrapper">
+        <div className="wrapper footer-links-wrapper">
           <SectionWrapper>
             <FooterHeader tablet={tablet} mobile={mobile}>
-              <Link>Features</Link>
+              Features
             </FooterHeader>
             <FooterText tablet={tablet} mobile={mobile}>
               <Link>AXE API Feature</Link>
@@ -38,7 +58,7 @@ const Footer = ({ mobile, tablet }) => {
           </SectionWrapper>
           <SectionWrapper>
             <FooterHeader tablet={tablet} mobile={mobile}>
-              <Link>Help & Support</Link>
+              Help & Support
             </FooterHeader>
             <FooterText tablet={tablet} mobile={mobile}>
               <Link>FAQ</Link>
@@ -49,7 +69,7 @@ const Footer = ({ mobile, tablet }) => {
           </SectionWrapper>
           <SectionWrapper>
             <FooterHeader tablet={tablet} mobile={mobile}>
-              <Link>Terms &amp; condition</Link>
+              Terms &amp; condition
             </FooterHeader>
             <FooterText tablet={tablet} mobile={mobile}>
               <Link>Privacy</Link>
@@ -57,7 +77,7 @@ const Footer = ({ mobile, tablet }) => {
           </SectionWrapper>
           <SectionWrapper>
             <FooterHeader tablet={tablet} mobile={mobile}>
-              <Link>Company</Link>
+              sCompany
             </FooterHeader>
             <FooterText tablet={tablet} mobile={mobile}>
               <Link>About Us</Link>

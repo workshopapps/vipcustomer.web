@@ -9,7 +9,7 @@ const FooterContainer = styled.footer`
   background: #091540;
   padding: 22px;
   display: flex;
-
+  color: white;
   justify-content: center;
 `;
 const LogoWrapper = styled.div`
@@ -52,6 +52,10 @@ const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  & a.active {
+    color: #c04a1c;
+  }
 `;
 
 const FooterHeader = styled.h5`

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ButtonWrapper } from "../general/button.styled";
 
 const HeaderWrapper = styled.header`
+  color: white;
   background: #091540;
   display: flex;
   align-items: center;
@@ -38,6 +39,7 @@ const SubHeading = styled.h2`
   text-align: center;
   @media (max-width: 690px) {
     font-size: 35px;
+    line-height: 50px;
   }
 `;
 
@@ -83,7 +85,7 @@ const LandingInput = styled.input.attrs({
     color: inherit;
   }
   @media (max-width: 690px) {
-    padding: 8px 108px 8px 8px;
+    padding: 8px 148px 8px 8px;
   }
 `;
 const HeaderButton = styled(ButtonWrapper)`
@@ -99,7 +101,7 @@ const HeaderButton = styled(ButtonWrapper)`
   color: #121212;
   @media (max-width: 690px) {
     font-size: 12px;
-    width: 80px;
+    width: 120px;
   }
 `;
 export {
