@@ -18,6 +18,9 @@
   --color-lightBlue: #323c60;
   --color-darkBlue: #091540;
   --color-neutral: #f9f9ff;
+  --Primary-color500: #323c60;
+  --Default-121212: #121212;
+  --Primary-colour200: #adb1bf;
   --mobile: 600px;
   --tablet: 900px;
 }
@@ -37,12 +40,6 @@ li {
   background-color: transparent;
   cursor: pointer;
   text-decoration: none;
-}
-
-:root {
-  --Primary-color500: #323c60;
-  --Default-121212: #121212;
-  --Primary-colour200: #adb1bf;
 }
 
 * {
