@@ -1,10 +1,9 @@
 import React from "react";
 // import LOGO from "../../assests/icons/logo.svg";
-import styles from "./footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={`footer ${styles.footer}`}>
+    <div className={`footer `}>
       <div>{/* <img src={LOGO} alt="" /> */}</div>
       <div>
         <h3 className="features">Features</h3>
