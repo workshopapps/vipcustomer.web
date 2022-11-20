@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
+import Consultation from "./components/consultation/Consultation";
 import PasswordRecovery from "./pages/PasswordRecovery";
 import Aboutus from "pages/Aboutus";
 import Login from "pages/auth/Login";
@@ -34,6 +35,7 @@ function App() {
           <Route path="/example" element={<Example />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/docs/*" element={<Docs />} />
+          <Route path="/consultation" element={<Consultation />} />
           <Route path="/password-recovery">
             <Route index element={<PasswordRecovery />} />
             <Route path="change" element={<PasswordChange />} />
