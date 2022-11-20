@@ -11,20 +11,19 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
-
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
 import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Team from "./pages/Team";
-
 import Demo from "components/Demo/Demo";
 import PasswordChange from "./pages/PasswordChange";
 import PasswordRecovery from "./pages/PasswordRecovery";
 import Profile from "pages/Profile";
 import EditProfile from "pages/EditProfile";
 import ErrorPage from "pages/ErrorPage";
+import Aboutus from "pages/Aboutus";
 
 function App() {
   const { theme } = Store();
@@ -51,6 +50,7 @@ function App() {
           </Route>
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit" element={<EditProfile />} />
+          <Route path="/about-us" element={<Aboutus />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
