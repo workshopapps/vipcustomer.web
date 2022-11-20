@@ -21,6 +21,7 @@ const Footer = () => {
       </div>
       <div>
         <h3 className="features">Company</h3>
+
         <h4>About Us</h4>
         <h4>Meet our Team</h4>
         <h4>Vision & Mission</h4>

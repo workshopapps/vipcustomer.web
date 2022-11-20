@@ -4,7 +4,7 @@ import Add from "../components/faq/asset/add.svg";
 import Remove from "../components/faq/asset/remove.svg";
 import Questions from "../components/faq/Questions";
 import { useState } from "react";
-import { Navbar } from "components/general/";
+import { Footer, Navbar } from "components/general/";
 
 const data = [
   {
@@ -87,7 +87,7 @@ const FAQ = () => {
         </div>
       </div>
 
-      {/* Footer */}
+      <Footer />
     </>
   );
 };
