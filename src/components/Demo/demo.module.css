@@ -215,9 +215,9 @@
     }
     .grid_container>div:last-child>h2 {
         font-weight: 500;
-        font-size: 16px;
+        font-size: 18px!important;
         padding-top: .6em;
-        line-height: 22px;
+        line-height: 29px!important;
     }
     .grid_container>div:last-child>ul>li {
         font-weight: 500;
