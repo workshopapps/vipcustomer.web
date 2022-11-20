@@ -67,7 +67,7 @@ implementation should be changed
         )}
         <Items className="nav--link--items" tablet={tablet}>
           <Link
-            to="/example
+            to="/
           ">
             Products
           </Link>
@@ -93,11 +93,11 @@ implementation should be changed
           mobile={mobile}
           style={{ color: "#fff" }}
           className={`${menuopen && "open"} nav--link--items`}>
-          <Link>Products</Link>
-          <Link>Resourses</Link>
+          <Link to="/">Products</Link>
+          <Link to="/">Resourses</Link>
           <Link to={"/team"}>The Team</Link>
-          <Link>Log in</Link>
-          <Link>Get Started</Link>
+          <Link to="/login">Log in</Link>
+          <Link to="signup">Get Started</Link>
           <Link to="/about-us">About Us</Link>
           <Link to="/login">Log in</Link>
           <Link to="/signup">Get Started</Link>
