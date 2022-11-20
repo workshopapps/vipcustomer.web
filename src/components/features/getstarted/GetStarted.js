@@ -15,10 +15,9 @@ const GetStarted = () => {
         power of data to grow your business through unique VIP offerings and
         partnerships.
       </p>
-      <Link to={'/signup'}>
-      <button className={classes.button}>Get Started</button>
+      <Link to={"/signup"}>
+        <button className={classes.button}>Get Started</button>
       </Link>
-
     </div>
   );
 };
