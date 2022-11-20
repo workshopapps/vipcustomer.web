@@ -48,7 +48,7 @@ const Login = () => {
           <div className={styles.formgroup}>
             <div>
               <label htmlFor="">Password</label>
-              <a href="/forgot-password">Reset password</a>
+              <a href="/password-recovery">Reset password</a>
             </div>
             <input
               type="password"
