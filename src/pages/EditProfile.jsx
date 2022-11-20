@@ -97,118 +97,120 @@ const EditProfile = () => {
             </div>
           </div>
           <div className="profile-main-content">
-            <div
-              className="profile-main-content-head"
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: "30px"
-              }}>
-              <div>
-                <h2>Edit Profile</h2>
+            <div className="profile-main-content-box">
+              <div
+                className="profile-main-content-head"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: "30px"
+                }}>
+                <div>
+                  <h2>Edit Profile</h2>
+                </div>
+                <div>
+                  <img src={Girl} width="120" alt="" />
+                </div>
               </div>
-              <div>
-                <img src={Girl} width="120" alt="" />
-              </div>
+
+              <form className="profile-form">
+                <div className="double-input">
+                  <div>
+                    <label htmlFor="">First Name</label>
+                    <input type="text" placeholder="Rika" />
+                  </div>
+
+                  <div>
+                    <label htmlFor="">Last Name</label>
+                    <input type="text" placeholder="Timmy" />
+                  </div>
+                </div>
+                <div className="single-input">
+                  <label htmlFor="">Company Email</label>
+                  <div style={{ position: "relative" }}>
+                    <input
+                      type="email"
+                      placeholder="axe.business@gmail.com"
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    {email.length >= 8 && (
+                      <img
+                        src={Check}
+                        alt=""
+                        width="25"
+                        style={{
+                          position: "absolute",
+                          top: "16px",
+                          right: "10px"
+                        }}
+                      />
+                    )}
+                  </div>
+                </div>
+
+                <div className="single-input">
+                  <label htmlFor="">Address</label>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="33062 Zboncak isle"
+                  />
+                </div>
+
+                <div className="single-input">
+                  <label htmlFor="">Contact Number</label>
+                  <input type="tel" placeholder="58077.79" />
+                </div>
+
+                <div className="double-input">
+                  <div>
+                    <label htmlFor="city">City</label>
+                    <select name="city" id="city">
+                      <option value="mehrab">Mehrab</option>
+                      <option value="lagos">Lagos</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="state">State</label>
+                    <select name="state" id="state">
+                      <option value="borzogi">Borzogi</option>
+                      <option value="Banghad">Banghad</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="single-input">
+                  <label htmlFor="">Password</label>
+                  <div style={{ position: "relative" }}>
+                    <input
+                      type="password"
+                      placeholder="sbdfbnd65sfdvb s"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                    {password.length >= 8 && (
+                      <img
+                        src={Check}
+                        alt=""
+                        width="25"
+                        style={{
+                          position: "absolute",
+                          top: "16px",
+                          right: "10px"
+                        }}
+                      />
+                    )}
+                  </div>
+                </div>
+
+                <div className="profile-form-buttons">
+                  <button className="cancel-btn">Cancel</button>
+                  <button className="save-btn">Save</button>
+                </div>
+              </form>
             </div>
-
-            <form className="profile-form">
-              <div className="double-input">
-                <div>
-                  <label htmlFor="">First Name</label>
-                  <input type="text" placeholder="Rika" />
-                </div>
-
-                <div>
-                  <label htmlFor="">Last Name</label>
-                  <input type="text" placeholder="Timmy" />
-                </div>
-              </div>
-              <div className="single-input">
-                <label htmlFor="">Company Email</label>
-                <div style={{ position: "relative" }}>
-                  <input
-                    type="email"
-                    placeholder="axe.business@gmail.com"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  {email.length >= 8 && (
-                    <img
-                      src={Check}
-                      alt=""
-                      width="25"
-                      style={{
-                        position: "absolute",
-                        top: "16px",
-                        right: "10px"
-                      }}
-                    />
-                  )}
-                </div>
-              </div>
-
-              <div className="single-input">
-                <label htmlFor="">Address</label>
-                <input
-                  type="text"
-                  name=""
-                  id=""
-                  placeholder="33062 Zboncak isle"
-                />
-              </div>
-
-              <div className="single-input">
-                <label htmlFor="">Contact Number</label>
-                <input type="tel" placeholder="58077.79" />
-              </div>
-
-              <div className="double-input">
-                <div>
-                  <label htmlFor="city">City</label>
-                  <select name="city" id="city">
-                    <option value="mehrab">Mehrab</option>
-                    <option value="lagos">Lagos</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="state">State</label>
-                  <select name="state" id="state">
-                    <option value="borzogi">Borzogi</option>
-                    <option value="Banghad">Banghad</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="single-input">
-                <label htmlFor="">Password</label>
-                <div style={{ position: "relative" }}>
-                  <input
-                    type="password"
-                    placeholder="sbdfbnd65sfdvb s"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  {password.length >= 8 && (
-                    <img
-                      src={Check}
-                      alt=""
-                      width="25"
-                      style={{
-                        position: "absolute",
-                        top: "16px",
-                        right: "10px"
-                      }}
-                    />
-                  )}
-                </div>
-              </div>
-
-              <div className="profile-form-buttons">
-                <button className="cancel-btn">Cancel</button>
-                <button className="save-btn">Save</button>
-              </div>
-            </form>
           </div>
         </section>
       </main>
