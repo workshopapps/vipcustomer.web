@@ -19,6 +19,8 @@ import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Demo from "components/Demo/Demo";
+import PasswordRecovery from "pages/auth/PasswordRecovery";
+import PasswordChange from "pages/auth/PasswordChange";
 
 function App() {
   const { theme } = Store();
@@ -40,6 +42,10 @@ function App() {
           <Route path="/mission" element={<Mission />} />
           <Route path="/csv-upload" element={<CsvUpload />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/password-recovery">
+            <Route index element={<PasswordRecovery />} />
+            <Route path="change" element={<PasswordChange />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
