@@ -28,7 +28,11 @@ const Footer = () => {
           <h4>Company</h4>
           <Linkbtn href="#" child="About us" classname="footlink" />
           <Linkbtn href="#" child="Meet our team" classname="footlink" />
-          <Linkbtn href="#" child="Vision & Mission" classname="footlink" />
+          <Linkbtn
+            href="./mission"
+            child="Vision & Mission"
+            classname="footlink"
+          />
         </div>
       </div>
     </FooterWrapper>
