@@ -1,87 +1,69 @@
 .vision {
-  height: 500px;
-  padding: 30px 0 61px;
-  padding-left: 8%;
-  padding-right: 15%;
-  width: 100%;
-  background: var(--saturated-cream);
+  background-color: var(--saturated-cream);
 }
-/* .vision > div {
-  display: flex;
-} */
+.container {
+  width: 90%;
+  margin: 0 auto !important;
+  left: 20%;
+  padding: 3.5rem 0;
+  overflow: auto;
+  max-width: 179rem;
+}
+
 .img {
-  max-width: 40%;
-  height: 342.4px;
   float: right;
-  padding: 30px;
-  margin-right: -20px;
-  margin-top: -200px;
+  width: 50%;
+  max-width: 50rem;
+  padding: 1.5rem;
 }
 .h2 {
-  font-weight: 600;
-  font-size: 36.8px;
-  line-height: 44.8px;
-  color: var(--blue);
-  margin-top: 150px;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  padding-top: 1rem !important;
 }
 .p {
-  max-width: 640px;
-  /* height: 46.55px; */
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--blue);
-  margin-top: 20.8px;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1rem !important;
 }
-@media screen and (max-width: 840px) {
-  .vision {
-    background: var(--cream);
-    margin-bottom: 0;
-    height: 400px;
+@media (min-width: 650px) {
+  .container {
+    gap: 10%;
+    width: 80%;
   }
-  .img {
-    float: right;
-    /* width: 60%; */
-    margin-left: 20px;
-    height: 320px;
-    margin-bottom: -20px;
-    /* border: solid 2px red; */
-  }
+
   .h2 {
-    font-size: 22.9895px;
-    line-height: 28px;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    padding: 1rem 0;
   }
   .p {
-    font-weight: 400;
-    font-size: 12.3453px;
-    line-height: 15px;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
   }
 }
-@media screen and (max-width: 430px) {
-  .vision {
-    background: var(--saturated-cream);
-    padding: 10% 3%;
-    height: 300px;
+
+@media (min-width: 1000px) {
+  .container {
+    gap: 15%;
+    width: 80%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
   }
-  .img {
-    width: 50%;
-    height: 150px;
-    float: right;
-    display: inline;
-    padding: 25px;
-    margin-top: -50px;
-  }
+
   .h2 {
-    font-weight: 600;
-    font-size: 19.2px;
-    line-height: 28.8px;
-    color: var(--blue);
-    margin: 0;
+    font-size: 3.6rem;
+    line-height: 4.5rem;
+    padding: 2rem 0;
   }
   .p {
-    margin-top: 20px;
-    color: var(--blue);
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
   }
 }
