@@ -11,18 +11,17 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
-import Consultation from "./components/consultation/Consultation";
-import PasswordRecovery from "./pages/PasswordRecovery";
 import Aboutus from "pages/Aboutus";
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
 import CsvUpload from "pages/CsvUpload";
+import HelpCenter from "pages/helpCenter/HelpCenter";
 import SignUp from "./pages/auth/SignUp";
-import PasswordChange from "./pages/PasswordChange";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Demo from "components/Demo/Demo";
-import Terms from "pages/terms/Terms";
+import PasswordChange from "./pages/PasswordChange";
+import PasswordRecovery from "./pages/PasswordRecovery";
 
 function App() {
   const { theme } = Store();
@@ -32,26 +31,25 @@ function App() {
       <GLobalStyles />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/example" element={<Example />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/docs/*" element={<Docs />} />
-          <Route path="/consultation" element={<Consultation />} />
+          <Route path="/" element={<Home />} />{" "}
+          <Route path="/example" element={<Example />} />{" "}
+          <Route path="/dashboard" element={<Dashboard />} />{" "}
+          <Route path="/signup" element={<SignUp />} />{" "}
+          <Route path="/docs/*" element={<Docs />} />{" "}
+          <Route path="/about-us" element={<Aboutus />} />{" "}
+          <Route path="/login" element={<Login />} />{" "}
+          <Route path="/demo" element={<Demo />} />{" "}
+          <Route path="/faq" element={<FAQ />} />{" "}
+          <Route path="/mission" element={<Mission />} />{" "}
+          <Route path="/csv-upload" element={<CsvUpload />} />{" "}
+          <Route path="/help" element={<HelpCenter />} />{" "}
+          <Route path="/privacy" element={<Privacy />} />{" "}
           <Route path="/password-recovery">
             <Route index element={<PasswordRecovery />} />
             <Route path="change" element={<PasswordChange />} />
           </Route>
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/about-us" element={<Aboutus />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/demo" element={<Demo />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/mission" element={<Mission />} />
-          <Route path="/csv-upload" element={<CsvUpload />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-        </Routes>
-      </BrowserRouter>
+        </Routes>{" "}
+      </BrowserRouter>{" "}
     </ThemeProvider>
   );
 }
