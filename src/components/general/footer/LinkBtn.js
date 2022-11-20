@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Linkbtn = ({ href, child, className }) => {
   return (
     <>
-      <a href={href} className={className}>
+      <Link to={href} className={className}>
         {child}
-      </a>
+      </Link>
     </>
   );
 };

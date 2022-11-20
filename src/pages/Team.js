@@ -1,7 +1,7 @@
 import React from "react";
 import "../components/team/styles/components/Team.css";
 import { Card } from "../components/team/Card";
-import { Navbar } from "../components/general";
+import { Footer, Navbar } from "../components/general";
 
 
 function Team(props) {
@@ -27,6 +27,7 @@ function Team(props) {
                 position={"Project Manager"} />
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
