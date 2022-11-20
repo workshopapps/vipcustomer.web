@@ -97,64 +97,66 @@ const Consultation = () => {
         Back
       </Link>
       <ConsultStyled>
-        <h1>Schedule a consultation</h1>
-        <p>Complete form to schedule a consultation with us</p>
+        <div className="consult-inner">
+          <h1>Schedule a consultation</h1>
+          <p>Complete form to schedule a consultation with us</p>
 
-        <FormStyled method="post" onSubmit={handleSubmit}>
-          <Input
-            label="First Name *"
-            id="fname"
-            errorMessage="Please input a valid first name"
-            isError={formError.fname}
-            type="text"
-            onChange={handleInputChange}
-            value={formDetails.fname}
-          />
-          <Input
-            label="Last Name *"
-            id="lname"
-            errorMessage="Please input a valid last name"
-            isError={formError.lname}
-            type="text"
-            onChange={handleInputChange}
-            value={formDetails.lname}
-          />
-          <Input
-            label="Email *"
-            id="email"
-            errorMessage="Please input a valid email"
-            isError={formError.email}
-            type="email"
-            onChange={handleInputChange}
-            value={formDetails.email}
-          />
-          <Input
-            label="Mobile *"
-            id="mobile"
-            errorMessage="Please input a valid mobile number"
-            isError={formError.mobile}
-            type="number"
-            onChange={handleInputChange}
-            value={formDetails.mobile}
-          />
-          <Input
-            label="Location *"
-            id="location"
-            errorMessage="Please input a valid location"
-            isError={formError.location}
-            type="text"
-            onChange={handleInputChange}
-            value={formDetails.location}
-          />
-          <BtnContainer>
-            <button type="submit" className="submit">
-              Schedule a call <img src={tick} alt="" />
-            </button>
-            <button type="reset" className="reset" disabled={true}>
-              Reset
-            </button>
-          </BtnContainer>
-        </FormStyled>
+          <FormStyled method="post" onSubmit={handleSubmit}>
+            <Input
+              label="First Name *"
+              id="fname"
+              errorMessage="Please input a valid first name"
+              isError={formError.fname}
+              type="text"
+              onChange={handleInputChange}
+              value={formDetails.fname}
+            />
+            <Input
+              label="Last Name *"
+              id="lname"
+              errorMessage="Please input a valid last name"
+              isError={formError.lname}
+              type="text"
+              onChange={handleInputChange}
+              value={formDetails.lname}
+            />
+            <Input
+              label="Email *"
+              id="email"
+              errorMessage="Please input a valid email"
+              isError={formError.email}
+              type="email"
+              onChange={handleInputChange}
+              value={formDetails.email}
+            />
+            <Input
+              label="Mobile *"
+              id="mobile"
+              errorMessage="Please input a valid mobile number"
+              isError={formError.mobile}
+              type="number"
+              onChange={handleInputChange}
+              value={formDetails.mobile}
+            />
+            <Input
+              label="Location *"
+              id="location"
+              errorMessage="Please input a valid location"
+              isError={formError.location}
+              type="text"
+              onChange={handleInputChange}
+              value={formDetails.location}
+            />
+            <BtnContainer>
+              <button type="submit" className="submit">
+                Schedule a call <img src={tick} alt="" />
+              </button>
+              <button type="reset" className="reset" disabled={true}>
+                Reset
+              </button>
+            </BtnContainer>
+          </FormStyled>
+        </div>
       </ConsultStyled>
       <Footer />
     </ConsultPageWrap>
