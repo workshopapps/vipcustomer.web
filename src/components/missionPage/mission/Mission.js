@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./mission.module.css";
 // import image
-import MissionImg from "../assets/mission.svg";
+import MissionImg from "../assets/mission.webp";
 const Mission = () => {
   return (
     <div className={styles.mission}>

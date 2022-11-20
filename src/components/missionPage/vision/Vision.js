@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./vision.module.css";
-import vissionImg from "../assets/vision.svg";
+import vissionImg from "../assets/vision.webp";
 const Vision = () => {
   return (
     <div className={styles.vision}>
