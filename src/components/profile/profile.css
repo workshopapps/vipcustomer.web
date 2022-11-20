@@ -1,4 +1,4 @@
-/* PROFILE STYLES by @Oluwatoyinah */ 
+/* PROFILE STYLES by @Oluwatoyinah */
 .profile-logo {
   width: 150px;
 }
@@ -128,8 +128,7 @@
 .profile-form select {
   display: block;
   padding: 21px;
-  border: 2px solid #ffffff;
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.14));
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14);
   border-radius: 5px;
   width: 100%;
   font-size: 15px;

@@ -49,7 +49,7 @@ const Profile = () => {
             <div className="side-nav-body">
               <ul>
                 <li>
-                  <NavLink to="/edit-profile">
+                  <NavLink to="/profile/edit">
                     <span>
                       <img className="link-image" src={Settings} alt="" />
                     </span>
