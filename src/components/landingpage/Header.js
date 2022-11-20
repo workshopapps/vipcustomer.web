@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   HeaderContentWrapper,
   HeaderWrapper,
   Heading,
-  InputWrappr,
-  LandingInput,
   Span,
   SubHeading,
   HeaderButton
@@ -22,10 +22,9 @@ const Header = () => {
           Axe API identifies very important personas that visits your website
           and converts them to high leads.
         </Heading>
-        <InputWrappr>
-          <LandingInput />
-          <HeaderButton>Get Started</HeaderButton>
-        </InputWrappr>
+        <HeaderButton>
+          <Link to="/demo">Try Our Demo</Link>
+        </HeaderButton>
       </HeaderContentWrapper>
     </HeaderWrapper>
   );
