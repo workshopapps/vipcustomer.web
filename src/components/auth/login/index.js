@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import styles from "./index.module.css";
+import { login_a } from "store/actions/authActions";
+import { AuthStore } from "store/contexts/AuthContext";
 
 const Login = () => {
+  const { dispatch } = AuthStore();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isVisible, setIsVisible] = useState(false);
@@ -12,6 +15,7 @@ const Login = () => {
   const handleClick = (e) => {
     e.preventDefault();
     if (email && password.length > 8) {
+      login_a(dispatch);
       nav("/dashboard");
     } else if (password.length < 8) {
       setIsVisible(true);
@@ -48,7 +52,7 @@ const Login = () => {
           <div className={styles.formgroup}>
             <div>
               <label htmlFor="">Password</label>
-              <a href="/forgot-password">Reset password</a>
+              <a href="/password-recovery">Reset password</a>
             </div>
             <input
               type="password"
