@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styling from "./demo.module.css";
 import checkmark from "./assets/checkmark.png";
 import Loading from "./Loading";
+import Results from "./Results";
 
 const BASE_URL = new URL("http://18.212.30.183:8000");
 
@@ -22,22 +23,30 @@ const Demo = () => {
   let data;
 
   async function handleSubmit(e) {
-    e.preventDefault();
-    setIsLoading(true);
-    const name = firstName + " " + lastName;
-    BASE_URL.searchParams.append("name", name);
-    gender && BASE_URL.searchParams.append("gender", gender);
-    career && BASE_URL.searchParams.append("occupation", career);
-    age && BASE_URL.searchParams.append("age", age);
-    email && BASE_URL.searchParams.append("email", email);
-    const res = await fetch(BASE_URL.toString());
-    data = await res.json();
-    console.log(data);
-    setLoadingText("All done!");
-    setTimeout(() => {
-      setIsLoading(false);
-      setShowResult(true);
-    }, 1000);
+    try {
+      e.preventDefault();
+      setIsLoading(true);
+      const name = firstName + " " + lastName;
+      BASE_URL.searchParams.append("name", name);
+      gender && BASE_URL.searchParams.append("gender", gender);
+      career && BASE_URL.searchParams.append("occupation", career);
+      age && BASE_URL.searchParams.append("age", age);
+      email && BASE_URL.searchParams.append("email", email);
+      const res = await fetch(BASE_URL.toString());
+      // const res = await fetch(
+      //   `http://18.212.30.183:8000/api/search/?name=${name}&gender=${gender}&occupation=${career}&age=${age}&email=${email}`
+      // );
+      data = await res.json()[0];
+      console.log(data);
+      setLoadingText("All done!");
+      setTimeout(() => {
+        setIsLoading(false);
+        setShowResult(true);
+      }, 1000);
+    } catch (e) {
+      setIsLoading(true);
+      setLoadingText("An error occured, Please try again later");
+    }
   }
 
   useEffect(() => {
@@ -49,7 +58,7 @@ const Demo = () => {
   return (
     <main>
       {isLoading && <Loading text={loadingText} />}
-      {showResult && <p>results</p>}
+      {showResult && <Results name="elon" gender="male" />}
       {!isLoading && (
         <section className={grid_container}>
           <div>
