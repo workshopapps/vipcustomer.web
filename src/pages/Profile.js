@@ -12,10 +12,12 @@ import Rou from "../assets/images/rou.png";
 import Upload from "../assets/images/upload.png";
 import ProfileMobileNav from "../components/profile/ProfileMobileNav";
 import "../components/profile/profile.css";
+import LogoutPage from "components/auth/logoutpage";
 
 const Profile = () => {
   const [mobileActive, setMobileActive] = useState(false);
 
+  const [modalShow, setModalShow] = React.useState(false);
   useEffect(() => {
     scrollTo(0, 0);
   }, []);
@@ -89,7 +91,15 @@ const Profile = () => {
                     <span>
                       <img className="link-image" src={Logout} alt="" />
                     </span>
-                    <span className="link-text">Logout</span>
+                    <span
+                      className="link-text"
+                      onClick={() => setModalShow(true)}>
+                      Logout
+                    </span>
+                    <LogoutPage
+                      show={modalShow}
+                      onHide={() => setModalShow(false)}
+                    />
                   </NavLink>
                 </li>
               </ul>
