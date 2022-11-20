@@ -94,6 +94,11 @@
   padding: 8px 0;
   box-sizing: border-box;
   margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.input__upload:hover {
+  opacity: 0.8;
 }
 
 .uploaded_csv_info {
