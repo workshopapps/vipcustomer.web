@@ -23,11 +23,8 @@ import PasswordRecovery from "./pages/PasswordRecovery";
 import Profile from "pages/Profile";
 import EditProfile from "pages/EditProfile";
 import ErrorPage from "pages/ErrorPage";
-<<<<<<< HEAD
 import Terms from "pages/terms/Terms";
-=======
 import Aboutus from "pages/Aboutus";
->>>>>>> bf8a91dc9603a432581ae25994e524a33417abe7
 
 function App() {
   const { theme } = Store();
