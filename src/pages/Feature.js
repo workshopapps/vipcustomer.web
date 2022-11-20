@@ -1,5 +1,7 @@
-const { default: Index } = require("components/features/index/Index")
-const { Navbar } = require("components/general")
+import { Navbar } from "components/general"
+import { Footer } from "components/general"
+const { Index } = require("components/features/index/Index")
+
 
 const Feature = () =>{
   return(
