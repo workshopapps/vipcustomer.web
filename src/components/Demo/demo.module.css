@@ -179,15 +179,16 @@
     }
     .grid_container>div:first-child>h1,
     .grid_container>div:first-child>h1>strong {
-        font-size: 20px;
-        line-height: 26px;
-        width: 100%;
-        text-align: center;
+        font-size: 16px!important;
+        text-align: center!important;
+        padding-top: 0!important;
+        line-height: 25px!important;
     }
     .grid_container>div:nth-of-type(2)>p {
-        font-size: 14px;
+        font-size: 14px!important;
         line-height: 26px;
-        width: 100%;
+        width: 100%!important;
+        position: absolute!important;
     }
     .grid_container>div:nth-of-type(2)>article>form>button {
         width: 98px;
@@ -201,7 +202,7 @@
         line-height: 22px;
     }
     .grid_container>div:nth-of-type(2)>article {
-        padding: 1em;
+        padding: 0em;
         border: 0;
     }
     .grid_container>div:nth-of-type(2)>article>h2,
