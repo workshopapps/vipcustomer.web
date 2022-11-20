@@ -13,6 +13,7 @@ import Example from "./pages/Example";
 import Docs from "./pages/Docs";
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
+import Help from "pages/Help";
 import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
@@ -43,6 +44,7 @@ function App() {
           <Route path="/demo" element={<Demo />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/mission" element={<Mission />} />
+          <Route path="/help" element={<Help />} />
           <Route path="/team" exact element={<Team />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
