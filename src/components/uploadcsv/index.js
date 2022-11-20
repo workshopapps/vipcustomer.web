@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import NavBar from "./navbar";
 import Upload from "./upload";
 import Almost from "./almost";
 
@@ -16,6 +17,8 @@ function UploadCsv() {
 
   return (
     <main className={styles.main}>
+      <NavBar />
+
       {/* Switch statement to render components based on upload progress */}
       <div className={styles.container}>
         {(() => {
