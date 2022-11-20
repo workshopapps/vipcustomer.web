@@ -19,6 +19,8 @@ import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Demo from "components/Demo/Demo";
+import Profile from "pages/Profile";
+import EditProfile from "pages/EditProfile";
 
 function App() {
   const { theme } = Store();
@@ -40,6 +42,8 @@ function App() {
           <Route path="/mission" element={<Mission />} />
           <Route path="/csv-upload" element={<CsvUpload />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
