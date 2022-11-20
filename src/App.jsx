@@ -20,6 +20,8 @@ import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Demo from "components/Demo/Demo";
+import PasswordChange from "./pages/PasswordChange";
+import PasswordRecovery from "./pages/PasswordRecovery";
 
 function App() {
   const { theme } = Store();
@@ -33,7 +35,6 @@ function App() {
           <Route path="/example" element={<Example />} />{" "}
           <Route path="/dashboard" element={<Dashboard />} />{" "}
           <Route path="/signup" element={<SignUp />} />{" "}
-          <Route path="/terms" element={<Terms />} />{" "}
           <Route path="/docs/*" element={<Docs />} />{" "}
           <Route path="/about-us" element={<Aboutus />} />{" "}
           <Route path="/login" element={<Login />} />{" "}
@@ -43,6 +44,10 @@ function App() {
           <Route path="/csv-upload" element={<CsvUpload />} />{" "}
           <Route path="/help" element={<HelpCenter />} />{" "}
           <Route path="/privacy" element={<Privacy />} />{" "}
+          <Route path="/password-recovery">
+            <Route index element={<PasswordRecovery />} />
+            <Route path="change" element={<PasswordChange />} />
+          </Route>
         </Routes>{" "}
       </BrowserRouter>{" "}
     </ThemeProvider>
