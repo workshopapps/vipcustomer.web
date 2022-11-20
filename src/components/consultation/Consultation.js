@@ -102,7 +102,7 @@ const Consultation = () => {
 
         <FormStyled method="post" onSubmit={handleSubmit}>
           <Input
-            label="First Name"
+            label="First Name *"
             id="fname"
             errorMessage="Please input a valid first name"
             isError={formError.fname}
@@ -111,7 +111,7 @@ const Consultation = () => {
             value={formDetails.fname}
           />
           <Input
-            label="Last Name"
+            label="Last Name *"
             id="lname"
             errorMessage="Please input a valid last name"
             isError={formError.lname}
@@ -120,7 +120,7 @@ const Consultation = () => {
             value={formDetails.lname}
           />
           <Input
-            label="Email"
+            label="Email *"
             id="email"
             errorMessage="Please input a valid email"
             isError={formError.email}
@@ -129,7 +129,7 @@ const Consultation = () => {
             value={formDetails.email}
           />
           <Input
-            label="Mobile"
+            label="Mobile *"
             id="mobile"
             errorMessage="Please input a valid mobile number"
             isError={formError.mobile}
@@ -138,7 +138,7 @@ const Consultation = () => {
             value={formDetails.mobile}
           />
           <Input
-            label="Location"
+            label="Location *"
             id="location"
             errorMessage="Please input a valid location"
             isError={formError.location}
