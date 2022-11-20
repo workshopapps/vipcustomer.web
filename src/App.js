@@ -11,7 +11,6 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
-import Demo from "components/Demo/Demo";
 import Aboutus from "pages/Aboutus";
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
@@ -20,6 +19,12 @@ import Help from "pages/Help";
 import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
+import Demo from "components/Demo/Demo";
+import PasswordChange from "./pages/PasswordChange";
+import PasswordRecovery from "./pages/PasswordRecovery";
+import Profile from "pages/Profile";
+import EditProfile from "pages/EditProfile";
+import ErrorPage from "pages/ErrorPage";
 
 function App() {
   const { theme } = Store();
@@ -42,6 +47,13 @@ function App() {
           <Route path="/csv-upload" element={<CsvUpload />} />
           <Route path="/help" element={<Help />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/password-recovery">
+            <Route index element={<PasswordRecovery />} />
+            <Route path="change" element={<PasswordChange />} />
+          </Route>
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/edit" element={<EditProfile />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

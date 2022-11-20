@@ -11,9 +11,13 @@ import LOGO from "../assests/icons/logo.svg";
 import MenuBtn from "./MenuBtn";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import useScreenSize from "hooks/useScreenSize";
 
-const Navbar = ({ mobile, tablet }) => {
+const Navbar = () => {
   const [menuopen, setMenuOpen] = useState(false);
+  const { screenWidth } = useScreenSize();
+  const mobile = screenWidth <= 690;
+  const tablet = screenWidth <= 1024;
 
   /*!IMPORTANT-
 This may not be the best way to effect this...in case it slows down page,
@@ -68,14 +72,11 @@ implementation should be changed
             Products
           </Link>
           <Link>Resourses</Link>
-          <Link>About Us</Link>
+          <Link to="/about-us">About Us</Link>
         </Items>
-        <Items
-          className="nav--link--items"
-          tablet={tablet}
-          style={{ color: "#fff" }}>
-          <Link>Log in</Link>
-          <Link>
+        <Items className="nav--link--items" tablet={tablet}>
+          <Link to="/login">Log in</Link>
+          <Link to="/signup">
             {/* this a reusable button component */}
             <Button
               style={{ padding: "12px 24px", fontWeight: "700" }}
@@ -93,9 +94,9 @@ implementation should be changed
           className={`${menuopen && "open"} nav--link--items`}>
           <Link>Products</Link>
           <Link>Resourses</Link>
-          <Link>About Us</Link>
-          <Link>Log in</Link>
-          <Link>Get Started</Link>
+          <Link to="/about-us">About Us</Link>
+          <Link to="/login">Log in</Link>
+          <Link to="/signup">Get Started</Link>
         </MobileNavWrapper>
       )}
     </NavWrapper>
