@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "../getstarted/GetStarted.module.css";
+import { Link } from "react-router-dom";
 
 const GetStarted = () => {
   return (
@@ -14,7 +15,11 @@ const GetStarted = () => {
         power of data to grow your business through unique VIP offerings and
         partnerships.
       </p>
+      <Link to={'/signup'}>
       <button className={classes.button}>Get Started</button>
+        
+      </Link>
+
     </div>
   );
 };
