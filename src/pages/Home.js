@@ -61,7 +61,7 @@ const Home = () => {
         </Link>
         <Link className="btn" to="/login">
           Login
-          </Link>
+        </Link>
 
         {/* NOTE this is temporary */}
         <Link className="btn" to="/faq">

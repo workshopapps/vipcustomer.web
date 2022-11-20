@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
 import Aboutus from "pages/Aboutus";
+import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
 import CsvUpload from "pages/CsvUpload";
 import HelpCenter from "pages/helpCenter/HelpCenter";

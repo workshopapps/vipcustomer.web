@@ -1,5 +1,6 @@
 .login__container {
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -183,6 +184,6 @@
     width: 538px;
   }
   .login {
-    margin: 191px auto;
+    margin: auto;
   }
 }
