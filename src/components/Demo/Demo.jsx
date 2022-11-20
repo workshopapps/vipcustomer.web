@@ -37,7 +37,7 @@ const Demo = () => {
                   <input type="text" required />
                 </label>
                 <label>
-                  Email
+                  Email Address
                   <input />
                 </label>
                 <label>
