@@ -6,6 +6,7 @@
     padding: 3em;
     column-gap: 3em;
     font-family: 'Poppins', sans-serif;
+    margin: 2em 0em;
 }
 
 
@@ -170,12 +171,13 @@
     .grid_container>div:nth-of-type(2) {
         height: max-content;
     }
+    .grid_container>div:first-child>h1 {
+        width: 100%;
+    }
     .grid_container>div:first-child>h1,
     .grid_container>div:first-child>h1>strong {
         font-size: 20px;
         line-height: 26px;
-        text-align: center;
-        width: 262px;
     }
     .grid_container>div:first-child>p {
         font-size: 14px;
