@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import styles from "./vision.module.css";
 import vissionImg from "../assets/vision.svg";
 const Vision = () => {
