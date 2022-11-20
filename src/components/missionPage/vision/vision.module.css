@@ -9,7 +9,9 @@
   overflow: auto;
   max-width: 179rem;
 }
-
+.p {
+  color: var(--blue) !important;
+}
 .img {
   float: right;
   width: 50%;

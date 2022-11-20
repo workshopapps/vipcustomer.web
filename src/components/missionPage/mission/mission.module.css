@@ -9,6 +9,9 @@
   padding: 3.5rem 0;
   overflow: auto;
 }
+.p {
+  color: var(--blue) !important;
+}
 .span {
   clear: right;
 }
