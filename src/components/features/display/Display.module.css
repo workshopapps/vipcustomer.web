@@ -15,6 +15,6 @@
   transform: translateX(-60%);
 }
 @media (min-width: 1024px) {
- .overlay{width: 100%;}
- .image{width: 100%;}
-}
+  .overlay{width: 100%;}
+  .image{width: 100%;}
+ }
