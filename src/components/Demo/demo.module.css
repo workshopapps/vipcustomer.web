@@ -112,6 +112,10 @@
     gap: 1em;
 }
 
+.grid_container>div:nth-of-type(2)>article>form>article>span {
+    align-self: center;
+}
+
 
 /* styling for second_div ends */
 
@@ -196,7 +200,7 @@
         line-height: 22px;
     }
     .grid_container>div:nth-of-type(2)>article {
-        padding: 1em 2em;
+        padding: 1em;
         border: 0;
     }
     .grid_container>div:nth-of-type(2)>article>h2,
@@ -216,7 +220,11 @@
         line-height: 18px;
     }
     .grid_container>div:nth-of-type(2)>article>form>article {
+        display: block;
+    }
+    .grid_container>div:nth-of-type(2)>article>form>article>span {
         justify-content: flex-start;
+        font-size: 12px;
     }
 }
 
@@ -274,5 +282,8 @@
     }
     .grid_container>div:nth-of-type(2)>article>form>article {
         justify-content: center;
+    }
+    .grid_container>div:nth-of-type(2)>article>form>article>span {
+        align-self: center;
     }
 }
