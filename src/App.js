@@ -23,6 +23,7 @@ import PasswordRecovery from "./pages/PasswordRecovery";
 import Profile from "pages/Profile";
 import EditProfile from "pages/EditProfile";
 import ErrorPage from "pages/ErrorPage";
+import Aboutus from "pages/Aboutus";
 
 function App() {
   const { theme } = Store();
@@ -49,6 +50,7 @@ function App() {
           </Route>
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit" element={<EditProfile />} />
+          <Route path="/about-us" element={<Aboutus />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
