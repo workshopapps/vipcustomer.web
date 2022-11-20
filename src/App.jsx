@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
 import Aboutus from "pages/Aboutus";
+import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
 import CsvUpload from "pages/CsvUpload";
 import HelpCenter from "pages/helpCenter/HelpCenter";
@@ -34,6 +35,9 @@ function App() {
           <Route path="/signup" element={<SignUp />} />{" "}
           <Route path="/terms" element={<Terms />} />{" "}
           <Route path="/docs/*" element={<Docs />} />{" "}
+          <Route path="/about-us" element={<Aboutus />} />{" "}
+          <Route path="/login" element={<Login />} />{" "}
+          <Route path="/demo" element={<Demo />} />{" "}
           <Route path="/faq" element={<FAQ />} />{" "}
           <Route path="/mission" element={<Mission />} />{" "}
           <Route path="/csv-upload" element={<CsvUpload />} />{" "}
