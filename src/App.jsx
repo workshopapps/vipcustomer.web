@@ -19,6 +19,7 @@ import HelpCenter from "pages/helpCenter/HelpCenter";
 import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
+import Demo from "components/Demo/Demo";
 
 function App() {
   const { theme } = Store();
@@ -28,20 +29,22 @@ function App() {
       <GLobalStyles />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/example" element={<Example />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/docs/*" element={<Docs />} />
-          <Route path="/about" element={<Aboutus />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/mission" element={<Mission />} />
-          <Route path="/csv-upload" element={<CsvUpload />} />
-          <Route path="/help" element={<HelpCenter />} />
-          <Route path="/privacy" element={<Privacy />} />
-        </Routes>
-      </BrowserRouter>
+          <Route path="/" element={<Home />} />{" "}
+          <Route path="/example" element={<Example />} />{" "}
+          <Route path="/dashboard" element={<Dashboard />} />{" "}
+          <Route path="/signup" element={<SignUp />} />{" "}
+          <Route path="/terms" element={<Terms />} />{" "}
+          <Route path="/docs/*" element={<Docs />} />{" "}
+          <Route path="/about-us" element={<Aboutus />} />{" "}
+          <Route path="/login" element={<Login />} />{" "}
+          <Route path="/demo" element={<Demo />} />{" "}
+          <Route path="/faq" element={<FAQ />} />{" "}
+          <Route path="/mission" element={<Mission />} />{" "}
+          <Route path="/csv-upload" element={<CsvUpload />} />{" "}
+          <Route path="/help" element={<HelpCenter />} />{" "}
+          <Route path="/privacy" element={<Privacy />} />{" "}
+        </Routes>{" "}
+      </BrowserRouter>{" "}
     </ThemeProvider>
   );
 }
