@@ -64,46 +64,22 @@ const InputWrappr = styled.div`
   height: 64px;
 `;
 
-const LandingInput = styled.input.attrs({
-  type: "text",
-  placeholder: "Enter Business email",
-  name: "landing_email"
-})`
-  width: 100%;
-  height: 100%;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  background: rgba(111, 227, 235, 0.06);
-  padding: 8px 210px 8px 8px;
-  border-radius: 4px;
-  ::-webkit-input-placeholder {
-    color: inherit;
-    font-weight: inherit;
-  }
-  ::-moz-placeholder {
-    color: inherit;
-  }
-  @media (max-width: 690px) {
-    padding: 8px 148px 8px 8px;
-  }
-`;
 const HeaderButton = styled(ButtonWrapper)`
   padding: 8px;
   height: 50px;
   background: #f05d23;
   width: 183px;
   border: none;
-  position: absolute;
   top: 8px;
   right: 8px;
-  borderradius: 4px;
+  border-radius: 4px;
   color: #121212;
   @media (max-width: 690px) {
     font-size: 12px;
     width: 120px;
   }
 `;
+
 export {
   HeaderWrapper,
   HeaderContentWrapper,
@@ -111,6 +87,5 @@ export {
   SubHeading,
   Heading,
   InputWrappr,
-  LandingInput,
   HeaderButton
 };
