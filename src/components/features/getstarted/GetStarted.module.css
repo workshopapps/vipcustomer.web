@@ -1,5 +1,6 @@
 .getstarted{
   text-align: center;
+  margin-top: 70px;
   padding:20px;
 }
 .heading{
@@ -56,6 +57,5 @@
   .paragraph{
     text-align: left;
     padding:0;
-
    }
 }
