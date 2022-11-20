@@ -1,12 +1,12 @@
 import React from "react";
-import "./footer.css";
+import styles from "./footer.module.css";
 import { Store } from "../../../store/contexts/AppContext";
 
 const Footer = () => {
   const { theme } = Store();
 
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <h4>HNG</h4>
 
       <div>
