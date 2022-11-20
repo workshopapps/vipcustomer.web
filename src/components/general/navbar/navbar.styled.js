@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
 const NavWrapper = styled.nav`
-  color: white;
-  position: sticky;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 10;
   font-size: 1.6rem;
+  color: white;
   font-weight: 500;
   display: flex;
   height: 81px;
@@ -35,6 +39,7 @@ const LogoWrapper = styled.div`
 const Items = styled.li`
   display: flex;
   gap: 40px;
+
   align-items: center;
   &.nav--link--items {
     display: ${({ tablet }) => tablet && "none"};
@@ -58,7 +63,7 @@ const MobileNavWrapper = styled.div`
   gap: 10px;
   top: 100%;
   font-weight: 500;
-  font-size: 10px;
+  font-size: 1.6rem;
   line-height: 28px;
   overflow-x: hidden;
   transition: 300ms 0.2s all ease-in-out;
@@ -66,7 +71,7 @@ const MobileNavWrapper = styled.div`
   padding-inline: ${({ mobile, tablet }) =>
     mobile ? "40px" : tablet ? "78.9px" : "120px"};
   &.open {
-    height: 180px;
+    height: 195px;
     max-height: fit-content;
   }
   & > a.active {

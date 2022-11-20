@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import styles from "./mission.module.css";
 import MissionImg from "../assets/mission.svg";
 const Mission = () => {

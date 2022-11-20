@@ -11,12 +11,14 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
+import Aboutus from "pages/Aboutus";
 import FAQ from "./pages/FAQ";
 import CsvUpload from "pages/CsvUpload";
 import HelpCenter from "pages/helpCenter/HelpCenter";
 import SignUp from "./pages/auth/SignUp";
-import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
+import Demo from "components/Demo/Demo";
 
 function App() {
   const { theme } = Store();
@@ -26,18 +28,19 @@ function App() {
       <GLobalStyles />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/example" element={<Example />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/docs/*" element={<Docs />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/mission" element={<Mission />} />
-          <Route path="/csv-upload" element={<CsvUpload />} />
-          <Route path="/help" element={<HelpCenter />} />
-        </Routes>
-      </BrowserRouter>
+          <Route path="/" element={<Home />} />{" "}
+          <Route path="/example" element={<Example />} />{" "}
+          <Route path="/dashboard" element={<Dashboard />} />{" "}
+          <Route path="/signup" element={<SignUp />} />{" "}
+          <Route path="/terms" element={<Terms />} />{" "}
+          <Route path="/docs/*" element={<Docs />} />{" "}
+          <Route path="/faq" element={<FAQ />} />{" "}
+          <Route path="/mission" element={<Mission />} />{" "}
+          <Route path="/csv-upload" element={<CsvUpload />} />{" "}
+          <Route path="/help" element={<HelpCenter />} />{" "}
+          <Route path="/privacy" element={<Privacy />} />{" "}
+        </Routes>{" "}
+      </BrowserRouter>{" "}
     </ThemeProvider>
   );
 }
