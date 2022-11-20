@@ -59,7 +59,9 @@ const Home = () => {
         <Link className="btn" to="/docs/somethingelse">
           Something Else
         </Link>
-        <Link className="btn" to="/password-recovery">Passwor recovery </Link>
+        <Link className="btn" to="/password-recovery">
+          Passwor recovery{" "}
+        </Link>
         {/* NOTE this is temporary */}
         <Link className="btn" to="/faq">
           FAQ
