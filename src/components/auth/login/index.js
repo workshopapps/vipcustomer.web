@@ -6,7 +6,7 @@ import { login_a } from "store/actions/authActions";
 import { AuthStore } from "store/contexts/AuthContext";
 
 const Login = () => {
-  const { dispatch, user } = AuthStore();
+  const { dispatch } = AuthStore();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isVisible, setIsVisible] = useState(false);
