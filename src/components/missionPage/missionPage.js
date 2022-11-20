@@ -12,7 +12,6 @@ const MissionVV = () => {
   return (
     <div className={styles.body}>
       <Navbar />
-      {/* <Header /> */}
       <Mission />
       <Vision />
       <Values />
