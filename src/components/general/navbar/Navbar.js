@@ -16,7 +16,7 @@ const Navbar = ({ mobile, tablet }) => {
   const [menuopen, setMenuOpen] = useState(false);
 
   /*!IMPORTANT-
-This may not be the best way to effect this...in case it slows down page, 
+This may not be the best way to effect this...in case it slows down page,
 implementation should be changed
 */
 
@@ -42,7 +42,7 @@ implementation should be changed
 
   return (
     /* Link currently does not have a route
-    
+
     this should be implemented when the routes are confirmed*/
 
     <NavWrapper tablet={tablet} mobile={mobile}>
@@ -70,7 +70,10 @@ implementation should be changed
           <Link>Resourses</Link>
           <Link>About Us</Link>
         </Items>
-        <Items className="nav--link--items" tablet={tablet}>
+        <Items
+          className="nav--link--items"
+          tablet={tablet}
+          style={{ color: "#fff" }}>
           <Link>Log in</Link>
           <Link>
             {/* this a reusable button component */}
@@ -86,6 +89,7 @@ implementation should be changed
         <MobileNavWrapper
           tablet={tablet}
           mobile={mobile}
+          style={{ color: "#fff" }}
           className={`${menuopen && "open"} nav--link--items`}>
           <Link>Products</Link>
           <Link>Resourses</Link>
