@@ -71,8 +71,8 @@ implementation should be changed
           <Link>About Us</Link>
         </Items>
         <Items className="nav--link--items" tablet={tablet}>
-          <Link>Log in</Link>
-          <Link>
+          <Link to="/login">Log in</Link>
+          <Link to="/signup">
             {/* this a reusable button component */}
             <Button
               style={{ padding: "12px 24px", fontWeight: "700" }}
@@ -90,8 +90,8 @@ implementation should be changed
           <Link>Products</Link>
           <Link>Resourses</Link>
           <Link>About Us</Link>
-          <Link>Log in</Link>
-          <Link>Get Started</Link>
+          <Link to="/login">Log in</Link>
+          <Link to="/signup">Get Started</Link>
         </MobileNavWrapper>
       )}
     </NavWrapper>
