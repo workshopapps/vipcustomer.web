@@ -26,29 +26,32 @@ export const FormStyled = styled.form`
 `;
 
 export const ConsultStyled = styled.section`
-  width: 80%;
-  margin: 4rem auto 0;
-  padding-bottom: 10rem;
   background-image: url(${tick});
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
-  @media only screen and (min-width: 768px) {
-    width: 70%;
-    @media screen and (min-width: 992px) {
-      width: 60%;
+  .consult-inner {
+    width: 80%;
+    margin: 4rem auto 0;
+    padding-bottom: 10rem;
+
+    @media only screen and (min-width: 768px) {
+      width: 70%;
+      @media screen and (min-width: 992px) {
+        width: 60%;
+      }
     }
-  }
 
-  h1,
-  p {
-    text-align: center;
-    color: #121212;
-  }
+    h1,
+    p {
+      text-align: center;
+      color: #121212;
+    }
 
-  p {
-    padding-block: 1.1rem 2rem;
-    font-size: 1.75rem;
+    p {
+      padding-block: 1.1rem 2rem;
+      font-size: 1.75rem;
+    }
   }
 `;
 
