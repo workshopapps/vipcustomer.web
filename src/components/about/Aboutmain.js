@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./About.module.css";
-import mainImage from "./main.png";
+
 const Aboutmain = () => {
   return (
     <div>
