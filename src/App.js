@@ -23,6 +23,7 @@ import PasswordRecovery from "./pages/PasswordRecovery";
 import Profile from "pages/Profile";
 import EditProfile from "pages/EditProfile";
 import ErrorPage from "pages/ErrorPage";
+import MeetTheTeam from "pages/MeetTheTeam";
 
 function App() {
   const { theme } = Store();
@@ -49,6 +50,7 @@ function App() {
           </Route>
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit" element={<EditProfile />} />
+          <Route path="/team" element={<MeetTheTeam />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

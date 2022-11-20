@@ -1,80 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-* {
-    font-family: 'Poppins', sans-serif;
-}
-main {
-    margin-top: 2em;
+.meet__The__team__main {
+  margin-top: 2em;
 }
 .meet-the-team {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
-.meet-the-team h1, p {
-    text-align: center;
+.meet-the-team h1,
+p {
+  text-align: center;
 }
 .theTeam {
-    width: 100%;
-    margin: 2em auto;
-    display: grid;
-    gap: 2em;
-    grid-auto-flow: row;
+  width: 100%;
+  margin: 2em auto;
+  display: grid;
+  gap: 2em;
+  grid-auto-flow: row;
 }
 .theTeam > * {
-    width: 100%;
-    margin: auto;
+  width: 100%;
+  margin: auto;
 }
 .team-lead {
-    padding: 40px;
-    background: #091540;
-    border: none;
-    border-radius: 20px;
-    width: 100%;
-    min-width: 220px;
-    max-width: 300px;
-    height: 100%;
-    max-height: 304px;
-    margin: 2em auto;
+  padding: 40px;
+  background: #091540;
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  min-width: 220px;
+  max-width: 300px;
+  height: 100%;
+  max-height: 304px;
+  margin: 2em auto;
 }
 .lead-img {
-    width: 100%;
-    max-width: 150px;
-    min-width: 100px;
-    height: 100%;
-    height: 150px;
-    min-height: 100px;
-    border-radius: 50%;
-    margin-bottom: 2em;
+  width: 100%;
+  max-width: 150px;
+  min-width: 100px;
+  height: 100%;
+  height: 150px;
+  min-height: 100px;
+  border-radius: 50%;
+  margin-bottom: 2em;
 }
 .lead-name {
-    font-size: 16px;
-    line-height: 16px;
-    text-align: center;
-    font-weight: 600;
-    color: #fff;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
 }
 .lead-track {
-    font-size: 6px;
-    line-height: 10px;
-    text-align: center;
-    font-weight: 600;
-    color: #f05d23;
+  font-size: 6px;
+  line-height: 10px;
+  text-align: center;
+  font-weight: 600;
+  color: #f05d23;
 }
 /**/
 @media screen and (max-width: 768px) {
-    .team-lead {
-        padding: 20px;
-    }
+  .team-lead {
+    padding: 20px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .theTeam {
-        grid-template-columns: 1fr 1fr;
-    }
+  .theTeam {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media screen and (min-width: 1024px) {
-    .theTeam {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+  .theTeam {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
