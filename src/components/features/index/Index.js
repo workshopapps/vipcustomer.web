@@ -1,31 +1,23 @@
-import React, { useEffect, useState } from "react";
+import { Navbar, Footer } from "components/general";
+import React from "react";
 import Display from "../display/Display";
 import Experience from "../experience/Experience";
 import GetStarted from "../getstarted/GetStarted";
 import classes from "./Index.module.css";
 
 const Index = () => {
-  const [width, setWidth] = useState("");
-
-  useEffect(() => {
-    function windowlistener() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener("resize", windowlistener);
-
-    return () => {
-      window.removeEventListener("resize", windowlistener);
-    };
-  });
-
   return (
-    <div className={classes.container}>
-      <div className={classes.gridcontainer}>
-        <GetStarted />
-        <Display width={width} />
+    <>
+      <Navbar />
+      <div className={classes.container}>
+        <div className={classes.gridcontainer}>
+          <GetStarted />
+          <Display />
+        </div>
+        <Experience />
       </div>
-      <Experience />
-    </div>
+      <Footer />
+    </>
   );
 };
 export default Index;

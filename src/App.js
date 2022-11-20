@@ -19,6 +19,7 @@ import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Team from "./pages/Team";
 import Demo from "components/Demo/Demo";
+import Feature from "pages/Feature";
 import PasswordChange from "./pages/PasswordChange";
 import PasswordRecovery from "./pages/PasswordRecovery";
 import Profile from "pages/Profile";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/help" element={<Help />} />
           <Route path="/team" exact element={<Team />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/feature" element={<Feature />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/password-recovery">
             <Route index element={<PasswordRecovery />} />
