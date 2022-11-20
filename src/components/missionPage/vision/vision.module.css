@@ -28,7 +28,7 @@
   line-height: 1.8rem;
   margin-top: 1rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 800px) {
   .container {
     gap: 10%;
     width: 80%;
