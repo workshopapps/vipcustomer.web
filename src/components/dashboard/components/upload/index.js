@@ -2,9 +2,9 @@ import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./upload.module.css";
-import dummmy_dp from "../assets/dummy_dp.png";
-import CloudUploadIcon from "../assets/CloudUploadIcon.svg";
-import UploadIcon from "../assets/UploadIcon.svg";
+import dummmy_dp from "../../assets/dummy_dp.png";
+import CloudUploadIcon from "./assets/CloudUploadIcon.svg";
+import UploadIcon from "./assets/UploadIcon.svg";
 
 function Upload(props) {
   const { onNext } = props;

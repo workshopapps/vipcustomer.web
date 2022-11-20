@@ -3,10 +3,10 @@ import SearchInput from "../searchinput";
 
 import styles from "./nav.module.css";
 
-import dummmy_dp from "../assets/dummy_dp.png";
+import dummmy_dp from "../../assets/dummy_dp.png";
 import Logo from "./assets/Logo.svg";
 import MobileLogo from "./assets/MobileLogo.svg";
-import SearchIcon from "../assets/SearchIcon.svg";
+import SearchIcon from "./assets/SearchIcon.svg";
 
 export default function NavBar() {
   return (

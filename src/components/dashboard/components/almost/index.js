@@ -7,7 +7,7 @@ import CancelIcon from "./assets/CancelIcon.svg";
 import SuccessIcon from "./assets/SuccessIcon.svg";
 import WaitingIcon from "./assets/WaitingIcon.svg";
 
-import dummmy_dp from "../assets/dummy_dp.png";
+import dummmy_dp from "../../assets/dummy_dp.png";
 
 export default function Almost(props) {
   const { step, onNext } = props;

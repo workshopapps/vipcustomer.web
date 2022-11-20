@@ -14,7 +14,6 @@ import Docs from "./pages/Docs";
 import Aboutus from "pages/Aboutus";
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
-import CsvUpload from "pages/CsvUpload";
 import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
@@ -42,7 +41,6 @@ function App() {
           <Route path="/demo" element={<Demo />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/mission" element={<Mission />} />
-          <Route path="/csv-upload" element={<CsvUpload />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/password-recovery">
             <Route index element={<PasswordRecovery />} />

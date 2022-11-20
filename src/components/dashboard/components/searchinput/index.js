@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./search.module.css";
-import SearchIcon from "../assets/SearchIcon.svg";
+import SearchIcon from "./assets/SearchIcon.svg";
 
 function SearchInput() {
   return (
