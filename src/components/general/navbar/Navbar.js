@@ -52,7 +52,7 @@ implementation should be changed
     <NavWrapper tablet={tablet} mobile={mobile}>
       <NavItemsWrapper>
         <Items className="nav--logo">
-          <Link>
+          <Link to="/">
             <LogoWrapper mobile={mobile} tablet={tablet}>
               <img src={LOGO} alt="axeapi logo" />
             </LogoWrapper>
