@@ -23,6 +23,7 @@ import PasswordRecovery from "./pages/PasswordRecovery";
 import Profile from "pages/Profile";
 import EditProfile from "pages/EditProfile";
 import ErrorPage from "pages/ErrorPage";
+import Terms from "pages/terms/Terms";
 import Aboutus from "pages/Aboutus";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path="/mission" element={<Mission />} />
           <Route path="/team" exact element={<Team />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/password-recovery">
             <Route index element={<PasswordRecovery />} />
             <Route path="change" element={<PasswordChange />} />
