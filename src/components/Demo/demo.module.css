@@ -6,7 +6,6 @@
     padding: 3em;
     column-gap: 3em;
     font-family: 'Poppins', sans-serif;
-    align-items: center;
     margin: 4em 0;
 }
 
@@ -22,6 +21,7 @@
     font-weight: 700;
     line-height: 59px;
     color: var(--Default-121212);
+    padding-top: 1em;
 }
 
 .grid_container>div:first-child>h1>strong {
@@ -125,11 +125,6 @@
 
 /* styling for third_div ends */
 
-.grid_container>div:last-child {
-    position: relative;
-    bottom: 7em;
-}
-
 .grid_container>div:last-child>h2,
 .grid_container>div:last-child>p {
     line-height: 42px;
@@ -183,15 +178,13 @@
     .grid_container>div:nth-of-type(2) {
         height: max-content;
     }
-    .grid_container>div:first-child>h1 {
-        width: 100%;
-    }
     .grid_container>div:first-child>h1,
     .grid_container>div:first-child>h1>strong {
         font-size: 20px;
         line-height: 26px;
+        width: 100%;
     }
-    .grid_container>div:first-child>p {
+    .grid_container>div:nth-of-type(2)>p {
         font-size: 14px;
         line-height: 26px;
         width: 100%;
@@ -215,6 +208,10 @@
     .grid_container>div:last-child>p {
         display: none;
     }
+    .grid_container>div:nth-of-type(2)>article>h2 {
+        display: none;
+        padding: 0;
+    }
     .grid_container>div:last-child>h2 {
         font-weight: 500;
         font-size: 16px;
@@ -233,10 +230,6 @@
     .grid_container>div:nth-of-type(2)>article>form>article>span {
         justify-content: flex-start;
         font-size: 12px;
-    }
-    .grid_container>div:last-child {
-        position: relative;
-        bottom: -7em;
     }
     .grid_container>div:nth-of-type(2) {
         grid-row: span 0;
@@ -281,6 +274,10 @@
     .grid_container>div:nth-of-type(2)>article {
         padding: 1em 2em;
         border: 0;
+    }
+    .grid_container>div:nth-of-type(2)>article>p {
+        position: relative;
+        bottom: 4em;
     }
     .grid_container>div:nth-of-type(2)>article>h2,
     .grid_container>div:last-child>p {
