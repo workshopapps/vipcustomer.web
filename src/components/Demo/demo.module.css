@@ -109,7 +109,7 @@
 .grid_container>div:nth-of-type(2)>article>form>article {
     display: flex;
     width: 100%;
-    gap: 1em;
+    gap: .5em;
 }
 
 .grid_container>div:nth-of-type(2)>article>form>article>span {
