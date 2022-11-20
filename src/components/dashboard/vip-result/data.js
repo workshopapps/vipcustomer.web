@@ -7,32 +7,32 @@ export const _vip = [
     career: "Business person"
   },
   {
-    name: "Alice Walton",
-    category: "Gold Vip",
+    name: "Lawrence Edward",
+    category: "Bronze Vip",
     gender: "Female",
     netWorth: "$11b",
-    career: "Business person"
+    career: "Market woman"
   },
   {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
+    name: "Biil Gates",
+    category: "Silver Vip",
+    gender: "male",
     netWorth: "$11b",
-    career: "Business person"
+    career: "Enterpreneaur"
   },
   {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
+    name: "Dangote Walton",
+    category: "Major Vip",
+    gender: "Male",
     netWorth: "$11b",
-    career: "Business person"
+    career: "Huzzler"
   },
   {
-    name: "Alice Walton",
+    name: "Mark Essien",
     category: "Gold Vip",
-    gender: "Female",
+    gender: "male",
     netWorth: "$11b",
-    career: "Business person"
+    career: "Tech guru"
   },
   {
     name: "Alice Walton",

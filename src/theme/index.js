@@ -33,7 +33,6 @@ body {
   min-width:7rem;
   padding:7px 10px;
   border: 2px solid ${({ theme }) => theme.color};
-  color:${({ theme }) => theme.color};
   transition:all 0.3s linear;
   text-transform:uppercase;
   font-size:1rem;

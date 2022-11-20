@@ -12,6 +12,6 @@ export const TextWrapper = styled.p`
   border-top: 1.7px solid #b5b7c0;
   color: #091540;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 26px;
 `;
