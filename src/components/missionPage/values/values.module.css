@@ -2,7 +2,7 @@
   width: 90%;
   max-width: 179rem;
 
-  margin: 0 auto !important;
+  margin: 0 auto;
   display: flex;
   padding: 3.5rem 0;
   padding-bottom: 2rem;
@@ -11,7 +11,7 @@
 
 .connect {
   width: 90%;
-  margin: 0 auto !important;
+  margin: 0 auto;
   left: 20%;
   padding: 3.5rem 0;
 }
@@ -33,20 +33,20 @@
   font-size: 1.2rem;
 
   line-height: 1.8rem;
-  margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important;
-  color: var(--blue) !important;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--blue);
 }
 .p {
-  color: var(--blue) !important;
+  color: var(--blue);
 }
 .email {
-  color: var(--blue) !important;
+  color: var(--blue);
 }
 .ul > li > span {
   font-size: 1.5rem;
   line-height: 2.5rem;
-  margin-left: 1rem !important;
+  margin-left: 1rem;
 }
 .ul > li {
   display: flex;
@@ -68,7 +68,7 @@
   align-items: center;
   border: 0.085308rem solid var(--blue);
   border-radius: 0.6rem;
-  margin: 1rem auto !important;
+  margin: 1rem auto;
 }
 
 .connect > h2 {

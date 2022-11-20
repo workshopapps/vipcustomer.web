@@ -4,14 +4,14 @@
 .container {
   width: 90%;
   max-width: 179rem;
-  margin: 0 auto !important;
-  margin-top: 8rem !important;
+  margin: 0 auto;
+  margin-top: 8rem;
   left: 20%;
   padding: 3.5rem 0;
   overflow: auto;
 }
 .p {
-  color: var(--blue) !important;
+  color: var(--blue);
 }
 .span {
   clear: right;
@@ -35,10 +35,10 @@
   font-size: 1.2rem;
   line-height: 1.8rem;
   margin-top: 0;
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem;
 }
 .button {
-  margin-top: 2rem !important;
+  margin-top: 2rem;
   color: var(--white);
   align-items: center;
   padding: 1rem;
@@ -56,7 +56,6 @@
     display: flex;
     gap: 10%;
     width: 80%;
-    /* max-width: 1000px; */
   }
 
   .h2 {
