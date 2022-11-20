@@ -1,10 +1,10 @@
 import React from 'react';
-import pd from './img/pd.png';
-import pm from './img/pm.png';
-import backend from './img/backend.png';
-import frontend from './img/frontend.png';
-import devops from './img/devops.png';
-import './css/Team.css';
+import pd from './pd.png';
+import pm from './pm.png';
+import backend from './backend.png';
+import frontend from './frontend.png';
+import devops from './devops.png';
+import './Team.css';
 
 export default function Team() {
     return (
