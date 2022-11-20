@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import useScreenSize from "../../../hooks/useScreenSize";
 import {
   NavItemsWrapper,
   NavWrapper,
@@ -11,12 +10,10 @@ import Button from "../Button";
 import LOGO from "../assests/icons/logo.svg";
 import MenuBtn from "./MenuBtn";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const Navbar = () => {
+const Navbar = ({ mobile, tablet }) => {
   const [menuopen, setMenuOpen] = useState(false);
-  const { screenWidth } = useScreenSize();
-  const mobile = screenWidth <= 690;
-  const tablet = screenWidth <= 1024;
 
   /*!IMPORTANT-
 This may not be the best way to effect this...in case it slows down page, 
@@ -65,7 +62,11 @@ implementation should be changed
           </Items>
         )}
         <Items className="nav--link--items" tablet={tablet}>
-          <Link>Products</Link>
+          <Link
+            to="/example
+          ">
+            Products
+          </Link>
           <Link>Resourses</Link>
           <Link>About Us</Link>
         </Items>
@@ -98,3 +99,7 @@ implementation should be changed
 };
 
 export default Navbar;
+Navbar.propTypes = {
+  mobile: PropTypes.bool.isRequired,
+  tablet: PropTypes.bool.isRequired
+};

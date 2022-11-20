@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
 const NavWrapper = styled.nav`
-  color: white;
-  position: sticky;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 10;
   font-size: 1.6rem;
+  color: white;
   font-weight: 500;
   display: flex;
   height: 81px;
@@ -35,6 +39,7 @@ const LogoWrapper = styled.div`
 const Items = styled.li`
   display: flex;
   gap: 40px;
+
   align-items: center;
   &.nav--link--items {
     display: ${({ tablet }) => tablet && "none"};
