@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Items, LogoWrapper, MobileNavWrapper, NavItemsWrapper, NavWrapper } from "./navbar.styled";
+import {
+  Items,
+  LogoWrapper,
+  MobileNavWrapper,
+  NavItemsWrapper,
+  NavWrapper
+} from "./navbar.styled";
 import Button from "../Button";
 import LOGO from "../assests/icons/logo.svg";
 import MenuBtn from "./MenuBtn";
