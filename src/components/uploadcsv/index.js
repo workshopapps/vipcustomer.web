@@ -4,7 +4,6 @@ import Upload from "./upload";
 import Almost from "./almost";
 
 import styles from "./uploadcsv.module.css";
-import dummmy_dp from "./assets/dummy_dp.png";
 
 function UploadCsv() {
   const [step, setStep] = useState(0);
@@ -17,34 +16,23 @@ function UploadCsv() {
 
   return (
     <main className={styles.main}>
-      <section className={styles.container}>
-        <div className={styles.welcome__header}>
-          <img src={dummmy_dp} alt="user" />
+      {/* Switch statement to render components based on upload progress */}
+      <div className={styles.container}>
+        {(() => {
+          switch (step) {
+            case 0:
+              return <Upload onNext={onNext} />;
 
-          <div>
-            <h2>Hi, Iyanu</h2>
-            <h2>Welcome back!</h2>
-          </div>
-        </div>
+            case 1:
+              return <Almost onNext={onNext} step={step} />;
 
-        {/* Switch statement to render components based on upload progress */}
-        <div className={styles.upload__progress}>
-          {(() => {
-            switch (step) {
-              case 0:
-                return <Upload onNext={onNext} />;
-
-              case 1:
-                return <Almost onNext={onNext} step={step} />;
-
-              case 2:
-                return <Almost onNext={onNext} step={step} />;
-              default:
-                return null;
-            }
-          })()}
-        </div>
-      </section>
+            case 2:
+              return <Almost onNext={onNext} step={step} />;
+            default:
+              return null;
+          }
+        })()}
+      </div>
     </main>
   );
 }
