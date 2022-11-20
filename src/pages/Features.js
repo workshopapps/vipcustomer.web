@@ -1,5 +1,5 @@
 import React from "react";
-import FeaturesComponent from "../components/features/index/index";
+import FeaturesComponent from "../components/features/index/star";
 
 const Features = () => {
   return <FeaturesComponent />;
