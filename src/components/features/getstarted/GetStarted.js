@@ -17,7 +17,6 @@ const GetStarted = () => {
       </p>
       <Link to={'/signup'}>
       <button className={classes.button}>Get Started</button>
-        
       </Link>
 
     </div>
