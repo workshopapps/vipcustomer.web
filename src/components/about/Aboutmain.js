@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./About.module.css";
-import mainImage from "./main.png";
+
 const Aboutmain = () => {
   return (
     <div>
@@ -33,9 +33,7 @@ const Aboutmain = () => {
               </p>
             </div>
           </div>
-          <div className={styles.imgContainer}>
-            <img src={mainImage} alt="main image " />
-          </div>
+          <div className={styles.imgContainer}></div>
         </div>
       </div>
     </div>
