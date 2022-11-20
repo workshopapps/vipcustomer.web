@@ -1,12 +1,10 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
 // import { Navbar } from "../components/general";
 // import Footer from "../components/general/otherfooter/Footer";
 import LandingPage from "../components/landingpage/LandingPage";
 import useScreenSize from "../hooks/useScreenSize";
 import { Navbar, Footer } from "components/general";
-import Logout from "./Logout";
+// import Logout from "./Logout";
 
 const Home = () => {
   const { screenWidth } = useScreenSize();
