@@ -45,23 +45,18 @@ const FAQ = () => {
     closed: Add
   };
 
-  // const question_list = data;
   const [question_list, setQuestion_list] = useState(data);
-
-  // const [user_input, setUser_input] = useState("");
 
   function filter_(input) {
     const query = input.target.value;
-    // let newList = [...question_list];
-    if (query.length === 0) {
-      console.log("ifjhb");
-      setQuestion_list(data);
-    } else {
-      const newList = question_list.filter((item) => {
-        return !item.text.includes(query); //// This is returning an error
-      });
-      setQuestion_list(newList);
-    }
+    let _newList = data;
+    const newList = _newList.filter((item) => {
+      if (item.text.toLowerCase().includes(query)) {
+        return item;
+      }
+    });
+
+    setQuestion_list(newList);
   }
 
   return (
@@ -76,7 +71,6 @@ const FAQ = () => {
           {question_list.map((item) => (
             <Questions
               key={item.id}
-              // user_data={user_input}
               styles={styles}
               text={item.text}
               icon={icon}
@@ -93,9 +87,3 @@ const FAQ = () => {
 };
 
 export default FAQ;
-// function onInput(e) {
-//   setUser_input(e.target.input);
-//   console.log(user_input);
-// }
-
-// onChange = { filter_ };
