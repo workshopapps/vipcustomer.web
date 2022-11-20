@@ -120,7 +120,7 @@
   }
 }
 /* for ipad view  */
-@media screen and (max-width: 834px) {
+@media screen and (min-width: 600px) {
   .modal-box {
     width: 631px;
     height: 326px;  
@@ -144,7 +144,7 @@
 }
 
 /* for mobile view  */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 600px) {
   .modal-box {
     width: 337px;
     height: 248px;
@@ -171,9 +171,6 @@
   }
   .modal-box-success {
     width: 283.03px;
-  }
-  .modal-box-success p {
-    margin-left: 13.5%;
   }
   .cancel-success {
     margin-left: 49%;

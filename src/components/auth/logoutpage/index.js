@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./logout.css";
 
-const Logout = (props) => {
+const LogoutPage = (props) => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
   const [logoutSuccess, setLogoutSuccess] = useState(false);
@@ -13,9 +12,9 @@ const Logout = (props) => {
   const logout = (e) => {
     e.preventDefault();
     setIsActive((current) => !current);
+    setLogoutSuccess((status) => !status);
     localStorage.clear();
     sessionStorage.clear();
-    setLogoutSuccess((status) => !status);
     navigate("/");
   };
 
@@ -24,7 +23,7 @@ const Logout = (props) => {
       <Modal
         className="modal-design"
         {...props}
-        size="lg"
+        size="sm"
         aria-labelledby="contained-modal-title-vcenter"
         centered>
         {logoutSuccess ? (
@@ -322,4 +321,4 @@ const Logout = (props) => {
   );
 };
 
-export default Logout;
+export default LogoutPage;
