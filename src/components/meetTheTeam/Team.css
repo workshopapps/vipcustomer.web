@@ -22,10 +22,6 @@ main {
     gap: 2em;
     grid-auto-flow: row;
 }
-.theTeam > * {
-    width: 100%;
-    margin: auto;
-}
 .team-lead {
     padding: 40px;
     background: #091540;
