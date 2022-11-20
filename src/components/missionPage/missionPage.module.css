@@ -12,3 +12,6 @@
   background-color: var(--white);
   /* color: black; */
 }
+.body > p {
+  color: black;
+}
