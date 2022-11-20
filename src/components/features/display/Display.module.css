@@ -1,20 +1,28 @@
 .container{
-  margin-top: 2.4rem;
-  position: relative;
-  margin-top: 30px;
+  background-image: url("../assets/mobile.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 600px;
 }
-.image{
- position: relative;
-/* top: 20%; */
- left: 10%;
+
+@media (min-width:540px) {
+  .container{
+    background-image: url("../assets/tablet.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+  }
+  
 }
-.overlay{
-  position: absolute;
-  top: -5%;
-  left: 50%;
-  transform: translateX(-60%);
-}
-@media (min-width: 1024px) {
-  .overlay{width: 100%;}
-  .image{width: 100%;}
+
+@media (min-width:1024px){
+  .container{
+    background-image: url("../assets/desktop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+  }
  }

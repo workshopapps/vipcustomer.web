@@ -19,6 +19,7 @@ import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Demo from "components/Demo/Demo";
+import Feature from "pages/Feature";
 
 function App() {
   const { theme } = Store();
@@ -32,6 +33,7 @@ function App() {
           <Route path="/example" element={<Example />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/documentation" element={<Docs />} />
+          <Route path="/feature" element={<Feature />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/about-us" element={<Aboutus />} />
           <Route path="/login" element={<Login />} />

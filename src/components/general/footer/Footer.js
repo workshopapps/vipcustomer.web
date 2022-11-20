@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="footbar">
         <div className="footbarone">
           <h4>Features</h4>
-          <Linkbtn href="#" child="Axe API Feature" classname="footlink" />
+          <Linkbtn href="/feature" child="Axe API Feature" classname="footlink" />
           <Linkbtn href="#" child="How it works" classname="footlink" />
         </div>
         <div className="footbarone">

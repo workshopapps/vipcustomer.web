@@ -1,5 +1,6 @@
 .container{
   text-align: center;
+  margin-top: 100px;
 }
 @media (min-width: 1024px) {
   .container{
@@ -8,6 +9,6 @@
 .gridcontainer{
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  padding: 20px 52px;
+  padding: 20 56 20px 52px;
 }
 }
