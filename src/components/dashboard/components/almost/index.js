@@ -21,7 +21,7 @@ export default function Almost(props) {
     if (step <= 2) {
       const timeOut = setTimeout(() => {
         onNext();
-      }, 15000);
+      }, 2000);
 
       return () => {
         clearTimeout(timeOut);

@@ -25,8 +25,7 @@ function Upload(props) {
     onNext();
   }
 
-  const handleClick = (e) => {
-    e.preventDefault();
+  const handleUpload = (e) => {
     hiddenFileInput.current.click(e);
   };
 
@@ -48,7 +47,7 @@ function Upload(props) {
         </div>
 
         <form className={styles.upload__form}>
-          <div className={styles.input__upload}>
+          <div className={styles.input__upload} onClick={handleUpload}>
             {isSelected ? (
               <div className={styles.uploaded_csv__info}>
                 <p>Filename: {selectedFile.name}</p>
@@ -61,9 +60,7 @@ function Upload(props) {
               </div>
             )}
 
-            <button onClick={handleClick} className={styles.browse_btn}>
-              Browse Files
-            </button>
+            <button className={styles.browse_btn}>Browse Files</button>
 
             <input
               type="file"
