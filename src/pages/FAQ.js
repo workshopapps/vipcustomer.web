@@ -4,7 +4,7 @@ import Add from "../components/faq/asset/add.svg";
 import Remove from "../components/faq/asset/remove.svg";
 import Questions from "../components/faq/Questions";
 import { useState } from "react";
-import { Footer, Navbar } from "components/general/";
+import { Navbar, Footer } from "components/general/";
 
 const data = [
   {
