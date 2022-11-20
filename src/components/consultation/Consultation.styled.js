@@ -3,10 +3,7 @@ import tick from "./assets/consultation-bg.png";
 
 export const ConsultPageWrap = styled.div`
   padding-top: 100px;
-  /* background-image: url(${tick}); */
-  background-repeat: no-repeat;
-  background-position-x: right;
-  background-position-y: bottom;
+
   background-size: 30%;
   .back-btn {
     background: #091540;
@@ -32,7 +29,10 @@ export const ConsultStyled = styled.section`
   width: 80%;
   margin: 4rem auto 0;
   padding-bottom: 10rem;
-
+  background-image: url(${tick});
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
   @media only screen and (min-width: 768px) {
     width: 70%;
     @media screen and (min-width: 992px) {
