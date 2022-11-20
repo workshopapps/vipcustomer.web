@@ -2,9 +2,9 @@ import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./upload.module.css";
-import dummmy_dp from "../assets/dummy_dp.png";
-import CloudUploadIcon from "../assets/CloudUploadIcon.svg";
-import UploadIcon from "../assets/UploadIcon.svg";
+import dummmy_dp from "../../assets/dummy_dp.png";
+import CloudUploadIcon from "./assets/CloudUploadIcon.svg";
+import UploadIcon from "./assets/UploadIcon.svg";
 
 function Upload(props) {
   const { onNext } = props;
@@ -25,8 +25,7 @@ function Upload(props) {
     onNext();
   }
 
-  const handleClick = (e) => {
-    e.preventDefault();
+  const handleUpload = (e) => {
     hiddenFileInput.current.click(e);
   };
 
@@ -48,7 +47,7 @@ function Upload(props) {
         </div>
 
         <form className={styles.upload__form}>
-          <div className={styles.input__upload}>
+          <div className={styles.input__upload} onClick={handleUpload}>
             {isSelected ? (
               <div className={styles.uploaded_csv__info}>
                 <p>Filename: {selectedFile.name}</p>
@@ -61,9 +60,7 @@ function Upload(props) {
               </div>
             )}
 
-            <button onClick={handleClick} className={styles.browse_btn}>
-              Browse Files
-            </button>
+            <button className={styles.browse_btn}>Browse Files</button>
 
             <input
               type="file"

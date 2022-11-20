@@ -14,7 +14,6 @@ import Docs from "./pages/Docs";
 
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
-import CsvUpload from "pages/CsvUpload";
 import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
