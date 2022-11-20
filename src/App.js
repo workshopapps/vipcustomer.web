@@ -22,6 +22,7 @@ import PasswordChange from "./pages/PasswordChange";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Demo from "components/Demo/Demo";
+import ErrorPage from "pages/ErrorPage";
 
 function App() {
   const { theme } = Store();
@@ -48,6 +49,7 @@ function App() {
           <Route path="/mission" element={<Mission />} />
           <Route path="/csv-upload" element={<CsvUpload />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
