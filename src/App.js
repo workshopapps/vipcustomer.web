@@ -35,7 +35,6 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/about-us" element={<Aboutus />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/demo" element={<Demo />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/csv-upload" element={<CsvUpload />} />
