@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import mobile from "../assets/mobile.png";
 import tablet from "../assets/tablet.png";
 import desktop from "../assets/desktop.png";
 import classes from "./Display.module.css";
-import PropTypes from "prop-types";
-const Display = ({ width }) => {
-  width.toString();
+const Display = () => {
+  const [width, setWidth] = useState("");
+
+  useEffect(() => {
+    function windowlistener() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", windowlistener);
+
+    return () => {
+      window.removeEventListener("resize", windowlistener);
+    };
+  });
+
   let image = mobile;
   if (width >= 640 && width < 1024) {
     image = tablet;
@@ -19,7 +30,5 @@ const Display = ({ width }) => {
     </div>
   );
 };
-Display.propTypes = {
-  width: PropTypes.string
-};
+
 export default Display;
