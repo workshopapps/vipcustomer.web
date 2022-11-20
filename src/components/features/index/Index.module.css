@@ -1,13 +1,14 @@
-.container{
+.container {
   text-align: center;
+  margin-top: 70px;
 }
 @media (min-width: 1024px) {
-  .container{
+  .container {
     text-align: left;
   }
-.gridcontainer{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  padding: 20px 52px;
-}
+  .gridcontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 100px 52px 20px 80px;
+  }
 }
