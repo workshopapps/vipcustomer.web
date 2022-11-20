@@ -35,12 +35,12 @@ const ProfileMobileNav = ({ mobileActive, closeNav }) => {
           <img src={House} width="33" className="header-icons" alt="house" />
         </span>
         <span>
-          <img src={Bell} width="23" className="header-icons" alt="bell" />
+          <img src={Bell} width="33" className="header-icons" alt="bell" />
         </span>
         <span>
           <img
             src={Calender}
-            width="23"
+            width="33"
             className="header-icons"
             alt="calender"
           />
