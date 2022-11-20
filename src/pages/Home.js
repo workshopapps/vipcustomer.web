@@ -3,10 +3,14 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Store } from "../store/contexts/AppContext";
 import { sayHello_a } from "../store/actions/appActions";
-import { Navbar } from "../components/general/navbar";
-
+import Logout from "./Logout";
+import { Button } from "react-bootstrap";
+// import Navbar from "../../src/components/general/navbar";
 const Home = () => {
   const { greet, dispatch, changeTheme, theme } = Store();
+
+  //the useState to show modal for logout screen
+  const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
     sayHello_a(dispatch);
@@ -14,7 +18,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <h1>Home Page</h1>
       <h1>{greet}</h1>
 
@@ -27,6 +31,16 @@ const Home = () => {
       <Link className="btn" to="/example">
         Example page
       </Link>
+
+      {/* logout button begins */}
+      <>
+        <Button variant="primary" onClick={() => setModalShow(true)}>
+          Logout
+        </Button>
+
+        <Logout show={modalShow} onHide={() => setModalShow(false)} />
+      </>
+      {/* logout button ends  */}
 
       <h4 style={{ marginTop: "30px" }}>Theme is {theme ? "light" : "dark"}</h4>
 
@@ -44,6 +58,14 @@ const Home = () => {
         </Link>
         <Link className="btn" to="/docs/somethingelse">
           Something Else
+        </Link>
+        <Link className="btn" to="/login">
+          Login
+        </Link>
+
+        {/* NOTE this is temporary */}
+        <Link className="btn" to="/faq">
+          FAQ
         </Link>
       </div>
     </div>

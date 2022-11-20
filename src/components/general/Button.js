@@ -1,10 +1,13 @@
-import styled from "styled-components";
+import React from "react";
+import { ButtonWrapper } from "./button.styled";
+import PropTypes from "prop-types";
 
 /*
 This is a reusable Button Component
 
 Button component takes in props
 
+<<<<<<< HEAD
 
 @PROPS TYPE - STRINGS
 
@@ -16,19 +19,23 @@ Button component takes in props
  border - border -(width,weight,color),
  height - height,
  width  - width
+=======
+ style - overides default styling - (object),
+ onClick - on click function,
+ text - strings/children
+>>>>>>> d22d36248e98332ebc366b4dba9639bb1e03dcf0
 */
-export const Button = styled.button`
-  display: flex;
-  align-iems: center;
-  justify-content: center;
-  gap: 8px;
-  font-weight: ${({ fw }) => fw || "inherit"};
-  font-size: ${({ fz }) => fz || "inherit"};
-  color: ${({ color }) => color || "inherit"};
-  background: ${({ bg }) => bg || "transparent"};
-  padding: ${({ padding }) => padding || ".5rem"};
-  border: ${({ border }) => border};
-  height: ${({ height }) => height};
-  width: ${({ width }) => width};
-  border-radius: ${({ radius }) => radius || "8px"};
-`;
+const Button = ({ style, text, onClick }) => {
+  return (
+    <ButtonWrapper style={style} onClick={onClick}>
+      {text}
+    </ButtonWrapper>
+  );
+};
+
+export default Button;
+Button.propTypes = {
+  style: PropTypes.string,
+  text: PropTypes.string,
+  onClick: PropTypes.func
+};
