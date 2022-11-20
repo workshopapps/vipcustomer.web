@@ -1,7 +1,11 @@
 import React from "react";
-
+import VipResult from "./vip-result";
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <VipResult />
+    </div>
+  );
 };
 
 export default Dashboard;

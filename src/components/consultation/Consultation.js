@@ -9,6 +9,7 @@ import {
 } from "./Consultation.styled";
 import tick from "./assets/small.png";
 import { Link } from "react-router-dom";
+import { Footer } from "components/general";
 
 const Consultation = () => {
   const [formDetails, setFormDetails] = useState({
@@ -155,6 +156,7 @@ const Consultation = () => {
           </BtnContainer>
         </FormStyled>
       </ConsultStyled>
+      <Footer />
     </ConsultPageWrap>
   );
 };

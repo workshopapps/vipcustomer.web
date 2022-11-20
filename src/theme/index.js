@@ -10,8 +10,8 @@ const Themes = {
     //.. others
   },
   dark: {
-    color: "#ffffff",
-    bg: "#000000",
+    color: "#000000",
+    bg: "#ffffff",
     example: "pink"
 
     // others
@@ -23,19 +23,17 @@ const GLobalStyles = createGlobalStyle`
 /* example */
 body {
     background-color: ${({ theme }) => theme.bg};
+    max-width:1523px;
     margin:0 auto;
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
-    color: ${({ theme }) => theme.color};
     transition:color 0.2s linear, background-color 0.2s linear;
-
   }
 
 .btn{
   min-width:7rem;
   padding:7px 10px;
   border: 2px solid ${({ theme }) => theme.color};
-  color:${({ theme }) => theme.color};
   transition:all 0.3s linear;
   text-transform:uppercase;
   font-size:1rem;

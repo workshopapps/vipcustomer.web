@@ -2,11 +2,11 @@ import styled from "styled-components";
 import tick from "./assets/consultation-bg.png";
 
 export const ConsultPageWrap = styled.div`
+  padding-top: 100px;
   /* background-image: url(${tick}); */
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
-  padding-bottom: 10rem;
   background-size: 30%;
   .back-btn {
     background: #091540;
@@ -31,6 +31,7 @@ export const FormStyled = styled.form`
 export const ConsultStyled = styled.section`
   width: 80%;
   margin: 4rem auto 0;
+  padding-bottom: 10rem;
 
   @media only screen and (min-width: 768px) {
     width: 70%;
@@ -75,7 +76,9 @@ export const BtnContainer = styled.div`
       color: #fff;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
+      padding-block: 0.2rem;
     }
 
     &.reset {
