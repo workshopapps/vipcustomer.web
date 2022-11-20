@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
+import Demo from "components/Demo/Demo";
 import Aboutus from "pages/Aboutus";
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
@@ -35,6 +36,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/about-us" element={<Aboutus />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/demo" element={<Demo />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/csv-upload" element={<CsvUpload />} />
