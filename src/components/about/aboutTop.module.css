@@ -6,8 +6,11 @@
 
 .container {
   color: white;
-  text-align: center;
-  padding: 20px 0px;
+  text-align: center; 
+  padding-top: 100px;
+  padding-bottom: 60px;
+  margin: auto;
+  width: 80%;
 }
 
 .heading {
@@ -26,7 +29,10 @@
     display: block;
     width: 80%;
     margin: 0 auto;
-    padding: 35px 0px;
+    padding-top: 100px;
+    padding-bottom: 60px;
+    margin: auto;
+    width: 80%;
   }
 
   .heading {
