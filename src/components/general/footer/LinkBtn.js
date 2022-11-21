@@ -13,7 +13,7 @@ const Linkbtn = ({ href, child, className }) => {
   );
 };
 
-Linkbtn.PropTypes = {
+Linkbtn.propTypes = {
   href: PropTypes.any,
   children: PropTypes.string,
   className: PropTypes.any
