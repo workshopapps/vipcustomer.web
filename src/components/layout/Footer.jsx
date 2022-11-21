@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className={`footer `}>
       <div>{/* <img src={LOGO} alt="" /> */}</div>
       <div>
         <h3 className="features">Features</h3>
@@ -21,6 +21,7 @@ const Footer = () => {
       </div>
       <div>
         <h3 className="features">Company</h3>
+
         <h4>About Us</h4>
         <h4>Meet our Team</h4>
         <h4>Vision & Mission</h4>

@@ -1,5 +1,5 @@
 /* import font family here */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 *,
 *::before,
@@ -7,6 +7,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -15,9 +16,15 @@
   --color-lightBlue: #323c60;
   --color-darkBlue: #091540;
   --color-neutral: #f9f9ff;
+  --Primary-color500: #323c60;
+  --Default-121212: #121212;
+  --Primary-colour200: #adb1bf;
   --mobile: 600px;
   --tablet: 900px;
 }
+
+/* Don't set font size as percentage */
+/* font-size: 62.5% */
 
 html {
   font-size: 62.5%;
@@ -36,17 +43,6 @@ li {
   text-decoration: none;
 }
 
-/* sets default margin of header elements and paragraph tag to zero */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
 * {
   padding: 0;
   margin: 0;

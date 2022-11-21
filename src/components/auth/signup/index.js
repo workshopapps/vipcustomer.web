@@ -21,7 +21,7 @@ import {
   NavBarWrapper
 } from "./signup.styled";
 import { useNavigate } from "react-router-dom";
-import { Navbar } from "../../general/navbar/index";
+import { Navbar } from "../../general";
 import { AuthStore } from "../../../store/contexts/AuthContext";
 import { login_a } from "../../../store/actions/authActions";
 
