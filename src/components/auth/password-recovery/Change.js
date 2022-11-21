@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Shell from "./Shell";
 import Input from "../Input";
 import { useNavigate } from "react-router-dom";
