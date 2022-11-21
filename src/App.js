@@ -2,7 +2,6 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import { Themes, GLobalStyles } from "./theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/navBar/NavBar";
 
 // Stores
 import { Store } from "./store/contexts/AppContext";
@@ -24,7 +23,6 @@ function App() {
     <ThemeProvider theme={theme ? Themes.light : Themes.dark}>
       <GLobalStyles />
       <BrowserRouter>
-        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/example" element={<Example />} />
