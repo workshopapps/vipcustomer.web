@@ -3,7 +3,6 @@
   width: 90%;
   max-width: 1157px;
   margin: auto;
-  /* border: 1px solid black; */
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -11,7 +10,6 @@
 }
 
 .progress_step {
-  /* border: 1px solid black; */
   min-height: 1rem;
   display: flex;
   align-items: center;
@@ -57,25 +55,25 @@
   left: -1px;
   margin: 0 auto;
   width: 125px;
-  height: 5px;
+  height: 4px;
   border-top: 1px solid var(--color-darkBlue);
   border-bottom: 1px solid var(--color-darkBlue);
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .line {
     margin: 0 auto;
     width: 244px;
-    height: 6px;
+    height: 5px;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 850px) {
   .line {
     margin: 0 auto;
     width: 450px;
-    height: 1rem;
+    height: 0.9rem;
   }
 }
 
@@ -84,16 +82,22 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 5px;
+  height: 4px;
   width: 90%;
-  border: 1px solid var(--color-darkBlue);
-  /* background-color: "#CED0D9"; */
   z-index: 5;
+  border: 1px solid var(--color-darkBlue);
+  transition: 0.5s ease-in-out;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .background_line {
-    height: 1rem;
+    height: 5px;
+  }
+}
+
+@media (min-width: 850px) {
+  .background_line {
+    height: 0.9rem;
   }
 }
 
