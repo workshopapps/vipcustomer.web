@@ -59,6 +59,17 @@ const FAQ = () => {
     setQuestion_list(newList);
   }
 
+  const [id_, setID] = useState(null);
+
+  function opened_func(id) {
+    if (id === id_) {
+      console.log("ugvf");
+      setID(null);
+    } else {
+      setID(id);
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -71,11 +82,13 @@ const FAQ = () => {
           {question_list.map((item) => (
             <Questions
               key={item.id}
-              styles={styles}
+              id={item.id}
+              styles={id_ === item.id ? styles.opened : styles.closed}
               text={item.text}
-              icon={icon}
+              icon={id_ === item.id ? icon.opened : icon.closed}
               p={item.p}
               alt={"icon"}
+              onChange_={opened_func}
             />
           ))}
         </div>

@@ -57,6 +57,9 @@
   padding: 2.2rem 0.4rem;
   gap: 1.3rem;
   border-bottom: 0.5px solid #09154033;
+  transition: 13ms;
+  position: relative;
+  overflow: hidden;
 }
 
 .faq .main > div div {
@@ -81,6 +84,7 @@
 
 .faq .main > div .ques_p {
   color: var(--Primary-color500);
+  color: red;
   font-size: 1.4rem;
   width: 78%;
   align-self: start;
