@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { GLobalStyles, Themes } from "./theme";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 
 // Stores
 import { Store } from "./store/contexts/AppContext";
@@ -31,6 +31,14 @@ import Consultation from "pages/Consultation";
 
 function App() {
   const { theme } = Store();
+  const { pathname } = useLocation();
+
+  // scrolls to top of page on path change
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
 
   return (
     <ThemeProvider theme={theme ? Themes.light : Themes.dark}>
