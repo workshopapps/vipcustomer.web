@@ -51,7 +51,7 @@
   margin-top: 3.5rem;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .container {
     display: flex;
     gap: 10%;

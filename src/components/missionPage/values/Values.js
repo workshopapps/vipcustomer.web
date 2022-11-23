@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./values.module.css";
 import listIcon from "../assets/listIcon.svg";
-import ValuesImg from "../assets/values.svg";
+import ValuesImg from "../assets/values.webp";
 
 const Values = () => {
   return (

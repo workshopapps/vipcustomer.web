@@ -14,7 +14,7 @@
       rgba(15, 15, 15, 0.6),
       rgba(15, 15, 15, 0.6)
     ),
-    url("./assets/bg-img.png");
+    url("./assets/bg-img.webp");
   background-position: center;
   background-size: cover;
 }
