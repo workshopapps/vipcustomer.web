@@ -23,11 +23,7 @@ const Footer = () => {
         <div className="footbarone">
           <h4>Help & Support</h4>
           <Linkbtn href="/faq" child="FAQ" classname="footlink" />
-          <Linkbtn
-            href="/help-ceter"
-            child="Help Center"
-            classname="footlink"
-          />
+          <Linkbtn href="/help" child="Help Center" classname="footlink" />
         </div>
         <div className="footbarone">
           <h4>Terms & Condition</h4>

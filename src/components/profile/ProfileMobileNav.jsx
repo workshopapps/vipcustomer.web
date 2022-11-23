@@ -52,7 +52,7 @@ const ProfileMobileNav = ({ mobileActive, closeNav }) => {
 
       <ul className="profile-mobile-nav-list">
         <li>
-          <NavLink to="/edit-profile">
+          <NavLink to="/profile/edit">
             <span>
               <img className="link-image" src={Pen} alt="" />
             </span>
@@ -60,7 +60,7 @@ const ProfileMobileNav = ({ mobileActive, closeNav }) => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/edit-profile">
+          <NavLink to="/">
             <span>
               <img className="link-image" src={Settings} alt="" />
             </span>
