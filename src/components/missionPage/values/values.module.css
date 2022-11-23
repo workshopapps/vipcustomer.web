@@ -89,7 +89,7 @@
   border-radius: 0.69rem;
   color: var(--white);
 }
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .container {
     display: flex;
     gap: 10%;

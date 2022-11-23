@@ -113,6 +113,10 @@
   align-items: center;
   margin-bottom: 30px;
 }
+.profile-main-content-box {
+  width: 70%;
+  margin: 0 auto;
+}
 .profile-form {
   margin-bottom: 50px;
 }
@@ -167,6 +171,13 @@
   line-height: 38px;
   color: #091540;
   margin-right: 20px;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.user-box .user-box-head span:hover {
+  color: #000;
+  font-weight: 700;
 }
 
 .user-box .user-box-body {
@@ -218,6 +229,10 @@
 
 /* media query */
 @media (max-width: 961px) {
+  .profile-main-content-box {
+    width: 90%;
+    margin: 0 auto;
+  }
   .hamburger {
     display: initial;
   }

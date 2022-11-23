@@ -12,17 +12,18 @@ const Footer = () => {
       <div className="footbar">
         <div className="footbarone">
           <h4>Features</h4>
-          <Linkbtn href="#" child="Axe API Feature" classname="footlink" />
+          <Linkbtn
+            href="/feature"
+            child="Axe API Feature"
+            classname="footlink"
+          />
+          <Linkbtn href="#" child="How it works" classname="footlink" />
           <Linkbtn href="/demo" child="How it works" classname="footlink" />
         </div>
         <div className="footbarone">
           <h4>Help & Support</h4>
           <Linkbtn href="/faq" child="FAQ" classname="footlink" />
-          <Linkbtn
-            href="/help-ceter"
-            child="Help Center"
-            classname="footlink"
-          />
+          <Linkbtn href="/help" child="Help Center" classname="footlink" />
         </div>
         <div className="footbarone">
           <h4>Terms & Condition</h4>
