@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Items,
   LogoWrapper,
@@ -14,9 +14,28 @@ import useScreenSize from "hooks/useScreenSize";
 
 const Navbar = () => {
   const [menuopen, setMenuOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
   const { screenWidth } = useScreenSize();
   const mobile = screenWidth <= 690;
-  const tablet = screenWidth <= 1024;
+  const tablet = screenWidth <= 1124;
+
+  const scrollHeader = () => {
+    if (window.scrollY >= 40) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHeader);
+  }, []);
+
+  /*This code is not really necessary but for production reasons*/
+  useEffect(() => {
+    if (!tablet) {
+      window.addEventListener("resize", setMenuOpen(false));
+    }
+  }, [tablet]);
 
   /*!IMPORTANT-
 This may not be the best way to effect this...in case it slows down page,
@@ -48,7 +67,11 @@ implementation should be changed
 
     this should be implemented when the routes are confirmed*/
 
-    <NavWrapper tablet={tablet} mobile={mobile}>
+    <NavWrapper
+      tablet={tablet}
+      mobile={mobile}
+      scroll={scroll}
+      menuopen={menuopen}>
       <NavItemsWrapper>
         <Items className="nav--logo">
           <Link to="/">
@@ -95,8 +118,6 @@ implementation should be changed
           <Link to="/">Products</Link>
           <Link to="/">Resourses</Link>
           <Link to={"/team"}>The Team</Link>
-          <Link to="/login">Log in</Link>
-          <Link to="signup">Get Started</Link>
           <Link to="/about-us">About Us</Link>
           <Link to="/login">Log in</Link>
           <Link to="/signup">Get Started</Link>
