@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import quest from "./asset/faq.module.css";
 
 const Questions = ({ styles, text, icon, alt, p, onChange_, id }) => {
   function clicked() {
@@ -7,12 +8,14 @@ const Questions = ({ styles, text, icon, alt, p, onChange_, id }) => {
   }
 
   return (
-    <div className={styles.closed}>
+    <div className={styles}>
       <div>
         <h3 onClick={clicked}>{text}</h3>
-        <img onClick={clicked} src={`${icon}`} alt={alt} />
+        <figure onClick={clicked}>
+          <img src={`${icon}`} alt={alt} />
+        </figure>
       </div>
-      <p className={`ques_p ${styles} `}>{p}</p>
+      <p className={`${quest.ques_p} ${styles} `}>{p}</p>
     </div>
   );
 };

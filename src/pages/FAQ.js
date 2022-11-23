@@ -63,7 +63,6 @@ const FAQ = () => {
 
   function opened_func(id) {
     if (id === id_) {
-      console.log("ugvf");
       setID(null);
     } else {
       setID(id);
@@ -83,7 +82,8 @@ const FAQ = () => {
             <Questions
               key={item.id}
               id={item.id}
-              styles={id_ === item.id ? styles.opened : styles.closed}
+              // styles={id_ === item.id ? styles.opened : styles.closed}
+              styles={id_ === item.id ? styles.opened : null}
               text={item.text}
               icon={id_ === item.id ? icon.opened : icon.closed}
               p={item.p}

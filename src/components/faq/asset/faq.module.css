@@ -75,27 +75,34 @@
   font-weight: 500;
   color: var(--Default-121212);
   cursor: pointer;
+  flex: 0.95;
 }
 
-.faq .main > div div img {
-  width: 1.3rem;
+.faq .main > div div figure {
+  flex: 0.05;
+  justify-content: end;
   cursor: pointer;
+  width: 100%;
 }
 
-.faq .main > div .ques_p {
+.faq .main > div div figure img {
+  width: 1.3rem;
+}
+
+.ques_p {
   color: var(--Primary-color500);
-  color: red;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   width: 78%;
+  visibility: collapse;
   align-self: start;
+  transition: 0.35s linear;
+  height: 0;
+  overflow: hidden;
 }
 
 .opened {
-  display: block;
-}
-
-.closed {
-  display: none;
+  visibility: visible;
+  height: 160px;
 }
 
 @media (max-width: 834px) {
@@ -121,7 +128,7 @@
     font-size: 1.5rem;
   }
 
-  .faq .main > div .ques_p {
+  .ques_p {
     font-size: 1rem;
   }
 }
@@ -148,7 +155,7 @@
     width: 1.4rem;
   }
 
-  .faq .main > div .ques_p {
+  .ques_p {
     font-size: 1.1rem;
     width: 100%;
   }
