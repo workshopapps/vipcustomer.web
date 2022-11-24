@@ -9,33 +9,23 @@ import { Navbar, Footer } from "components/general/";
 const data = [
   {
     id: 1,
-    text: "What is Axe VIP Customer API?",
-    p: "Making sure your account is safe is our biggest priority. We're committed to protecting your account with the highest standards of security available. We use state-of-the-art data encryption and two-factor authentication (2FA) protection when handling your financial information."
+    text: "What is Axe VIP API?",
+    p: "The Axe VIP API analyzes visiting user profiles on a Website/Application to identify & categorize VIP Customers\nThe API searches various social media platforms and web databases to see if the user meets your VIP Guest criteria."
   },
   {
     id: 2,
-    text: "How secure are your payment",
-    p: "Making sure your account is safe is our biggest priority. We're committed to protecting your account with the highest standards of security available. We use state-of-the-art data encryption and two-factor authentication (2FA) protection when handling your financial information."
+    text: "What is the purpose of VIP API?",
+    p: "The tool accurately verifies and records VIP visits, generates statistical reports, and keeps historical data, all of which can help you integrate a VIP loyalty program/rewards system or partnerships for publicity."
   },
   {
     id: 3,
-    text: "How to integrate Axe VIP customer API?",
-    p: "Making sure your account is safe is our biggest priority. We're committed to protecting your account with the highest standards of security available. We use state-of-the-art data encryption and two-factor authentication (2FA) protection when handling your financial information."
+    text: "Who is it for?",
+    p: "Businesses that want to categorize their users to optimize sales and marketing initiatives and enhance the customer experience."
   },
   {
     id: 4,
-    text: "Axe VIP customer API pricing",
-    p: "Making sure your account is safe is our biggest priority. We're committed to protecting your account with the highest standards of security available. We use state-of-the-art data encryption and two-factor authentication (2FA) protection when handling your financial information."
-  },
-  {
-    id: 5,
-    text: "What is VIP Customer API?",
-    p: "Making sure your account is safe is our biggest priority. We're committed to protecting your account with the highest standards of security available. We use state-of-the-art data encryption and two-factor authentication (2FA) protection when handling your financial information."
-  },
-  {
-    id: 6,
-    text: "Security and Privacy",
-    p: "Making sure your account is safe is our biggest priority. We're committed to protecting your account with the highest standards of security available. We use state-of-the-art data encryption and two-factor authentication (2FA) protection when handling your financial information."
+    text: "How much does it cost?",
+    p: "Axe API is currently in Beta mode; as a result, only 10% of the total cost will be charged."
   }
 ];
 
@@ -87,6 +77,7 @@ const FAQ = () => {
               text={item.text}
               icon={id_ === item.id ? icon.opened : icon.closed}
               p={item.p}
+              // p_h={p_h}
               alt={"icon"}
               onChange_={opened_func}
             />

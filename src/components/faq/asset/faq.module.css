@@ -57,9 +57,12 @@
   padding: 2.2rem 0.4rem;
   gap: 1.3rem;
   border-bottom: 0.5px solid #09154033;
-  transition: 13ms;
+  /* transition: 13ms; */
   position: relative;
   overflow: hidden;
+  transition: all 0.7s ease;
+  /* transition: all 0.2s ease; */
+  /* transition: 0.35s linear; */
 }
 
 .faq .main > div div {
@@ -95,15 +98,30 @@
   width: 78%;
   visibility: collapse;
   align-self: start;
-  transition: 0.35s linear;
-  height: 0;
+  transition: all 0.3s ease;
+  max-height: 0;
   overflow: hidden;
 }
 
 .opened {
   visibility: visible;
-  height: 160px;
+  /* transition: 0.35s linear; */
+  max-height: 1000vh;
 }
+
+/* .ques_p {
+  color: var(--Primary-color500);
+  font-size: 1.6rem;
+  width: 78%;
+  align-self: start;
+  transition: 0.35s linear;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.opened {
+  max-height: 1000px;
+} */
 
 @media (max-width: 834px) {
   .faq {
