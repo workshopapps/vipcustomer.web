@@ -15,12 +15,12 @@ const Header = () => {
     <HeaderWrapper>
       <HeaderContentWrapper>
         <SubHeading>
-          Let’s Identify your <Span>VIP’s</Span> And Convert Them To{" "}
-          <Span>Sales</Span>
+          Let’s Identify your <Span>VIP’s</Span> and convert them to High paying{" "}
+          <Span>Customers</Span>
         </SubHeading>
         <Heading>
-          Axe API identifies very important personas that visits your website
-          and converts them to high leads.
+          Axe API identifies very important personas that visit your website and
+          converts them to high paying leads.
         </Heading>
         <HeaderButton>
           <Link to="/demo">Try Our Demo</Link>
