@@ -65,6 +65,7 @@
       padding-left: 3rem;
     }
 
-
-
+    .terms-container .dots {
+      word-break: break-word;
+    }
  

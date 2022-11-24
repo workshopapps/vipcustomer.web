@@ -215,8 +215,9 @@ const Terms = () => {
                 that is allegedly infringed.
                 <br />
                 Copyright infringement claims and notices should be sent to Axe
-                API by mail to:
+                API by mail to:<span className='dots'>
                 ..........................................................................................................................................................................
+                </span>
               </p>
               <h3>Disclaimer of Warranty and Liability</h3>
               <p>
