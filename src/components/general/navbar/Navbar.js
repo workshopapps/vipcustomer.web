@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import useScreenSize from "../../../hooks/useScreenSize";
 import {
-  NavItemsWrapper,
-  NavWrapper,
-  LogoWrapper,
   Items,
-  MobileNavWrapper
+  LogoWrapper,
+  MobileNavWrapper,
+  NavItemsWrapper,
+  NavWrapper
 } from "./navbar.styled";
 import Button from "../Button";
 import LOGO from "../assests/icons/logo.svg";
 import MenuBtn from "./MenuBtn";
 import { Link } from "react-router-dom";
+import useScreenSize from "hooks/useScreenSize";
 
 const Navbar = () => {
   const [menuopen, setMenuOpen] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
   const tablet = screenWidth <= 1024;
 
   /*!IMPORTANT-
-This may not be the best way to effect this...in case it slows down page, 
+This may not be the best way to effect this...in case it slows down page,
 implementation should be changed
 */
 
@@ -45,13 +45,13 @@ implementation should be changed
 
   return (
     /* Link currently does not have a route
-    
+
     this should be implemented when the routes are confirmed*/
 
     <NavWrapper tablet={tablet} mobile={mobile}>
       <NavItemsWrapper>
         <Items className="nav--logo">
-          <Link>
+          <Link to="/">
             <LogoWrapper mobile={mobile} tablet={tablet}>
               <img src={LOGO} alt="axeapi logo" />
             </LogoWrapper>
@@ -65,13 +65,18 @@ implementation should be changed
           </Items>
         )}
         <Items className="nav--link--items" tablet={tablet}>
-          <Link>Products</Link>
+          <Link
+            to="/
+          ">
+            Products
+          </Link>
           <Link>Resourses</Link>
-          <Link>About Us</Link>
+          <Link to={"/team"}>The Team</Link>
+          <Link to="/about-us">About Us</Link>
         </Items>
         <Items className="nav--link--items" tablet={tablet}>
-          <Link>Log in</Link>
-          <Link>
+          <Link to="/login">Log in</Link>
+          <Link to="/signup">
             {/* this a reusable button component */}
             <Button
               style={{ padding: "12px 24px", fontWeight: "700" }}
@@ -85,12 +90,16 @@ implementation should be changed
         <MobileNavWrapper
           tablet={tablet}
           mobile={mobile}
+          style={{ color: "#fff" }}
           className={`${menuopen && "open"} nav--link--items`}>
-          <Link>Products</Link>
-          <Link>Resourses</Link>
-          <Link>About Us</Link>
-          <Link>Log in</Link>
-          <Link>Get Started</Link>
+          <Link to="/">Products</Link>
+          <Link to="/">Resourses</Link>
+          <Link to={"/team"}>The Team</Link>
+          <Link to="/login">Log in</Link>
+          <Link to="signup">Get Started</Link>
+          <Link to="/about-us">About Us</Link>
+          <Link to="/login">Log in</Link>
+          <Link to="/signup">Get Started</Link>
         </MobileNavWrapper>
       )}
     </NavWrapper>

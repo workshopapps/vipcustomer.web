@@ -10,8 +10,8 @@ const Themes = {
     //.. others
   },
   dark: {
-    color: "#ffffff",
-    bg: "#000000",
+    color: "#000000",
+    bg: "#ffffff",
     example: "pink"
 
     // others
@@ -22,7 +22,8 @@ const GLobalStyles = createGlobalStyle`
 /* style general classes here that needs theeming */
 /* example */
 body {
-    max-width:1605px;
+    scroll-behavior: smooth;
+    background-color: ${({ theme }) => theme.bg};
     margin:0 auto;
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
@@ -33,7 +34,6 @@ body {
   min-width:7rem;
   padding:7px 10px;
   border: 2px solid ${({ theme }) => theme.color};
-  color:${({ theme }) => theme.color};
   transition:all 0.3s linear;
   text-transform:uppercase;
   font-size:1rem;

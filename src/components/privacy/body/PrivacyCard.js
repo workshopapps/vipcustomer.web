@@ -13,7 +13,7 @@ const PrivacyCard = ({ plist }) => {
   );
 };
 
-PrivacyCard.PropTypes = {
+PrivacyCard.propTypes = {
   title: PropTypes.string,
   body: PropTypes.string
 };

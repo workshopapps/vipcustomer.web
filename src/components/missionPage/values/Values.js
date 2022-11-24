@@ -1,17 +1,19 @@
 import React from "react";
 import styles from "./values.module.css";
 import listIcon from "../assets/listIcon.svg";
-import ValuesImg from "../assets/values.svg";
+import ValuesImg from "../assets/values.webp";
 
 const Values = () => {
   return (
     <div className={styles.values}>
-      <div className={styles.coreValues}>
+      <div className={styles.container}>
         <img className={styles.img} src={ValuesImg} />
         <div>
           {" "}
           <h2 className={styles.h2}>Our Core Values</h2>
-          <p className={styles.p}>We Strive daily to provide our users with:</p>
+          <p className={styles.p}>
+            We Strive daily to provide our users with :
+          </p>
           <ul className={styles.ul}>
             <li>
               <img src={listIcon} />
