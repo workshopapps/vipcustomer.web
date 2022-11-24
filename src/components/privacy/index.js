@@ -16,8 +16,8 @@ const Privacy = () => (
     <Navbar />
     <PrivacyWrapper>
       <section>
-        <h2>PRIVACY POLICY</h2>
-        <p>
+        <h1>PRIVACY POLICY</h1>
+        <p className="txt">
           TeamAxe Privacy Policy is designed to help you understand how we
           collect and use the personal information you decide to share, and help
           you make informed decisions when using{" "}
@@ -35,7 +35,7 @@ const Privacy = () => (
         <div>{list}</div>
       </section>
       <section>
-        <h2>Terms of Use, Notices and Revisions</h2>
+        <h1>Terms of Use, Notices and Revisions</h1>
         <div>{listTwo}</div>
       </section>
     </PrivacyWrapper>

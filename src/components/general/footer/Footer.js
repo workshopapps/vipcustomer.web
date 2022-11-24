@@ -1,12 +1,12 @@
 import React from "react";
 import FooterWrapper from "./footer.styled";
-import axeLogo from "./images/logos.png";
+import axeLogo from "../assests/icons/logo.svg";
 import Linkbtn from "./LinkBtn";
 
 const Footer = () => {
   return (
     <FooterWrapper>
-      <div>
+      <div className="footimg">
         <img src={axeLogo} alt="Axe API" />
       </div>
       <div className="footbar">
