@@ -4,11 +4,7 @@
 }
 @media (min-width: 1024px) {
   .container {
-    text-align: left;
+    text-align: center;
   }
-  .gridcontainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 100px 52px 20px 80px;
-  }
+  
 }
