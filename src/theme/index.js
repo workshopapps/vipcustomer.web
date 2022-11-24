@@ -22,6 +22,7 @@ const GLobalStyles = createGlobalStyle`
 /* style general classes here that needs theeming */
 /* example */
 body {
+    scroll-behavior: smooth;
     background-color: ${({ theme }) => theme.bg};
     margin:0 auto;
     font-size: 1.6rem;
