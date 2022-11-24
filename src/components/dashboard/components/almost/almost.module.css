@@ -24,22 +24,28 @@
 
 .almost__header > div > h2 {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   color: var(--color-dark);
   margin-bottom: 5px;
 }
 
 @media (min-width: 900px) {
   .almost__header > div > h2 {
-    font-size: 2rem;
+    font-size: 3.5rem;
   }
 }
 
 .upload__process {
   width: 100%;
   margin: 0 auto;
-  padding: 5.25rem 0;
+  padding: 10rem 0 5.25rem;
   box-sizing: border-box;
+}
+
+@media (min-width: 900px) {
+  .upload__process {
+    padding: 10rem 0 5.25rem;
+  }
 }
 
 .upload__info {
@@ -127,7 +133,7 @@
 .success > p {
   width: 80%;
   margin: 4px auto 0;
-  font-weight: 300;
-  font-size: 0.875rem;
+  font-weight: 400;
+  font-size: 1rem;
   color: var(--color-dark);
 }

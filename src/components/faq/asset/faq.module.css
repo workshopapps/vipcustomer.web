@@ -57,6 +57,12 @@
   padding: 2.2rem 0.4rem;
   gap: 1.3rem;
   border-bottom: 0.5px solid #09154033;
+  /* transition: 13ms; */
+  position: relative;
+  overflow: hidden;
+  /* transition: all 0.7s ease; */
+  /* transition: all 0.2s ease; */
+  /* transition: 0.35s linear; */
 }
 
 .faq .main > div div {
@@ -72,26 +78,38 @@
   font-weight: 500;
   color: var(--Default-121212);
   cursor: pointer;
+  flex: 0.95;
 }
 
-.faq .main > div div img {
-  width: 1.3rem;
+.faq .main > div div figure {
+  flex: 0.05;
+  justify-content: end;
   cursor: pointer;
+  width: 100%;
 }
 
-.faq .main > div .ques_p {
+.faq .main > div div figure img {
+  width: 1.3rem;
+}
+
+.ques_p {
   color: var(--Primary-color500);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   width: 78%;
   align-self: start;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  visibility: collapse;
 }
 
-.opened {
-  display: block;
+.ques_p.closed {
+  visibility: collapse;
+  height: 0;
 }
 
-.closed {
-  display: none;
+.ques_p.opened {
+  visibility: visible;
+  height: 50px;
 }
 
 @media (max-width: 834px) {
@@ -117,7 +135,7 @@
     font-size: 1.5rem;
   }
 
-  .faq .main > div .ques_p {
+  .ques_p {
     font-size: 1rem;
   }
 }
@@ -144,7 +162,7 @@
     width: 1.4rem;
   }
 
-  .faq .main > div .ques_p {
+  .ques_p {
     font-size: 1.1rem;
     width: 100%;
   }

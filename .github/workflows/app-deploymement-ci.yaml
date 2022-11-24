@@ -2,12 +2,10 @@ name: VIP Customer Deployment Workflow
 on:
   push:
     branches:
-      - main
-      - master
+      - branch
   pull_request:
     branches:
-      - main
-      - master
+      - branch
 jobs:
   build-push-images:
     runs-on: ubuntu-20.04
