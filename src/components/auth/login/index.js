@@ -1,26 +1,40 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import styles from "./index.module.css";
 import { login_a } from "store/actions/authActions";
 import { AuthStore } from "store/contexts/AuthContext";
+import axios from "api/axios";
 
 const Login = () => {
   const { dispatch } = AuthStore();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isVisible, setIsVisible] = useState(false);
+  const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(
+    "an unexpected error occured, please try again another time"
+  );
+  const location = useLocation();
+  const nextPath = location.state?.from?.pathname || "/dashboard";
   const nav = useNavigate();
 
-  const handleClick = (e) => {
+  async function loginHandler(e) {
     e.preventDefault();
-    if (email && password.length > 8) {
-      login_a(dispatch);
-      nav("/dashboard");
-    } else if (password.length < 8) {
-      setIsVisible(true);
+    try {
+      const { data } = await axios.post("/api/user/login", {
+        email: email,
+        password: password
+      });
+      login_a(dispatch, data);
+      nav(nextPath);
+    } catch (err) {
+      if (err?.response?.status === 401) {
+        setErrorMessage("invalid credentials");
+      }
+      setErrorMessageIsShown(true);
     }
-  };
+  }
 
   return (
     <div className={styles.login__container}>
@@ -38,7 +52,7 @@ const Login = () => {
 
         <p>Welcome, Kindly enter your details to login.</p>
 
-        <form action="">
+        <form onSubmit={loginHandler}>
           <div className={styles.formgroup}>
             <label htmlFor="">Email</label>
             <input
@@ -69,14 +83,19 @@ const Login = () => {
             </span>
             <p>Remember me</p>
           </div>
-
-          <button
-            className={styles.login__btn}
-            onClick={(e) => {
-              handleClick(e);
-            }}>
-            Login
-          </button>
+          <div style={{ marginTop: "1rem" }}>
+            {errorMessageIsShown && (
+              <div
+                style={{
+                  marginBottom: "0.5rem",
+                  color: "#ff414e",
+                  fontSize: "1.4rem"
+                }}>
+                {errorMessage}
+              </div>
+            )}
+            <button className={styles.login__btn}>Login</button>
+          </div>
         </form>
 
         <div className={styles.lines}>
