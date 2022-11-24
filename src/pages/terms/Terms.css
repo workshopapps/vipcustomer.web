@@ -1,5 +1,6 @@
 .terms-container body{
   background-color: #f2f2f2;
+  color: #000000;
   padding: 0;
   margin: 0;
 }
@@ -13,14 +14,12 @@
   }
 .terms-container p {
     font-size: 1.6rem;
-    color: #000000;
   }
 
 .terms-container h3 {
   font-size: 2.7rem;
   padding-bottom: 1.6rem;
   padding-top: 1.6rem;
-  color: #000000;
 }
 
 .terms-container .t-c-div {
@@ -33,7 +32,6 @@
   font-size: 3.2rem;
   margin-top: 8rem;
   text-align: center;
-  color: #000000;
 }
   
 .terms-container .terms{
@@ -41,7 +39,6 @@
     height: 4.2rem;
     justify-content: center;
     text-align: center;
-    color: #000000;
     display: table;
 }
 
