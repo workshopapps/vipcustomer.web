@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { SlSocialInstagram, SlSocialTwitter } from "react-icons/sl";
 // import { ReactComponent as Logo } from "../../../assests/icons/logo.svg";
@@ -28,14 +28,7 @@ import axios from "api/axios";
 
 export default function index() {
   const navigate = useNavigate();
-
-  const { user, dispatch } = AuthStore();
-
-  useEffect(() => {
-    if (user) {
-      navigate("/dashboard", { replace: true });
-    }
-  }, [user]);
+  const { dispatch } = AuthStore();
 
   async function signUpHandler(e) {
     e.preventDefault();
@@ -47,6 +40,7 @@ export default function index() {
         password: enteredPassword
       });
       login_a(dispatch, data);
+      navigate("/dashboard", { replace: true });
     } catch (err) {
       setErrorMessageIsShown(true);
     }
