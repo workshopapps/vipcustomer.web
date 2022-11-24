@@ -11,10 +11,13 @@ const NavWrapper = styled.nav`
   font-weight: 500;
   display: flex;
   height: 81px;
+
   padding-inline: ${({ mobile, tablet }) =>
     mobile ? "40px" : tablet ? "78.9px" : "120px"};
   width: 100%;
   background: #091540;
+  box-shadow: ${({ scroll, menuopen }) =>
+    scroll && !menuopen && "1px 2px 5px rgba(1,1,1,.3)"};
 `;
 
 const NavItemsWrapper = styled.ul`
@@ -65,13 +68,14 @@ const MobileNavWrapper = styled.div`
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 28px;
-  overflow-x: hidden;
+  overflow-y: hidden;
   transition: 300ms 0.2s all ease-in-out;
   height: 0px;
+  box-shadow: ${({ tablet }) => tablet && "1px 2px 5px rgba(1,1,1,.3)"};
   padding-inline: ${({ mobile, tablet }) =>
     mobile ? "40px" : tablet ? "78.9px" : "120px"};
   &.open {
-    height: 195px;
+    height: 225px;
     max-height: fit-content;
   }
   & > a.active {
