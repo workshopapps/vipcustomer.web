@@ -1,12 +1,14 @@
 import React from "react";
 import DATA_IMAGE from "../general/assests/images/data.png";
-import { ImageWrapper } from "./image.styled";
+import { VideoWrapper, VideoContainer } from "./image.styled";
 
 const Image = () => {
   return (
-    <ImageWrapper>
-      <img src={DATA_IMAGE} alt="data image" />
-    </ImageWrapper>
+    <VideoWrapper>
+      <VideoContainer>
+        <video></video>
+      </VideoContainer>
+    </VideoWrapper>
   );
 };
 
