@@ -73,7 +73,7 @@ const FAQ = () => {
               key={item.id}
               id={item.id}
               // styles={id_ === item.id ? styles.opened : styles.closed}
-              styles={id_ === item.id ? styles.opened : null}
+              styles={id_ === item.id ? styles.opened : styles.closed}
               text={item.text}
               icon={id_ === item.id ? icon.opened : icon.closed}
               p={item.p}

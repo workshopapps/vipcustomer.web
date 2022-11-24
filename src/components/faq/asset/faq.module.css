@@ -60,7 +60,7 @@
   /* transition: 13ms; */
   position: relative;
   overflow: hidden;
-  transition: all 0.7s ease;
+  /* transition: all 0.7s ease; */
   /* transition: all 0.2s ease; */
   /* transition: 0.35s linear; */
 }
@@ -96,32 +96,21 @@
   color: var(--Primary-color500);
   font-size: 1.6rem;
   width: 78%;
-  visibility: collapse;
   align-self: start;
+  overflow: hidden;
   transition: all 0.3s ease;
-  max-height: 0;
-  overflow: hidden;
+  visibility: collapse;
 }
 
-.opened {
+.ques_p.closed {
+  visibility: collapse;
+  height: 0;
+}
+
+.ques_p.opened {
   visibility: visible;
-  /* transition: 0.35s linear; */
-  max-height: 1000vh;
+  height: 50px;
 }
-
-/* .ques_p {
-  color: var(--Primary-color500);
-  font-size: 1.6rem;
-  width: 78%;
-  align-self: start;
-  transition: 0.35s linear;
-  overflow: hidden;
-  max-height: 0;
-}
-
-.opened {
-  max-height: 1000px;
-} */
 
 @media (max-width: 834px) {
   .faq {
