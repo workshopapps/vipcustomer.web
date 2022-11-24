@@ -13,7 +13,7 @@ const LandingCta = () => {
         text="Get Started"
         style={{
           padding: "16px 51px",
-          width: "194px",
+          width: "max-content",
           height: "56px",
           color: "#121212",
           border: "1px solid #333333",
