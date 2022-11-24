@@ -50,38 +50,29 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 5.25rem 0;
-  /* display: flex;
-  align-items: flex-start;
-  justify-content: space-between; */
   box-sizing: border-box;
   border: 1px solid black;
 }
 
-.texts {
+.upload__process_header {
   text-align: center;
 }
-.texts > h2 {
+.upload__process_header > h2 {
   font-weight: 700;
   font-size: 2rem;
   color: var(--color-lightBlue);
   margin-bottom: 1.5rem;
 }
 
-.texts > p {
+.upload__process_header > p {
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   color: var(--color-lightBlue);
 }
 
 @media (min-width: 900px) {
-  .texts > h2 {
+  .upload__process_header > h2 {
     font-size: 3rem;
-  }
-}
-
-@media (min-width: 600px) {
-  .texts > p {
-    font-size: 1rem;
   }
 }
 
@@ -135,7 +126,13 @@
   box-sizing: border-box;
 }
 
-.upload_btn {
+.upload__form > div > .error_message {
+  padding: 2px 0;
+  color: red;
+  font-size: 1.1rem;
+}
+
+.add_entry__btn {
   width: 100%;
   height: 46px;
   display: flex;
@@ -152,7 +149,7 @@
   border-radius: 10px;
 }
 
-.upload_btn[disabled] {
+.add_entry__btn[disabled] {
   opacity: 0.7;
 }
 
@@ -200,7 +197,6 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  /* gap: 10px; */
 }
 
 .visible__entry {
@@ -219,13 +215,29 @@
 }
 
 .visible__entry > span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+  border: 1px solid black;
+}
+
+.visible__entry > span > svg {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  fill: var(--color-darkBlue);
+  transition: 0.3s ease-in-out;
+}
+
+.rotate_icon {
+  rotate: 180deg;
 }
 
 .hidden__entry {
   width: 100%;
   height: 0px;
-  padding: 0 5px;
+  padding: 5px;
   opacity: 0;
   visibility: hidden;
   box-sizing: border-box;
@@ -245,5 +257,37 @@
 }
 
 .delete_btn {
+  display: inline-block;
+  width: 20px;
+  height: 100%;
   cursor: pointer;
+  border: 1px solid black;
+}
+
+.delete_btn > svg {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  fill: var(--color-darkBlue);
+}
+
+.upload_btn {
+  width: 100%;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #ffffff;
+  background: var(--color-darkBlue);
+  border: 1px solid rgba(152, 152, 160, 0.6);
+  border-radius: 10px;
+}
+
+.upload_btn[disabled] {
+  opacity: 0.7;
 }

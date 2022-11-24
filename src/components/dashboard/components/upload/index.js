@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { MdDelete, MdExpandLess } from "react-icons/md";
+
 import PropTypes from "prop-types";
 
 import styles from "./upload.module.css";
-// import CloudUploadIcon from "./assets/CloudUploadIcon.svg";
 import UploadIcon from "./assets/UploadIcon.svg";
 import UserDropdown from "../userdropdown";
 
@@ -15,13 +16,24 @@ function Upload(props) {
   const [visibleEntry, setVisibleEntry] = useState(false);
   const [visibleIndex, setVisibleIndex] = useState(0);
 
+  useEffect(() => {
+    setFormErrors(validateForm(formData));
+  }, [formData]);
+
   //Function for form validation
   function validateForm(values) {
     const errors = {};
-    if (values.fullName.length <= 5) {
+    const regex = /\S+@\S+\.\S+/;
+
+    if (values.fullName.length <= 2) {
       errors.fullName = "Please enter your full name";
     }
 
+    if (values.email.length > 0) {
+      if (!regex.test(values.email)) {
+        errors.email = "Please enter a valid email";
+      }
+    }
     return errors;
   }
 
@@ -48,9 +60,9 @@ function Upload(props) {
       </div>
 
       <div className={styles.upload__process}>
-        <div className={styles.texts}>
-          <h2>Add Names Below</h2>
-          <p>Fill the form to add to list of names</p>
+        <div className={styles.upload__process_header}>
+          <h2>Add Entries Below</h2>
+          <p>Fill the form to add to entries</p>
         </div>
 
         <div className={styles.container}>
@@ -68,6 +80,9 @@ function Upload(props) {
                 value={formData.fullName}
                 onChange={handleChange}
               />
+              {formErrors.fullName && (
+                <p className={styles.error_message}>{formErrors.fullName}</p>
+              )}
             </div>
 
             <div>
@@ -79,6 +94,9 @@ function Upload(props) {
                 value={formData.email}
                 onChange={handleChange}
               />
+              {formErrors.email && (
+                <p className={styles.error_message}>{formErrors.email}</p>
+              )}
             </div>
 
             <div>
@@ -95,7 +113,10 @@ function Upload(props) {
               <label htmlFor="name">Name</label>
               <input type="text" id="name" />
             </div>
-            <button type="submit" className={styles.upload_btn}>
+            <button
+              type="submit"
+              disabled={Object.keys(formErrors).length !== 0}
+              className={styles.add_entry__btn}>
               Add Entry
             </button>
           </form>
@@ -116,7 +137,11 @@ function Upload(props) {
                             setVisibleEntry(!visibleEntry);
                             setVisibleIndex(index);
                           }}>
-                          icon
+                          <MdExpandLess
+                            className={`${
+                              visibleEntry ? styles.rotate_icon : ""
+                            }`}
+                          />
                         </span>
                       </div>
 
@@ -135,7 +160,7 @@ function Upload(props) {
                       onClick={() => {
                         removeEntry(index);
                       }}>
-                      delete
+                      <MdDelete />
                     </span>
                   </div>
                 );
@@ -143,11 +168,10 @@ function Upload(props) {
             </div>
 
             <button
-              type="submit"
               disabled={namesData.length === 0}
               className={styles.upload_btn}>
               <img src={UploadIcon} alt="Upload" />
-              Upload Names
+              Upload Entries
             </button>
           </div>
         </div>
