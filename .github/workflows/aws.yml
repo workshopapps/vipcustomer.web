@@ -1,6 +1,10 @@
 on:
   push:
-    branches: [dev]
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - master
 
 name: Deploy Vip App on ECS
 
