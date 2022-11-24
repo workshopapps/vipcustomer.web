@@ -6,6 +6,7 @@ import Linkbtn from "./LinkBtn";
 const Footer = () => {
   return (
     <FooterWrapper>
+      {/* for footer page */}
       <div className="footimg">
         <img src={axeLogo} alt="Axe API" />
       </div>
