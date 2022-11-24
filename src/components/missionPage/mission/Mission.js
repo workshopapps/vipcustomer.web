@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./mission.module.css";
 // import image
 import MissionImg from "../assets/mission.webp";
+import { Link } from "react-router-dom";
 const Mission = () => {
   return (
     <div className={styles.mission}>
@@ -25,7 +26,10 @@ const Mission = () => {
               criteria of VIP guest
             </span>
           </p>
-          <button className={styles.button}> Request a Demo</button>
+          <Link to="/demo">
+            {" "}
+            <button className={styles.button}> Request a Demo</button>
+          </Link>
         </div>
       </div>
     </div>
