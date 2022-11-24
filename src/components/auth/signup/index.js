@@ -39,18 +39,17 @@ export default function index() {
 
   async function signUpHandler(e) {
     e.preventDefault();
-    // try {
-    //   const res = await axios.post("/api/user/signup", {
-    //     first_name: enteredFirstName,
-    //     last_name: enteredLastName,
-    //     email: enteredEmail,
-    //     password: enteredPassword
-    //   });
-    //   console.log(res);
-    //   login_a(dispatch, res);
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    try {
+      const { data } = await axios.post("/api/user/signup", {
+        first_name: enteredFirstName,
+        last_name: enteredLastName,
+        email: enteredEmail,
+        password: enteredPassword
+      });
+      login_a(dispatch, data);
+    } catch (err) {
+      setErrorMessageIsShown(true);
+    }
   }
 
   //TRYING TO REPLICATE FORMIK FUNCTIONALITY
@@ -70,6 +69,7 @@ export default function index() {
   const [conPasswordIsTouched, setConPasswordIsTouched] = useState(false);
 
   const [termsIsChecked, setTermsIsChecked] = useState(false);
+  const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
 
   const canSubmit =
     !emailIsError &&
@@ -206,6 +206,16 @@ export default function index() {
               </Checkbox>
             </div>
             <div style={{ marginTop: "1rem" }}>
+              {errorMessageIsShown && (
+                <div
+                  style={{
+                    marginBottom: "0.5rem",
+                    color: "#ff414e",
+                    fontSize: "1.4rem"
+                  }}>
+                  An unexpected error occured. Try again another time
+                </div>
+              )}
               <SignUpBtn type="submit" disabled={!canSubmit}>
                 Sign up
               </SignUpBtn>

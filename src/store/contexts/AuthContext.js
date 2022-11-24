@@ -11,7 +11,7 @@ const Authcontext = ({ children }) => {
 
   useEffect(() => {
     const user = localStorage.getItem("user");
-    if (user) login_a(dispatch, user);
+    if (user) login_a(dispatch, JSON.parse(user));
   }, []);
 
   return (
