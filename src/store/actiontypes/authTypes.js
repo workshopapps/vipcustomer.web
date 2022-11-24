@@ -1,1 +1,3 @@
 export const ON_LOGIN_SUCCESSFUL = "ON_LOGIN_SUCCESSFUL";
+
+export const ON_LOGOUT = "ON_LOGOUT";

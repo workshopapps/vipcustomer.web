@@ -24,6 +24,7 @@ import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../general";
 import { AuthStore } from "../../../store/contexts/AuthContext";
 import { login_a } from "../../../store/actions/authActions";
+import axios from "api/axios";
 
 export default function index() {
   const navigate = useNavigate();
@@ -36,12 +37,26 @@ export default function index() {
     }
   }, [user]);
 
-  function signUpHandler(e) {
+  async function signUpHandler(e) {
     e.preventDefault();
-    login_a(dispatch);
+    // try {
+    //   const res = await axios.post("/api/user/signup", {
+    //     first_name: enteredFirstName,
+    //     last_name: enteredLastName,
+    //     email: enteredEmail,
+    //     password: enteredPassword
+    //   });
+    //   console.log(res);
+    //   login_a(dispatch, res);
+    // } catch (err) {
+    //   console.log(err);
+    // }
   }
 
   //TRYING TO REPLICATE FORMIK FUNCTIONALITY
+  const [enteredFirstName, setEnteredFirstName] = useState("");
+  const [enteredLastName, setEnteredLastName] = useState("");
+
   const [enteredEmail, setEnteredEmail] = useState("");
   const [emailIsError, setEmailIsError] = useState(false);
   const [emailIsTouched, setEmailIsTouched] = useState(false);
@@ -126,8 +141,20 @@ export default function index() {
           </OrDemarcation>
           <Form onSubmit={signUpHandler}>
             <Names>
-              <Input label="First Name" id="first-name" required />
-              <Input label="Last Name" id="last-name" required />
+              <Input
+                label="First Name"
+                id="first-name"
+                onChange={(e) => setEnteredFirstName(e.target.value)}
+                value={enteredFirstName}
+                required
+              />
+              <Input
+                label="Last Name"
+                id="last-name"
+                onChange={(e) => setEnteredLastName(e.target.value)}
+                value={enteredLastName}
+                required
+              />
             </Names>
             <Input
               label="Email"
