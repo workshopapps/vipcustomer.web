@@ -4,6 +4,8 @@ import { FcGoogle } from "react-icons/fc";
 import styles from "./index.module.css";
 import { login_a } from "store/actions/authActions";
 import { AuthStore } from "store/contexts/AuthContext";
+import Input from "../Input";
+import Checkbox from "../signup/Checkbox";
 import axios from "api/axios";
 
 const Login = () => {
