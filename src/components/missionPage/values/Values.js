@@ -4,6 +4,15 @@ import listIcon from "../assets/listIcon.svg";
 import ValuesImg from "../assets/values.webp";
 
 const Values = () => {
+  function handleSubmit(e) {
+    e.preventDefault();
+    setEmail("");
+  }
+
+  const [email, setEmail] = React.useState("");
+  function handleChange(e) {
+    setEmail(e.target.value);
+  }
   return (
     <div className={styles.values}>
       <div className={styles.container}>
@@ -32,10 +41,16 @@ const Values = () => {
       </div>
       <div className={styles.connect}>
         <h2>Get Connected with us</h2>
-        <div>
-          <p className={styles.email}>Email Address</p>
+        <form onSubmit={handleSubmit}>
+          <input
+            className={styles.email}
+            type="email"
+            value={email}
+            placeholder="Email Address"
+            onChange={handleChange}></input>
+
           <button className={styles.button}>subscribe</button>
-        </div>
+        </form>
       </div>
     </div>
   );
