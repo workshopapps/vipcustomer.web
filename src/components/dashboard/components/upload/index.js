@@ -2,9 +2,9 @@ import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./upload.module.css";
-import dummmy_dp from "../../assets/dummy_dp.png";
 import CloudUploadIcon from "./assets/CloudUploadIcon.svg";
 import UploadIcon from "./assets/UploadIcon.svg";
+import UserDropdown from "../userdropdown";
 
 function Upload(props) {
   const { onNext } = props;
@@ -32,7 +32,7 @@ function Upload(props) {
   return (
     <div className={styles.upload}>
       <div className={styles.welcome__header}>
-        <img src={dummmy_dp} alt="user" />
+        <UserDropdown />
 
         <div>
           <h2>Hi, Iyanu</h2>
@@ -56,7 +56,7 @@ function Upload(props) {
               <div className={styles.no_csv__texts}>
                 <img src={CloudUploadIcon} alt="Upload" />
                 <h3>Drag and Drop your files here</h3>
-                <small>csv or pdf</small>
+                <small>csv files only</small>
               </div>
             )}
 

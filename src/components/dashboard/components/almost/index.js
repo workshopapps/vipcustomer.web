@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import ProgressBar from "components/progressbar";
+
+import UserDropdown from "../userdropdown";
+import ProgressBar from "../progressbar";
 
 import styles from "./almost.module.css";
 import CancelIcon from "./assets/CancelIcon.svg";
 import SuccessIcon from "./assets/SuccessIcon.svg";
 import WaitingIcon from "./assets/WaitingIcon.svg";
-
-import dummmy_dp from "../../assets/dummy_dp.png";
 
 export default function Almost(props) {
   const { step, onNext } = props;
@@ -32,7 +32,7 @@ export default function Almost(props) {
   return (
     <div className={styles.almost}>
       <div className={styles.almost__header}>
-        <img src={dummmy_dp} alt="user" />
+        <UserDropdown />
 
         <div>
           {step === 1 ? (
