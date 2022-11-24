@@ -8,10 +8,16 @@ import UploadIcon from "./assets/UploadIcon.svg";
 import UserDropdown from "../userdropdown";
 
 function Upload(props) {
-  const { handleNamesData, namesData, removeEntry } = props;
+  const { handleNamesData, namesData, removeEntry, handleUpload } = props;
 
   //states
-  const [formData, setFormData] = useState({ fullName: "", email: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    gender: "",
+    occupation: "",
+    age: 0,
+    email: ""
+  });
   const [formErrors, setFormErrors] = useState({});
   const [visibleEntry, setVisibleEntry] = useState(false);
   const [visibleIndex, setVisibleIndex] = useState(0);
@@ -25,8 +31,8 @@ function Upload(props) {
     const errors = {};
     const regex = /\S+@\S+\.\S+/;
 
-    if (values.fullName.length <= 2) {
-      errors.fullName = "Please enter your full name";
+    if (values.name.length <= 2) {
+      errors.name = "Please enter a name";
     }
 
     if (values.email.length > 0) {
@@ -45,7 +51,14 @@ function Upload(props) {
   function handleSubmit(e, formData) {
     e.preventDefault();
     handleNamesData(formData);
-    setFormData({ ...formData, fullName: "", email: "" });
+    setFormData({
+      ...formData,
+      name: "",
+      gender: "",
+      occupation: "",
+      age: 0,
+      email: ""
+    });
   }
 
   return (
@@ -71,20 +84,61 @@ function Upload(props) {
               handleSubmit(e, formData);
             }}
             className={styles.upload__form}>
+            {/* name */}
             <div>
-              <label htmlFor="fullName">Full Name</label>
+              <label htmlFor="name">Name</label>
               <input
                 type="text"
-                id="fullName"
+                id="name"
                 placeholder="John Doe"
-                value={formData.fullName}
+                value={formData.name}
                 onChange={handleChange}
               />
-              {formErrors.fullName && (
-                <p className={styles.error_message}>{formErrors.fullName}</p>
+              {formErrors.name ? (
+                <p className={styles.error_message}>{formErrors.name}</p>
+              ) : null}
+            </div>
+
+            {/* gender */}
+            <div>
+              <label htmlFor="gender">Gender</label>
+              <input
+                type="text"
+                id="gender"
+                placeholder="Male/Female"
+                value={formData.gender}
+                onChange={handleChange}
+              />
+              {formErrors.gender && (
+                <p className={styles.error_message}>{formErrors.gender}</p>
               )}
             </div>
 
+            {/* occupation */}
+            <div>
+              <label htmlFor="occupation">Occupation</label>
+              <input
+                type="text"
+                id="occupation"
+                placeholder="Student"
+                value={formData.occupation}
+                onChange={handleChange}
+              />
+            </div>
+
+            {/* age */}
+            <div>
+              <label htmlFor="age">Age</label>
+              <input
+                type="number"
+                id="age"
+                placeholder="20"
+                value={formData.age}
+                onChange={handleChange}
+              />
+            </div>
+
+            {/* email */}
             <div>
               <label htmlFor="email">Email</label>
               <input
@@ -94,25 +148,11 @@ function Upload(props) {
                 value={formData.email}
                 onChange={handleChange}
               />
-              {formErrors.email && (
+              {formErrors.email ? (
                 <p className={styles.error_message}>{formErrors.email}</p>
-              )}
+              ) : null}
             </div>
 
-            <div>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" />
-            </div>
-
-            <div>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" />
-            </div>
-
-            <div>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" />
-            </div>
             <button
               type="submit"
               disabled={Object.keys(formErrors).length !== 0}
@@ -121,7 +161,7 @@ function Upload(props) {
             </button>
           </form>
 
-          <div className={styles.names__container}>
+          <div className={styles.entries__list}>
             <h2 className={styles.names__header}>List of Entries</h2>
 
             <div className={styles.entries}>
@@ -130,7 +170,7 @@ function Upload(props) {
                   <div key={item.id} className={styles.entry}>
                     <div className={styles.entry__details}>
                       <div className={styles.visible__entry}>
-                        <p> {item.fullName}</p>
+                        <p> {item.name}</p>
 
                         <span
                           onClick={() => {
@@ -139,7 +179,9 @@ function Upload(props) {
                           }}>
                           <MdExpandLess
                             className={`${
-                              visibleEntry ? styles.rotate_icon : ""
+                              visibleEntry && index === visibleIndex
+                                ? styles.rotate_icon
+                                : ""
                             }`}
                           />
                         </span>
@@ -151,6 +193,9 @@ function Upload(props) {
                             ? styles.visible
                             : ""
                         } `}>
+                        <p>Gender: {item.gender}</p>
+                        <p>Occupation: {item.occupation}</p>
+                        <p>Age: {item.age}</p>
                         <p>Email: {item.email}</p>
                       </div>
                     </div>
@@ -169,7 +214,11 @@ function Upload(props) {
 
             <button
               disabled={namesData.length === 0}
-              className={styles.upload_btn}>
+              className={styles.upload_btn}
+              onClick={(e) => {
+                e.preventDefault();
+                handleUpload();
+              }}>
               <img src={UploadIcon} alt="Upload" />
               Upload Entries
             </button>
@@ -184,6 +233,7 @@ export default Upload;
 
 Upload.propTypes = {
   handleNamesData: PropTypes.func,
+  handleUpload: PropTypes.func,
   namesData: PropTypes.array,
   removeEntry: PropTypes.func
 };

@@ -85,5 +85,6 @@ export default function Almost(props) {
 
 Almost.propTypes = {
   step: PropTypes.number,
-  onNext: PropTypes.func
+  onNext: PropTypes.func,
+  isUploading: PropTypes.bool
 };
