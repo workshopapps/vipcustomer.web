@@ -1,33 +1,40 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./upload.module.css";
-import CloudUploadIcon from "./assets/CloudUploadIcon.svg";
+// import CloudUploadIcon from "./assets/CloudUploadIcon.svg";
 import UploadIcon from "./assets/UploadIcon.svg";
 import UserDropdown from "../userdropdown";
 
 function Upload(props) {
-  const { onNext } = props;
+  const { handleNamesData, namesData, removeEntry } = props;
 
-  const [selectedFile, setSelectedFile] = useState();
-  const [isSelected, setIsSelected] = useState(false);
+  //states
+  const [formData, setFormData] = useState({ fullName: "", email: "" });
+  const [formErrors, setFormErrors] = useState({});
+  const [visibleEntry, setVisibleEntry] = useState(false);
+  const [visibleIndex, setVisibleIndex] = useState(0);
 
-  //ref for targetting hidden file input
-  const hiddenFileInput = useRef(null);
+  //Function for form validation
+  function validateForm(values) {
+    const errors = {};
+    if (values.fullName.length <= 5) {
+      errors.fullName = "Please enter your full name";
+    }
+
+    return errors;
+  }
 
   function handleChange(e) {
-    setSelectedFile(e.target.files[0]);
-    setIsSelected(true);
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e, formData) {
     e.preventDefault();
-    onNext();
+    handleNamesData(formData);
+    setFormData({ ...formData, fullName: "", email: "" });
   }
-
-  const handleUpload = (e) => {
-    hiddenFileInput.current.click(e);
-  };
 
   return (
     <div className={styles.upload}>
@@ -42,46 +49,108 @@ function Upload(props) {
 
       <div className={styles.upload__process}>
         <div className={styles.texts}>
-          <h2>Upload Document</h2>
-          <p>Attach your CSV documemts for analysis</p>
+          <h2>Add Names Below</h2>
+          <p>Fill the form to add to list of names</p>
         </div>
 
-        <form className={styles.upload__form}>
-          <div className={styles.input__upload} onClick={handleUpload}>
-            {isSelected ? (
-              <div className={styles.uploaded_csv__info}>
-                <p>Filename: {selectedFile.name}</p>
-              </div>
-            ) : (
-              <div className={styles.no_csv__texts}>
-                <img src={CloudUploadIcon} alt="Upload" />
-                <h3>Drag and Drop your files here</h3>
-                <small>csv files only</small>
-              </div>
-            )}
+        <div className={styles.container}>
+          <form
+            onSubmit={(e) => {
+              handleSubmit(e, formData);
+            }}
+            className={styles.upload__form}>
+            <div>
+              <label htmlFor="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                placeholder="John Doe"
+                value={formData.fullName}
+                onChange={handleChange}
+              />
+            </div>
 
-            <button className={styles.browse_btn}>Browse Files</button>
+            <div>
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="example@gmail.com"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
 
-            <input
-              type="file"
-              name="file"
-              id="csvFileInput"
-              accept=".csv"
-              onChange={handleChange}
-              style={{ display: "none" }}
-              ref={hiddenFileInput}
-            />
+            <div>
+              <label htmlFor="name">Name</label>
+              <input type="text" id="name" />
+            </div>
+
+            <div>
+              <label htmlFor="name">Name</label>
+              <input type="text" id="name" />
+            </div>
+
+            <div>
+              <label htmlFor="name">Name</label>
+              <input type="text" id="name" />
+            </div>
+            <button type="submit" className={styles.upload_btn}>
+              Add Entry
+            </button>
+          </form>
+
+          <div className={styles.names__container}>
+            <h2 className={styles.names__header}>List of Entries</h2>
+
+            <div className={styles.entries}>
+              {namesData.map((item, index) => {
+                return (
+                  <div key={item.id} className={styles.entry}>
+                    <div className={styles.entry__details}>
+                      <div className={styles.visible__entry}>
+                        <p> {item.fullName}</p>
+
+                        <span
+                          onClick={() => {
+                            setVisibleEntry(!visibleEntry);
+                            setVisibleIndex(index);
+                          }}>
+                          icon
+                        </span>
+                      </div>
+
+                      <div
+                        className={`${styles.hidden__entry} ${
+                          visibleEntry && index === visibleIndex
+                            ? styles.visible
+                            : ""
+                        } `}>
+                        <p>Email: {item.email}</p>
+                      </div>
+                    </div>
+
+                    <span
+                      className={styles.delete_btn}
+                      onClick={() => {
+                        removeEntry(index);
+                      }}>
+                      delete
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+
+            <button
+              type="submit"
+              disabled={namesData.length === 0}
+              className={styles.upload_btn}>
+              <img src={UploadIcon} alt="Upload" />
+              Upload Names
+            </button>
           </div>
-
-          <button
-            className={styles.upload_btn}
-            onClick={(e) => {
-              handleSubmit(e);
-            }}>
-            <img src={UploadIcon} alt="Upload" />
-            Upload
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );
@@ -90,5 +159,7 @@ function Upload(props) {
 export default Upload;
 
 Upload.propTypes = {
-  onNext: PropTypes.func
+  handleNamesData: PropTypes.func,
+  namesData: PropTypes.array,
+  removeEntry: PropTypes.func
 };

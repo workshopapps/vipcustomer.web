@@ -9,12 +9,29 @@ import styles from "./dashboard.module.css";
 
 export default function Dashboard() {
   const [step, setStep] = useState(0);
+  const [namesData, setNamesData] = useState([]);
 
   const onChange = (nextStep) => {
     setStep(nextStep < 0 ? 0 : nextStep > 3 ? 3 : nextStep);
   };
 
   const onNext = () => onChange(step + 1);
+
+  function handleNamesData(data) {
+    const newEntry = {
+      id: namesData.length + 1,
+      fullName: data.fullName,
+      email: data.email
+    };
+    setNamesData([...namesData, newEntry]);
+    console.log(namesData);
+  }
+
+  function removeEntry(id) {
+    const filteredEntries = namesData.filter((_, index) => index !== id);
+
+    setNamesData(filteredEntries);
+  }
 
   return (
     <main className={styles.main}>
@@ -25,7 +42,14 @@ export default function Dashboard() {
         {(() => {
           switch (step) {
             case 0:
-              return <Upload onNext={onNext} />;
+              return (
+                <Upload
+                  onNext={onNext}
+                  namesData={namesData}
+                  handleNamesData={handleNamesData}
+                  removeEntry={removeEntry}
+                />
+              );
 
             case 1:
               return <Almost onNext={onNext} step={step} />;
