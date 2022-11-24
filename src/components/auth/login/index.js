@@ -10,7 +10,6 @@ const Login = () => {
   const { dispatch } = AuthStore();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isVisible, setIsVisible] = useState(false);
   const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
   const [errorMessage, setErrorMessage] = useState(
     "an unexpected error occured, please try again another time"
@@ -27,7 +26,7 @@ const Login = () => {
         password: password
       });
       login_a(dispatch, data);
-      nav(nextPath);
+      nav(nextPath, { replace: true });
     } catch (err) {
       if (err?.response?.status === 401) {
         setErrorMessage("invalid credentials");
@@ -74,7 +73,6 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {isVisible && <p>Incorrect Password</p>}
           </div>
 
           <div id={styles.remember}>
