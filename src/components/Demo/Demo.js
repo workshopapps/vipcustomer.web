@@ -1,18 +1,65 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styling from "./demo.module.css";
 import checkmark from "./assets/checkmark.png";
-import { Footer, Navbar } from "components/general";
-import useScreenSize from "hooks/useScreenSize";
+import Loading from "./Loading";
+import Results from "./Results";
+
+const BASE_URL = new URL("http://18.212.30.183:8000");
 
 const Demo = () => {
   const { grid_container } = styling;
-  const { screenWidth } = useScreenSize();
-  const mobile = screenWidth <= 690;
-  const tablet = screenWidth <= 1024;
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [gender, setGender] = useState("");
+  const [career, setCareer] = useState("");
+  const [age, setAge] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState(
+    "Please wait, we are processing your request."
+  );
+  const [showResult, setShowResult] = useState(false);
+  let data;
+
+  async function handleSubmit(e) {
+    try {
+      e.preventDefault();
+      setIsLoading(true);
+      const name = firstName + " " + lastName;
+      BASE_URL.searchParams.append("name", name);
+      gender && BASE_URL.searchParams.append("gender", gender);
+      career && BASE_URL.searchParams.append("occupation", career);
+      age && BASE_URL.searchParams.append("age", age);
+      email && BASE_URL.searchParams.append("email", email);
+      const res = await fetch(BASE_URL.toString());
+      // const res = await fetch(
+      //   `http://18.212.30.183:8000/api/search/?name=${name}&gender=${gender}&occupation=${career}&age=${age}&email=${email}`
+      // );
+      data = await res.json()[0];
+      console.log(data);
+      setLoadingText("All done!");
+      setTimeout(() => {
+        setIsLoading(false);
+        setShowResult(true);
+      }, 1000);
+    } catch (e) {
+      setIsLoading(true);
+      setLoadingText("An error occured, Please try again later");
+    }
+  }
+
+  useEffect(() => {
+    return () => {
+      setShowResult(false);
+    };
+  }, []);
+
   return (
-    <>
-      <Navbar mobile={mobile} tablet={tablet} />
-      <main>
+    <main>
+      {isLoading && <Loading text={loadingText} />}
+      {showResult && <Results name="elon" gender="male" />}
+      {!isLoading && (
         <section className={grid_container}>
           <div>
             <h1>
@@ -27,30 +74,55 @@ const Demo = () => {
                 analyze or choose Advanced options to customize the
                 identification process
               </p>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <label>
                   FirstName <span>*</span>
-                  <input type="text" required />
+                  <input
+                    type="text"
+                    required
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
                 </label>
                 <label>
                   LastName <span>*</span>
-                  <input type="text" required />
+                  <input
+                    type="text"
+                    required
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
                 </label>
                 <label>
-                  Email Address
-                  <input />
+                  Email
+                  <input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </label>
                 <label>
                   Gender
-                  <input type="text" />
+                  <input
+                    type="text"
+                    value={gender}
+                    onChange={(e) => setGender(e.target.value)}
+                  />
                 </label>
                 <label>
                   Career/Industry
-                  <input type="text" />
+                  <input
+                    type="text"
+                    value={career}
+                    onChange={(e) => setCareer(e.target.value)}
+                  />
                 </label>
                 <label>
-                  Country
-                  <input type="text" />
+                  Age
+                  <input
+                    type="text"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                  />
                 </label>
                 <article>
                   <button type="submit">Analyse</button>
@@ -87,9 +159,8 @@ const Demo = () => {
             </ul>
           </div>
         </section>
-      </main>
-      <Footer mobile={mobile} tablet={tablet} />
-    </>
+      )}
+    </main>
   );
 };
 export default Demo;
