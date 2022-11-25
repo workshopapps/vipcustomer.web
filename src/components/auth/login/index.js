@@ -34,7 +34,7 @@ const Login = () => {
       return;
     }
 
-    if (password.length < 8) {
+    if (password.length < 6) {
       setIsPassword(false);
       setTimeout(() => {
         setIsPassword(true);
