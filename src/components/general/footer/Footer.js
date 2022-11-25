@@ -17,8 +17,8 @@ const Footer = () => {
             child="Axe API Feature"
             classname="footlink"
           />
-          <Linkbtn href="#" child="How it works" classname="footlink" />
-          <Linkbtn href="/demo" child="How it works" classname="footlink" />
+          <Linkbtn href="/" child="How it works" classname="footlink" />
+          <Linkbtn href="/demo" child="Demo" classname="footlink" />
         </div>
         <div className="footbarone">
           <h4>Help & Support</h4>
