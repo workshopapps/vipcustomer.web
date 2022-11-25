@@ -5,7 +5,7 @@ const Experience = () => {
   const lists = [
     {
       id: 1,
-      name: "Analyses.large.CSV.data."
+      name: "Analyses large CSV data."
     },
     {
       id: 2,

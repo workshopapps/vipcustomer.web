@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import Logo from "../../assets/images/logo.png";
 import House from "../../assets/images/house.png";
@@ -13,8 +13,11 @@ import Logout from "../../assets/images/logout.png";
 import Pen from "../../assets/images/pen.png";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
+import LogoutPage from "components/auth/logoutpage";
 
 const ProfileMobileNav = ({ mobileActive, closeNav }) => {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <div className={`profile-mobile-nav ${mobileActive ? "active" : ""}`}>
       <div className="profile-nav-head">
@@ -96,11 +99,19 @@ const ProfileMobileNav = ({ mobileActive, closeNav }) => {
         </li>
 
         <li>
-          <NavLink to="/">
+          <NavLink to="/profile">
             <span>
               <img className="link-image" src={Logout} alt="" />
             </span>
-            <span className="link-text">Logout</span>
+            <span
+              className="link-text"
+              onClick={() => {
+                setModalShow(true);
+                closeNav();
+              }}>
+              Logout
+            </span>
+            <LogoutPage show={modalShow} onHide={() => setModalShow(false)} />
           </NavLink>
         </li>
       </ul>
