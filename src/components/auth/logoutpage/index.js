@@ -2,19 +2,21 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { logout_a } from "store/actions/authActions";
+import { AuthStore } from "store/contexts/AuthContext";
 import "./logout.css";
 
 const LogoutPage = (props) => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
   const [logoutSuccess, setLogoutSuccess] = useState(false);
+  const { dispatch } = AuthStore();
 
   const logout = (e) => {
     e.preventDefault();
     setIsActive((current) => !current);
     setLogoutSuccess((status) => !status);
-    localStorage.clear();
-    sessionStorage.clear();
+    logout_a(dispatch);
     navigate("/");
   };
 
