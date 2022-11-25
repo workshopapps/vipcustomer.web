@@ -49,6 +49,7 @@ export default function Dashboard() {
       email: data.email
     };
     setNamesData([...namesData, newEntry]);
+    console.log(namesData);
   }
 
   //Removes entry from lists
