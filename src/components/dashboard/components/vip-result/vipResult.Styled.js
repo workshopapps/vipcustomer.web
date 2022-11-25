@@ -16,15 +16,25 @@ export const ResultsWrapper = styled.section`
 
   max-width: 1200px;
   width: 100%;
-  padding: 10px;
   margin: 0 auto;
 
   .wrapper__container {
     padding: 15px;
-    height: 600px;
+    height: 570px;
     border: 1px solid #adb1bf;
     overflow-x: auto;
     border-radius: 12px;
+  }
+
+  .wrapper__container::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+  }
+
+  @media screen and (min-width: 1200px) {
+    .wrapper__container {
+      overflow-x: hidden;
+    }
   }
 `;
 
@@ -51,6 +61,7 @@ export const MobileWrapper = styled.div`
   padding: 15px;
   border: 1px solid #adb1bf;
   border-radius: 12px;
+  border: 2px solid red;
 `;
 
 export const MobileRow = styled.div`
