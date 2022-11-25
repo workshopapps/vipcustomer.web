@@ -42,6 +42,7 @@ export const OptionsCard = styled.form`
   border-radius: 4px;
   padding: 10px;
   width: 120%;
+  z-index: ${({ showOptions }) => (showOptions ? 3 : "")};
 
   .options__select {
     display: flex;
@@ -79,4 +80,15 @@ export const OptionsCard = styled.form`
   .options__select * {
     pointer-events: none;
   }
+`;
+
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  display: ${({ showOptions }) => (showOptions ? "block" : "none")};
 `;

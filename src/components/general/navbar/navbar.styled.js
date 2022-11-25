@@ -10,7 +10,7 @@ const NavWrapper = styled.nav`
   color: white;
   font-weight: 500;
   display: flex;
-  height: 81px;
+  height: 50px;
 
   padding-inline: ${({ mobile, tablet }) =>
     mobile ? "40px" : tablet ? "78.9px" : "120px"};
