@@ -13,6 +13,7 @@ import {
   MobileRow,
   TabletRow
 } from "./vipResult.Styled";
+// import { Overlay } from "./components/filtersBar.styled";
 
 // app
 const VipResult = ({ responseData = [] }) => {
@@ -101,6 +102,8 @@ const VipResult = ({ responseData = [] }) => {
           </MobileWrapper>
         </Mobile>
       </ResultsWrapper>
+
+      {/* <Overlay /> */}
 
       {/* The paginate buttons */}
       <Paginate
