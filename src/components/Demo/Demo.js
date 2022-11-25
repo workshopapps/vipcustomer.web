@@ -4,7 +4,7 @@ import checkmark from "./assets/checkmark.png";
 import Loading from "./Loading";
 import Results from "./Results";
 
-const BASE_URL = new URL("http://18.212.30.183:8000");
+const BASE_URL = new URL("http://54.164.135.3/api/search/");
 
 const Demo = () => {
   const { grid_container } = styling;
@@ -58,7 +58,7 @@ const Demo = () => {
   return (
     <main>
       {isLoading && <Loading text={loadingText} />}
-      {showResult && <Results name="elon" gender="male" />}
+      {showResult && <Results name="Elon Dough" gender="male" />}
       {!isLoading && (
         <section className={grid_container}>
           <div>
