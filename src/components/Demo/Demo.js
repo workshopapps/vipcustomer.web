@@ -3,6 +3,7 @@ import styling from "./demo.module.css";
 import checkmark from "./assets/checkmark.png";
 import Loading from "./Loading";
 import Results from "./Results";
+import { Navbar, Footer } from "components/general";
 
 const BASE_URL = new URL("http://54.164.135.3/api/search/");
 
@@ -57,6 +58,7 @@ const Demo = () => {
 
   return (
     <main>
+      <Navbar />
       {isLoading && <Loading text={loadingText} />}
       {showResult && <Results name="Elon Dough" gender="male" />}
       {!isLoading && (
@@ -159,7 +161,8 @@ const Demo = () => {
             </ul>
           </div>
         </section>
-      )}
+      )}{" "}
+      <Footer />
     </main>
   );
 };

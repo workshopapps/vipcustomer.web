@@ -6,6 +6,9 @@
   padding: 3em;
   column-gap: 3em;
   font-family: "Poppins", sans-serif;
+  margin-top: 7rem;
+  margin-bottom: 20rem;
+  min-height: 80vh;
 }
 
 /* styling for parent_container ends*/
@@ -159,6 +162,7 @@
     grid-template-columns: 1fr;
     padding: 1.5em;
     gap: 1em;
+    height: 100%;
   }
   .grid_container > div:nth-of-type(2) {
     height: max-content;
@@ -218,6 +222,7 @@
     grid-template-columns: 1fr;
     padding: 2em;
     gap: 1em;
+    height: 100%;
   }
   .grid_container > div:nth-of-type(2) {
     height: max-content;
