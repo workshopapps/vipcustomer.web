@@ -31,8 +31,8 @@ function Upload(props) {
     const errors = {};
     const regex = /\S+@\S+\.\S+/;
 
-    if (values.name.length <= 2) {
-      errors.name = "Please enter a name";
+    if (values.name.length <= 3) {
+      errors.name = "Name is required";
     }
 
     if (values.email.length > 0) {
@@ -167,7 +167,7 @@ function Upload(props) {
             <div className={styles.entries}>
               {namesData.map((item, index) => {
                 return (
-                  <div key={item.id} className={styles.entry}>
+                  <div key={index} className={styles.entry}>
                     <div className={styles.entry__details}>
                       <div className={styles.visible__entry}>
                         <p> {item.name}</p>

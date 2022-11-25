@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import UserDropdown from "../userdropdown";
@@ -16,18 +16,6 @@ export default function Almost(props) {
     e.preventDefault();
     onNext();
   }
-
-  useEffect(() => {
-    if (step <= 2) {
-      const timeOut = setTimeout(() => {
-        onNext();
-      }, 2000);
-
-      return () => {
-        clearTimeout(timeOut);
-      };
-    }
-  }, []);
 
   return (
     <div className={styles.almost}>
@@ -85,6 +73,5 @@ export default function Almost(props) {
 
 Almost.propTypes = {
   step: PropTypes.number,
-  onNext: PropTypes.func,
-  isUploading: PropTypes.bool
+  onNext: PropTypes.func
 };

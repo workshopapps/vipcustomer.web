@@ -4,6 +4,7 @@ import NavBar from "./components/navbar";
 import Upload from "./components/upload";
 import Almost from "./components/almost";
 import VipResult from "./components/vip-result";
+import axios from "./components/api";
 
 import styles from "./dashboard.module.css";
 
@@ -11,44 +12,15 @@ export default function Dashboard() {
   const [step, setStep] = useState(0);
   const [namesData, setNamesData] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
+  const [responseData, setResponseData] = useState({});
 
   const onChange = (nextStep) => {
     setStep(nextStep < 0 ? 0 : nextStep > 3 ? 3 : nextStep);
   };
   const onNext = () => onChange(step + 1);
 
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(namesData)
-  };
-
-  function handleUpload() {
-    setIsUploading(true);
-
-    fetch("http://54.164.135.3/api/saerch/search-many/", options)
-      .then((data) => {
-        if (!data.ok) {
-          setStep(0);
-          setIsUploading(false);
-          throw Error(data.status);
-        }
-        onNext();
-        return data.json();
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }
-
   function handleNamesData(data) {
     const newEntry = {
-      id: namesData.length + 1,
       name: data.name,
       gender: data.gender,
       occupation: data.occupation,
@@ -61,6 +33,26 @@ export default function Dashboard() {
   function removeEntry(id) {
     const filteredEntries = namesData.filter((_, index) => index !== id);
     setNamesData(filteredEntries);
+  }
+
+  //Upload entries function
+  async function handleUpload() {
+    setIsUploading(true);
+    setStep(1);
+    console.log(JSON.stringify(namesData));
+
+    try {
+      const { data } = await axios.post("/api/search/search-many", {
+        data: namesData
+      });
+
+      setResponseData(data);
+      console.log(data);
+      setStep(2);
+    } catch (error) {
+      console.log(error?.response);
+      setStep(0);
+    }
   }
 
   return (
@@ -91,7 +83,7 @@ export default function Dashboard() {
               return <Almost onNext={onNext} step={step} />;
 
             case 3:
-              return <VipResult />;
+              return <VipResult responseData={responseData} />;
             default:
               return null;
           }
