@@ -99,7 +99,7 @@ const Demo = () => {
       // reset buttons
       submitBtn.classList.remove("loading");
       submitBtn.disabled = false;
-      submitBtn.textContent = "annalyze";
+      submitBtn.textContent = "analyze";
 
       // reset all input fields
       inputWrappers.forEach((wrapper) => {
@@ -231,7 +231,7 @@ const Demo = () => {
               </div>
 
               <button type="submit" className="mt25" id="btn__submit">
-                Annalyze
+                Analyze
               </button>
             </form>
           </article>

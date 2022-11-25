@@ -94,7 +94,9 @@ export const ModalContent = styled.div`
     text-decoration: underline;
     margin-bottom: 10px;
   }
-
+  .capitalize {
+    text-transform: capitalize;
+  }
   .not__found {
     text-align: center;
   }
