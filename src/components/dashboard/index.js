@@ -51,7 +51,7 @@ export default function Dashboard() {
       setStep(2);
     } catch (error) {
       console.log(error?.response);
-      setStep(0);
+      setStep(2);
     }
   }
 
