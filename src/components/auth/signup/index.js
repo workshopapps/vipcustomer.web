@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { SlSocialInstagram, SlSocialTwitter } from "react-icons/sl";
 // import { ReactComponent as Logo } from "../../../assests/icons/logo.svg";
@@ -24,24 +24,32 @@ import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../general";
 import { AuthStore } from "../../../store/contexts/AuthContext";
 import { login_a } from "../../../store/actions/authActions";
+import axios from "api/axios";
 
 export default function index() {
   const navigate = useNavigate();
+  const { dispatch } = AuthStore();
 
-  const { user, dispatch } = AuthStore();
-
-  useEffect(() => {
-    if (user) {
-      navigate("/dashboard", { replace: true });
-    }
-  }, [user]);
-
-  function signUpHandler(e) {
+  async function signUpHandler(e) {
     e.preventDefault();
-    login_a(dispatch);
+    try {
+      const { data } = await axios.post("/api/user/signup", {
+        first_name: enteredFirstName,
+        last_name: enteredLastName,
+        email: enteredEmail,
+        password: enteredPassword
+      });
+      login_a(dispatch, data);
+      navigate("/dashboard", { replace: true });
+    } catch (err) {
+      setErrorMessageIsShown(true);
+    }
   }
 
   //TRYING TO REPLICATE FORMIK FUNCTIONALITY
+  const [enteredFirstName, setEnteredFirstName] = useState("");
+  const [enteredLastName, setEnteredLastName] = useState("");
+
   const [enteredEmail, setEnteredEmail] = useState("");
   const [emailIsError, setEmailIsError] = useState(false);
   const [emailIsTouched, setEmailIsTouched] = useState(false);
@@ -55,6 +63,7 @@ export default function index() {
   const [conPasswordIsTouched, setConPasswordIsTouched] = useState(false);
 
   const [termsIsChecked, setTermsIsChecked] = useState(false);
+  const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
 
   const canSubmit =
     !emailIsError &&
@@ -126,8 +135,20 @@ export default function index() {
           </OrDemarcation>
           <Form onSubmit={signUpHandler}>
             <Names>
-              <Input label="First Name" id="first-name" required />
-              <Input label="Last Name" id="last-name" required />
+              <Input
+                label="First Name"
+                id="first-name"
+                onChange={(e) => setEnteredFirstName(e.target.value)}
+                value={enteredFirstName}
+                required
+              />
+              <Input
+                label="Last Name"
+                id="last-name"
+                onChange={(e) => setEnteredLastName(e.target.value)}
+                value={enteredLastName}
+                required
+              />
             </Names>
             <Input
               label="Email"
@@ -179,6 +200,16 @@ export default function index() {
               </Checkbox>
             </div>
             <div style={{ marginTop: "1rem" }}>
+              {errorMessageIsShown && (
+                <div
+                  style={{
+                    marginBottom: "0.5rem",
+                    color: "#ff414e",
+                    fontSize: "1.4rem"
+                  }}>
+                  An unexpected error occured. Try again another time
+                </div>
+              )}
               <SignUpBtn type="submit" disabled={!canSubmit}>
                 Sign up
               </SignUpBtn>

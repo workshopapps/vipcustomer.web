@@ -30,7 +30,7 @@ export const LinkStyles = styled(Link)`
   white-space: nowrap;
 `;
 
-export const Names = styled.form`
+export const Names = styled.div`
   display: flex;
   align-items: center;
   gap: 3.2rem;
@@ -61,8 +61,8 @@ export const Form = styled.form`
 export const OrDemarcation = styled.div`
   text-align: center;
   position: relative;
-  margin-top: 2rem;
-  font-size: 2.5rem;
+  margin-top: 1.8rem;
+  font-size: 1.8rem;
   color: #121212;
 
   span {
@@ -94,11 +94,11 @@ export const GoogleSignUp = styled.div`
   align-items: center;
   justify-content: center;
   gap: 13px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #121212;
   border: 2px solid #091540;
   border-radius: 7px;
-  padding-block: 1.6rem;
+  padding-block: 1rem;
   width: 100%;
   cursor: pointer;
 

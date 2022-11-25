@@ -18,7 +18,7 @@ import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Team from "./pages/Team";
-import Demo from "components/Demo/Demo";
+import Demo from "pages/Demo";
 import Feature from "pages/Feature";
 import PasswordChange from "./pages/PasswordChange";
 import PasswordRecovery from "./pages/PasswordRecovery";
@@ -28,6 +28,7 @@ import ErrorPage from "pages/ErrorPage";
 import Terms from "pages/terms/Terms";
 import Aboutus from "pages/Aboutus";
 import Consultation from "pages/Consultation";
+import RequireAuth from "components/auth/RequireAuth";
 
 function App() {
   const { theme } = Store();
@@ -46,7 +47,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/example" element={<Example />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/docs/*" element={<Docs />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
@@ -62,8 +62,12 @@ function App() {
           <Route index element={<PasswordRecovery />} />
           <Route path="change" element={<PasswordChange />} />
         </Route>
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/edit" element={<EditProfile />} />
+        {/* Protected Routes */}
+        <Route element={<RequireAuth />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/edit" element={<EditProfile />} />
+        </Route>
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="*" element={<ErrorPage />} />
