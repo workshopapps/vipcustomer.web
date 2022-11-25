@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const PrivacyWrapper = styled.main`
   width: 100%;
+  margin-top:7rem;
   padding:5rem;
   background-color: #ffffff;
   font-family: "Poppins", sans-serif;
