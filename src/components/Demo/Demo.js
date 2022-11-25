@@ -99,7 +99,7 @@ const Demo = () => {
       // reset buttons
       submitBtn.classList.remove("loading");
       submitBtn.disabled = false;
-      submitBtn.textContent = "Send Message";
+      submitBtn.textContent = "annalyze";
 
       // reset all input fields
       inputWrappers.forEach((wrapper) => {
