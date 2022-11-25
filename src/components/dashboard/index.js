@@ -82,7 +82,7 @@ export default function Dashboard() {
           uploadError: true,
           isUploading: false
         });
-        setStep(0);
+        setStep(2);
       }
     }, 2000);
   }
