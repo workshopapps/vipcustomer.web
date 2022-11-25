@@ -18,14 +18,13 @@ const Profile = () => {
   const [mobileActive, setMobileActive] = useState(false);
   const [activeSection, setActiveSection] = useState("all");
 
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
   useEffect(() => {
     scrollTo(0, 0);
   }, []);
 
   function openNav() {
     setMobileActive(true);
-    console.log("nav open");
   }
 
   function closeNav() {
