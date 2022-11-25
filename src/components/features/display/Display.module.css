@@ -3,20 +3,25 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 600px;
+  height: 100rem;
 }
 
 @media (min-width: 540px) {
   .container {
     background-image: url("../assets/tablet.png");
-    height: 600px;
+    height: 60rem;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    background-image: url("../assets/tablet.png");
+    height: 80rem;
   }
 }
 
 @media (min-width: 1024px) {
   .container {
     background-image: url("../assets/desktop.png");
-
-    height: 350px;
+    height: 60rem;
   }
 }
