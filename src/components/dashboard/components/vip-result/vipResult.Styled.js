@@ -61,7 +61,6 @@ export const MobileWrapper = styled.div`
   padding: 15px;
   border: 1px solid #adb1bf;
   border-radius: 12px;
-  border: 2px solid red;
 `;
 
 export const MobileRow = styled.div`

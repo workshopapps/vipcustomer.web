@@ -25,6 +25,17 @@ const VipResult = ({ responseData = [] }) => {
   function paginateFn(array = [], itemsPerPage, currentPage = 0) {
     if (!itemsPerPage) throw new Error("check parameters at paginateFn");
 
+    array = array.map((arr, index) => {
+      if (typeof arr == "object" && !Array.isArray(arr)) {
+        return {
+          ...arr,
+          no: index + 1
+        };
+      } else {
+        return arr;
+      }
+    });
+
     let pageNumber = Math.ceil(array.length / itemsPerPage);
     let startIndex = currentPage * itemsPerPage;
     let stopIndex = startIndex + itemsPerPage;
@@ -68,13 +79,13 @@ const VipResult = ({ responseData = [] }) => {
             </TabletRow>
 
             {vipList.map((vip, index) => {
-              const { name, category, gender, netWorth, career } = vip;
+              const { name, category, gender, career, no } = vip;
               return (
                 <TabletRow key={index}>
                   <Text text={name} />
                   <Text text={category} />
                   <Text text={gender} />
-                  <Text text={netWorth} />
+                  <Text text={no + "b$"} />
                   <Text text={career} />
                 </TabletRow>
               );
@@ -103,8 +114,6 @@ const VipResult = ({ responseData = [] }) => {
         </Mobile>
       </ResultsWrapper>
 
-      {/* <Overlay /> */}
-
       {/* The paginate buttons */}
       <Paginate
         paginateFn={paginateFn}
@@ -118,7 +127,9 @@ const VipResult = ({ responseData = [] }) => {
 };
 
 VipResult.propTypes = {
-  responseData: PropTypes.array.isRequired
+  responseData: PropTypes.object.isRequired
+  // array needed... currently api returns an empty object
+  // responseData: PropTypes.array.isRequired
 };
 
 export default VipResult;

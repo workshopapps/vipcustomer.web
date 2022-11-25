@@ -18,7 +18,7 @@ import SignUp from "./pages/auth/SignUp";
 import Privacy from "./pages/Privacy";
 import Mission from "pages/Mission";
 import Team from "./pages/Team";
-import Demo from "components/Demo/Demo";
+import Demo from "pages/Demo";
 import Feature from "pages/Feature";
 import PasswordChange from "./pages/PasswordChange";
 import PasswordRecovery from "./pages/PasswordRecovery";
