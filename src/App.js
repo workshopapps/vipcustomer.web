@@ -70,7 +70,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit" element={<EditProfile />} />
         </Route> */}
-        <Route path="/new-dashboard" element={<Dashboard />} />
+        <Route path="/new-dashboard/*" element={<Dashboard />} />
         <Route path="/dashboard" element={<OldDashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<EditProfile />} />
