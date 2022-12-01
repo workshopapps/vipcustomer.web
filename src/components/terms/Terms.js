@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "components/general/footer/Footer";
 import Navbar from "components/general/navbar/Navbar";
-import "pages/terms/Terms.css";
+import "./Terms.css";
 
 const Terms = () => {
   return (
