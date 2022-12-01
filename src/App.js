@@ -8,6 +8,7 @@ import { Store } from "./store/contexts/AppContext";
 
 // pages
 import Home from "./pages/Home";
+import OldDashboard from "./pages/OldDashboard";
 import Dashboard from "./pages/Dashboard";
 import Example from "./pages/Example";
 import Docs from "./pages/Docs";
@@ -25,7 +26,7 @@ import PasswordRecovery from "./pages/PasswordRecovery";
 import Profile from "pages/Profile";
 import EditProfile from "pages/EditProfile";
 import ErrorPage from "pages/ErrorPage";
-import Terms from "pages/terms/Terms";
+import Terms from "pages/Terms";
 import Aboutus from "pages/Aboutus";
 import Consultation from "pages/Consultation";
 import RequireAuth from "components/auth/RequireAuth";
@@ -69,7 +70,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit" element={<EditProfile />} />
         </Route> */}
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/new-dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<OldDashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<EditProfile />} />
         <Route path="/about-us" element={<Aboutus />} />
