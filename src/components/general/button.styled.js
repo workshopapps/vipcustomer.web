@@ -10,6 +10,5 @@ export const ButtonWrapper = styled.button`
   color: inherit;
   background: transparent;
   padding: 0.5rem;
-  border: 1px solid #fffafb;
   border-radius: 8px;
 `;
