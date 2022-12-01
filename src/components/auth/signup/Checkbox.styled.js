@@ -14,7 +14,7 @@ export const Label = styled.label`
   cursor: pointer;
   position: relative;
   padding-left: 4.1rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 
   span {
     height: 2rem;
@@ -24,7 +24,6 @@ export const Label = styled.label`
     border-radius: 6px;
     position: absolute;
     left: 0;
-    top: 0.45rem;
 
     .checkmark {
       font-size: 1.8rem;

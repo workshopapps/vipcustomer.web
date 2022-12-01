@@ -50,7 +50,7 @@ export const Form = styled.form`
   margin-top: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.6rem;
 
   @media only screen and (max-width: 768px) {
     margin-top: 2rem;
@@ -93,7 +93,7 @@ export const GoogleSignUp = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 13px;
+  gap: 10px;
   font-size: 1.6rem;
   color: #121212;
   border: 2px solid #091540;
@@ -123,7 +123,7 @@ export const GoogleSignUp = styled.div`
 `;
 
 export const Right = styled.div`
-  flex: 1.2;
+  flex: 1;
   display: grid;
   place-items: center;
   padding: 7rem;
@@ -138,7 +138,7 @@ export const Right = styled.div`
 
   & > div {
     width: 100%;
-    max-width: 58.8rem;
+    max-width: 45rem;
   }
 `;
 
