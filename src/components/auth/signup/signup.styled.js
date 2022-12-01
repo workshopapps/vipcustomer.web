@@ -89,39 +89,6 @@ export const OrDemarcation = styled.div`
   }
 `;
 
-export const GoogleSignUp = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 1.6rem;
-  color: #121212;
-  border: 2px solid #091540;
-  border-radius: 7px;
-  padding-block: 1rem;
-  width: 100%;
-  cursor: pointer;
-
-  span {
-    font-size: 3rem;
-    display: grid;
-    place-items: center;
-  }
-
-  @media only screen and (max-width: 768px) {
-    font-size: 1.2rem;
-    padding-block: 1.4rem;
-    padding-inline: 1.6rem;
-    justify-content: flex-start;
-
-    border: 1px solid #adb1bf;
-
-    span {
-      font-size: 2rem;
-    }
-  }
-`;
-
 export const Right = styled.div`
   flex: 1;
   display: grid;

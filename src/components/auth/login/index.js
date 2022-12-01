@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import styles from "./index.module.css";
 import { login_a } from "store/actions/authActions";
 import { AuthStore } from "store/contexts/AuthContext";
 import Input from "../Input";
 import Checkbox from "../signup/Checkbox";
 import axios from "api/axios";
+import { GoogleLogin } from "@react-oauth/google";
 
 const Login = () => {
   const { dispatch } = AuthStore();
@@ -55,6 +55,28 @@ const Login = () => {
       }
       setErrorMessageIsShown(true);
     }
+  }
+
+  async function onGoogleSuccess({ credential }) {
+    try {
+      const { data } = await axios.post("/api/user/google-auth/", {
+        jwt_token: credential
+      });
+      login_a(dispatch, data.user);
+      nav("/dashboard", { replace: true });
+    } catch (e) {
+      setErrorMessage(
+        "An unexpected error occured. Please try again another time"
+      );
+      setErrorMessageIsShown(true);
+    }
+  }
+
+  function onGoogleError() {
+    setErrorMessage(
+      "An unexpected error occured. Please try again another time"
+    );
+    setErrorMessageIsShown(true);
   }
 
   return (
@@ -124,12 +146,13 @@ const Login = () => {
           <span className={styles.line}></span>
         </div>
 
-        <button className={styles.google}>
-          <FcGoogle />
-          Authorize with Google
-        </button>
+        <GoogleLogin
+          text="continue_with"
+          onError={onGoogleError}
+          onSuccess={onGoogleSuccess}
+        />
 
-        <p>
+        <p style={{ marginTop: "2.4rem" }}>
           Don&apos;t have an account? <a href="/signup">Sign up</a>
         </p>
       </div>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
 import { SlSocialInstagram, SlSocialTwitter } from "react-icons/sl";
 // import { ReactComponent as Logo } from "../../../assests/icons/logo.svg";
 import { ReactComponent as Logo } from "../../general/assests/icons/logo.svg";
@@ -167,11 +166,6 @@ export default function index() {
             onError={onGoogleError}
             onSuccess={onGoogleSuccess}
           />
-          {/* <GoogleSignUp onClick={loginWithGoogle}>
-            <FcGoogle />
-            <span></span>
-            Sign up with Google
-          </GoogleSignUp> */}
           <OrDemarcation>
             <span>or</span>
           </OrDemarcation>
