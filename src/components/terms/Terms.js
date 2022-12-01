@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "components/general/footer/Footer";
 import Navbar from "components/general/navbar/Navbar";
-import "pages/terms/Terms.css";
+import "./Terms.css";
 
 const Terms = () => {
   return (
@@ -216,7 +216,7 @@ const Terms = () => {
                 <br />
                 Copyright infringement claims and notices should be sent to Axe
                 API by mail to:
-                <span className='dots'>
+                <span className="dots">
                   ..........................................................................................................................................................................
                 </span>
               </p>
