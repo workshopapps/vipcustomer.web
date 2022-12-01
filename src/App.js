@@ -29,6 +29,7 @@ import Terms from "pages/terms/Terms";
 import Aboutus from "pages/Aboutus";
 import Consultation from "pages/Consultation";
 import RequireAuth from "components/auth/RequireAuth";
+import History from "pages/History";
 
 function App() {
   const { theme } = Store();
@@ -72,6 +73,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<EditProfile />} />
+        <Route path="/history" element={<History />} />
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="*" element={<ErrorPage />} />
