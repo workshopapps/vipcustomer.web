@@ -7,27 +7,59 @@ import { FilterBar } from "./FiltersBar";
 import { TiArrowMaximiseOutline } from "react-icons/ti";
 
 function SearchHistory() {
-  const [vips, setVips] = useState([]);
-  const [searchTitle, setSearchTitle] = useState("");
+  const [data, setData] = useState([]);
+  const [value, setValue] = useState("");
+
+  // useEffect(() => {
+  //   const setVips = async () => {
+  //     const response = await axios.get(
+  //       "https://jsonplaceholder.typicode.com/users"
+  //     );
+  //     setVips(response.data);
+  //   };
+  //   setVips();
+  // }, []);
 
   useEffect(() => {
-    const setVips = async () => {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      setVips(response.data);
-    };
-    setVips();
+    loadUsersData();
   }, []);
+
+  const loadUsersData = async () => {
+    return await axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((response) => setData(response.data))
+      .catch((err) => console.log(err));
+  };
+  console.log("data", data);
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    return await axios
+      .get(`https://jsonplaceholder.typicode.com/users?q=${value}`)
+      .then((response) => {
+        setData(response.data);
+        setValue("");
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
-      <div className={styles.searchinput}>
-        <input type="text" name="name" id="name" placeholder="Search History" />
+      <form className={styles.searchinput} onSubmit={handleSearch}>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Search History"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
         <span className={styles.icon}>
-          <img src={SearchIcon} alt="Search" />
+          <button type="submit">
+            <img src={SearchIcon} alt="Search" />
+          </button>
         </span>
-      </div>
+      </form>
       <div>
         <div className={styles.tablediv}>
           <h2>Today- Thursday, November 30th, 2022</h2>
@@ -60,6 +92,20 @@ function SearchHistory() {
               <td>Tech guru</td>
               <td>70%</td>
             </tr>
+            {data.length === 0 ? (
+              <div>No data found</div>
+            ) : (
+              data.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.username}</td>
+                  <td>{item.email}</td>
+                  <td>{item.phone}</td>
+                  <td>{item.website}</td>
+                  <td>{item.phone}</td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
