@@ -63,11 +63,15 @@ function App() {
           <Route path="change" element={<PasswordChange />} />
         </Route>
         {/* Protected Routes */}
-        <Route element={<RequireAuth />}>
+        {/* Commented out for submission reasons */}
+        {/* <Route element={<RequireAuth />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit" element={<EditProfile />} />
-        </Route>
+        </Route> */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/edit" element={<EditProfile />} />
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="*" element={<ErrorPage />} />

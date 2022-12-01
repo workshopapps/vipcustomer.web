@@ -18,7 +18,7 @@ const Modal = ({ search = {}, result, name, modal, setModal }) => {
     age: resAge
   } = result || {};
 
-  console.log(result);
+  // console.log(result);
 
   return (
     <ModalWrap modal={modal} className={` `}>
@@ -81,7 +81,7 @@ const Modal = ({ search = {}, result, name, modal, setModal }) => {
                 <div className="row">
                   <small></small>
                   <span>Name</span>
-                  <p>{resName}</p>
+                  <p className="capitalize">{resName}</p>
                 </div>
 
                 <div className="row">
