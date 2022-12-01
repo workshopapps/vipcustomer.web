@@ -8,4 +8,6 @@ export const login_a = (dispatch, payload) => {
 export const logout_a = (dispatch) => {
   dispatch({ type: types.ON_LOGOUT });
   localStorage.removeItem("user");
+  //Removes stored user entries
+  localStorage.removeItem("storedEntries");
 };

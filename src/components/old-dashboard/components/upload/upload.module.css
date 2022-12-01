@@ -203,7 +203,7 @@
 
 .visible__entry > p {
   font-weight: 500;
-  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   color: var(--color-darkBlue);
 }
 
@@ -245,7 +245,7 @@
 
 .hidden__entry > p {
   font-weight: 500;
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.5rem);
   color: var(--color-lightBlue);
   margin-bottom: 1rem;
 }
@@ -262,6 +262,13 @@
   height: 100%;
   margin: auto;
   fill: var(--color-darkBlue);
+}
+
+.upload_btn__container > p {
+  padding: 5px;
+  font-size: 1.2rem;
+  color: red;
+  font-weight: 500;
 }
 
 .upload_btn {
