@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
-import {
-  FilterBarWrapper,
-  SortBarWrapper,
-  OptionsCard,
-  Overlay
-} from "./filtersBar.styled";
+import { FilterBarWrapper, OptionsCard, Overlay } from "./filtersBar.styled";
 
 // Filter Bar
 const FilterBar = () => {

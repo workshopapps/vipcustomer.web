@@ -93,7 +93,7 @@ function SearchHistory() {
               <td>70%</td>
             </tr>
             {data.length === 0 ? (
-              <div>No data found</div>
+              <div style={{ color: "red" }}>No data found</div>
             ) : (
               data.map((item, index) => (
                 <tr key={index}>
