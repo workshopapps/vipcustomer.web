@@ -11,10 +11,17 @@
   object-fit: cover;
 }
 
-.docs-main {
-  margin-left: 300px;
+.docs-main {/*
+  margin-left: 450px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
   text-align: center;
+  */
+width: 70%;
+position: absolute;
+right: 0;
+padding-right: 70px;
+color: #091540;
+padding-top: 50px;
 }
