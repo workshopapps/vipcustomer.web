@@ -19,6 +19,10 @@ export const SignUpBtn = styled.button`
   padding: 1rem;
   border-radius: 8px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 
   &:disabled {
     cursor: not-allowed;

@@ -48,6 +48,7 @@ export default function index() {
   // const [termsIsChecked, setTermsIsChecked] = useState(false);
   const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [spinnerClasses, setSpinnerClasses] = useState("spinner small stop");
 
   async function signUpHandler(e) {
     e.preventDefault();
@@ -71,15 +72,18 @@ export default function index() {
     }
 
     try {
+      setSpinnerClasses("spinner small");
       const { data } = await axios.post("/api/user/signup", {
         first_name: enteredFirstName,
         last_name: enteredLastName,
         email: enteredEmail,
         password: enteredPassword
       });
+      setSpinnerClasses("spinner small stop");
       login_a(dispatch, data);
       navigate("/dashboard", { replace: true });
     } catch (err) {
+      setSpinnerClasses("spinner small stop");
       setErrorMessage(
         "An unexpected error occured. Please try again another time"
       );
@@ -222,7 +226,15 @@ export default function index() {
                   {errorMessage}
                 </div>
               )}
-              <SignUpBtn type="submit">Sign up</SignUpBtn>
+              <SignUpBtn type="submit">
+                Sign up
+                <span
+                  className={spinnerClasses}
+                  style={{
+                    borderLeft: "2px solid white",
+                    display: "inline-block"
+                  }}></span>
+              </SignUpBtn>
             </div>
           </Form>
         </div>

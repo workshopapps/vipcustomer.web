@@ -19,6 +19,8 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState(
     "an unexpected error occured, please try again another time"
   );
+  const [spinnerClasses, setSpinnerClasses] = useState("spinner small stop");
+
   const location = useLocation();
   const nextPath = location.state?.from?.pathname || "/dashboard";
   const nav = useNavigate();
@@ -43,13 +45,16 @@ const Login = () => {
     }
 
     try {
+      setSpinnerClasses("spinner small");
       const { data } = await axios.post("/api/user/login", {
         email: email,
         password: password
       });
+      setSpinnerClasses("spinner small stop");
       login_a(dispatch, data);
       nav(nextPath, { replace: true });
     } catch (err) {
+      setSpinnerClasses("spinner small stop");
       if (err?.response?.status === 401) {
         setErrorMessage("invalid credentials");
       }
@@ -114,7 +119,15 @@ const Login = () => {
                 {errorMessage}
               </div>
             )}
-            <button className={styles.login__btn}>Login</button>
+            <button className={styles.login__btn}>
+              Login
+              <span
+                className={spinnerClasses}
+                style={{
+                  borderLeft: "2px solid white",
+                  display: "inline-block"
+                }}></span>
+            </button>
           </div>
         </form>
 
