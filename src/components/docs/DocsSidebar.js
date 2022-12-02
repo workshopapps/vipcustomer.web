@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Docs.module.css'
 
+
 const DocsSidebar = () => {
   return (
     <div className={styles.maindiv}>
@@ -14,10 +15,10 @@ const DocsSidebar = () => {
 
         <div className={styles.linksdiv}>
           <h2>API Documentation</h2>
-            <p><Link to="/usage" className={styles.li}>Usage</Link></p>
-            <p><Link to="/search" className={styles.li}>Search</Link></p>
-            <p><Link to="/serachmany" className={styles.li}>Search-Many</Link></p>
-            <p><Link to="/history" className={styles.li}>History</Link></p>
+            <p><Link to="/documents/usage" className={styles.li}>Usage</Link></p>
+            <p><Link to="/documents/search" className={styles.li}>Search</Link></p>
+            <p><Link to="/documents/searchmany" className={styles.li}>Search-Many</Link></p>
+            <p><Link to="/documents/history" className={styles.li}>History</Link></p>
           
         </div>
                 
