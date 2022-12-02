@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
 import { SlSocialInstagram, SlSocialTwitter } from "react-icons/sl";
 // import { ReactComponent as Logo } from "../../../assests/icons/logo.svg";
 import { ReactComponent as Logo } from "../../general/assests/icons/logo.svg";
@@ -12,7 +11,6 @@ import {
   LinkStyles,
   Socials,
   Right,
-  GoogleSignUp,
   OrDemarcation,
   Form,
   Names,
@@ -25,26 +23,11 @@ import { Navbar } from "../../general";
 import { AuthStore } from "../../../store/contexts/AuthContext";
 import { login_a } from "../../../store/actions/authActions";
 import axios from "api/axios";
+import GoogleAuth from "../GoogleAuth";
 
 export default function index() {
   const navigate = useNavigate();
   const { dispatch } = AuthStore();
-
-  async function signUpHandler(e) {
-    e.preventDefault();
-    try {
-      const { data } = await axios.post("/api/user/signup", {
-        first_name: enteredFirstName,
-        last_name: enteredLastName,
-        email: enteredEmail,
-        password: enteredPassword
-      });
-      login_a(dispatch, data);
-      navigate("/dashboard", { replace: true });
-    } catch (err) {
-      setErrorMessageIsShown(true);
-    }
-  }
 
   //TRYING TO REPLICATE FORMIK FUNCTIONALITY
   const [enteredFirstName, setEnteredFirstName] = useState("");
@@ -62,15 +45,51 @@ export default function index() {
   const [conPassowrdIsError, setConPassowrdIsError] = useState(false);
   const [conPasswordIsTouched, setConPasswordIsTouched] = useState(false);
 
-  const [termsIsChecked, setTermsIsChecked] = useState(false);
+  // const [termsIsChecked, setTermsIsChecked] = useState(false);
   const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [spinnerClasses, setSpinnerClasses] = useState("spinner small stop");
 
-  const canSubmit =
-    !emailIsError &&
-    emailIsTouched &&
-    !conPassowrdIsError &&
-    conPasswordIsTouched &&
-    termsIsChecked;
+  async function signUpHandler(e) {
+    e.preventDefault();
+
+    if (emailIsError) {
+      setErrorMessage("Please enter a valid email address");
+      setErrorMessageIsShown(true);
+      return;
+    }
+
+    if (passowrdIsError) {
+      setErrorMessage("Password must be longer than 6 characters");
+      setErrorMessageIsShown(true);
+      return;
+    }
+
+    if (conPassowrdIsError) {
+      setErrorMessage("Passwords do not match");
+      setErrorMessageIsShown(true);
+      return;
+    }
+
+    try {
+      setSpinnerClasses("spinner small");
+      const { data } = await axios.post("/api/user/signup", {
+        first_name: enteredFirstName,
+        last_name: enteredLastName,
+        email: enteredEmail,
+        password: enteredPassword
+      });
+      setSpinnerClasses("spinner small stop");
+      login_a(dispatch, data);
+      navigate("/dashboard", { replace: true });
+    } catch (err) {
+      setSpinnerClasses("spinner small stop");
+      setErrorMessage(
+        "An unexpected error occured. Please try again another time"
+      );
+      setErrorMessageIsShown(true);
+    }
+  }
 
   function emailChangeHanlder(e) {
     const value = e.target.value;
@@ -124,12 +143,7 @@ export default function index() {
       </Left>
       <Right>
         <div>
-          <GoogleSignUp>
-            <span>
-              <FcGoogle />
-            </span>
-            Sign up with Google
-          </GoogleSignUp>
+          <GoogleAuth text="signup_with" />
           <OrDemarcation>
             <span>or</span>
           </OrDemarcation>
@@ -164,6 +178,7 @@ export default function index() {
                   emailChangeHanlder(e);
                 }
               }}
+              required
             />
             <Input
               label="Password"
@@ -177,6 +192,7 @@ export default function index() {
                 setPasswordIsTouched(true);
                 passwordChangeHanlder(e);
               }}
+              required
             />
             <Input
               label="Confirm Password"
@@ -190,13 +206,13 @@ export default function index() {
                 setConPasswordIsTouched(true);
                 conPasswordChangeHanlder(e);
               }}
+              required
             />
             <div style={{ marginTop: "0.7rem" }}>
-              <Checkbox
-                id="check"
-                onChange={(e) => setTermsIsChecked(e.target.checked)}>
-                I agree to the <LinkStyles to='/terms'>Terms of Service</LinkStyles> and{" "}
-                <LinkStyles to='/privacy'>Privacy Notice</LinkStyles>
+              <Checkbox id="check">
+                I agree to the{" "}
+                <LinkStyles to="/terms">Terms of Service</LinkStyles> and{" "}
+                <LinkStyles to="/privacy">Privacy Notice</LinkStyles>
               </Checkbox>
             </div>
             <div style={{ marginTop: "1rem" }}>
@@ -207,11 +223,17 @@ export default function index() {
                     color: "#ff414e",
                     fontSize: "1.4rem"
                   }}>
-                  An unexpected error occured. Try again another time
+                  {errorMessage}
                 </div>
               )}
-              <SignUpBtn type="submit" disabled={!canSubmit}>
+              <SignUpBtn type="submit">
                 Sign up
+                <span
+                  className={spinnerClasses}
+                  style={{
+                    borderLeft: "2px solid white",
+                    display: "inline-block"
+                  }}></span>
               </SignUpBtn>
             </div>
           </Form>
