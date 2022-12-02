@@ -80,14 +80,13 @@ function App() {
         <Route path="/profile/edit" element={<EditProfile />} />
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
-        <Route path="*" element={<ErrorPage />} />
-
         <Route path="/documents" element={<DocsLayouts />}>
         <Route path="/documents" element={<Documents />} />
           <Route path="/documents/search" element={<Search />} />
           <Route path="/documents/searchmany" element={<SearchMany />} />
           <Route path="/documents/history" element={<History />} />
           <Route path="/documents/usage" element={<Usage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </ThemeProvider>
