@@ -195,8 +195,8 @@ export default function index() {
               <Checkbox
                 id="check"
                 onChange={(e) => setTermsIsChecked(e.target.checked)}>
-                I agree to the <LinkStyles>Terms of Service</LinkStyles> and{" "}
-                <LinkStyles>Privacy Notice</LinkStyles>
+                I agree to the <LinkStyles to='/terms'>Terms of Service</LinkStyles> and{" "}
+                <LinkStyles to='/privacy'>Privacy Notice</LinkStyles>
               </Checkbox>
             </div>
             <div style={{ marginTop: "1rem" }}>

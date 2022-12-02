@@ -1,0 +1,40 @@
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 30%;
+  height: 100%;
+}
+
+.loading > span {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  animation-name: loading;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.loading > span:first-of-type {
+  animation-delay: 0.2s;
+}
+.loading > span:last-of-type {
+  animation-delay: 0.4s;
+}
+
+@keyframes loading {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 0;
+  }
+}

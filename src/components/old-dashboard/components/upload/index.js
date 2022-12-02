@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { MdDelete, MdExpandLess } from "react-icons/md";
-
 import PropTypes from "prop-types";
+
+import Loading from "../loading";
 
 import styles from "./upload.module.css";
 import UploadIcon from "./assets/UploadIcon.svg";
 import UserDropdown from "../userdropdown";
 
 function Upload(props) {
-  const { handleNamesData, namesData, removeEntry, handleUpload } = props;
+  const {
+    handleNamesData,
+    namesData,
+    removeEntry,
+    handleUpload,
+    uploadState,
+    username
+  } = props;
 
   //states
   const [formData, setFormData] = useState({
@@ -67,7 +75,7 @@ function Upload(props) {
         <UserDropdown />
 
         <div>
-          <h2>Hi, Iyanu</h2>
+          <h2>{`Hi, ${username ? username : "User"}`}</h2>
           <h2>Welcome back!</h2>
         </div>
       </div>
@@ -212,16 +220,31 @@ function Upload(props) {
               })}
             </div>
 
-            <button
-              disabled={namesData.length === 0}
-              className={styles.upload_btn}
-              onClick={(e) => {
-                e.preventDefault();
-                handleUpload();
-              }}>
-              <img src={UploadIcon} alt="Upload" />
-              Upload Entries
-            </button>
+            <div className={styles.upload_btn__container}>
+              <p>
+                {uploadState.uploadError
+                  ? "Error while uploading entries."
+                  : null}
+              </p>
+
+              <button
+                disabled={namesData.length === 0 || uploadState.isUploading}
+                className={styles.upload_btn}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleUpload();
+                }}>
+                {uploadState.isUploading ? (
+                  <Loading />
+                ) : (
+                  <>
+                    {" "}
+                    <img src={UploadIcon} alt="Upload" />
+                    Upload Entries
+                  </>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -234,6 +257,8 @@ export default Upload;
 Upload.propTypes = {
   handleNamesData: PropTypes.func,
   handleUpload: PropTypes.func,
+  uploadState: PropTypes.object,
   namesData: PropTypes.array,
-  removeEntry: PropTypes.func
+  removeEntry: PropTypes.func,
+  username: PropTypes.string
 };
