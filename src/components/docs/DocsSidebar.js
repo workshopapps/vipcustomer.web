@@ -9,8 +9,8 @@ const DocsSidebar = () => {
       <div id="mySidenav" className={styles.sidenav}>
         <div className={styles.linksdiv}>
           <h2>Overview</h2>
-            <p><Link to="/usage" className={styles.li}>Introduction</Link></p>
-            <p><Link to="/usage" className={styles.li}>Quick Start</Link></p>       
+            <p><Link to="/documents" className={styles.li}>Introduction</Link></p>
+            <p><Link to="/documents" className={styles.li}>Quick Start</Link></p>       
         </div>
 
         <div className={styles.linksdiv}>
