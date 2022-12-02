@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
+import DocsOverview from "components/docs/DocsOverview";
 
 const Docs = () => {
   return (
@@ -7,13 +8,8 @@ const Docs = () => {
       <Route
         path="/"
         element={
-          <div>
-            <h1>I am a parent with side bar</h1>
+          <DocsOverview/>
 
-            <h5>
-              <Outlet />
-            </h5>
-          </div>
         }>
         <Route
           index

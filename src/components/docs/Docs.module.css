@@ -1,0 +1,83 @@
+.navcontainer{
+  border-bottom: 1px solid #BEBEBE;
+  
+}
+.nav{
+  margin: auto;
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  width: 93%;
+  height: 100px;
+}
+
+.navlogo{
+  width: 33.3%;
+
+}
+.logo{
+  height: 70px;
+ 
+}
+.navsearchdiv{
+  margin: auto;
+  width: 33.3%;
+
+}
+.navsearch::placeholder{
+  padding-left: 30px;
+  font-size: 18px;
+}
+.navsearch{
+  border:2px solid #091540;
+  border-radius: 5px;
+  height: 45px;
+  width: 100%;
+
+}
+.navlinks{
+  margin: auto;
+  width: 33.3%;
+  text-align: center;
+
+  
+}
+.navlink{
+  color: #091540;
+
+}
+
+.maindiv{
+  background-color: #111;
+
+}
+
+.maindiv .sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-top: 102px;
+  border-right: 2px solid #BEBEBE;
+  display: flex;
+  flex-direction: column;
+  color: #091540;
+}
+.linksdiv{
+  padding-top: 50px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.li{
+ 
+
+}
+
