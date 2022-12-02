@@ -6,7 +6,7 @@ import { AuthStore } from "store/contexts/AuthContext";
 import Input from "../Input";
 import Checkbox from "../signup/Checkbox";
 import axios from "api/axios";
-import { GoogleLogin } from "@react-oauth/google";
+import GoogleAuth from "../GoogleAuth";
 
 const Login = () => {
   const { dispatch } = AuthStore();
@@ -55,28 +55,6 @@ const Login = () => {
       }
       setErrorMessageIsShown(true);
     }
-  }
-
-  async function onGoogleSuccess({ credential }) {
-    try {
-      const { data } = await axios.post("/api/user/google-auth/", {
-        jwt_token: credential
-      });
-      login_a(dispatch, data.user);
-      nav("/dashboard", { replace: true });
-    } catch (e) {
-      setErrorMessage(
-        "An unexpected error occured. Please try again another time"
-      );
-      setErrorMessageIsShown(true);
-    }
-  }
-
-  function onGoogleError() {
-    setErrorMessage(
-      "An unexpected error occured. Please try again another time"
-    );
-    setErrorMessageIsShown(true);
   }
 
   return (
@@ -146,11 +124,7 @@ const Login = () => {
           <span className={styles.line}></span>
         </div>
 
-        <GoogleLogin
-          text="continue_with"
-          onError={onGoogleError}
-          onSuccess={onGoogleSuccess}
-        />
+        <GoogleAuth text="continue_with" />
 
         <p style={{ marginTop: "2.4rem" }}>
           Don&apos;t have an account? <a href="/signup">Sign up</a>

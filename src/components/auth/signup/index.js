@@ -23,7 +23,7 @@ import { Navbar } from "../../general";
 import { AuthStore } from "../../../store/contexts/AuthContext";
 import { login_a } from "../../../store/actions/authActions";
 import axios from "api/axios";
-import { GoogleLogin } from "@react-oauth/google";
+import GoogleAuth from "../GoogleAuth";
 
 export default function index() {
   const navigate = useNavigate();
@@ -117,28 +117,6 @@ export default function index() {
       setConPassowrdIsError(value !== enteredPassword);
   }
 
-  async function onGoogleSuccess({ credential }) {
-    try {
-      const { data } = await axios.post("/api/user/google-auth/", {
-        jwt_token: credential
-      });
-      login_a(dispatch, data.user);
-      navigate("/dashboard", { replace: true });
-    } catch (e) {
-      setErrorMessage(
-        "An unexpected error occured. Please try again another time"
-      );
-      setErrorMessageIsShown(true);
-    }
-  }
-
-  function onGoogleError() {
-    setErrorMessage(
-      "An unexpected error occured. Please try again another time"
-    );
-    setErrorMessageIsShown(true);
-  }
-
   return (
     <Container>
       <NavBarWrapper>
@@ -161,11 +139,7 @@ export default function index() {
       </Left>
       <Right>
         <div>
-          <GoogleLogin
-            text="signup_with"
-            onError={onGoogleError}
-            onSuccess={onGoogleSuccess}
-          />
+          <GoogleAuth text="signup_with" />
           <OrDemarcation>
             <span>or</span>
           </OrDemarcation>
