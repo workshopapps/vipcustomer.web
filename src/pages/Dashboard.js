@@ -14,7 +14,7 @@ const Dashboard = () => {
 
         <Route path="history" element={<div>history</div>} />
 
-        <Route path="top-rated" element={<div>top rated</div>} />
+        <Route path="top-rank" element={<div>top rated</div>} />
 
         <Route path="profile" element={<div>tprofile</div>} />
 

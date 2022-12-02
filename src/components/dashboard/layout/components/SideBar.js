@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-
+import React from "react";
+import PropTypes from "prop-types";
+import { NavLink, useLocation } from "react-router-dom";
 import { SideBarWrapper, LinksContainer } from "./sidebar.styled";
 
 import { IoSearchOutline, IoSettingsOutline } from "react-icons/io5";
 import { FaRegUser, FaAddressBook } from "react-icons/fa";
-import { BsStar } from "react-icons/bs";
-import { AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineLogout, AiOutlineStar } from "react-icons/ai";
+import { HiArrowNarrowLeft } from "react-icons/hi";
 
 const _links = [
   {
     path: "/dashboard",
-    name: "search",
+    name: "Search",
     icon: <IoSearchOutline />
   },
 
@@ -22,49 +22,70 @@ const _links = [
   },
 
   {
-    path: "/dashboard/top-rated",
-    name: "top rated",
-    icon: <BsStar />
+    path: "/dashboard/top-rank",
+    name: "Rank",
+    icon: <AiOutlineStar />
   },
 
   {
     path: "/dashboard/profile",
-    name: "profile",
+    name: "Profile",
     icon: <FaRegUser />
   },
 
   {
     path: "/dashboard/settings",
-    name: "settings",
+    name: "Settings",
     icon: <IoSettingsOutline />
   }
 ];
 
-const SideBar = () => {
-  const [sideBarOpen, setSideBarOpen] = useState(false);
+const SideBar = (props) => {
+  const { sideBarOpen, setSideBarOpen } = props;
+  const { pathname } = useLocation();
 
   return (
     <SideBarWrapper close={sideBarOpen}>
+      <button
+        onClick={() => setSideBarOpen(!sideBarOpen)}
+        className="close__btn">
+        <HiArrowNarrowLeft />
+      </button>
+
       <LinksContainer>
         {_links.map((link, index) => {
           const { path, name, icon } = link;
 
           return (
-            <NavLink key={index} to={path}>
+            <NavLink
+              className={pathname === path ? "isActive" : ""}
+              key={index}
+              to={path}>
               <div className="link__wrap">
                 <span className="icon">{icon}</span>
-                <span className="text">{name}</span>
+                <span data-text={name} className="text">
+                  {name}
+                </span>
               </div>
             </NavLink>
           );
         })}
 
         <div className="link__wrap">
-          <AiOutlineLogout></AiOutlineLogout>
+          <span className="icon">
+            <AiOutlineLogout />
+          </span>
+          <span data-text="Logout" className="text">
+            Logout
+          </span>
         </div>
       </LinksContainer>
     </SideBarWrapper>
   );
 };
 
+SideBar.propTypes = {
+  sideBarOpen: PropTypes.bool,
+  setSideBarOpen: PropTypes.func
+};
 export default SideBar;
