@@ -18,9 +18,11 @@ export default function GoogleAuth({ text }) {
       const { data } = await axios.post("/api/user/google-auth/", {
         jwt_token: credential
       });
-      login_a(dispatch, data.user);
+      login_a(dispatch, data);
       navigate("/dashboard", { replace: true });
     } catch (e) {
+      console.log(e);
+
       setErrorMessage(
         "An unexpected error occured. Please try again another time"
       );
