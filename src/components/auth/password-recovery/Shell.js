@@ -9,9 +9,15 @@ import {
   Button
 } from "./shell.styled";
 
-export default function Shell({ title, buttonText, children, onBtnClick }) {
+export default function Shell({
+  title,
+  buttonText,
+  children,
+  onBtnClick,
+  opacity
+}) {
   return (
-    <Container>
+    <Container style={{ opacity: opacity }}>
       <div>
         <Title>{title}</Title>
         <White>
@@ -29,5 +35,6 @@ Shell.propTypes = {
   title: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   children: PropTypes.node,
-  onBtnClick: PropTypes.func
+  onBtnClick: PropTypes.func,
+  opacity: PropTypes.number
 };

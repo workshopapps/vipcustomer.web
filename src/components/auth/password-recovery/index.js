@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import Input from "../Input";
 import Shell from "./Shell";
 
@@ -8,7 +9,6 @@ const index = () => {
   const [isError, setIsError] = useState(false);
 
   const navigate = useNavigate();
-
   function handleSubmit() {
     if (!enteredEmail) setIsError(true);
     else navigate("change");
@@ -16,6 +16,7 @@ const index = () => {
 
   return (
     <Shell
+      // style={{ opacity: 0.4 }}
       title="Password Recovery"
       buttonText="Next"
       onBtnClick={handleSubmit}>
@@ -29,6 +30,7 @@ const index = () => {
         label="Email"
         id="email"
         type="email"
+        required
         placeholder="JohnDoe@gmail.com"
         value={enteredEmail}
         onChange={(e) => setEnteredEmail(e.target.value)}

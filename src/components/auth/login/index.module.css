@@ -187,3 +187,15 @@
     margin: auto;
   }
 }
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+.spaceBetween > p {
+  color: #f05d23;
+  font-size: small;
+}
+.spaceBetween > p:hover {
+  cursor: pointer;
+}
