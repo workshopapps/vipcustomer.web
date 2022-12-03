@@ -35,6 +35,7 @@ import Documents from "pages/Documents";
 import SearchMany from "pages/docs/SearchMany";
 import History from "pages/docs/History";
 import Usage from "pages/docs/Usage";
+import Quick from "pages/docs/Quickstart";
 
 function App() {
   const { theme } = Store();
@@ -86,6 +87,7 @@ function App() {
           <Route path="/documents/searchmany" element={<SearchMany />} />
           <Route path="/documents/history" element={<History />} />
           <Route path="/documents/usage" element={<Usage />} />
+          <Route path="/documents/quick" element={<Quick />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

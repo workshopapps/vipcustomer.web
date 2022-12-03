@@ -8,7 +8,7 @@ import "./style.css";
 
 const DocsLayouts = () => {
   return (
-    <div>
+    <div className='layouts-div'>
       <div>
         <DocsOverview />
       </div>

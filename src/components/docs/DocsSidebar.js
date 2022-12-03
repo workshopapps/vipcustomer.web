@@ -1,16 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Docs.module.css'
+import { FiAlignJustify} from "react-icons/fi";
+
 
 
 const DocsSidebar = () => {
   return (
     <div className={styles.maindiv}>
+      <div className={ styles.menubar }>
+        <FiAlignJustify />
+      </div>
       <div id="mySidenav" className={styles.sidenav}>
         <div className={styles.linksdiv}>
           <h2>Overview</h2>
             <p><Link to="/documents" className={styles.li}>Introduction</Link></p>
-            <p><Link to="/documents" className={styles.li}>Quick Start</Link></p>       
+            <p><Link to="/documents/quick" className={styles.li}>Quick Start</Link></p>       
         </div>
 
         <div className={styles.linksdiv}>
@@ -21,7 +26,6 @@ const DocsSidebar = () => {
             <p><Link to="/documents/history" className={styles.li}>History</Link></p>
           
         </div>
-                
                 
         </div>
     </div>

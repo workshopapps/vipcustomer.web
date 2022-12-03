@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import SF from './STAR-FINDER-LOGO.png'
 import styles from './Docs.module.css'
 import { BsSearch } from 'react-icons/bs';
 
 const DocsNav = () => {
+
+
   return (
+  
     <div className={styles.navcontainer}>
       <div className={styles.nav}> 
         <div className={styles.navlogo}>
@@ -17,11 +20,9 @@ const DocsNav = () => {
         <div className={styles.navlinks}>
             <a href='https://github.com/workshopapps/vipcustomer.web' className={styles.navlink}>Github</a>
         </div>
-        
-    </div>
-    </div>
-    
-  )
+        </div>
+      </div>
+  );
 }
 
 export default DocsNav

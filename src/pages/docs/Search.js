@@ -1,16 +1,22 @@
 import React from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
-import DocsOverview from "components/docs/DocsOverview";
 
 const Docs = () => {
   return (
-    <div>
+    <div className="documents-div">
       <h1>Search</h1>
       <h3>Searching starFinder app for VIPs</h3>
-      <p>By using the app, we navigate using search bar, the name of the VIP being searched for should be typed in the the search bar, and it should pop up for use</p>
+      <p>By using the app, we navigate using search bar, the name of the VIP being searched for should be typed in the the search bar, and it should pop up for use.</p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quidem enim eius, asperiores quia deserunt atque quo itaque necessitatibus sit accusamus pariatur! Est unde ipsum quaerat, repellendus officiis earum dolore.
+        To have a succesfull search response, the following parameter MUST be inputed: name of person. Other parameters includes gender, occupation, age, email address.
       </p>
+
+      <iframe 
+        src="https://www.thiscodeworks.com/embed/638b49faf3febd0015d3b6ae" 
+        style={{ width: '100%', height: '268px' }} 
+        frameBorder="0">
+      </iframe>
+
+      <p>NOTE: An optional API key, should be passed to the request header to attribute the search request to a user. </p>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque vel numquam ipsa laboriosam veniam. Temporibus nemo maiores ipsam earum laboriosam quae laborum corrupti quasi quidem vero nesciunt voluptates deserunt nobis iusto nisi illo consequuntur, error eaque id nihil doloremque rerum distinctio illum odit. Magnam vel dolorum expedita necessitatibus, soluta consequuntur deleniti praesentium, porro mollitia ipsum qui consectetur pariatur repellendus laboriosam ut! Eligendi labore quos unde magni veritatis blanditiis reiciendis, exercitationem assumenda illo quidem voluptas hic libero recusandae alias ducimus eaque quis deleniti, repellendus sit molestias. Rem mollitia dignissimos nihil quasi, suscipit quod quisquam a ex molestias, cumque sapiente dolore possimus! Alias explicabo vero itaque corrupti voluptatum, voluptas eius consequatur ad quisquam, magnam quo dolores labore aperiam. Nihil a vero inventore amet pariatur modi deleniti, nisi ad excepturi. Laudantium eveniet iusto ipsam quam sed harum iure recusandae et dolorem numquam! Doloremque quaerat sequi vitae, repudiandae facilis accusamus quidem nulla aliquid perspiciatis quam ratione debitis, suscipit voluptas assumenda unde corrupti? Voluptas aut fuga odit laudantium perspiciatis est exercitationem quidem a aperiam eius, cupiditate asperiores. Sapiente eius numquam modi quas quibusdam quae, itaque aliquid nemo veniam molestias. Debitis labore possimus praesentium, pariatur illum nihil dolores rem harum optio necessitatibus incidunt! Distinctio, perspiciatis error!
       </p>
