@@ -5,7 +5,7 @@ import { FaTimes } from "react-icons/fa";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import PropTypes from "prop-types";
 export default function Modal({ setModal, modalForm, setOpacity }) {
-  const [ModalForm, setModalForm] = React.useState("");
+  // const [ModalForm, setModalForm] = React.useState("");
 
   const success = (
     <StyledDiv>

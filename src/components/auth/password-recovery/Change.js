@@ -1,12 +1,11 @@
 import React from "react";
 import Shell from "./Shell";
 import Input from "../Input";
-import { useNavigate } from "react-router-dom";
 // import { AiOutlineEyeInvisible } from "react-icons/ai";
 import Modal from "./Modal";
 
 export default function Change() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [password, setPassword] = React.useState("");
   const [passwordConfirm, setPasswordConfirm] = React.useState("");
   const [opacity, setOpacity] = React.useState(1);
