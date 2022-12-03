@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // import all pages here
-import { Layout, Search, Profile } from "components/dashboard";
+import { Layout, Search, Profile, Settings } from "components/dashboard";
 
 // replace the divs with your pages
 
@@ -18,7 +18,7 @@ const Dashboard = () => {
 
         <Route path="profile" element={<Profile />} />
 
-        <Route path="settings" element={<div>settings</div>} />
+        <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>
   );
