@@ -68,3 +68,5 @@ npm run lint --fix  # to fix linting isssues
 ```
 
 you can also lint for all files in the repo by running that command in the root folder.
+
+
