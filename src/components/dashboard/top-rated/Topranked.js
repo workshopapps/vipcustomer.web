@@ -2,12 +2,9 @@ import React,{useState,useEffect,useContext} from 'react';
 import classes from "./Topranked.module.css"
 
 
-const ranks =[{name:'Chika',age:'23',gender:'female',occupation:'null',vip_score:80,timestamp:"2022-11-02"},{name:'Chika',age:'23',gender:'female',occupation:'null',vip_score:80,timestamp:"2022-11-02"}]
-const headers = ["Name","Age","Gender","Occupation","VIP Rating"];
 const Topranked = () =>{
   const [loading,setLoading] = useState(false);
-  const [data,setData] = useState(ranks);
-
+  const [datas,setDatas] = useState(ranks);
 const fetchRankData  =() =>{
 const user = { user: localStorage.getItem("user") || false };
 const users = JSON.parse(user.user);
@@ -18,14 +15,16 @@ const users = JSON.parse(user.user);
       Authorization:`Bearer ${users.access_token}`
       }})
      .then((res)=> res.json())
-     .then((data)=> setData(data))
+     .then((data)=> setDatas(data))
     setLoading(false)
   }
   useEffect(()=>{
     fetchRankData()
   },[])
-
-
+if(loading)
+  return(
+    <h3>.Loading..</h3>
+  )
   return (
     <>
         <section className={classes.container}>
@@ -38,8 +37,8 @@ const users = JSON.parse(user.user);
                 <h3 className={classes.header}>Rating</h3>
           </div>
 
-          {ranks.map((vip, index) => {
-            const { name, age, gender, occupation, vip_score} = vip;
+          {datas.map((data, index) => {
+            const { name, age, gender, occupation, vip_score} = data;
             return (
               <div key={index} className={classes.tabletContainer} >
                 <p className={classes.text}>{name}</p>
@@ -56,8 +55,8 @@ const users = JSON.parse(user.user);
 
     <div className={classes.mobile}>
      <section className={classes.mobileContainer}>
-          {ranks.map((vip, index) => {
-            const { name, age, gender, occupation, vip_score} = vip;
+            {datas.map((data, index) => {
+            const { name, age, gender, occupation, vip_score} = data;
             return (
               <div key={index} className={classes.mobileRow}>
              <div className={classes.row}>
