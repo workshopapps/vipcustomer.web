@@ -81,6 +81,7 @@ const Login = () => {
 
         <form onSubmit={loginHandler}>
           <Input
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             id="email"
@@ -88,7 +89,7 @@ const Login = () => {
             placeholder="JohnObi@gmail.com"
             errorMessage="Invalid Email"
             isError={!isEmail}
-            type="email"
+            required
           />
 
           <Input
@@ -102,12 +103,15 @@ const Login = () => {
             type="password"
           />
 
-          <Checkbox
-            value={isChecked}
-            onChange={(e) => setIsChecked(e.target.checked)}
-            id="checked">
-            Remember me
-          </Checkbox>
+          <div className={styles.spaceBetween}>
+            <Checkbox
+              value={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+              id="checked">
+              Remember me
+            </Checkbox>
+            <p onClick={() => nav("/password-recovery")}>Forgot password?</p>
+          </div>
 
           <div style={{ marginTop: "1rem" }}>
             {errorMessageIsShown && (

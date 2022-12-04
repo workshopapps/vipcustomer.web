@@ -2,6 +2,7 @@
 
 This is the Vip Customer Frontend built with [React](https://reactjs.org/) (Frontend)
 
+
 ## Getting Started.
 
 Make sure you have nodejs installed by running the following command:
@@ -68,3 +69,5 @@ npm run lint --fix  # to fix linting isssues
 ```
 
 you can also lint for all files in the repo by running that command in the root folder.
+
+
