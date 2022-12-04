@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Shell from "./Shell";
-import Input from "../Input";
 import { useLocation } from "react-router-dom";
 import Modal from "./Modal";
 import { Button, ErrorMessage, StyledInput, StyledDiv } from "./shell.styled";
@@ -46,7 +45,7 @@ export default function Change() {
       setErrorMessage("password doesnt match");
       setErrorMessageIsShown(true);
     } else {
-      if (password.length < 8) {
+      if (password.length < 6) {
         setErrorMessage("password is less than 8 characters");
         setErrorMessageIsShown(true);
       } else {
@@ -57,7 +56,7 @@ export default function Change() {
             email: importedEmail,
             password: password
           });
-
+          console.log(data);
           setSpinnerClasses("spinner small stop");
           setModal(true);
           setOpacity(0.4);
@@ -88,7 +87,7 @@ export default function Change() {
               id="password"
               // type="password
               type={passwordVisible ? "text" : "password"}
-              placeholder="Minimum of 8 characters"
+              placeholder="Minimum of 6 characters"
               onChange={handlePasswordChange}
               value={password}
             />{" "}
