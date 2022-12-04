@@ -23,11 +23,11 @@ const GLobalStyles = createGlobalStyle`
 /* example */
 body {
     scroll-behavior: smooth;
-    background-color: ${({ theme }) => theme.bg};
+    /* background-color: ${({ theme }) => theme.bg}; */
     margin:0 auto;
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
-    transition:color 0.2s linear, background-color 0.2s linear;
+    /* transition:color 0.2s linear, background-color 0.2s linear; */
   }
 
 .btn{

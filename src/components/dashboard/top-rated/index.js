@@ -1,4 +1,5 @@
 // please export your page here
+
 import Topranked from "./Topranked";
 
 const index = () =>{
@@ -9,3 +10,4 @@ const index = () =>{
   )
 }
 export default index
+

@@ -124,6 +124,10 @@
   background: #121212;
   color: white;
   margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .login .lines {
@@ -186,4 +190,16 @@
   .login {
     margin: auto;
   }
+}
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+.spaceBetween > p {
+  color: #f05d23;
+  font-size: small;
+}
+.spaceBetween > p:hover {
+  cursor: pointer;
 }

@@ -7,8 +7,8 @@ const PrivacyCard = ({ plist }) => {
   const { title, body } = plist;
   return (
     <div>
-      <h3>{title}</h3>
-      <p>{body}</p>
+      <h2>{title}</h2>
+      <p className="pbody">{body}</p>
     </div>
   );
 };

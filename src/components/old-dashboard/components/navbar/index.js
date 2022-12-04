@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SearchInput from "../searchinput";
 
 import styles from "./nav.module.css";
@@ -13,9 +14,11 @@ export default function NavBar() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <div className={styles.logo__container}>
-          <img src={Logo} alt="Axe api" />
-        </div>
+        <Link to="/">
+          <div className={styles.logo__container}>
+            <img src={Logo} alt="Axe api" />
+          </div>
+        </Link>
 
         <div className={styles.search__user_img}>
           <SearchInput />

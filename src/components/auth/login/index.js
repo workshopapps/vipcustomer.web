@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import styles from "./index.module.css";
 import { login_a } from "store/actions/authActions";
 import { AuthStore } from "store/contexts/AuthContext";
 import Input from "../Input";
 import Checkbox from "../signup/Checkbox";
 import axios from "api/axios";
+import GoogleAuth from "../GoogleAuth";
 
 const Login = () => {
   const { dispatch } = AuthStore();
@@ -19,6 +19,8 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState(
     "an unexpected error occured, please try again another time"
   );
+  const [spinnerClasses, setSpinnerClasses] = useState("spinner small stop");
+
   const location = useLocation();
   const nextPath = location.state?.from?.pathname || "/dashboard";
   const nav = useNavigate();
@@ -43,16 +45,20 @@ const Login = () => {
     }
 
     try {
+      setSpinnerClasses("spinner small");
       const { data } = await axios.post("/api/user/login", {
         email: email,
         password: password
       });
+      setSpinnerClasses("spinner small stop");
       login_a(dispatch, data);
       nav(nextPath, { replace: true });
     } catch (err) {
-      if (err?.response?.status === 401) {
-        setErrorMessage("invalid credentials");
-      }
+      setSpinnerClasses("spinner small stop");
+      const message = err?.response?.data?.detail;
+      setErrorMessage(
+        message || "An unexpected error occured. Please try again another time"
+      );
       setErrorMessageIsShown(true);
     }
   }
@@ -75,6 +81,7 @@ const Login = () => {
 
         <form onSubmit={loginHandler}>
           <Input
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             id="email"
@@ -82,7 +89,7 @@ const Login = () => {
             placeholder="JohnObi@gmail.com"
             errorMessage="Invalid Email"
             isError={!isEmail}
-            type="email"
+            required
           />
 
           <Input
@@ -96,12 +103,15 @@ const Login = () => {
             type="password"
           />
 
-          <Checkbox
-            value={isChecked}
-            onChange={(e) => setIsChecked(e.target.checked)}
-            id="checked">
-            Remember me
-          </Checkbox>
+          <div className={styles.spaceBetween}>
+            <Checkbox
+              value={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+              id="checked">
+              Remember me
+            </Checkbox>
+            <p onClick={() => nav("/password-recovery")}>Forgot password?</p>
+          </div>
 
           <div style={{ marginTop: "1rem" }}>
             {errorMessageIsShown && (
@@ -114,7 +124,15 @@ const Login = () => {
                 {errorMessage}
               </div>
             )}
-            <button className={styles.login__btn}>Login</button>
+            <button className={styles.login__btn}>
+              Login
+              <span
+                className={spinnerClasses}
+                style={{
+                  borderLeft: "2px solid white",
+                  display: "inline-block"
+                }}></span>
+            </button>
           </div>
         </form>
 
@@ -124,12 +142,9 @@ const Login = () => {
           <span className={styles.line}></span>
         </div>
 
-        <button className={styles.google}>
-          <FcGoogle />
-          Authorize with Google
-        </button>
+        <GoogleAuth text="continue_with" />
 
-        <p>
+        <p style={{ marginTop: "2.4rem" }}>
           Don&apos;t have an account? <a href="/signup">Sign up</a>
         </p>
       </div>
