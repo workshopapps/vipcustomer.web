@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState } from "react";
 
 import NavBar from "./components/navbar";
@@ -92,3 +93,9 @@ export default function Dashboard() {
     </main>
   );
 }
+=======
+// export all pages here
+export { default as Layout } from "./layout";
+export { default as Search } from "./search";
+export { default as Topranked } from "./top-rated/index";
+>>>>>>> Stashed changes
