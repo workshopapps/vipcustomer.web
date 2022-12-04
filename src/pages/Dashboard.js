@@ -9,7 +9,7 @@ import { Layout, Search , Topranked} from "components/dashboard";
 const Dashboard = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout />} >
         <Route index element={<Search />} />
 
         <Route path="history" element={<div>history</div>} />
@@ -19,7 +19,11 @@ const Dashboard = () => {
         <Route path="profile" element={<div>tprofile</div>} />
 
         <Route path="settings" element={<div>settings</div>} />
+<<<<<<< Updated upstream
     
+=======
+    </Route>
+>>>>>>> Stashed changes
     </Routes>
   );
 };
