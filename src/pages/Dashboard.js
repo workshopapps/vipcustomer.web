@@ -19,11 +19,7 @@ const Dashboard = () => {
         <Route path="profile" element={<div>tprofile</div>} />
 
         <Route path="settings" element={<div>settings</div>} />
-<<<<<<< Updated upstream
-    
-=======
     </Route>
->>>>>>> Stashed changes
     </Routes>
   );
 };
