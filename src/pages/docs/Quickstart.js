@@ -51,9 +51,6 @@ const Documents = () => {
         style={{ width: '100%', height: '918px' }}
         frameBorder="0">
       </iframe>
-      <p>
-        
-      </p>
 
     </div>
   );
