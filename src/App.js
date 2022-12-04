@@ -30,6 +30,7 @@ import Terms from "pages/Terms";
 import Aboutus from "pages/Aboutus";
 import Consultation from "pages/Consultation";
 import RequireAuth from "components/auth/RequireAuth";
+import Uploadcsv from "pages/CsvUpload";
 
 function App() {
   const { theme } = Store();
@@ -76,6 +77,7 @@ function App() {
         <Route path="/profile/edit" element={<EditProfile />} />
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
+        <Route path="/csvupload" element={<Uploadcsv />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </ThemeProvider>
