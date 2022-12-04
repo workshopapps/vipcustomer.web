@@ -1,21 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {
-  Container,
-  ContentWrapper,
-  Title,
-  White,
-  Button
-} from "./shell.styled";
+import { Container, ContentWrapper, Title, White } from "./shell.styled";
 
-export default function Shell({
-  title,
-  buttonText,
-  children,
-  onBtnClick,
-  opacity
-}) {
+export default function Shell({ title, children, opacity }) {
   return (
     <Container style={{ opacity: opacity }}>
       <div>
@@ -23,7 +11,6 @@ export default function Shell({
         <White>
           <ContentWrapper>
             <div>{children}</div>
-            <Button onClick={onBtnClick}>{buttonText}</Button>
           </ContentWrapper>
         </White>
       </div>
@@ -33,7 +20,7 @@ export default function Shell({
 
 Shell.propTypes = {
   title: PropTypes.string.isRequired,
-  buttonText: PropTypes.string.isRequired,
+  buttonText: PropTypes.string,
   children: PropTypes.node,
   onBtnClick: PropTypes.func,
   opacity: PropTypes.number
