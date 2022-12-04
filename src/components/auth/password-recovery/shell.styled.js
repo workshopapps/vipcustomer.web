@@ -75,10 +75,32 @@ export const Button = styled.button`
   color: white;
   padding: 1rem;
   border-radius: 8px;
-  margin-top: 5.8rem;
+  margin-top: 2.8rem;
   cursor: pointer;
 
   @media screen and (max-width: 480px) {
     font-size: 1.4rem;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 1.4rem;
+`;
+
+export const StyledInput = styled.input`
+  width: 100%;
+  // padding: 10px 20px;
+  background: white;
+  font-size: 15px;
+`;
+export const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: space-between;
+  border: 2px solid #e8e8e8;
+  align-items: centre;
+  justify-content: centre;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-sixe: 2rem;
 `;
