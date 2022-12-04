@@ -1,7 +1,7 @@
 import React from "react";
 import NavWrapper from "./nav.styled";
 import PropTypes from "prop-types";
-const _tabs = ["Quick search", "multi search", "upload a csv"];
+const _tabs = ["Quick search", "multi search", "upload a CSV"];
 
 // app
 const Nav = ({ tab, setTab }) => {

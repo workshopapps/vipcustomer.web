@@ -3,6 +3,7 @@ import Form from "components/Demo/Form";
 import axios from "api/axios";
 import SingleSearchWrapper from "./singlesearche.styled";
 import Modal from "components/Demo/Modal";
+import Loading from "../loading";
 
 const SingleSearch = () => {
   // states for the Form component
@@ -32,6 +33,7 @@ const SingleSearch = () => {
       });
 
       const result = response.data[0];
+      console.log(response.data);
       return result;
     } catch (error) {
       return undefined;
@@ -46,6 +48,7 @@ const SingleSearch = () => {
 
     if (first && last) {
       const name = `${first} ${last}`;
+      setSearchInputs({});
       setLoading(true);
 
       // api call
@@ -68,11 +71,8 @@ const SingleSearch = () => {
       <SingleSearchWrapper>
         <section>
           <h2>Run a quick search</h2>
-          <form onClick={handleSubmit} className="form2" action="">
-            <div className="loading">
-              <div className={loading ? "spinner" : "spinner stop"}></div>
-              <p>Please wait</p>
-            </div>
+          <form onSubmit={handleSubmit} className="quick__form">
+            <Loading loading={loading} />
 
             <div className="form__wrapper">
               <input
@@ -102,7 +102,7 @@ const SingleSearch = () => {
 
         <section>
           <h2>Get a more accurate Result</h2>
-          <div className="form">
+          <div className="detailed__form">
             <Form
               params={{
                 setModal,

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { Text, HeaderText } from "./components/Text";
 import ResultsNavBar from "./components/ResultsNavBar";
 import Column from "./components/Column";
 import Paginate from "./components/Paginate";
 import { _vip } from "./data";
+import { BsCheckLg } from "react-icons/bs";
+import { FaTimes } from "react-icons/fa";
 import {
   ResultsWrapper,
   Tablet,
@@ -16,7 +18,7 @@ import {
 
 // app
 const Result = ({ responseData = [] }) => {
-  console.log(responseData);
+  const ResultsRef = useRef(null);
   const [currentBtn, setCurrentBtn] = useState(0);
   const [vipList, setVipList] = useState(paginateFn(_vip, 9).items);
 
@@ -53,7 +55,7 @@ const Result = ({ responseData = [] }) => {
     const newList = paginateFn(_vip, 9, val).items;
     setVipList(newList);
     setCurrentBtn(val);
-    window.scrollTo(0, 0);
+    window.scrollTo(0, Number(ResultsRef.current.offsetTop));
   };
 
   // effect updates the state in case of changes
@@ -65,16 +67,16 @@ const Result = ({ responseData = [] }) => {
   return (
     <>
       {/* The results container or wrapper */}
-      <ResultsWrapper>
+      <ResultsWrapper ref={ResultsRef}>
         <Tablet>
           <section className="wrapper__container">
             <ResultsNavBar />
             <TabletRow>
               <HeaderText text="Name" />
-              <HeaderText text="Category" />
+              <HeaderText text="VIP?" />
+              <HeaderText text="Score" />
               <HeaderText text="Gender" />
-              <HeaderText text="Networth" />
-              <HeaderText text="Career" />
+              <HeaderText text="Age" />
             </TabletRow>
 
             {vipList.map((vip, index) => {
@@ -82,10 +84,10 @@ const Result = ({ responseData = [] }) => {
               return (
                 <TabletRow key={index}>
                   <Text text={name} />
+                  <Text text={<BsCheckLg />} />
                   <Text text={category} />
                   <Text text={gender} />
                   <Text text={no + "b$"} />
-                  <Text text={career} />
                 </TabletRow>
               );
             })}
@@ -102,10 +104,10 @@ const Result = ({ responseData = [] }) => {
               return (
                 <MobileRow key={index}>
                   <Column name="Name" value={name} />
-                  <Column name="Category" value={category} />
-                  <Column name="Gender" value={gender} />
-                  <Column name="Networth" value={netWorth} />
-                  <Column name="Career" value={career} />
+                  <Column name="VIP?" value={<FaTimes />} />
+                  <Column name="Score" value={gender} />
+                  <Column name="Gender" value={netWorth} />
+                  <Column name="Age" value={career} />
                 </MobileRow>
               );
             })}
@@ -128,7 +130,7 @@ const Result = ({ responseData = [] }) => {
 Result.propTypes = {
   // responseData: PropTypes.object.isRequired
   // array needed... currently api returns an empty object
-  responseData: PropTypes.array.isRequired
+  responseData: PropTypes.array
 };
 
 export default Result;

@@ -47,7 +47,20 @@ const Form = ({ params }) => {
           };
         }
       } else {
-        if (inputEl.value && inputEl.value.length >= 3) {
+        // check for age
+        if (inputEl.name === "Age" && inputEl.value) {
+          optionalParams = {
+            ...optionalParams,
+            [inputEl.name.toLowerCase()]: JSON.parse(inputEl.value) || 0
+          };
+        }
+
+        // others
+        if (
+          inputEl.value &&
+          inputEl.value.length >= 3 &&
+          inputEl.name !== "Age"
+        ) {
           optionalParams = {
             ...optionalParams,
             [inputEl.name.toLowerCase()]: inputEl.value.trim()
@@ -64,6 +77,8 @@ const Form = ({ params }) => {
       let inputName = names["First name"] + " " + names["Last name"];
       setName(inputName);
       setSearchInputs(optionalParams);
+
+      console.log(optionalParams);
 
       // disabe submit button
       submitBtn.classList.add("loading");

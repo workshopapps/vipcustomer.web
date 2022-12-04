@@ -1,9 +1,9 @@
 // please export your page here
 import React, { useState } from "react";
-import MultiSearch from "./components/multi-search";
+import { MultiSearch } from "./components/multi-search";
 import { Nav } from "./components/nav";
 import { SingleSearch } from "./components/single-search";
-import CsvUpload from "./components/csv-upload";
+import { CSV } from "./components/csv-upload";
 
 const Search = () => {
   const [tab, setTab] = useState(0);
@@ -17,7 +17,7 @@ const Search = () => {
 
       {tab === 1 && <MultiSearch />}
 
-      {tab === 2 && <CsvUpload />}
+      {tab === 2 && <CSV />}
     </>
   );
 };

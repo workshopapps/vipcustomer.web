@@ -1,7 +1,1 @@
-import React from "react";
-
-const MultiSearch = () => {
-  return <div>MultiSearch</div>;
-};
-
-export default MultiSearch;
+export { default as MultiSearch } from "./components/MultiSearch";

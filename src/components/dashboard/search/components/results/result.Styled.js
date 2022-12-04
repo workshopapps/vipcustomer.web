@@ -20,7 +20,7 @@ export const ResultsWrapper = styled.section`
 
   .wrapper__container {
     padding: 15px;
-    height: 570px;
+    height: 580px;
     border: 1px solid #adb1bf;
     overflow-x: auto;
     border-radius: 12px;

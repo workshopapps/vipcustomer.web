@@ -1,7 +1,1 @@
-import React from "react";
-
-const CsvUpload = () => {
-  return <div>CsvUpload</div>;
-};
-
-export default CsvUpload;
+export { default as CSV } from "./components/CSV";

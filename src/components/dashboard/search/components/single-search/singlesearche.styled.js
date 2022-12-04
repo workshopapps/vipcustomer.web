@@ -2,38 +2,18 @@ import styled from "styled-components";
 
 const SingleSearchWrapper = styled.section`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: 50px;
 
-  .loading {
-    .spinner {
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      border: 2px solid red;
-      margin: 0 auto;
-    }
-
-    p {
-      margin-bottom: 10px;
-      text-align: center;
-    }
-  }
-
-  .spinner.stop {
-    display: none;
-  }
-
   section {
-    margin-right: 30px;
-
     h2 {
       text-align: center;
       margin-bottom: 20px;
     }
   }
 
-  .form {
+  .detailed__form {
     max-width: 500px;
     border: 1px solid;
     border-radius: 10px;
@@ -41,7 +21,11 @@ const SingleSearchWrapper = styled.section`
     margin: 0 auto;
   }
 
-  .form2 {
+  .quick__form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
     .form__wrapper {
       border-radius: 15px;
       overflow: hidden;
@@ -55,6 +39,7 @@ const SingleSearchWrapper = styled.section`
       button {
         padding: 0px 10px;
         height: 44px;
+        width: 33%;
       }
 
       input:first-of-type {
@@ -64,8 +49,18 @@ const SingleSearchWrapper = styled.section`
 
       button {
         background-color: var(--color-orange);
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
         color: white;
       }
+    }
+  }
+
+  @media screen and (min-width: 930px) {
+    flex-direction: row;
+
+    section {
+      margin-right: 30px;
     }
   }
 `;
