@@ -1,18 +1,25 @@
 .navcontainer{
   border-bottom: 1px solid #BEBEBE;
-  position: sticky;
+  position: fixed;
   top: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 1000;
   
 }
-.nav{
+
+.nav {
   margin: auto;
   display: flex;
   padding-top: 15px;
   padding-bottom: 10px;
   width: 93%;
   height: 100px;
- 
 }
+.rightsidebar {
+  display: none;
+}
+
 
 .navlogo{
   width: 33.3%;
@@ -32,7 +39,7 @@
   font-size: 18px;
 }
 .navsearch{
-  border:2px solid #091540;
+  border:1px solid #091540;
   border-radius: 5px;
   height: 45px;
   width: 100%;
@@ -47,11 +54,23 @@
 }
 .navlink{
   color: #091540;
+  right: auto;
+  
+}
 
+.navlink:hover{
+  color: #c7c8ca;
+
+}
+.linksdiv {
+  color: #091540;
+}
+
+.linksdiv :hover {
+  color: #c7c8ca;
 }
 
 .maindiv {
-
   width: 25%;
   position: fixed; 
   top: 0;
@@ -71,20 +90,61 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.menubar {
+  display: none;
+}
+
+.showrightsidebar {
+  display: none;
 
 }
 
-@media only screen and (max-width: 900px){
-  .linksdiv >h2{
-    font-size: 1.5rem;
-  }
+.rightsidebar {
+  display: none;
+  position: absolute;
+  right: 0;
 }
+
+
+
 
 @media only screen and (max-width: 768px){
   .maindiv{
     width: 28%;
     padding-right: 30px;
   }
+
+  .navlink{
+    display: none;
+  }
+
+  .menubar {
+    display: block;
+    position: fixed;
+    right: 0px;
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.showrightsidebar {
+  display: block !important;
+}
+
+.rightsidebar {
+  display: none;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, .90);
+}
+
+.sidenav {
+  display: none;
+}
+
   .linksdiv >h2{
     font-size: 1.5rem;
   }
