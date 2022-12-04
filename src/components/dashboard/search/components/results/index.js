@@ -4,7 +4,7 @@ import { Text, HeaderText } from "./components/Text";
 import ResultsNavBar from "./components/ResultsNavBar";
 import Column from "./components/Column";
 import Paginate from "./components/Paginate";
-import { _vip } from "./data";
+// import { _vip } from "./data"; //tetst data
 import { BsCheckLg } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
 import {
@@ -17,25 +17,14 @@ import {
 } from "./result.Styled";
 
 // app
-const Result = ({ responseData = [] }) => {
+const Result = ({ vip = [] }) => {
   const ResultsRef = useRef(null);
   const [currentBtn, setCurrentBtn] = useState(0);
-  const [vipList, setVipList] = useState(paginateFn(_vip, 9).items);
+  const [vipList, setVipList] = useState(paginateFn(vip, 9).items);
 
   // paginate function... returns a slice of the whole array
   function paginateFn(array = [], itemsPerPage, currentPage = 0) {
     if (!itemsPerPage) throw new Error("check parameters at paginateFn");
-
-    array = array.map((arr, index) => {
-      if (typeof arr == "object" && !Array.isArray(arr)) {
-        return {
-          ...arr,
-          no: index + 1
-        };
-      } else {
-        return arr;
-      }
-    });
 
     let pageNumber = Math.ceil(array.length / itemsPerPage);
     let startIndex = currentPage * itemsPerPage;
@@ -52,16 +41,11 @@ const Result = ({ responseData = [] }) => {
 
   // handle paginate .... changes the page content
   const handlePaginate = (val) => {
-    const newList = paginateFn(_vip, 9, val).items;
+    const newList = paginateFn(vip, 9, val).items;
     setVipList(newList);
     setCurrentBtn(val);
     window.scrollTo(0, Number(ResultsRef.current.offsetTop));
   };
-
-  // effect updates the state in case of changes
-  // useEffect(() => {
-  //   setVipList(paginateFn(_vip, 9).items);
-  // }, [responseData]);
 
   // app
   return (
@@ -80,14 +64,14 @@ const Result = ({ responseData = [] }) => {
             </TabletRow>
 
             {vipList.map((vip, index) => {
-              const { name, category, gender, career, no } = vip;
+              const { name, vip_score, is_vip, gender, age } = vip;
               return (
                 <TabletRow key={index}>
                   <Text text={name} />
-                  <Text text={<BsCheckLg />} />
-                  <Text text={category} />
+                  <Text text={is_vip ? <BsCheckLg /> : <FaTimes />} />
+                  <Text text={vip_score} />
                   <Text text={gender} />
-                  <Text text={no + "b$"} />
+                  <Text text={age} />
                 </TabletRow>
               );
             })}
@@ -99,15 +83,18 @@ const Result = ({ responseData = [] }) => {
 
           <MobileWrapper>
             {vipList.map((vip, index) => {
-              const { name, category, gender, netWorth, career } = vip;
+              const { name, is_vip, vip_score, gender, age } = vip;
 
               return (
                 <MobileRow key={index}>
                   <Column name="Name" value={name} />
-                  <Column name="VIP?" value={<FaTimes />} />
-                  <Column name="Score" value={gender} />
-                  <Column name="Gender" value={netWorth} />
-                  <Column name="Age" value={career} />
+                  <Column
+                    name="VIP?"
+                    value={is_vip ? <BsCheckLg /> : <FaTimes />}
+                  />
+                  <Column name="Score" value={vip_score} />
+                  <Column name="Gender" value={gender} />
+                  <Column name="Age" value={age} />
                 </MobileRow>
               );
             })}
@@ -119,7 +106,7 @@ const Result = ({ responseData = [] }) => {
       <Paginate
         paginateFn={paginateFn}
         itemsPerPage={9}
-        array={_vip}
+        array={vip}
         currentBtn={currentBtn}
         handlePaginate={handlePaginate}
       />
@@ -130,7 +117,7 @@ const Result = ({ responseData = [] }) => {
 Result.propTypes = {
   // responseData: PropTypes.object.isRequired
   // array needed... currently api returns an empty object
-  responseData: PropTypes.array
+  vip: PropTypes.array
 };
 
 export default Result;

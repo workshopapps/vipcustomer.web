@@ -16,7 +16,6 @@ const Entries = (props) => {
   const [error, setError] = useState(false);
 
   const handleFetch = async (list) => {
-    console.log(list);
     setLoading(true);
     setVip(undefined);
     setError(false);
@@ -27,7 +26,6 @@ const Entries = (props) => {
       });
 
       setVip(response.data);
-      console.log(response);
       setLoading(false);
       return;
     } catch (error) {

@@ -42,7 +42,7 @@ const MultiSearch = () => {
         </section>
       </MultiSearchWrapper>
 
-      {vip && <ShowVip vip={vip} setVip={setVip} />}
+      {vip && <ShowVip vip={vip} />}
     </>
   );
 };

@@ -1,20 +1,17 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Result from "../../results";
 import ShowVipWrapper from "./showvip.styled";
 
-const ShowVip = ({ vip = [1], setVip }) => {
-  const showVipRef = useRef(null);
-
+const ShowVip = ({ vip = [1] }) => {
   const _vip = vip.flat();
-  console.log(_vip);
 
   useEffect(() => {
     window.scrollTo(0, document.body.scrollHeight);
   }, [vip]);
 
   return (
-    <ShowVipWrapper useRef={showVipRef}>
+    <ShowVipWrapper>
       {_vip.length < 1 ? (
         <>
           <div className="notFound">

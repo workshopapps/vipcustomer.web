@@ -11,7 +11,7 @@ const CSV = () => {
   return (
     <>
       <CsvWrapper>
-        <Uploadcsv />
+        <Uploadcsv setVip={setVip} />
         <Instructions />
       </CsvWrapper>
 

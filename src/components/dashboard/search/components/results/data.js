@@ -1,457 +1,212 @@
 export const _vip = [
   {
     name: "Alice Walton",
-    category: "Gold Vip",
+    vip_score: 50,
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Lawrence Edward",
-    category: "Bronze Vip",
+    vip_score: 50,
     gender: "Female",
-    netWorth: "$11b",
-    career: "Market woman"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Biil Gates",
-    category: "Silver Vip",
+    vip_score: 50,
     gender: "male",
-    netWorth: "$11b",
-    career: "Enterpreneaur"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Dangote Walton",
-    category: "Major Vip",
+    vip_score: 50,
     gender: "Male",
-    netWorth: "$11b",
-    career: "Huzzler"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Mark Essien",
-    category: "Gold Vip",
+    vip_score: 50,
     gender: "male",
-    netWorth: "$11b",
-    career: "Tech guru"
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
+  },
+  {
+    name: "Alice Walton",
+    vip_score: 50,
+    gender: "Female",
+    is_vip: true,
+    age: 70
   },
   {
     name: "Alice Walton",
     category: "Gold Vip",
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Alice Walton",
     category: "Gold Vip",
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Alice Walton",
     category: "Gold Vip",
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Alice Walton",
     category: "Gold Vip",
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Alice Walton",
     category: "Gold Vip",
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Alice Walton",
     category: "Gold Vip",
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Alice Walton",
     category: "Gold Vip",
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Alice Walton",
     category: "Gold Vip",
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   },
   {
     name: "Alice Walton",
     category: "Gold Vip",
     gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
-  },
-  {
-    name: "Alice Walton",
-    category: "Gold Vip",
-    gender: "Female",
-    netWorth: "$11b",
-    career: "Business person"
+    is_vip: true,
+    age: 70
   }
 ];

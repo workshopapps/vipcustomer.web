@@ -26,7 +26,6 @@ function csvParser(file, fetch) {
   const fileReader = new FileReader();
   fileReader.addEventListener("load", function () {
     fileString = this.result;
-    console.log(fileString);
     if (fileString.trim()) {
       const array = parseToArray(fileString);
       fetch(array);

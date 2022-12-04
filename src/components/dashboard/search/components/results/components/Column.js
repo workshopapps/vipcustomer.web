@@ -12,6 +12,10 @@ const Column = ({ name, value }) => {
 
 Column.propTypes = {
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object
+  ])
 };
 export default Column;

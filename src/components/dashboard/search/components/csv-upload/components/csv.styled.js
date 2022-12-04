@@ -49,8 +49,7 @@ export const UploadcsvWrapper = styled.article`
     max-width: 270px;
     padding: 5px;
     width: 100%;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 20px auto;
     background-color: whitesmoke;
     overflow: hidden;
 

@@ -1,13 +1,19 @@
 import React, { useRef, useState } from "react";
+import axios from "api/axios";
+import PropTypes from "prop-types";
 import { UploadcsvWrapper } from "./csv.styled";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import Loading from "../../loading";
 import csvParser from "../utils";
 
-const Uploadcsv = () => {
+const Uploadcsv = ({ setVip }) => {
   const input = useRef();
   const [fileName, setFileName] = useState("");
   const [file, setFile] = useState(null);
+
+  // loding and error states
+  const [loading, setLoading] = useState();
+  const [error, setError] = useState("");
 
   function handleSelectFile() {
     input.current.addEventListener("change", (e) => {
@@ -23,25 +29,47 @@ const Uploadcsv = () => {
     input.current.click();
   }
 
-  function handleFetch(array) {
-    console.log(array);
-    console.log(array[0]["age"]);
+  async function handleFetch(array) {
+    // check for name prop
+    if (!array[0].name) {
+      setError("Invalid CSV, Name prop is missing");
+      return;
+    }
+
+    setLoading(true);
+    setVip(undefined);
+
+    // Post WITH AXIOS
+    try {
+      const response = await axios.post("/api/search/search-many", {
+        data: array
+      });
+      setVip(response.data);
+      setLoading(false);
+      return;
+    } catch (error) {
+      setLoading(false);
+      setError("unexpected error, please try again");
+      setVip(undefined);
+      console.log(error);
+      return;
+    }
   }
 
   function handleUpload(e) {
     e.preventDefault();
+    setError("");
 
     if (!file) {
-      console.log("no file");
+      setError("Please add a CSV file");
       return;
     }
 
     if (!file.type.match("text/csv")) {
-      console.log("file not a csv");
+      setError("The file passed is not a csv");
       return;
     }
 
-    console.log("file is csv");
     csvParser(file, handleFetch);
   }
 
@@ -62,8 +90,8 @@ const Uploadcsv = () => {
 
         <input ref={input} hidden type="file" accept=".csv" />
 
-        {/* <Loading/> */}
-        <p className="error">{"error"}</p>
+        <Loading loading={loading} />
+        <p className="error">{error}</p>
 
         <button onClick={handleUpload} className="f fcenter" type="submit">
           <span className="icon f fcenter">
@@ -77,8 +105,8 @@ const Uploadcsv = () => {
   );
 };
 
-export default Uploadcsv;
+Uploadcsv.propTypes = {
+  setVip: PropTypes.func
+};
 
-{
-  /* <img src={UploadImage} alt="upload image" /> */
-}
+export default Uploadcsv;

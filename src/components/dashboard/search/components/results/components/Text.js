@@ -8,7 +8,11 @@ export const Text = ({ text }) => {
 };
 
 Text.propTypes = {
-  text: PropTypes.string.isRequired
+  text: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object
+  ])
 };
 
 //Header / Title text wrapper
