@@ -46,7 +46,6 @@ const Documents = () => {
           The StartFinder API can be used by virtually any companies or firms who wants to target a particular audience or persons, that been said, you can tour the app and find other amazing services.
         </p>
       <p>
-        <br /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laborum dignissimos explicabo, sed exercitationem aut fuga praesentium harum cumque molestiae delectus veniam? Nostrum, ducimus tenetur cumque expedita debitis dolore libero?
       </p>
       <iframe 
         src='https://www.thiscodeworks.com/embed/638a0f89b992240015b970ee' 
@@ -54,7 +53,7 @@ const Documents = () => {
         frameBorder="0">
       </iframe>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo veniam voluptas rerum maxime dolor sequi perspiciatis est sunt facilis suscipit hic pariatur beatae autem minus, amet delectus nulla natus explicabo.
+        
       </p>
 
     </div>

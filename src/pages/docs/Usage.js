@@ -32,8 +32,6 @@ const Docs = () => {
       </p>
       <h3>How to use startfinder</h3>
         <p>
-          lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum dolor sit amet, consectetur adip.
-          lorem ipsum dolor sit amet, consectetur adipisicing elit, lorem ipsum dolor sit amet, consectetur adipisicing elit.... lorem ipsum dolor sit amet, consectetur adipisicing elit   
         </p>
     </div>   
   );
