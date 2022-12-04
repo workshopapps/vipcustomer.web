@@ -55,9 +55,10 @@ const Login = () => {
       nav(nextPath, { replace: true });
     } catch (err) {
       setSpinnerClasses("spinner small stop");
-      if (err?.response?.status === 401) {
-        setErrorMessage("invalid credentials");
-      }
+      const message = err?.response?.data?.detail;
+      setErrorMessage(
+        message || "An unexpected error occured. Please try again another time"
+      );
       setErrorMessageIsShown(true);
     }
   }
