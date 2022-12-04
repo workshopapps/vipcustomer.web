@@ -8,7 +8,6 @@ import axios from "axios";
 import Result from "components/dashboard/search/components/results";
 import csvParser from "components/dashboard/search/components/csv-upload/utils";
 
-// PORT = 3666;
 const Uploadcsv = () => {
   const [highlighted, setHighlighted] = useState(false);
   const [csvFile, setCsvFile] = useState();
@@ -16,6 +15,7 @@ const Uploadcsv = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // API request handling
   const sendPostRequest = async (array) => {
     console.log(array);
     if (!array[0].name) {
@@ -37,12 +37,13 @@ const Uploadcsv = () => {
       return;
     } catch (err) {
       setLoading(false);
-      setError("Unexpected error, please try again");
+      setError("unexpected error, please try again");
       console.log(err);
       return;
     }
   };
 
+  // On submit handling
   const Submit = () => {
     setError("");
 
@@ -52,14 +53,13 @@ const Uploadcsv = () => {
     }
 
     if (!csvFile.type.match("text/csv")) {
-      setError("The file uploaded is not a CSV File");
+      setError("The file uploaded is not a CSV");
       return;
     }
 
     csvParser(csvFile, sendPostRequest);
   };
 
-  console.log(vip);
   return (
     <>
       <NavBar />
