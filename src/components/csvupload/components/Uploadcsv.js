@@ -37,7 +37,7 @@ const Uploadcsv = () => {
       return;
     } catch (err) {
       setLoading(false);
-      setError("unexpected error, please try again");
+      setError("Unexpected error, please try again");
       console.log(err);
       return;
     }
@@ -52,7 +52,7 @@ const Uploadcsv = () => {
     }
 
     if (!csvFile.type.match("text/csv")) {
-      setError("The file uploaded is not a CSV");
+      setError("The file uploaded is not a CSV File");
       return;
     }
 
