@@ -15,7 +15,7 @@ export const SideBarWrapper = styled.section`
   z-index: 2;
 
   /* only on screens less than 500px */
-  transition: translateX 0.3s linear;
+  transition: all 0.3s linear;
   transform: ${({ close }) =>
     close ? "translateX(0px)" : "translateX(-100%)"};
 
@@ -51,9 +51,9 @@ export const LinksContainer = styled.div`
   justify-content: space-around;
 
   .isActive .link__wrap {
-    border: 2px solid var(--color-lightBlue);
-    /* background-color: var(--color-lightBlue);
-    color: white; */
+    border: 2px solid var(--color-orange);
+    color: var(--color-orange);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14);
   }
 
   .link__wrap {
@@ -63,9 +63,6 @@ export const LinksContainer = styled.div`
     padding: 5px 10px;
     height: 44px;
     margin-bottom: 25px;
-
-    /* background-color: inherit;
-    transition: background 0.1s linear; */
 
     .icon {
       display: flex;

@@ -73,19 +73,26 @@ export default function index() {
 
     try {
       setSpinnerClasses("spinner small");
-      const { data } = await axios.post("/api/user/signup", {
+      await axios.post("/api/user/signup", {
         first_name: enteredFirstName,
         last_name: enteredLastName,
         email: enteredEmail,
         password: enteredPassword
       });
+
+      const { data } = await axios.post("/api/user/login", {
+        email: enteredEmail,
+        password: enteredPassword
+      });
+
       setSpinnerClasses("spinner small stop");
       login_a(dispatch, data);
       navigate("/dashboard", { replace: true });
     } catch (err) {
       setSpinnerClasses("spinner small stop");
+      const message = err?.response?.data?.detail;
       setErrorMessage(
-        "An unexpected error occured. Please try again another time"
+        message || "An unexpected error occured. Please try again another time"
       );
       setErrorMessageIsShown(true);
     }

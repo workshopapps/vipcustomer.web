@@ -55,9 +55,10 @@ const Login = () => {
       nav(nextPath, { replace: true });
     } catch (err) {
       setSpinnerClasses("spinner small stop");
-      if (err?.response?.status === 401) {
-        setErrorMessage("invalid credentials");
-      }
+      const message = err?.response?.data?.detail;
+      setErrorMessage(
+        message || "An unexpected error occured. Please try again another time"
+      );
       setErrorMessageIsShown(true);
     }
   }
@@ -80,6 +81,7 @@ const Login = () => {
 
         <form onSubmit={loginHandler}>
           <Input
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             id="email"
@@ -87,7 +89,7 @@ const Login = () => {
             placeholder="JohnObi@gmail.com"
             errorMessage="Invalid Email"
             isError={!isEmail}
-            type="email"
+            required
           />
 
           <Input
@@ -101,12 +103,15 @@ const Login = () => {
             type="password"
           />
 
-          <Checkbox
-            value={isChecked}
-            onChange={(e) => setIsChecked(e.target.checked)}
-            id="checked">
-            Remember me
-          </Checkbox>
+          <div className={styles.spaceBetween}>
+            <Checkbox
+              value={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+              id="checked">
+              Remember me
+            </Checkbox>
+            <p onClick={() => nav("/password-recovery")}>Forgot password?</p>
+          </div>
 
           <div style={{ marginTop: "1rem" }}>
             {errorMessageIsShown && (
