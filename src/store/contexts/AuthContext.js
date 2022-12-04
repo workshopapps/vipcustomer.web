@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import reducer from "../reducers/AuthReducer";
 
 const Context = createContext();
-const initialState = { user: localStorage.getItem("user") || false };
+const initialState = {
+  user: JSON.parse(localStorage.getItem("user")) || false
+};
 
 const Authcontext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
