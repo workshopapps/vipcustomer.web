@@ -6,7 +6,7 @@ import LayoutsWrapper from "./layout.styled";
 
 // app
 const Layout = () => {
-  const [sideBarOpen, setSideBarOpen] = useState(true);
+  const [sideBarOpen, setSideBarOpen] = useState(false);
 
   // jsx
   return (
