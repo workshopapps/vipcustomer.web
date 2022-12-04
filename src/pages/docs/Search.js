@@ -18,6 +18,7 @@ const Docs = () => {
 
       <p>NOTE: An optional API key, should be passed to the request header to attribute the search request to a user. </p>
       <p>
+        
         </p>
     </div>
         
