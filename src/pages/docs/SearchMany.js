@@ -17,7 +17,14 @@ const Docs = () => {
       frameBorder="0">
     </iframe>
     <p>NOTE: An optional API key, should be passed to the request header to attribute the search request to a user. </p>
+    
+    <iframe 
+      src="https://www.thiscodeworks.com/embed/638b4cf2f3febd0015d3b6af" 
+      style={{ width: '100%', height: '255px' }} 
+      frameBorder="0">
+    </iframe>
   </div>
+  
   );
 };
 

@@ -37,7 +37,6 @@ const Documents = () => {
           Next steps!!!
         </h3>
         <p>Follow up your target audience with the help of starfinder using your own companys policies</p>
-
         <h3>
           Many more.
         </h3>
