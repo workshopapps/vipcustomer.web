@@ -1,10 +1,10 @@
-import classes from "./Header.module.css"
+import classes from "./Header.module.css";
+
 const Header = () =>{
   return(
-    <div>
+    <div className={classes.container}>
     <h2 className={classes.header}>Vip</h2>
-
-    </div>
+  </div>
   )
 }
 export default Header

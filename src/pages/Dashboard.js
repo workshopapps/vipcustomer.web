@@ -1,5 +1,4 @@
 import React from "react";
-import { Layout, Search , Topranked} from "components/dashboard";
 import { Routes, Route } from "react-router-dom";
 
 // import all pages here

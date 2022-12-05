@@ -29,9 +29,6 @@ import Terms from "pages/Terms";
 import Aboutus from "pages/Aboutus";
 import Consultation from "pages/Consultation";
 import RequireAuth from "components/auth/RequireAuth";
-
-import History from "pages/History";
-
 import DocsLayouts from "pages/docs/DocsLayouts";
 import Search from "pages/docs/Search";
 import Documents from "pages/Documents";
