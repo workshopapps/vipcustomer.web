@@ -29,6 +29,7 @@ import Terms from "pages/Terms";
 import Aboutus from "pages/Aboutus";
 import Consultation from "pages/Consultation";
 import RequireAuth from "components/auth/RequireAuth";
+import Uploadcsv from "pages/CsvUpload";
 import DocsLayouts from "pages/docs/DocsLayouts";
 import Search from "pages/docs/Search";
 import Documents from "pages/Documents";
@@ -81,6 +82,7 @@ function App() {
         <Route path="/profile/edit" element={<EditProfile />} />
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
+        <Route path="/csvupload" element={<Uploadcsv />} />
         <Route path="/documents" element={<DocsLayouts />}>
         <Route path="/documents" element={<Documents />} />
           <Route path="/documents/search" element={<Search />} />
