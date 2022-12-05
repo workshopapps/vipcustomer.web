@@ -10,6 +10,8 @@ Make sure you have nodejs installed by running the following command:
 node -v
 ```
 
+
+
 If the output is not the version of your nodejs installation, install nodejs from [here](https://nodejs.org/en/download/)
 
 After installing nodejs install [npm](https://www.npmjs.com/package/npm)
