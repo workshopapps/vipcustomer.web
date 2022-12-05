@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 // import all pages here
 
-import { Layout, Search , Topranked} from "components/dashboard";
+import { Layout, Search ,Topranked} from "../components/dashboard";
 
 // replace the divs with your pages
 
@@ -20,8 +20,6 @@ const Dashboard = () => {
         <Route path="top-rank" element={<Topranked />} />
 
         <Route path="profile" element={<div>tprofile</div>} />
-
-        <Route path="settings" element={<div>settings</div>} />
       </Route>
     </Routes>
   );
