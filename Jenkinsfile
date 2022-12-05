@@ -5,7 +5,7 @@ pipeline {
 		stage("Deploy frontend"){
 
 			steps {
-				sh "sudo su && cd /home/busganda/vipcustomer.web && git pull"
+				sh "git checkout dev && git pull"
 				sh "sudo systemctl restart starfinder-frontend.service"
 			} 	
 	   }
