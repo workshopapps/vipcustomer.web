@@ -72,6 +72,8 @@
 
 .linksdiv {
   color: #091540;
+  font-size: 1.6rem;
+
 }
 
 .linksdiv :hover {
@@ -110,6 +112,10 @@
 
 }
 
+.navlink {
+color: #091540;
+}
+
 .rightsidebar {
   display: none;
   position: absolute;
@@ -128,6 +134,10 @@
   .maindiv {
     width: 28%;
     padding-right: 30px;
+  }
+
+  .navsearchdiv {
+    display: none;
   }
 
   .navlink {

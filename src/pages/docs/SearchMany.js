@@ -9,7 +9,7 @@ const Docs = () => {
         By using this tool, we navigate using search-many bar, the name(s) of the VIP being searched for should be typed in the the search bar, and it/they should pop up for use.
       </p>
       <p>
-        To have a succesfull search-many response, the following parameters must be inputed: name of person(s), gender, occupation(s), age(s), email address(es).
+        To have a succesfull search-many response, the following parameters MUST be inputed: name of person(s) Other parameters includes: gender, occupation(s), age(s), email address(es).
       </p>
     <iframe 
       src="https://www.thiscodeworks.com/embed/638b4cf2f3febd0015d3b6af" 

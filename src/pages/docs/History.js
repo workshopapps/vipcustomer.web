@@ -24,7 +24,6 @@ const Docs = () => {
     <p>
       This endpoint returns the list of search requets done by a specigfic user. It takes in bearer authorization token provided after a successfull login request. the authorization tolken is then passed to the get history request header.
     </p>
-
      </div>
   );
 };

@@ -23,7 +23,6 @@ const DocsNav = () => {
             <img src={SF} alt="" className={styles.logo}/>
         </div>
         <div className={styles.navsearchdiv} >
-
             <input type="search" placeholder='Search' id='search' name='search-bar' className={styles.navsearch}/>
         </div>
         <div className={ styles.menubar }>
@@ -35,26 +34,30 @@ const DocsNav = () => {
         <div className={ isExpanded ? styles.showrightsidebar + " " + styles.rightsidebar : styles.rightsidebar}>
         <div id="mySidenav">
           <div className={ styles.menubar }>
-          <FiX onClick={ handleExpand }/>
+            <FiX onClick={ handleExpand }/>
           </div>
         <div className={styles.linksdiv}>
           <h2>Overview</h2>
             <p><Link to="/documents" className={styles.li}>Introduction</Link></p>
             <p><Link to="/documents/quick" className={styles.li}>Quick Start</Link></p>       
         </div>
+       
 
         <div className={styles.linksdiv}>
           <h2>API Documentation</h2>
             <p><Link to="/documents/usage" className={styles.li}>Usage</Link></p>
             <p><Link to="/documents/search" className={styles.li}>Search</Link></p>
             <p><Link to="/documents/searchmany" className={styles.li}>Search-Many</Link></p>
-            <p><Link to="/documents/history" className={styles.li}>History</Link></p>
-          
+            <p><Link to="/documents/history" className={styles.li}>History</Link></p>      
         </div>
                 
         </div>
 
+        <div className={styles.navsearch} >
+            <input type="search" placeholder='Search' id='search' name='search-bar' className={styles.navsearch}/>
         </div>
+        </div>
+        
         </div>
       </div>
   );
