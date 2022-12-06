@@ -28,7 +28,12 @@ const Topranked = () =>{
       }})
      .then((res)=> res.json())
      .then((data)=> setDatas(data))
-     .catch((err)=>setError(true))
+     .catch((err)=>{
+      setError(true)
+      setDatas([])
+     }
+    
+     )
 
   }
   useEffect(()=>{
@@ -43,7 +48,8 @@ const Topranked = () =>{
 
 const indexOfLastPage = currentPage * perPage;
 const indexOfFirsPage = indexOfLastPage - perPage;
-const currentPost = datas.slice(indexOfFirsPage,indexOfLastPage)
+const currentPost = datas ? datas.slice(indexOfFirsPage,indexOfLastPage) : []
+
 
 const ascendingHandleChange = (e) => {
   let value = e.target.checked
@@ -77,7 +83,7 @@ const paginate =(number) =>{
   return (
 <div>
 <Header isChecked={isChecked} handleChange={handleChange} ascendingHandleChange={ascendingHandleChange} descendingHandleChange={descendingHandleChange} />
-{datas.length <=0 ? <Modal /> : 
+{currentPost.length <=0 ? <Modal /> : 
  <div>
   <div className={classes.tablet}>
     <section className={classes.container}>
