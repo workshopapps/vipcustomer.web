@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/team/styles/components/Team.css";
+import "components/team/components/Team.css";
 import { Card } from "../components/team/Card";
 import { Footer, Navbar } from "../components/general";
 
