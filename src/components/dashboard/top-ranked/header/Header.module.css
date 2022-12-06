@@ -1,0 +1,42 @@
+.container{
+    display:flex;
+    justify-content:flex-end;
+    padding:10px 20px
+  }
+  .header{
+    display:none; 
+     
+  }
+  .input{
+  
+    border:2px solid #b5b7c0;
+    padding:5px;
+  }
+  
+  .parent{
+    position:relative;
+  }
+  
+  .paragraph{
+    padding-bottom:10px;
+  }
+  .paragraph:hover{
+   text-decoration:underline
+  }
+  
+  @media (min-width:500px){
+    .container{
+    justify-content:space-between;
+  
+    }
+    .header{
+        display:block;
+        color: #f05d23;
+        font-weight: 600;
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        padding-top:10px ;
+       
+    }
+  }
+  
