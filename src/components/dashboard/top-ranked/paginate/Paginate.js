@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 
 const Paginate =({postPerPage, totalPost,paginate}) =>{
-    
+
   const pageNumbers =[];
   for(let i = 1; i < Math.ceil(totalPost/postPerPage); i++){
     pageNumbers.push(i)
@@ -21,6 +21,6 @@ export default Paginate;
 
 Paginate.propTypes = {
     postPerPage: PropTypes.number.isRequired,
-    totalPost: PropTypes.number.isRequired,
+    totalPost: PropTypes.number,
     paginate:PropTypes.func.isRequired,
   };
