@@ -24,7 +24,7 @@
   max-width: 1200px;
 }
 
-.card {
+.team_card {
   background-color: #091540;
   display: flex;
   flex-direction: column;
@@ -37,17 +37,17 @@
   height: 360px;
   gap: 1rem;
 }
-.card h4 {
+.team_card h4 {
   font-size: 18px;
   color: white;
   max-width: 15rem;
 }
-.card p {
+.team_card p {
   font-size: 12px;
-  color: #F05D23;
+  color: #f05d23;
   line-height: 0;
 }
-.card img {
+.team_card img {
   width: 170px;
   aspect-ratio: 1/1;
   object-fit: cover;

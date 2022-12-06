@@ -119,7 +119,7 @@ const Entry = (props) => {
   return (
     <EntryWrapper height={25 * height}>
       {/* header */}
-      <h3 onClick={showEntry} className="f">
+      <h3 onClick={showEntry} className="f entry__header">
         <small className="name">{name}</small>
 
         <div className="icon__wrap f">

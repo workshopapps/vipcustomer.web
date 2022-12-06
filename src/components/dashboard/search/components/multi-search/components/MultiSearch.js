@@ -23,7 +23,7 @@ const MultiSearch = () => {
     <>
       <MultiSearchWrapper>
         <section className="wrappers form">
-          <h2>Add Entries Below</h2>
+          <h2 className="header">Add Entries Below</h2>
           <Form
             storeList={setListToStorage}
             setEntryList={setEntryList}
@@ -32,7 +32,7 @@ const MultiSearch = () => {
         </section>
 
         <section className="wrappers entry">
-          <h2>List of entries</h2>
+          <h2 className="header">List of entries</h2>
           <Entries
             storeList={setListToStorage}
             setEntryList={setEntryList}
