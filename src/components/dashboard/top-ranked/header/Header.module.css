@@ -1,7 +1,7 @@
 .container{
     display:flex;
-    justify-content:flex-end;
-    padding:10px 20px
+    justify-content:space-between;
+    padding:10px 10px
   }
   .header{
     display:none; 
