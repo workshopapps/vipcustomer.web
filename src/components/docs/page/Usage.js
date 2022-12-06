@@ -15,9 +15,9 @@ const Usage = () => {
       </p>
       <h3>Why Starfinder</h3>
       <p>
-        Startfinder can be used for many different reasons,
-        <li>to have a target audience</li>
-        <li>to identify people of influence who can be reached out to</li>
+        Starfinder can be used for many different reasons,
+        <li>To have a target audience</li>
+        <li>To identify people of influence who can be reached out to</li>
         <li>Above all, to open and close more sales</li>
       </p>
       <h3>Things to achieve using Starfinder</h3>

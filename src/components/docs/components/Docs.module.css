@@ -1,11 +1,11 @@
-.navcontainer{
+.navcontainer {
   border-bottom: 1px solid #BEBEBE;
   position: fixed;
   top: 0;
   background: #fff;
   width: 100%;
   z-index: 1000;
-  
+
 }
 
 .nav {
@@ -16,54 +16,64 @@
   width: 93%;
   height: 100px;
 }
+
 .rightsidebar {
   display: none;
 }
 
 
-.navlogo{
+.navlogo {
   width: 33.3%;
 
 }
-.logo{
+
+.logo {
   height: 70px;
- 
+
 }
-.navsearchdiv{
+
+.navsearchdiv {
   margin: auto;
   width: 33.3%;
 
 }
-.navsearch::placeholder{
+
+.navsearch::placeholder {
   padding-left: 30px;
   font-size: 18px;
 }
-.navsearch{
-  border:1px solid #091540;
+
+.navsearch {
+  border: 1px solid #091540;
   border-radius: 5px;
   height: 45px;
   width: 100%;
 
 }
-.navlinks{
+
+.navlinks {
   margin: auto;
   width: 33.3%;
   text-align: center;
 
-  
-}
-.navlink{
-  color: #091540;
-  right: auto;
-  
+
 }
 
-.navlink:hover{
+.navlink {
+  color: #091540;
+  right: auto;
+
+}
+
+.navlink:hover {
   color: #c7c8ca;
 
 }
+
 .linksdiv {
   color: #091540;
+  font-size: 1.6rem;
+
 }
 
 .linksdiv :hover {
@@ -72,7 +82,7 @@
 
 .maindiv {
   width: 25%;
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   padding-top: 20px;
@@ -81,9 +91,10 @@
   display: flex;
   flex-direction: column;
   color: #091540;
-  
+
 }
-.linksdiv{
+
+.linksdiv {
   padding-top: 50px;
   margin-left: 50px;
   margin-bottom: 20px;
@@ -101,22 +112,35 @@
 
 }
 
+.navlink {
+color: #091540;
+}
+
 .rightsidebar {
   display: none;
   position: absolute;
   right: 0;
 }
 
+@media only screen and (max-width: 1000px) {
+  .linksdiv>h2 {
+    font-size: 1.5rem;
+
+  }
+}
 
 
-
-@media only screen and (max-width: 768px){
-  .maindiv{
+@media only screen and (max-width: 768px) {
+  .maindiv {
     width: 28%;
     padding-right: 30px;
   }
 
-  .navlink{
+  .navsearchdiv {
+    display: none;
+  }
+
+  .navlink {
     display: none;
   }
 
@@ -127,33 +151,33 @@
     margin-top: 20px;
     margin-right: 10px;
     padding: 10px;
-}
+  }
 
-.showrightsidebar {
-  display: block !important;
-}
+  .showrightsidebar {
+    display: block !important;
+  }
 
-.rightsidebar {
-  display: none;
-  position: absolute;
-  right: 0;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, .90);
-}
+  .rightsidebar {
+    display: none;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, .90);
+  }
 
-.sidenav {
-  display: none;
-}
+  .sidenav {
+    display: none;
+  }
 
-  .linksdiv >h2{
+  .linksdiv>h2 {
     font-size: 1.5rem;
   }
 }
 
-.content{
+
+.content {
   background-color: pink;
   width: 80%;
   position: absolute;
   right: 0;
 }
-
