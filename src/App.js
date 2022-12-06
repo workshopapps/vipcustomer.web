@@ -10,7 +10,6 @@ import { Store } from "./store/contexts/AppContext";
 import Home from "./pages/Home";
 import OldDashboard from "./pages/OldDashboard";
 import Dashboard from "./pages/Dashboard";
-import Example from "./pages/Example";
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
 import Help from "pages/Help";
@@ -22,8 +21,6 @@ import Demo from "pages/Demo";
 import Feature from "pages/Feature";
 import PasswordChange from "./pages/PasswordChange";
 import PasswordRecovery from "./pages/PasswordRecovery";
-import Profile from "pages/Profile";
-import EditProfile from "pages/EditProfile";
 import ErrorPage from "pages/ErrorPage";
 import Terms from "pages/Terms";
 import Aboutus from "pages/Aboutus";
@@ -47,7 +44,6 @@ function App() {
       <GLobalStyles />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/example" element={<Example />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/demo" element={<Demo />} />
@@ -71,8 +67,6 @@ function App() {
         </Route> */}
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="/old-dashboard" element={<OldDashboard />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/edit" element={<EditProfile />} />
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/docs/*" element={<Documentation />} />

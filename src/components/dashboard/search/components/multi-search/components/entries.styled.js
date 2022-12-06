@@ -59,7 +59,7 @@ export default EntriesWrapper;
 export const EntryWrapper = styled.div`
   margin-bottom: 10px;
 
-  h3 {
+  .entry__header {
     justify-content: space-between;
     cursor: pointer;
     width: 100%;
