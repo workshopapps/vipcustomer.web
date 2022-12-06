@@ -10,7 +10,6 @@
 }
 
 .docs-main {
-<<<<<<< HEAD:src/components/docs/components/document.css
   /*
   margin-left: 450px;
   margin-top: 20px;
@@ -25,24 +24,10 @@
   color: #091540;
   padding-top: 50px;
   margin-top: 100px;
-=======
-width: 70%;
-position: absolute;
-right: 0;
-padding-right: 40px;
-color: #091540;
-padding-top: 50px;
-margin-top: 100px;
->>>>>>> f33413a98fb7a0c5e2c3deb7da27dac60da32c19:src/pages/docs/style.css
 }
 
 .documents-div {
   line-height: 30px;
-<<<<<<< HEAD:src/components/docs/components/document.css
-=======
-  text-align: justify;
-  font-size: 1.6rem;
->>>>>>> f33413a98fb7a0c5e2c3deb7da27dac60da32c19:src/pages/docs/style.css
 }
 
 .documents-div h1,
@@ -71,13 +56,3 @@ h3 {
     align-items: center;
   }
 }
-<<<<<<< HEAD:src/components/docs/components/document.css
-=======
-
-.docs-main {
-  padding-left: 40px;
-
-}
-
-}
->>>>>>> f33413a98fb7a0c5e2c3deb7da27dac60da32c19:src/pages/docs/style.css
