@@ -28,14 +28,8 @@ import ErrorPage from "pages/ErrorPage";
 import Terms from "pages/Terms";
 import Aboutus from "pages/Aboutus";
 import Consultation from "pages/Consultation";
-import RequireAuth from "components/auth/RequireAuth";
-import DocsLayouts from "pages/docs/DocsLayouts";
-import Search from "pages/docs/Search";
-import Documents from "pages/Documents";
-import SearchMany from "pages/docs/SearchMany";
-import History from "pages/docs/History";
-import Usage from "pages/docs/Usage";
-import Quick from "pages/docs/Quickstart";
+// import RequireAuth from "components/auth/RequireAuth";
+import Documentation from "pages/Documentation";
 
 function App() {
   const { theme } = Store();
@@ -81,15 +75,8 @@ function App() {
         <Route path="/profile/edit" element={<EditProfile />} />
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
-        <Route path="/documents" element={<DocsLayouts />}>
-        <Route path="/documents" element={<Documents />} />
-          <Route path="/documents/search" element={<Search />} />
-          <Route path="/documents/searchmany" element={<SearchMany />} />
-          <Route path="/documents/history" element={<History />} />
-          <Route path="/documents/usage" element={<Usage />} />
-          <Route path="/documents/quick" element={<Quick />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
+        <Route path="/docs/*" element={<Documentation />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </ThemeProvider>
   );
