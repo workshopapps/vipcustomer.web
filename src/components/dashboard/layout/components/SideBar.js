@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { SideBarWrapper, LinksContainer } from "./sidebar.styled";
 
 import { IoSearchOutline, IoSettingsOutline } from "react-icons/io5";
@@ -44,6 +44,7 @@ const SideBar = (props) => {
   const { sideBarOpen, setSideBarOpen } = props;
   const { pathname } = useLocation();
 
+
   return (
     <SideBarWrapper close={sideBarOpen}>
       <button
@@ -75,9 +76,10 @@ const SideBar = (props) => {
           <span className="icon">
             <AiOutlineLogout />
           </span>
-          <span data-text="Logout" className="text">
+          <Link to='/dashboard/logoutModal'><span data-text="Logout" className="text">
             Logout
-          </span>
+          </span></Link>
+
         </div>
       </LinksContainer>
     </SideBarWrapper>
