@@ -1,7 +1,5 @@
 import React from 'react'
-import { Routes, Route, Outlet } from "react-router-dom";
-import DocsNav from "components/docs/DocsNav";
-import DocsSidebar from 'components/docs/DocsSidebar';
+import { Outlet } from "react-router-dom";
 import DocsOverview from 'components/docs/DocsOverview';
 import "./style.css";
 
