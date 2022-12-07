@@ -50,6 +50,8 @@ export default function Dashboard() {
       age: data.age,
       email: data.email
     };
+
+    setNamesData([...namesData, newEntry]);
   }
 
   //Removes entry from lists

@@ -5,8 +5,11 @@ import { UploadcsvWrapper } from "./csv.styled";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import Loading from "../../loading";
 import csvParser from "../utils";
+import { AuthStore } from "store/contexts/AuthContext";
 
 const Uploadcsv = ({ setVip }) => {
+  const { user } = AuthStore();
+  console.log(user);
   const input = useRef();
   const [fileName, setFileName] = useState("");
   const [file, setFile] = useState(null);
