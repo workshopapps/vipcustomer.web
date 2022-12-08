@@ -45,8 +45,7 @@ const SideBar = (props) => {
   const { sideBarOpen, setSideBarOpen } = props;
   const { pathname } = useLocation();
 
-  const [openmodal, setOpenModal] = useState(false)
-
+  const [openmodal, setOpenModal] = useState(false);
 
   return (
     <>
@@ -81,9 +80,14 @@ const SideBar = (props) => {
               <AiOutlineLogout />
             </span>
 
-            <button onClick={() => { setOpenModal(true) }}><span data-text="Logout" className="text">
-              Logout
-            </span></button>
+            <button
+              onClick={() => {
+                setOpenModal(true);
+              }}>
+              <span data-text="Logout" className="text">
+                Logout
+              </span>
+            </button>
           </div>
         </LinksContainer>
       </SideBarWrapper>
