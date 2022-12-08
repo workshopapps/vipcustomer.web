@@ -88,14 +88,10 @@ implementation should be changed
           </Items>
         )}
         <Items className="nav--link--items" tablet={tablet}>
+          <Link to="/">Home</Link>
           <Link to={"/team"}>The Team</Link>
-          <Link
-            to="/
-          ">
-            Products
-          </Link>
-          <Link>Resources</Link>
           <Link to="/about-us">About Us</Link>
+          {/* <Link>Contact Us</Link> */}
         </Items>
         <Items className="nav--link--items" tablet={tablet}>
           <Link to="/login">Log in</Link>
@@ -115,9 +111,9 @@ implementation should be changed
           mobile={mobile}
           style={{ color: "#fff" }}
           className={`${menuopen && "open"} nav--link--items`}>
+          <Link to="/">Home</Link>
           <Link to={"/team"}>The Team</Link>
-          <Link to="/">Products</Link>
-          <Link to="/">Resources</Link>
+          {/* <Link to="/">Resources</Link> */}
           <Link to="/about-us">About Us</Link>
           <Link to="/login">Log in</Link>
           <Link to="/signup">Get Started</Link>
