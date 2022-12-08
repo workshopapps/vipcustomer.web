@@ -7,7 +7,13 @@ const CsvWrapper = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 2px solid red; */
+
+  article {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
 
   /* gen classes */
   .f {
@@ -25,16 +31,16 @@ const CsvWrapper = styled.main`
 
   @media screen and (min-width: 800px) {
     flex-direction: row;
+
+    article {
+      margin: unset;
+      margin-right: 50px;
+    }
   }
 `;
 
 export const UploadcsvWrapper = styled.article`
   /* border: 2px solid red; */
-
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  margin-bottom: 50px;
 
   h2 {
     text-align: center;
@@ -103,11 +109,6 @@ export const UploadcsvWrapper = styled.article`
 `;
 
 export const InstructionsWrapper = styled.article`
-  margin: 0 auto;
-  width: 100%;
-  max-width: 420px;
-  /* border: 2px solid red; */
-
   h2 {
     margin-bottom: 10px;
     text-align: center;
@@ -145,15 +146,15 @@ export const InstructionsWrapper = styled.article`
   }
 
   .button {
-    display: block;
     margin: 0 auto;
     margin-top: 20px;
     max-width: 270px;
     width: 100%;
     border-radius: 8px;
     color: white;
-    padding: 10px 20px;
+    height: 40px;
     background-color: var(--color-darkBlue);
+    font-size: 1.4rem;
   }
 `;
 

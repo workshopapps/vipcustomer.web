@@ -5,9 +5,9 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { ModalContent, ModalWrap } from "./modal.styled";
 
 // appp
-const Modal = ({ search = {}, result, name, modal, setModal }) => {
+const Modal = ({ search = {}, result, modal, setModal }) => {
   // search from input field
-  const { email, age, occupation, gender } = search;
+  const { email, age, occupation, gender, name } = search;
 
   // result from API
   const {
@@ -139,7 +139,6 @@ const Modal = ({ search = {}, result, name, modal, setModal }) => {
 Modal.propTypes = {
   result: PropTypes.object,
   search: PropTypes.object,
-  name: PropTypes.string,
   modal: PropTypes.bool,
   setModal: PropTypes.func
 };

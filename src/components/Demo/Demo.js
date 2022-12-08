@@ -8,7 +8,6 @@ import Form from "./Form";
 
 const Demo = () => {
   const [modal, setModal] = useState(false);
-  const [name, setName] = useState("");
   const [response, setResponse] = useState(undefined);
   const [searchInputs, setSearchInputs] = useState({});
 
@@ -17,7 +16,6 @@ const Demo = () => {
     try {
       const response = await axios.get("/api/search/", {
         params: {
-          name: name,
           ...params
         }
       });
@@ -84,7 +82,6 @@ const Demo = () => {
                 setSearchInputs,
                 handleFetch,
                 setResponse,
-                setName,
                 setModal
               }}
             />
@@ -93,7 +90,6 @@ const Demo = () => {
       </DemoWrapper>
 
       <Modal
-        name={name}
         search={searchInputs}
         result={response}
         modal={modal}

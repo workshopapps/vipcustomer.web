@@ -7,6 +7,10 @@ const SingleSearchWrapper = styled.section`
   margin-top: 50px;
 
   section {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+
     h2 {
       text-align: center;
       margin-bottom: 20px;
@@ -14,7 +18,8 @@ const SingleSearchWrapper = styled.section`
   }
 
   .detailed__form {
-    max-width: 500px;
+    max-width: 400px;
+    width: 100%;
     border: 1px solid;
     border-radius: 10px;
     padding: 10px;
@@ -22,7 +27,7 @@ const SingleSearchWrapper = styled.section`
   }
 
   .quick__form {
-    max-width: 500px;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 50px;
 
@@ -30,16 +35,17 @@ const SingleSearchWrapper = styled.section`
       border-radius: 15px;
       overflow: hidden;
       display: flex;
+      width: 100%;
 
       input {
         border: 2px solid black;
+        width: 66%;
       }
 
       input,
       button {
         padding: 0px 10px;
         height: 44px;
-        width: 33%;
       }
 
       input:first-of-type {
@@ -52,6 +58,7 @@ const SingleSearchWrapper = styled.section`
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         color: white;
+        width: 33%;
       }
     }
   }
@@ -60,7 +67,8 @@ const SingleSearchWrapper = styled.section`
     flex-direction: row;
 
     section {
-      margin-right: 30px;
+      margin: unset;
+      margin-right: 50px;
     }
   }
 `;

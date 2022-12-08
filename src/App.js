@@ -8,7 +8,6 @@ import { Store } from "./store/contexts/AppContext";
 
 // pages
 import Home from "./pages/Home";
-import OldDashboard from "./pages/OldDashboard";
 import Dashboard from "./pages/Dashboard";
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
@@ -58,15 +57,11 @@ function App() {
           <Route index element={<PasswordRecovery />} />
           <Route path="change" element={<PasswordChange />} />
         </Route>
-        {/* Protected Routes */}
-        {/* Commented out for submission reasons */}
+        {/*Protected Routes  Commented out for submission reasons */}
         {/* <Route element={<RequireAuth />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/profile/edit" element={<EditProfile />} />
         </Route> */}
         <Route path="/dashboard/*" element={<Dashboard />} />
-        <Route path="/old-dashboard" element={<OldDashboard />} />
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/docs/*" element={<Documentation />} />
