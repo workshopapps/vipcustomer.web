@@ -15,7 +15,7 @@ const FilterBar = ({filterHandle,selected}) => {
 
   const [showOptions, setShowOptions] = useState(false);
 
-  const _options = ["Gold vip", "Silver vip", "Bronze vip"];
+  const _options = ["All","Gold vip", "Silver vip", "Bronze vip"];
 
 
   return (

@@ -3,7 +3,7 @@ import classes from "./Topranked.module.css";
 import Paginate from "../paginate/Paginate";
 import Header from "../header/Header";
 import Modal from "../modal/Modal";
-import Login from "../Login"
+import Login from "../login/Login"
 import axios from "api/axios";
 
 
@@ -24,22 +24,21 @@ const Topranked = () =>{
   const user = JSON.parse(localStorage.getItem("user")) || false
   
   const fetchRankData = (date="",sort = false) =>{
-      axios.get(`https://api.starfinder.hng.tech/api/history/top-search?date_sort=${date}&ascending_sort=${sort}`)
-     .then((res)=> {
-      setDatas(res.data)
-      setError(false)
-     })
-     .catch(()=>{
-      setError(true)
-      setDatas([])
-     }
-     )
-  
+    axios.get(`https://api.starfinder.hng.tech/api/history/top-search?date_sort=${date}&ascending_sort=${sort}`)
+    .then((res)=> {
+     setDatas(res.data)
+     setError(false)
+    })
+    .catch(()=>{
+     setError(true)
+     setDatas([])
+    }
+    )
   }
   useEffect(()=>{
-   if(user){ 
-    fetchRankData()
-   }
+    if(user){
+      fetchRankData()
+    }
   },[])
 
   const handleChange = (e) =>{
@@ -90,7 +89,7 @@ return (<div className={classes.error}>
 </div>)
   return (
  <div>
-  { !user.access_token ? 
+  { !user ? 
   <Login /> 
  :
   <div>

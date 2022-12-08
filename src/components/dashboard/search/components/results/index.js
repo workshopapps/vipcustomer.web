@@ -44,21 +44,31 @@ const Result = ({ vip = [] }) => {
 //  filter selection
   const filterHandle = (text) => {
     setFilterSelected(text);
-   if(text === "Gold vip"){
-     const filtered = filteredList.filter(vip => vip.vip_score >= 75)
+    let filtered;
+   if(text=== "All"){
+    setVipList(vip)
+   }else if(text === "Gold vip"){
+   filtered = filteredList.filter(vip => vip.category === "gold")
     setVipList(filtered)
    }else if(text==="Silver vip"){
-    const filtered = filteredList.filter(vip => vip.vip_score >= 70)
+    filtered = filteredList.filter(vip => vip.category === "silver")
     setVipList(filtered)
    }else{
-    const filtered = filteredList.filter(vip => vip.vip_score >= 60)
-   
+   filtered = filteredList.filter(vip => vip.category === "bronze")
     setVipList(filtered)
    }
   };
 // sort selection
+function sortedFn (a,b){
+ return a.vip_score - b.vip_score
+}
 const sortHandle = (text) => {
   setSortSelected(text);
+  if(text=== "Ascending order"){
+  setVipList(prev => prev.sort(sortedFn))
+  }else{
+    setVipList(prev => prev.sort(sortedFn).reverse())
+  }
 
 };
   // handle paginate .... changes the page content
@@ -81,21 +91,21 @@ const sortHandle = (text) => {
             <TabletRow>
               <HeaderText text="Name" />
               <HeaderText text="VIP?" />
-              <HeaderText text="Score" />
+              <HeaderText text="Rating" />
               <HeaderText text="Gender" />
               <HeaderText text="Age" />
               <HeaderText text="Category" />
             </TabletRow>
-            {vipList.map((vip, index) => {
-              const { name, vip_score, is_vip, gender, age } = vip;
+            {vipList.map((vip,index) => {
+              const { name, vip_score, is_vip, gender, age ,category} = vip;
               return (
                 <TabletRow key={index}>
                   <Text text={name.slice(0,1).toUpperCase() + name.slice(1)} />
                   <Text text={is_vip ? <BsCheckLg /> : <FaTimes />} />
-                  <Text text={Math.ceil(vip_score)} />
+                  <Text text={`${Math.ceil(vip_score)}%`} />
                   <Text text={gender.slice(0,1).toUpperCase() + gender.slice(1) } />
                   <Text text={age} />
-                  <Text text={age} />
+                  <Text text={category.slice(0,1).toUpperCase() + category.slice(1)} />
                 </TabletRow>
               );
             })}
@@ -107,7 +117,7 @@ const sortHandle = (text) => {
 
           <MobileWrapper>
             {vipList.map((vip, index) => {
-              const { name, is_vip, vip_score, gender, age } = vip;
+              const { name, is_vip, vip_score, gender, age,category } = vip;
     
               return (
                 <MobileRow key={index}>
@@ -116,10 +126,10 @@ const sortHandle = (text) => {
                     name="VIP?"
                     value={is_vip ? <BsCheckLg /> : <FaTimes />}
                   />
-                  <Column name="Score" value={Math.ceil(vip_score)} />
+                  <Column name="Rating" value={`${Math.ceil(vip_score)}%`} />
                   <Column name="Gender" value={gender.slice(0,1).toUpperCase() + gender.slice(1)} />
                   <Column name="Age" value={age} />
-                  <Column name="Category" value={vip_score} />
+                  <Column name="Category" value={category.slice(0,1).toUpperCase() + category.slice(1)} />
                 </MobileRow>
               );
             })}
