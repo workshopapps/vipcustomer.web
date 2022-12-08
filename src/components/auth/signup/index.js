@@ -15,15 +15,14 @@ import {
   Form,
   Names,
   SignUpBtn,
-  LogoWrapper,
-  NavBarWrapper
+  LogoWrapper
 } from "./signup.styled";
 import { useNavigate } from "react-router-dom";
-import { Navbar } from "../../general";
 import { AuthStore } from "../../../store/contexts/AuthContext";
 import { login_a } from "../../../store/actions/authActions";
 import axios from "api/axios";
 import GoogleAuth from "../GoogleAuth";
+import BackBtn from "../BackBtn";
 
 export default function index() {
   const navigate = useNavigate();
@@ -130,9 +129,6 @@ export default function index() {
 
   return (
     <Container>
-      <NavBarWrapper>
-        <Navbar />
-      </NavBarWrapper>
       <Left>
         <div>
           <LogoWrapper onClick={() => navigate("/")}>
@@ -147,6 +143,7 @@ export default function index() {
             <SlSocialTwitter />
           </Socials>
         </div>
+        <BackBtn />
       </Left>
       <Right>
         <div>
