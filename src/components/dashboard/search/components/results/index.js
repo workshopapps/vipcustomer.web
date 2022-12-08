@@ -4,8 +4,6 @@ import { Text, HeaderText } from "./components/Text";
 import ResultsNavBar from "./components/ResultsNavBar";
 import Column from "./components/Column";
 import Paginate from "./components/Paginate";
-import axios from "api/axios";
-// import { _vip } from "./data"; //tetst data
 import { BsCheckLg } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
 import {
@@ -22,6 +20,10 @@ const Result = ({ vip = [] }) => {
   const ResultsRef = useRef(null);
   const [currentBtn, setCurrentBtn] = useState(0);
   const [vipList, setVipList] = useState(paginateFn(vip, 9).items);
+  const [filteredList] = useState(vipList)
+  const [filterSelected, setFilterSelected] = useState("");
+  const [sortSelected, setSortSelected] = useState("");
+
 
   // paginate function... returns a slice of the whole array
   function paginateFn(array = [], itemsPerPage, currentPage = 0) {
@@ -39,12 +41,26 @@ const Result = ({ vip = [] }) => {
       buttonArray
     };
   }
+//  filter selection
+  const filterHandle = (text) => {
+    setFilterSelected(text);
+   if(text === "Gold vip"){
+     const filtered = filteredList.filter(vip => vip.vip_score >= 75)
+    setVipList(filtered)
+   }else if(text==="Silver vip"){
+    const filtered = filteredList.filter(vip => vip.vip_score >= 70)
+    setVipList(filtered)
+   }else{
+    const filtered = filteredList.filter(vip => vip.vip_score >= 60)
+   
+    setVipList(filtered)
+   }
+  };
+// sort selection
+const sortHandle = (text) => {
+  setSortSelected(text);
 
-  const fetchData = ()  => {
-   axios.get()
-   .then(res => setVipList(paginateFn(res,9)))
-  }
-
+};
   // handle paginate .... changes the page content
   const handlePaginate = (val) => {
     const newList = paginateFn(vip, 9, val).items;
@@ -53,6 +69,7 @@ const Result = ({ vip = [] }) => {
     window.scrollTo(0, Number(ResultsRef.current.offsetTop));
   };
 
+
   // app
   return (
     <>
@@ -60,7 +77,7 @@ const Result = ({ vip = [] }) => {
       <ResultsWrapper ref={ResultsRef}>
         <Tablet>
           <section className="wrapper__container">
-            <ResultsNavBar handleFetch={fetchData}/>
+            <ResultsNavBar filterHandle={filterHandle} sortHandle={sortHandle} sortSelected={sortSelected} filterSelected={filterSelected} />
             <TabletRow>
               <HeaderText text="Name" />
               <HeaderText text="VIP?" />
@@ -69,7 +86,6 @@ const Result = ({ vip = [] }) => {
               <HeaderText text="Age" />
               <HeaderText text="Category" />
             </TabletRow>
-
             {vipList.map((vip, index) => {
               const { name, vip_score, is_vip, gender, age } = vip;
               return (
@@ -87,12 +103,12 @@ const Result = ({ vip = [] }) => {
         </Tablet>
 
         <Mobile>
-          <ResultsNavBar />
+          <ResultsNavBar  filterHandle={filterHandle} sortHandle={sortHandle} sortSelected={sortSelected} filterSelected={filterSelected} />
 
           <MobileWrapper>
             {vipList.map((vip, index) => {
               const { name, is_vip, vip_score, gender, age } = vip;
-            console.log(vip)
+    
               return (
                 <MobileRow key={index}>
                   <Column name="Name" value={name.slice(0,1).toUpperCase() + name.slice(1)} />

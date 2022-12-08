@@ -3,8 +3,9 @@ import classes from "./Topranked.module.css";
 import Paginate from "../paginate/Paginate";
 import Header from "../header/Header";
 import Modal from "../modal/Modal";
+import Login from "../Login"
 import axios from "api/axios";
-import Login from "../../../auth/login/index";
+
 
 
 
@@ -14,7 +15,7 @@ const Topranked = () =>{
   const [error,setError] = useState(false)
   const [date, setDate] = useState("")
   const [currentPage,setCurrentPage] = useState(1)
-  const [perPage] = useState(7)
+  const [perPage] = useState(9)
   const [isChecked,setIsChecked]= useState({
     ascending:false,
     descending:false
@@ -24,7 +25,10 @@ const Topranked = () =>{
   
   const fetchRankData = (date="",sort = false) =>{
       axios.get(`https://api.starfinder.hng.tech/api/history/top-search?date_sort=${date}&ascending_sort=${sort}`)
-     .then((res)=> setDatas(res.data))
+     .then((res)=> {
+      setDatas(res.data)
+      setError(false)
+     })
      .catch(()=>{
       setError(true)
       setDatas([])
@@ -33,7 +37,9 @@ const Topranked = () =>{
   
   }
   useEffect(()=>{
+   if(user){ 
     fetchRankData()
+   }
   },[])
 
   const handleChange = (e) =>{
@@ -58,7 +64,7 @@ const ascendingHandleChange = (e) => {
     }
   })
 
-    fetchRankData(date,true)
+  fetchRankData("",true)
  
 }
 const descendingHandleChange = (e) => {
@@ -68,26 +74,25 @@ const descendingHandleChange = (e) => {
       ...prev,
       ascending:false,
       descending:value
-     
     }
   })
-
     fetchRankData(date,false)
-
  }
 
 const paginate =(number) =>{
   setCurrentPage(number)
 }
+
 if(error)
 return (<div className={classes.error}>
   <h3  className={classes.errormessage}>An error occured</h3>
-  <button className={classes.errorbutton} onClick={()=>fetchRankData()}>Try again</button>
+  <button className={classes.errorbutton} onClick={fetchRankData}>Try again</button>
 </div>)
-
   return (
-<div>
-  { !user ? <Login /> :
+ <div>
+  { !user.access_token ? 
+  <Login /> 
+ :
   <div>
   <Header isChecked={isChecked} handleChange={handleChange} ascendingHandleChange={ascendingHandleChange} descendingHandleChange={descendingHandleChange} />
   {currentPost.length <=0 ? <Modal /> : 
@@ -156,7 +161,7 @@ return (<div className={classes.error}>
   </div>
    </div>
   }
-  <Paginate postPerPage={perPage} totalPost={datas.length} paginate={paginate} />
+  <Paginate postPerPage={perPage} currentPage={currentPage} totalPost={datas.length} paginate={paginate} />
    </div>
   }
 </div>

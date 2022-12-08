@@ -10,30 +10,13 @@ import {
 } from "./filtersBar.styled";
 
 // Filter Bar
-const FilterBar = ({handleFetch}) => {
+const FilterBar = ({filterHandle,selected}) => {
+
+
   const [showOptions, setShowOptions] = useState(false);
-  const [selected, setSelected] = useState("");
 
   const _options = ["Gold vip", "Silver vip", "Bronze vip"];
 
-
-
-  const handleSelectOption = (text) => {
-    setSelected(text);
-    switch(text){
-      case "Gold vip":
-        console.log('hello');
-        break;
-        case "Silver vip":
-          console.log('hey');
-          break;
-        case "Bronze vip":
-          console.log('he');
-          break;
-          default:
-          return text
-    }
-  };
 
   return (
     <>
@@ -56,7 +39,7 @@ const FilterBar = ({handleFetch}) => {
           {_options.map((option, index) => {
             return (
               <div
-                onClick={() => handleSelectOption(option)}
+                onClick={() => filterHandle(option)}
                 key={index}
                 className="options__select">
                 <span
@@ -80,27 +63,11 @@ const FilterBar = ({handleFetch}) => {
   );
 };
 
-const SortBar = ({handleFetch}) => {
+const SortBar = ({sortHandle,selected}) => {
   const [showOptions, setShowOptions] = useState(false);
-  const [selected, setSelected] = useState("");
+  
 
   const _options = ["Ascending order", "Descending order"];
-
-  const handleSelectOption = (text) => {
-    setShowOptions(true);
-    setSelected(text);
-    console.log(text)
-    switch(text){
-      case "Ascending order":
-        console.log('hello');
-        break;
-        case "Descending order":
-          console.log('hey');
-          break;
-          default:
-          return text
-    }
-  };
 
   // app
   return (
@@ -123,7 +90,7 @@ const SortBar = ({handleFetch}) => {
         {_options.map((option, index) => {
           return (
             <div
-              onClick={() => handleSelectOption(option)}
+              onClick={() => sortHandle(option)}
               key={index}
               className="options__select">
               <span
@@ -150,8 +117,10 @@ export { FilterBar, SortBar };
 
 
 FilterBar.propTypes = {
-  handleFetch:PropTypes.func.isRequired,
+  filterHandle:PropTypes.func.isRequired,
+  selected:PropTypes.string.isRequired,
 };
 SortBar.propTypes = {
-  handleFetch:PropTypes.func.isRequired,
+  sortHandle:PropTypes.func.isRequired,
+  selected:PropTypes.string,
 };
