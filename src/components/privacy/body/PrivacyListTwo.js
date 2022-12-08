@@ -5,7 +5,7 @@ const PrivacyListTwo = [
   },
   {
     title: "Deletion of Your Data",
-    body: `You can request the deletion of your account and personal data at any point of time by sending us an email at contact@TeamAxe.com. Note that you won't be able to access your account anymore after deletion. We may also retain some data related to your account for the purposes of legal compliance.`
+    body: `You can request the deletion of your account and personal data at any point of time by sending us an email at contact@starfinder.com. Note that you won't be able to access your account anymore after deletion. We may also retain some data related to your account for the purposes of legal compliance.`
   },
   {
     title: "Copyright and Trademarks",

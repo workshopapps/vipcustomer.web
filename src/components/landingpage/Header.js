@@ -19,8 +19,8 @@ const Header = () => {
           <Span>Customers</Span>
         </SubHeading>
         <Heading>
-          Axe API identifies very important personas that visit your website and
-          converts them to high paying leads.
+          Star Finder identifies very important personas that visit your website
+          and converts them to high paying leads.
         </Heading>
         <HeaderButton>
           <Link to="/demo">Try Our Demo</Link>
