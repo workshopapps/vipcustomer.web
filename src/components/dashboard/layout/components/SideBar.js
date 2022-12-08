@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { SideBarWrapper, LinksContainer } from "./sidebar.styled";
@@ -7,6 +7,7 @@ import { IoSearchOutline, IoSettingsOutline } from "react-icons/io5";
 import { FaRegUser, FaAddressBook } from "react-icons/fa";
 import { AiOutlineLogout, AiOutlineStar } from "react-icons/ai";
 import { HiArrowNarrowLeft } from "react-icons/hi";
+import LogoutModal from "components/dashboard/logout-modal/LogoutModal";
 
 const _links = [
   {
@@ -44,45 +45,50 @@ const SideBar = (props) => {
   const { sideBarOpen, setSideBarOpen } = props;
   const { pathname } = useLocation();
 
+  const [openmodal, setOpenModal] = useState(false)
+
 
   return (
-    <SideBarWrapper close={sideBarOpen}>
-      <button
-        onClick={() => setSideBarOpen(!sideBarOpen)}
-        className="close__btn">
-        <HiArrowNarrowLeft />
-      </button>
+    <>
+      <SideBarWrapper close={sideBarOpen}>
+        <button
+          onClick={() => setSideBarOpen(!sideBarOpen)}
+          className="close__btn">
+          <HiArrowNarrowLeft />
+        </button>
 
-      <LinksContainer>
-        {_links.map((link, index) => {
-          const { path, name, icon } = link;
+        <LinksContainer>
+          {_links.map((link, index) => {
+            const { path, name, icon } = link;
 
-          return (
-            <NavLink
-              className={pathname === path ? "isActive" : ""}
-              key={index}
-              to={path}>
-              <div className="link__wrap">
-                <span className="icon">{icon}</span>
-                <span data-text={name} className="text">
-                  {name}
-                </span>
-              </div>
-            </NavLink>
-          );
-        })}
+            return (
+              <NavLink
+                className={pathname === path ? "isActive" : ""}
+                key={index}
+                to={path}>
+                <div className="link__wrap">
+                  <span className="icon">{icon}</span>
+                  <span data-text={name} className="text">
+                    {name}
+                  </span>
+                </div>
+              </NavLink>
+            );
+          })}
 
-        <div className="link__wrap">
-          <span className="icon">
-            <AiOutlineLogout />
-          </span>
-          <Link to='/dashboard/logoutModal'><span data-text="Logout" className="text">
-            Logout
-          </span></Link>
+          <div className="link__wrap">
+            <span className="icon">
+              <AiOutlineLogout />
+            </span>
 
-        </div>
-      </LinksContainer>
-    </SideBarWrapper>
+            <button onClick={() => { setOpenModal(true) }}><span data-text="Logout" className="text">
+              Logout
+            </span></button>
+          </div>
+        </LinksContainer>
+      </SideBarWrapper>
+      {openmodal && <LogoutModal closeModal={setOpenModal} />}
+    </>
   );
 };
 

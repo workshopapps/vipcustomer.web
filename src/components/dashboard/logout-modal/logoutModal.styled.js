@@ -1,18 +1,7 @@
 import styled from "styled-components";
 
-export const LogoutModalWrapper = styled.section`
-position: relative;
-width: 100%;
-height: 100%;
-`
-
 export const LogoutModalBox = styled.div`
-position: absolute;
 background-color: #ffffff;
-top: 25%;
-left: 15%;
-width: 70%;
-height: fit-content;
 `
 
 export const LogoutModalContent = styled.div`
@@ -32,7 +21,7 @@ padding: 30px 30px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 1.5rem;
-line-height: 24px;
+  line-height: 24px;
 }
 
 .logout {
@@ -62,19 +51,14 @@ line-height: 24px;
 `
 
 export const LogoutModalOverlay = styled.div`
-position:fixed; 
-  top:0px; 
-  bottom:0px; 
-  left:0px; 
-  right:0px; 
-  overflow:hidden; 
   padding:0; 
   margin:0; 
-  background-color:#000;  
-  filter:alpha(opacity=50); 
-  opacity:0.5; 
-  z-index:-1;
-
- 
+  background-color: rgba(0, 0, 0, 0.5);  
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
