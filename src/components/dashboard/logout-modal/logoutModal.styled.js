@@ -9,7 +9,7 @@ height: 100%;
 export const LogoutModalBox = styled.div`
 position: absolute;
 background-color: #ffffff;
-top: 30%;
+top: 25%;
 left: 15%;
 width: 70%;
 height: fit-content;
