@@ -138,7 +138,10 @@ const Profile = () => {
 
                 <div className="single-input">
                   <label htmlFor="">Company Email</label>
-                  <input type="email" placeholder="axe.business@gmail.com" />
+                  <input
+                    type="email"
+                    placeholder="starfinder.business@gmail.com"
+                  />
                 </div>
 
                 <div className="single-input">

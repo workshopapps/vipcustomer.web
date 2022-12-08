@@ -9,8 +9,8 @@ import { Navbar, Footer } from "components/general/";
 const data = [
   {
     id: 1,
-    text: "What is Axe VIP API?",
-    p: "The Axe VIP API analyzes visiting user profiles on a Website/Application to identify & categorize VIP Customers\nThe API searches various social media platforms and web databases to see if the user meets your VIP Guest criteria."
+    text: "What is Star Finder?",
+    p: "Star Finder analyzes visiting user profiles on a Website/Application to identify & categorize VIP Customers\nThe API searches various social media platforms and web databases to see if the user meets your VIP Guest criteria."
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const data = [
   {
     id: 4,
     text: "How much does it cost?",
-    p: "Axe API is currently in Beta mode; as a result, only 10% of the total cost will be charged."
+    p: "Star Finder is currently in Beta mode; as a result, only 10% of the total cost will be charged."
   }
 ];
 

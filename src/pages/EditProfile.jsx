@@ -131,7 +131,7 @@ const EditProfile = () => {
                   <div style={{ position: "relative" }}>
                     <input
                       type="email"
-                      placeholder="axe.business@gmail.com"
+                      placeholder="starfinder.business@gmail.com"
                       onChange={(e) => setEmail(e.target.value)}
                     />
                     {email.length >= 8 && (
