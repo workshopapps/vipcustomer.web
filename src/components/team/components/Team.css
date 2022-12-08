@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -28rem;
+  margin-top: -43rem;
 }
 .team__container * {
   color: black;
@@ -60,7 +60,7 @@
 }
 .vector {
   width: 60%;
-  margin-top: 10em;
+  margin-top: 8em;
 }
 .vector-bottom {
   margin-top: -22em;
@@ -98,11 +98,19 @@
     width: 280px;
     height: 280px;
   }
+  .team__container {
+    margin-top: -30rem;
+  }
 }
 
 @media screen and (max-width: 1120px) {
   .vector-bottom {
     margin-top: -19em;
+  }
+}
+@media screen and (max-width: 980px) {
+  .team__container {
+    margin-top: -22rem;
   }
 }
 @media screen and (max-width: 900px) {

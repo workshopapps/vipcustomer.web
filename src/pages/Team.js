@@ -24,7 +24,7 @@ function Team() {
           <Card
             img_url={require("../components/team/assets/team/IMG-20221119-WA0004.jpg")}
             name={"Alex Chika"}
-            position={"Front-End Dev"}
+            position={"Frontend"}
           />
           <Card
             img_url={require("../components/team/assets/team/IMG-20221119-WA0005.jpg")}
