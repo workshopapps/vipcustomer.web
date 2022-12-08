@@ -155,7 +155,7 @@ const Form = ({ params }) => {
         <input
           name="Age"
           id="age"
-          placeholder="Enter your age eg 67"
+          placeholder="Enter your age e.g 67"
           type="number"
         />
         <small className="errorMsg"></small>

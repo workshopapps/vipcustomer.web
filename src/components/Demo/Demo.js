@@ -33,7 +33,8 @@ const Demo = () => {
       <DemoWrapper>
         <Header>
           <h1>
-            Live Demo of <strong> Star Finder VIP </strong> recognition software
+            Live Demo of <strong> Star Finder VIP </strong> recognition
+            software.
           </h1>
         </Header>
 
@@ -70,11 +71,11 @@ const Demo = () => {
           </article>
 
           <article className="form__wrapper">
-            <h2>Try Out A Live Demo</h2>
+            <h2>Try Out A Live Demo.</h2>
 
             <p className="mt2">
               Fill in the information below with a VIP’s details and hit analyze
-              to identify Vips
+              to identify {"VIP's"}.
             </p>
 
             <Form
