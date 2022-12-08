@@ -4,6 +4,7 @@ import { Text, HeaderText } from "./components/Text";
 import ResultsNavBar from "./components/ResultsNavBar";
 import Column from "./components/Column";
 import Paginate from "./components/Paginate";
+import axios from "api/axios";
 // import { _vip } from "./data"; //tetst data
 import { BsCheckLg } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
@@ -39,6 +40,11 @@ const Result = ({ vip = [] }) => {
     };
   }
 
+  const fetchData = ()  => {
+   axios.get()
+   .then(res => setVipList(paginateFn(res,9)))
+  }
+
   // handle paginate .... changes the page content
   const handlePaginate = (val) => {
     const newList = paginateFn(vip, 9, val).items;
@@ -54,23 +60,25 @@ const Result = ({ vip = [] }) => {
       <ResultsWrapper ref={ResultsRef}>
         <Tablet>
           <section className="wrapper__container">
-            <ResultsNavBar />
+            <ResultsNavBar handleFetch={fetchData}/>
             <TabletRow>
               <HeaderText text="Name" />
               <HeaderText text="VIP?" />
               <HeaderText text="Score" />
               <HeaderText text="Gender" />
               <HeaderText text="Age" />
+              <HeaderText text="Category" />
             </TabletRow>
 
             {vipList.map((vip, index) => {
               const { name, vip_score, is_vip, gender, age } = vip;
               return (
                 <TabletRow key={index}>
-                  <Text text={name} />
+                  <Text text={name.slice(0,1).toUpperCase() + name.slice(1)} />
                   <Text text={is_vip ? <BsCheckLg /> : <FaTimes />} />
-                  <Text text={vip_score} />
-                  <Text text={gender} />
+                  <Text text={Math.ceil(vip_score)} />
+                  <Text text={gender.slice(0,1).toUpperCase() + gender.slice(1) } />
+                  <Text text={age} />
                   <Text text={age} />
                 </TabletRow>
               );
@@ -84,17 +92,18 @@ const Result = ({ vip = [] }) => {
           <MobileWrapper>
             {vipList.map((vip, index) => {
               const { name, is_vip, vip_score, gender, age } = vip;
-
+            console.log(vip)
               return (
                 <MobileRow key={index}>
-                  <Column name="Name" value={name} />
+                  <Column name="Name" value={name.slice(0,1).toUpperCase() + name.slice(1)} />
                   <Column
                     name="VIP?"
                     value={is_vip ? <BsCheckLg /> : <FaTimes />}
                   />
-                  <Column name="Score" value={vip_score} />
-                  <Column name="Gender" value={gender} />
+                  <Column name="Score" value={Math.ceil(vip_score)} />
+                  <Column name="Gender" value={gender.slice(0,1).toUpperCase() + gender.slice(1)} />
                   <Column name="Age" value={age} />
+                  <Column name="Category" value={vip_score} />
                 </MobileRow>
               );
             })}

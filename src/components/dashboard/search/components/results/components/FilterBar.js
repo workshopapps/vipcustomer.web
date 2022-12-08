@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
+import PropTypes from "prop-types";
 import {
   FilterBarWrapper,
   SortBarWrapper,
@@ -9,14 +10,29 @@ import {
 } from "./filtersBar.styled";
 
 // Filter Bar
-const FilterBar = () => {
+const FilterBar = ({handleFetch}) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selected, setSelected] = useState("");
 
   const _options = ["Gold vip", "Silver vip", "Bronze vip"];
 
+
+
   const handleSelectOption = (text) => {
     setSelected(text);
+    switch(text){
+      case "Gold vip":
+        console.log('hello');
+        break;
+        case "Silver vip":
+          console.log('hey');
+          break;
+        case "Bronze vip":
+          console.log('he');
+          break;
+          default:
+          return text
+    }
   };
 
   return (
@@ -64,15 +80,26 @@ const FilterBar = () => {
   );
 };
 
-const SortBar = () => {
+const SortBar = ({handleFetch}) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selected, setSelected] = useState("");
 
-  const _options = ["Last updated", "Ascending order", "Descending order"];
+  const _options = ["Ascending order", "Descending order"];
 
   const handleSelectOption = (text) => {
     setShowOptions(true);
     setSelected(text);
+    console.log(text)
+    switch(text){
+      case "Ascending order":
+        console.log('hello');
+        break;
+        case "Descending order":
+          console.log('hey');
+          break;
+          default:
+          return text
+    }
   };
 
   // app
@@ -120,3 +147,11 @@ const SortBar = () => {
 };
 
 export { FilterBar, SortBar };
+
+
+FilterBar.propTypes = {
+  handleFetch:PropTypes.func.isRequired,
+};
+SortBar.propTypes = {
+  handleFetch:PropTypes.func.isRequired,
+};
