@@ -47,14 +47,14 @@ const Demo = () => {
 
             <p className="sub__text mt2">
               Try out Star Finder with any VIP’s information and see how it
-              performs{" "}
+              performs.
             </p>
 
             <ul className="mt2">
               <li>
                 <img src={checkmark} />
                 Automatic VIP level tagging and categorization with relevant
-                keyword extraction
+                keyword extraction.
               </li>
               <li>
                 <img src={checkmark} />
@@ -64,7 +64,7 @@ const Demo = () => {
               <li>
                 <img src={checkmark} />
                 Automatic customer profiling methods and processes so teams can
-                focus on what matters the most
+                focus on what matters the most.
               </li>
             </ul>
           </article>

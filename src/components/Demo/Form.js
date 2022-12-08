@@ -144,7 +144,7 @@ const Form = ({ params }) => {
         <input
           name="Occupation"
           id="occupation"
-          placeholder="Enter your occupation"
+          placeholder="Enter occupation"
           type="text"
         />
         <small className="errorMsg"></small>
