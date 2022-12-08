@@ -119,7 +119,7 @@ const Form = (props) => {
           <label htmlFor="gender">Gender</label>
           <select name="Gender" id="gender">
             <option selected disabled value="">
-              Chose Gender
+              Choose Gender
             </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -132,7 +132,7 @@ const Form = (props) => {
           <input
             name="Occupation"
             id="occupation"
-            placeholder="Enter your occupation"
+            placeholder="Enter occupation"
             type="text"
           />
           <small className="errorMsg"></small>
@@ -143,7 +143,7 @@ const Form = (props) => {
           <input
             name="Age"
             id="age"
-            placeholder="Enter your age eg 67"
+            placeholder="Enter your age e.g 67"
             type="number"
           />
           <small className="errorMsg"></small>
