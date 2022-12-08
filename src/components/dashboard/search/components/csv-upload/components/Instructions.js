@@ -43,7 +43,7 @@ const Instructions = () => {
         </div>
       </div>
 
-      <a className="button" href={SampleCSV} download={"sample"}>
+      <a className="button f fcenter" href={SampleCSV} download={"sample"}>
         Download sample CSV
       </a>
     </InstructionsWrapper>

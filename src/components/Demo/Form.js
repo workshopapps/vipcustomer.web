@@ -3,16 +3,14 @@ import PropTypes from "prop-types";
 import FormWrapper from "./form.styled";
 
 const Form = ({ params }) => {
-  const { setModal, setResponse, setName, handleFetch, setSearchInputs } =
-    params;
+  const { setModal, setResponse, handleFetch, setSearchInputs } = params;
 
   const form = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     let valid = true;
-    let names = {};
-    let optionalParams = {};
+    let searchParams = {};
 
     // get submit button
     const submitBtn = form.current.querySelector("button");
@@ -25,7 +23,7 @@ const Form = ({ params }) => {
         wrapper.querySelector("input") || wrapper.querySelector("select");
       const errorEl = wrapper.querySelector(".errorMsg");
 
-      if (inputEl.name === "First name" || inputEl.name === "Last name") {
+      if (inputEl.name === "Name") {
         if (!inputEl.value) {
           errorEl.textContent = `${inputEl.name} field cannot be empty`;
           inputEl.classList.add("error");
@@ -41,16 +39,19 @@ const Form = ({ params }) => {
         if (inputEl.value && inputEl.value.length >= 3) {
           errorEl.textContent = "";
           inputEl.classList.remove("error");
-          names = {
-            ...names,
-            [inputEl.name]: inputEl.value.trim()
+          searchParams = {
+            ...searchParams,
+            [inputEl.name.toLowerCase()]: inputEl.value
+              .split(" ")
+              .filter((text) => text !== Boolean)
+              .join(" ")
           };
         }
       } else {
         // check for age
         if (inputEl.name === "Age" && inputEl.value) {
-          optionalParams = {
-            ...optionalParams,
+          searchParams = {
+            ...searchParams,
             [inputEl.name.toLowerCase()]: JSON.parse(inputEl.value) || 0
           };
         }
@@ -61,8 +62,8 @@ const Form = ({ params }) => {
           inputEl.value.length >= 3 &&
           inputEl.name !== "Age"
         ) {
-          optionalParams = {
-            ...optionalParams,
+          searchParams = {
+            ...searchParams,
             [inputEl.name.toLowerCase()]: inputEl.value.trim()
           };
         }
@@ -74,11 +75,8 @@ const Form = ({ params }) => {
     // console.log(names, optionalParams);
 
     if (valid) {
-      let inputName = names["First name"] + " " + names["Last name"];
-      setName(inputName);
-      setSearchInputs(optionalParams);
-
-      console.log(optionalParams);
+      setSearchInputs(searchParams);
+      // console.log(searchParams);
 
       // disabe submit button
       submitBtn.classList.add("loading");
@@ -86,7 +84,7 @@ const Form = ({ params }) => {
       submitBtn.textContent = "Please wait...";
 
       // api call
-      const response = await handleFetch(inputName, optionalParams);
+      const response = await handleFetch(searchParams);
       setResponse(response);
       setModal(true);
 
@@ -107,28 +105,15 @@ const Form = ({ params }) => {
 
   return (
     <FormWrapper ref={form} onSubmit={handleSubmit} className=" mt2">
-      <div className="wrapInput">
-        <div className="inputCon">
-          <label htmlFor="first_name">First name</label>
-          <input
-            name="First name"
-            id="first_name"
-            placeholder="Enter your first name"
-            type="text"
-          />
-          <small className="errorMsg"></small>
-        </div>
-
-        <div className="inputCon">
-          <label htmlFor="last_name">Last name</label>
-          <input
-            name="Last name"
-            id="last_name"
-            placeholder="Enter your last name"
-            type="text"
-          />
-          <small className="errorMsg"></small>
-        </div>
+      <div className="inputCon">
+        <label htmlFor="name">Name</label>
+        <input
+          name="Name"
+          id="name"
+          placeholder="Enter Name here"
+          type="text"
+        />
+        <small className="errorMsg"></small>
       </div>
 
       <div className="inputCon green">
@@ -145,8 +130,8 @@ const Form = ({ params }) => {
       <div className="inputCon green">
         <label htmlFor="gender">Gender</label>
         <select name="Gender" id="gender">
-          <option disabled value="select">
-            Select
+          <option selected disabled value="">
+            Chose Gender
           </option>
           <option value="male">Male</option>
           <option value="female">Female</option>
