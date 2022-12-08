@@ -11,7 +11,6 @@ const NavWrapper = styled.nav`
   font-weight: 500;
   display: flex;
   height: 50px;
-
   padding-inline: ${({ mobile, tablet }) =>
     mobile ? "40px" : tablet ? "78.9px" : "120px"};
   width: 100%;
@@ -28,10 +27,8 @@ const NavItemsWrapper = styled.ul`
   align-items: center;
 `;
 const LogoWrapper = styled.div`
-  width: ${({ mobile, tablet }) =>
-    mobile ? "48.9%" : tablet ? "73.46%" : "164.63px"};
-  height: ${({ mobile, tablet }) =>
-    mobile ? "48.9%" : tablet ? "73.46%" : "49px"};
+  width: 100%;
+  height: 50px;
   & > img {
     width: 100%;
     height: 100%;
