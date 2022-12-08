@@ -129,8 +129,8 @@ const Form = ({ params }) => {
 
       <div className="inputCon green">
         <label htmlFor="gender">Gender</label>
-        <select name="Gender" id="gender">
-          <option selected disabled value="">
+        <select defaultValue={""} name="Gender" id="gender">
+          <option disabled value="">
             Choose Gender
           </option>
           <option value="male">Male</option>
