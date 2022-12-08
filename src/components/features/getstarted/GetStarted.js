@@ -14,8 +14,8 @@ const GetStarted = () => {
         treatment they deserve
       </h4>
       <p className={classes.paragraph}>
-        Discover, view & rank VIPs on your platform with Axe API. Harness the
-        power of data to grow your business through unique VIP offerings and
+        Discover, view & rank VIPs on your platform with Star Finder. Harness
+        the power of data to grow your business through unique VIP offerings and
         partnerships.
       </p>
       {user ? (

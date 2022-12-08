@@ -10,7 +10,7 @@ const NavWrapper = styled.nav`
   color: white;
   font-weight: 500;
   display: flex;
-  height: 50px;
+  height: 65px;
 
   padding-inline: ${({ mobile, tablet }) =>
     mobile ? "40px" : tablet ? "78.9px" : "120px"};
@@ -36,6 +36,10 @@ const LogoWrapper = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  > img {
+    color: white;
+    width: 85%;
   }
 `;
 
