@@ -14,8 +14,8 @@
 }
 .team__container p {
   font-size: 18px;
-  line-height: 4rem;
   color: #333333;
+  text-align: center;
 }
 .team__container .team__flex {
   display: flex;
@@ -127,5 +127,11 @@
   }
   .team__container {
     margin-top: -15rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .team__container h1 {
+    font-size: 30px;
   }
 }
