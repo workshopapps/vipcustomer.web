@@ -1,13 +1,21 @@
 import React from "react";
-import "../components/team/styles/components/Team.css";
+import "components/team/components/Team.css";
 import { Card } from "../components/team/Card";
 import { Footer, Navbar } from "../components/general";
+import vectorRight from "../components/team/assets/Vector-right.png";
+import vectorLeft from "../components/team/assets/Vector-left.png";
 
 function Team() {
   return (
     <>
       <Navbar />
-
+      <div className="vector">
+        <img
+          src={vectorRight}
+          alt="for styling purposes only"
+          aria-hidden="true"
+        />
+      </div>
       <div className={"team__container"}>
         <h1> Meet The Team </h1>
         <p>Get to know the face behind the product.</p>
@@ -16,7 +24,7 @@ function Team() {
           <Card
             img_url={require("../components/team/assets/team/IMG-20221119-WA0004.jpg")}
             name={"Alex Chika"}
-            position={"Front-End Dev"}
+            position={"Frontend"}
           />
           <Card
             img_url={require("../components/team/assets/team/IMG-20221119-WA0005.jpg")}
@@ -39,6 +47,17 @@ function Team() {
             position={"Project Manager"}
           />
         </div>
+
+        <div className="teams-btn">
+          <p>Our Teams</p>
+        </div>
+      </div>
+      <div className="vector-bottom">
+        <img
+          src={vectorLeft}
+          alt="for styling purposes only"
+          aria-hidden="true"
+        />
       </div>
       <Footer />
     </>

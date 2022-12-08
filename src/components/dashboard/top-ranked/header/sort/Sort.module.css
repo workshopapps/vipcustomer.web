@@ -1,0 +1,26 @@
+.sort{
+    width:120px;
+    height:40px;
+    border:2px solid #b5b7c0;
+    text-align:center;
+    padding-top:5px;
+    border-radius:3px;
+    margin-bottom:10px
+}
+.parent{
+    position:relative;
+  }
+  .modal{
+    position:absolute;
+    background-color:white;
+    padding:10px;
+    width:140px;
+    max-height:150px;
+    border:2px solid #b5b7c0;
+  }
+  .input{
+    margin-bottom: 7px;
+  }
+  .checkbox{
+    margin-right:5px
+  }

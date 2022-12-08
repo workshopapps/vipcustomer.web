@@ -1,15 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const NavBarWrapper = styled.div`
-  display: none;
-  color: white;
-
-  @media only screen and (max-width: 768px) {
-    display: block;
-  }
-`;
-
 export const SignUpBtn = styled.button`
   width: 100%;
   background-color: #091540;
@@ -19,6 +10,10 @@ export const SignUpBtn = styled.button`
   padding: 1rem;
   border-radius: 8px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 
   &:disabled {
     cursor: not-allowed;
@@ -50,7 +45,7 @@ export const Form = styled.form`
   margin-top: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.6rem;
 
   @media only screen and (max-width: 768px) {
     margin-top: 2rem;
@@ -89,41 +84,8 @@ export const OrDemarcation = styled.div`
   }
 `;
 
-export const GoogleSignUp = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 13px;
-  font-size: 1.6rem;
-  color: #121212;
-  border: 2px solid #091540;
-  border-radius: 7px;
-  padding-block: 1rem;
-  width: 100%;
-  cursor: pointer;
-
-  span {
-    font-size: 3rem;
-    display: grid;
-    place-items: center;
-  }
-
-  @media only screen and (max-width: 768px) {
-    font-size: 1.2rem;
-    padding-block: 1.4rem;
-    padding-inline: 1.6rem;
-    justify-content: flex-start;
-
-    border: 1px solid #adb1bf;
-
-    span {
-      font-size: 2rem;
-    }
-  }
-`;
-
 export const Right = styled.div`
-  flex: 1.2;
+  flex: 1;
   display: grid;
   place-items: center;
   padding: 7rem;
@@ -138,7 +100,7 @@ export const Right = styled.div`
 
   & > div {
     width: 100%;
-    max-width: 58.8rem;
+    max-width: 45rem;
   }
 `;
 
