@@ -76,7 +76,7 @@ implementation should be changed
         <Items className="nav--logo">
           <Link to="/">
             <LogoWrapper mobile={mobile} tablet={tablet}>
-              <img src={LOGO} alt="axeapi logo" />
+              <img src={LOGO} alt="starfinder logo" />
             </LogoWrapper>
           </Link>
         </Items>
