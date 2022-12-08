@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 
 // import all pages here
 import { Layout, Search, Topranked } from "components/dashboard";
-import LogoutModal from "components/dashboard/logout-modal/LogoutModal";
 // replace the divs with your pages
 
 const Dashboard = () => {
@@ -19,7 +18,6 @@ const Dashboard = () => {
 
         <Route path="profile" element={<div>tprofile</div>} />
 
-        <Route path="logoutModal" element={<LogoutModal />} />
       </Route>
     </Routes>
   );

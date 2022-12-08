@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { SideBarWrapper, LinksContainer } from "./sidebar.styled";
 
 import { IoSearchOutline, IoSettingsOutline } from "react-icons/io5";
