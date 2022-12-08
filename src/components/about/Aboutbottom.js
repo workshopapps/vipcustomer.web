@@ -24,8 +24,9 @@ const Aboutbottom = () => {
         <div className={styles.bottomImg}></div>
         <div className={styles.textDiv}>
           <h3 className={styles.bottText}>
-            See how AxeAPI can help your business leverage customer information,
-            to make more informed business development decisions today
+            See how Star Finder can help your business leverage customer
+            information, to make more informed business development decisions
+            today
           </h3>
           {user ? (
             <button className={styles.signupBtn} onClick={navigateLogin}>

@@ -6,7 +6,7 @@ const LandingVideo = () => {
     <div className={styles.demo}>
       <div className={styles.wrapper}>
         <div>
-          <h4>Get a free demo of Axe API VIP recognition software</h4>
+          <h4>Get a free demo of Star Finder VIP recognition software</h4>
           <p>
             Join the leading software in API recognition with the click of a
             button

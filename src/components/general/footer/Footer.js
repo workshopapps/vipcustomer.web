@@ -1,20 +1,20 @@
 import React from "react";
 import FooterWrapper from "./footer.styled";
-import axeLogo from "./images/logos.png";
+import axeLogo from "./images/logos.svg";
 import Linkbtn from "./LinkBtn";
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <div>
-        <img src={axeLogo} alt="Axe API" />
+        <img src={axeLogo} alt="Star Finder" />
       </div>
       <div className="footbar">
         <div className="footbarone">
           <h4>Features</h4>
           <Linkbtn
             href="/feature"
-            child="Axe API Feature"
+            child="Star Finder Feature"
             classname="footlink"
           />
           <Linkbtn href="/" child="How it works" classname="footlink" />
