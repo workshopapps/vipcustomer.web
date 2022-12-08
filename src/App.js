@@ -10,7 +10,6 @@ import { Store } from "./store/contexts/AppContext";
 import Home from "./pages/Home";
 import OldDashboard from "./pages/OldDashboard";
 import Dashboard from "./pages/Dashboard";
-import Example from "./pages/Example";
 import Login from "pages/auth/Login";
 import FAQ from "./pages/FAQ";
 import Help from "pages/Help";
@@ -22,20 +21,12 @@ import Demo from "pages/Demo";
 import Feature from "pages/Feature";
 import PasswordChange from "./pages/PasswordChange";
 import PasswordRecovery from "./pages/PasswordRecovery";
-import Profile from "pages/Profile";
-import EditProfile from "pages/EditProfile";
 import ErrorPage from "pages/ErrorPage";
 import Terms from "pages/Terms";
 import Aboutus from "pages/Aboutus";
 import Consultation from "pages/Consultation";
-import RequireAuth from "components/auth/RequireAuth";
-import DocsLayouts from "pages/docs/DocsLayouts";
-import Search from "pages/docs/Search";
-import Documents from "pages/Documents";
-import SearchMany from "pages/docs/SearchMany";
-import History from "pages/docs/History";
-import Usage from "pages/docs/Usage";
-import Quick from "pages/docs/Quickstart";
+// import RequireAuth from "components/auth/RequireAuth";
+import Documentation from "pages/Documentation";
 
 function App() {
   const { theme } = Store();
@@ -53,7 +44,6 @@ function App() {
       <GLobalStyles />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/example" element={<Example />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/demo" element={<Demo />} />
@@ -77,19 +67,10 @@ function App() {
         </Route> */}
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="/old-dashboard" element={<OldDashboard />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/edit" element={<EditProfile />} />
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
-        <Route path="/documents" element={<DocsLayouts />}>
-        <Route path="/documents" element={<Documents />} />
-          <Route path="/documents/search" element={<Search />} />
-          <Route path="/documents/searchmany" element={<SearchMany />} />
-          <Route path="/documents/history" element={<History />} />
-          <Route path="/documents/usage" element={<Usage />} />
-          <Route path="/documents/quick" element={<Quick />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
+        <Route path="/docs/*" element={<Documentation />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </ThemeProvider>
   );

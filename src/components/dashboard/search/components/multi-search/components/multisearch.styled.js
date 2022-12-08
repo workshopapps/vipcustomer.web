@@ -5,7 +5,7 @@ const MultiSearchWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  h2 {
+  .header {
     text-align: center;
     margin: 50px 0px 20px 0px;
     font-size: 1.8rem;
