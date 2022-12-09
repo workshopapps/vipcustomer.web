@@ -1,0 +1,79 @@
+.profile {
+  width: 75%;
+  margin: auto;
+}
+
+.profile__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profile__header_details {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.profile__header_details a {
+  text-transform: capitalize;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid #091540;
+}
+
+.profile__header_img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: white;
+  background-color: #285e61;
+  text-transform: uppercase;
+}
+
+.profile__details > * {
+  margin-bottom: 24px;
+}
+
+.profile__details > div:first-child {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.profile__keys {
+  padding: 20px 30px 40px 20px;
+  border: 1px solid #091540;
+  border-radius: 20px;
+}
+
+.profile__keys > div {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.profile__keys_img {
+  margin-right: 20px;
+}
+
+.profile__keys_details > * {
+  margin-bottom: 8px;
+}
+
+.profile__keys_details div:last-child {
+  display: flex;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.profile__keys_details div:last-child input {
+  cursor: default;
+}
