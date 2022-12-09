@@ -8,7 +8,8 @@ import {
   Search,
   Topranked,
   Profile,
-  Settings
+  Settings,
+  History
 } from "components/dashboard";
 
 // replace the divs with your pages
@@ -18,7 +19,7 @@ const Dashboard = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Search />} />
-        <Route path="history" element={<div>history</div>} />
+        <Route path="history" element={<History />} />
         <Route path="top-rank" element={<Topranked />} />
         <Route path="profile" element={<Profile />} />
         <Route path="settings" element={<Settings />} />
