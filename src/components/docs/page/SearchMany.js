@@ -4,8 +4,8 @@ import "../components/document.css";
 const SearchMany = () => {
   return (
     <div className="documents-div">
-      <h1>This is the search many page.</h1>
-      <h3>Search many in the starFinder app for VIPs</h3>
+      <h1>This is the multi search page.</h1>
+      <h3>Multi search in the starFinder app for VIPs</h3>
       <p>
         By using this tool, we navigate using search-many bar, the name(s) of
         the VIP being searched for should be typed in the the search bar, and

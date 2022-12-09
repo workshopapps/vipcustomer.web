@@ -26,10 +26,10 @@ const Experience = () => {
       id: 5,
       name: "Take Action.",
       list: [
-        "Create Email list",
+        "Create email list",
         "Send bulk email to VIPs",
         "Send bulk email to VIPs",
-        "Give Discount"
+        "Give discount"
       ]
     }
   ];

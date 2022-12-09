@@ -13,24 +13,25 @@ export default function GoogleAuth({ text }) {
   const [errorMessage, setErrorMessage] = useState("");
   const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
 
+  const [spinnerClasses, setSpinnerClasses] = useState("spinner small stop");
+
   async function onSuccess({ credential }) {
     try {
+      setSpinnerClasses("spinner small");
       const { data } = await axios.post("/api/user/google-auth/", {
         jwt_token: credential
       });
+
+      setSpinnerClasses("spinner small stop");
       login_a(dispatch, data);
       navigate("/dashboard", { replace: true });
     } catch (e) {
-      console.log(e);
-
-      setErrorMessage(
-        "An unexpected error occured. Please try again another time"
-      );
-      setErrorMessageIsShown(true);
+      onError();
     }
   }
 
   function onError() {
+    setSpinnerClasses("spinner small stop");
     setErrorMessage(
       "An unexpected error occured. Please try again another time"
     );
@@ -49,6 +50,7 @@ export default function GoogleAuth({ text }) {
           {errorMessage}
         </div>
       )}
+      <div className={spinnerClasses} style={{ marginBottom: "0.5rem" }}></div>
       <GoogleLogin text={text} onError={onError} onSuccess={onSuccess} />
     </>
   );

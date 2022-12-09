@@ -7,27 +7,22 @@ import Loading from "../loading";
 
 const SingleSearch = () => {
   // states for the Form component
-  const [name, setName] = useState("");
   const [response, setResponse] = useState(undefined);
   const [searchInputs, setSearchInputs] = useState({});
 
   // states for the quick form input
   const [loading, setLoading] = useState(false);
-  const [inputNames, setInutNames] = useState({
-    firstName: "",
-    lastName: ""
-  });
+  const [inputName, setInputName] = useState("");
 
   // state for modal
   const [modal, setModal] = useState(false);
 
   // handle fetch function
-  const handleFetch = async (name, params = {}) => {
+  const handleFetch = async (params = {}) => {
     // GET WITH AXIOS
     try {
       const response = await axios.get("/api/search/", {
         params: {
-          name: name,
           ...params
         }
       });
@@ -43,25 +38,25 @@ const SingleSearch = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const first = inputNames.firstName.trim();
-    const last = inputNames.lastName.trim();
+    const name = inputName
+      .split(" ")
+      .filter((text) => text !== Boolean)
+      .join(" ");
 
-    if (first && last) {
-      const name = `${first} ${last}`;
-      setSearchInputs({});
+    if (name) {
+      setSearchInputs({
+        name
+      });
       setLoading(true);
 
       // api call
-      const response = await handleFetch(name);
-      setName(name);
+      const response = await handleFetch(searchInputs);
+
       setResponse(response);
       setModal(true);
 
       // reset form values
-      setInutNames({
-        firstName: "",
-        lastName: ""
-      });
+      setInputName("");
       setLoading(false);
     }
   };
@@ -76,22 +71,10 @@ const SingleSearch = () => {
 
             <div className="form__wrapper">
               <input
-                value={inputNames.firstName}
-                onChange={(e) =>
-                  setInutNames({ ...inputNames, firstName: e.target.value })
-                }
+                value={inputName}
+                onChange={(e) => setInputName(e.target.value)}
                 required
-                placeholder="Enter first name"
-                type="text"
-              />
-
-              <input
-                value={inputNames.lastName}
-                onChange={(e) =>
-                  setInutNames({ ...inputNames, lastName: e.target.value })
-                }
-                required
-                placeholder="Enter last name"
+                placeholder="Enter Name"
                 type="text"
               />
 
@@ -106,7 +89,6 @@ const SingleSearch = () => {
             <Form
               params={{
                 setModal,
-                setName,
                 setResponse,
                 setSearchInputs,
                 handleFetch
@@ -117,7 +99,6 @@ const SingleSearch = () => {
       </SingleSearchWrapper>
 
       <Modal
-        name={name}
         search={searchInputs}
         result={response}
         modal={modal}

@@ -5,9 +5,9 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { ModalContent, ModalWrap } from "./modal.styled";
 
 // appp
-const Modal = ({ search = {}, result, name, modal, setModal }) => {
+const Modal = ({ search = {}, result, modal, setModal }) => {
   // search from input field
-  const { email, age, occupation, gender } = search;
+  const { email, age, occupation, gender, name } = search;
 
   // result from API
   const {
@@ -24,7 +24,7 @@ const Modal = ({ search = {}, result, name, modal, setModal }) => {
     <ModalWrap modal={modal} className={` `}>
       <div style={{}} className="modal-body">
         <div className="header">
-          <h2>Axe Api</h2>
+          <h2>Star Finder Api</h2>
           <button onClick={() => setModal(!modal)} className="modal-btn">
             <FaTimes />
           </button>
@@ -139,7 +139,6 @@ const Modal = ({ search = {}, result, name, modal, setModal }) => {
 Modal.propTypes = {
   result: PropTypes.object,
   search: PropTypes.object,
-  name: PropTypes.string,
   modal: PropTypes.bool,
   setModal: PropTypes.func
 };

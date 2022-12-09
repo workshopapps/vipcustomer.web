@@ -1,15 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const NavBarWrapper = styled.div`
-  display: none;
-  color: white;
-
-  @media only screen and (max-width: 768px) {
-    display: block;
-  }
-`;
-
 export const SignUpBtn = styled.button`
   width: 100%;
   background-color: #091540;

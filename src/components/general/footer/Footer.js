@@ -1,13 +1,17 @@
 import React from "react";
 import FooterWrapper from "./footer.styled";
-import axeLogo from "./images/logos.svg";
+
+import starFinderLogo from "./images/logos.svg";
+
 import Linkbtn from "./LinkBtn";
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <div>
-        <img src={axeLogo} alt="Star Finder" />
+
+        <img src={starFinderLogo} alt="Star Finder" />
+
       </div>
       <div className="footbar">
         <div className="footbarone">

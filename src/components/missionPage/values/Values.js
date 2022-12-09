@@ -49,7 +49,7 @@ const Values = () => {
             placeholder="Email Address"
             onChange={handleChange}></input>
 
-          <button className={styles.button}>subscribe</button>
+          <button className={styles.button}>Subscribe</button>
         </form>
       </div>
     </div>

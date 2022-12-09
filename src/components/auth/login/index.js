@@ -7,6 +7,7 @@ import Input from "../Input";
 import Checkbox from "../signup/Checkbox";
 import axios from "api/axios";
 import GoogleAuth from "../GoogleAuth";
+import BackBtn from "../BackBtn";
 
 const Login = () => {
   const { dispatch } = AuthStore();
@@ -65,11 +66,13 @@ const Login = () => {
 
   return (
     <div className={styles.login__container}>
+      <BackBtn />
       <div className={styles.login__container__img}>
         <div>
           <h1>Let&apos;s help you, identify VIPs</h1>
           <p>
-            We are closer than you can imagine, AXE VIP always at your service.
+            We are closer than you can imagine, Star Finder VIP always at your
+            service.
           </p>
         </div>
       </div>

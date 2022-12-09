@@ -8,7 +8,6 @@ import Form from "./Form";
 
 const Demo = () => {
   const [modal, setModal] = useState(false);
-  const [name, setName] = useState("");
   const [response, setResponse] = useState(undefined);
   const [searchInputs, setSearchInputs] = useState({});
 
@@ -17,7 +16,6 @@ const Demo = () => {
     try {
       const response = await axios.get("/api/search/", {
         params: {
-          name: name,
           ...params
         }
       });
@@ -35,7 +33,10 @@ const Demo = () => {
       <DemoWrapper>
         <Header>
           <h1>
+
             Live Demo of <strong> Star Finder VIP </strong> recognition software
+
+
           </h1>
         </Header>
 
@@ -49,14 +50,16 @@ const Demo = () => {
 
             <p className="sub__text mt2">
               Try out Star Finder with any VIP’s information and see how it
-              performs{" "}
+
+              performs.
+
             </p>
 
             <ul className="mt2">
               <li>
                 <img src={checkmark} />
                 Automatic VIP level tagging and categorization with relevant
-                keyword extraction
+                keyword extraction.
               </li>
               <li>
                 <img src={checkmark} />
@@ -66,17 +69,17 @@ const Demo = () => {
               <li>
                 <img src={checkmark} />
                 Automatic customer profiling methods and processes so teams can
-                focus on what matters the most
+                focus on what matters the most.
               </li>
             </ul>
           </article>
 
           <article className="form__wrapper">
-            <h2>Try Out A Live Demo</h2>
+            <h2>Try Out A Live Demo.</h2>
 
             <p className="mt2">
               Fill in the information below with a VIP’s details and hit analyze
-              to identify Vips
+              to identify {"VIP's"}.
             </p>
 
             <Form
@@ -84,7 +87,6 @@ const Demo = () => {
                 setSearchInputs,
                 handleFetch,
                 setResponse,
-                setName,
                 setModal
               }}
             />
@@ -93,7 +95,6 @@ const Demo = () => {
       </DemoWrapper>
 
       <Modal
-        name={name}
         search={searchInputs}
         result={response}
         modal={modal}
