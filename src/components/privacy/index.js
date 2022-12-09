@@ -19,12 +19,15 @@ const Privacy = () => (
         <h1>PRIVACY POLICY</h1>
         <p className="txt">
           Star Finder Privacy Policy is designed to help you understand how we
+
           collect and use the personal information you decide to share, and help
           you make informed decisions when using{" "}
           <span>
             <a href="#">StarFinder.com</a>
           </span>
+
           . By using or accepting Star Finder you are accepting the practices
+
           described in this policy. If you have questions regarding this
           statement, you can send us email to{" "}
           <span>

@@ -8,8 +8,10 @@ const Abouttop = () => {
       <div className={styles.container}>
         <h1 className={styles.header}>About Us</h1>
         <p className={styles.paragraph}>
+
           Star Finder is a reliable service that can be used for VIP customer
           identification. We help you understand your website traffic and make
+
           sense of who is visiting your page. Whether it is to improve your
           sales decisions, or for targeted marketing campaigns. Our API will
           help you filter through your users profiles to alert you when you have

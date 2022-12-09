@@ -27,6 +27,7 @@ const Aboutbottom = () => {
             See how Star Finder can help your business leverage customer
             information, to make more informed business development decisions
             today.
+
           </h3>
           {user ? (
             <button className={styles.signupBtn} onClick={navigateLogin}>

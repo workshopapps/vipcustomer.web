@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // import all pages here
+
 import {
   Layout,
   Search,
@@ -9,6 +10,7 @@ import {
   Profile,
   Settings
 } from "components/dashboard";
+
 // replace the divs with your pages
 
 const Dashboard = () => {

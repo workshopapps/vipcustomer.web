@@ -33,8 +33,10 @@ const Demo = () => {
       <DemoWrapper>
         <Header>
           <h1>
-            Live Demo Of <strong> Star Finder VIP </strong> Recognition
-            Software.
+
+            Live Demo of <strong> Star Finder VIP </strong> recognition software
+
+
           </h1>
         </Header>
 
@@ -48,7 +50,9 @@ const Demo = () => {
 
             <p className="sub__text mt2">
               Try out Star Finder with any VIP’s information and see how it
+
               performs.
+
             </p>
 
             <ul className="mt2">
