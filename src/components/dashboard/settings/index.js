@@ -27,9 +27,9 @@ const index = () => {
   };
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user")).user;
+    const user = JSON.parse(localStorage.getItem("user"));
     if (!user) nav("/login");
-    getData(user);
+    getData(user.user);
     console.log(errorMsg);
   }, []);
 
