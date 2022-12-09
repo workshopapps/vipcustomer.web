@@ -74,7 +74,7 @@ const SingleSearch = () => {
                 value={inputName}
                 onChange={(e) => setInputName(e.target.value)}
                 required
-                placeholder="Enter name here"
+                placeholder="Enter Name"
                 type="text"
               />
 

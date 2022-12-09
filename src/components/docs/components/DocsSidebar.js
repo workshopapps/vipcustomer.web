@@ -34,7 +34,7 @@ const DocsSidebar = () => {
           </p>
           <p>
             <Link to="/docs/searchmany" className={styles.li}>
-              Search-Many
+              Multi Search
             </Link>
           </p>
           <p>

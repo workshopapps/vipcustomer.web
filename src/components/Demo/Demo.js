@@ -33,8 +33,8 @@ const Demo = () => {
       <DemoWrapper>
         <Header>
           <h1>
-            Live Demo of <strong> Star Finder VIP </strong> recognition
-            software.
+            Live Demo Of <strong> Star Finder VIP </strong> Recognition
+            Software.
           </h1>
         </Header>
 

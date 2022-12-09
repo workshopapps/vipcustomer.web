@@ -4,7 +4,7 @@ function AppReducer(state, action) {
   if (action.type === types.SAY_HELLO) {
     return {
       ...state,
-      greet: "Hello Team Axe"
+      greet: "Hello Star Finder"
     };
   }
 

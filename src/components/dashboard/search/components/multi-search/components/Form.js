@@ -95,12 +95,7 @@ const Form = (props) => {
       <form ref={form} onSubmit={handleSubmit}>
         <div className="inputCon">
           <label htmlFor="name">Name</label>
-          <input
-            name="Name"
-            id="name"
-            placeholder="Enter name here"
-            type="text"
-          />
+          <input name="Name" id="name" placeholder="Enter Name" type="text" />
           <small className="errorMsg"></small>
         </div>
 
@@ -109,7 +104,7 @@ const Form = (props) => {
           <input
             type="email"
             name="Email"
-            placeholder="yourname@email.com"
+            placeholder="Name@gmail.com"
             id="email"
           />
           <small className="errorMsg"></small>
@@ -143,7 +138,7 @@ const Form = (props) => {
           <input
             name="Age"
             id="age"
-            placeholder="Enter your age e.g 67"
+            placeholder="Enter Age e.g 67"
             type="number"
           />
           <small className="errorMsg"></small>
