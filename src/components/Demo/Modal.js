@@ -24,7 +24,7 @@ const Modal = ({ search = {}, result, modal, setModal }) => {
     <ModalWrap modal={modal} className={` `}>
       <div style={{}} className="modal-body">
         <div className="header">
-          <h2>Axe Api</h2>
+          <h2>Starfinder Api</h2>
           <button onClick={() => setModal(!modal)} className="modal-btn">
             <FaTimes />
           </button>
