@@ -51,7 +51,12 @@ export default function GoogleAuth({ text }) {
         </div>
       )}
       <div className={spinnerClasses} style={{ marginBottom: "0.5rem" }}></div>
-      <GoogleLogin text={text} onError={onError} onSuccess={onSuccess} />
+      <GoogleLogin
+        text={text}
+        onError={onError}
+        onSuccess={onSuccess}
+        logo_alignment="center"
+      />
     </>
   );
 }

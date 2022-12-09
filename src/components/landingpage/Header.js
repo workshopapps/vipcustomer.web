@@ -15,8 +15,8 @@ const Header = () => {
     <HeaderWrapper>
       <HeaderContentWrapper>
         <SubHeading>
-          Let’s Identify your <Span>VIP’s</Span> and convert them to High paying{" "}
-          <Span>Customers</Span>
+          Let’s Identify Your <Span>VIP’s</Span> And Convert Them To High Paying{" "}
+          <Span>Customers.</Span>
         </SubHeading>
         <Heading>
           Star Finder identifies very important personas that visit your website

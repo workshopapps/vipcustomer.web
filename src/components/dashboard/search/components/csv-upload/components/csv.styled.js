@@ -141,7 +141,7 @@ export const InstructionsWrapper = styled.article`
       font-size: 1.6rem;
       width: 100%;
       font-style: italic;
-      text-align: center;
+      /* text-align: center; */
     }
   }
 

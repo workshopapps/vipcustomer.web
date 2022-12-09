@@ -17,8 +17,8 @@ const History = () => {
         information you need.
       </p>
       <p>
-        The code snippets below gives show a succesful response from the
-        Starfinder.
+        The code snippets below gives show a succesful response from the Star
+        Finder.
       </p>
       <iframe
         src="https://www.thiscodeworks.com/embed/638b5e44f3febd0015d3b6b5"

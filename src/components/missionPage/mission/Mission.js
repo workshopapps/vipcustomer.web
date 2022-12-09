@@ -23,7 +23,7 @@ const Mission = () => {
               visits your websites to know if a particular visitor is ranked as
               a VIP customer. This API will scrap various social media platforms
               and the internet to find out if the user fits into a preset
-              criteria of VIP guest
+              criteria of VIP guest.
             </span>
           </p>
           <Link to="/demo">
