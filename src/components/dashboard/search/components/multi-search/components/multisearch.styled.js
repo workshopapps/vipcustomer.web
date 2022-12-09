@@ -28,7 +28,8 @@ const MultiSearchWrapper = styled.div`
     flex-direction: row;
 
     .wrappers {
-      margin-right: 30px;
+      margin: unset;
+      margin-right: 50px;
       width: 50%;
     }
 

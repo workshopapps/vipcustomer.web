@@ -18,17 +18,17 @@ const Privacy = () => (
       <section>
         <h1>PRIVACY POLICY</h1>
         <p className="txt">
-          TeamAxe Privacy Policy is designed to help you understand how we
+          StarFinder Privacy Policy is designed to help you understand how we
           collect and use the personal information you decide to share, and help
           you make informed decisions when using{" "}
           <span>
-            <a href="#">TeamAxe.com</a>
+            <a href="#">StarFinder.com</a>
           </span>
-          . By using or accepting TeamAxe you are accepting the practices
+          . By using or accepting StarFinder you are accepting the practices
           described in this policy. If you have questions regarding this
           statement, you can send us email to{" "}
           <span>
-            <a href="#">contact@TeamAxe.com</a>
+            <a href="#">contact@StarFinder.com</a>
           </span>
           .
         </p>
