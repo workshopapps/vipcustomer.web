@@ -65,6 +65,7 @@ const Result = ({ vip = [] }) => {
   const getHistory = async function(){
     const result = await Axios.get(`/api/history?page=${pageInfo.page}&size=${pageInfo.size}`, { headers: {'Authorization': `Bearer ${user.access_token}` } })
     setList(result.data.items) 
+    console.log(result)
     setPageInfo({
       page: result.data.page,
       total: result.data.total,
