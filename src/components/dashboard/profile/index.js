@@ -44,11 +44,11 @@ const index = () => {
   };
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user")).user;
-    if (!user) nav("/login");
-    getData(user);
+    const user = JSON.parse(localStorage.getItem("user")); //1
+    if (!user) return nav("/login"); //2
+    getData(user.user);
     getApiKey();
-  }, [JSON.parse(localStorage.getItem("user")).user]);
+  }, [JSON.parse(localStorage.getItem("user"))]); //3 still to  be corrected
 
   return (
     <>
