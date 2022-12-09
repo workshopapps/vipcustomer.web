@@ -24,7 +24,7 @@ import ErrorPage from "pages/ErrorPage";
 import Terms from "pages/Terms";
 import Aboutus from "pages/Aboutus";
 import Consultation from "pages/Consultation";
-// import RequireAuth from "components/auth/RequireAuth";
+import RequireAuth from "components/auth/RequireAuth";
 import Documentation from "pages/Documentation";
 
 function App() {
@@ -57,11 +57,9 @@ function App() {
           <Route index element={<PasswordRecovery />} />
           <Route path="change" element={<PasswordChange />} />
         </Route>
-        {/*Protected Routes  Commented out for submission reasons */}
-        {/* <Route element={<RequireAuth />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Route> */}
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route element={<RequireAuth />}>
+          <Route path="/dashboard/*" element={<Dashboard />} />
+        </Route>
         <Route path="/about-us" element={<Aboutus />} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/docs/*" element={<Documentation />} />
