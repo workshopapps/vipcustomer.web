@@ -25,7 +25,6 @@ const Uploadcsv = ({ setVip }) => {
       if (!file) return;
       setFileName(file.name);
       setFile(file);
-      console.log(file.type);
     });
 
     input.current.click();

@@ -29,11 +29,9 @@ const Topranked = () => {
       })
       .then((res) => {
         setDatas(res.data);
-        console.log(res);
         setError(false);
       })
-      .catch((err) => {
-        console.log("me", err);
+      .catch(() => {
         setError(true);
         setDatas([]);
       });
@@ -114,7 +112,6 @@ const Topranked = () => {
                       {currentPost.map((data, index) => {
                         const { name, age, gender, vip_score, timestamp } =
                           data;
-                        console.log(data);
                         return (
                           <div key={index} className={classes.tabletContainer}>
                             <p className={classes.text}>

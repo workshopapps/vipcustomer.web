@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./index.module.css";
 import FormGroup from "./FormGroup";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ErrorModal from "./ErrorModal";
 import { AuthStore } from "store/contexts/AuthContext";
 import { login_a } from "store/actions/authActions";
@@ -60,7 +60,7 @@ const index = () => {
           <div className={styles.settings__header}>
             <div className={styles.settings__header_details}>
               <h1>Settings</h1>
-              <a href="/dashboard/profile">cancel</a>
+              <Link href="/dashboard/profile">cancel</Link>
             </div>
             <div className={styles.settings__header_img}>
               {getUserImg(user?.user.first_name, user?.user.last_name)}
