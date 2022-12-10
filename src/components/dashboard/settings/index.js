@@ -11,16 +11,25 @@ import Loading from "../search/components/loading";
 
 const index = () => {
   const { user, dispatch } = AuthStore();
+  const nav = useNavigate();
+
+  // local states
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [userState, setUserState] = useState({ first_name: "", last_name: "" });
 
-  const nav = useNavigate();
   const getUserImg = (str1, str2) => {
     return str1.charAt(0) + str2.charAt(0);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!user || !userState.first_name || !userState.last_name) return;
+    if (!user || !userState.first_name || !userState.last_name)
+      return setError("Please fill all fields");
+
+    setLoading(true);
+    setError("");
+
     try {
       await axios.patch("/api/user/update_user_profie", userState);
       const resp = await axios.get(
@@ -35,10 +44,11 @@ const index = () => {
           first_name,
           last_name
         }
-      });
+      }); //resetting user object
       nav("/dashboard/profile");
     } catch (error) {
-      login_a(dispatch, user);
+      setLoading(false);
+      setError("Unexpected error, please try again");
     }
   };
 
@@ -76,8 +86,9 @@ const index = () => {
               }
               placeholder="Enter your last name"
             />
-            <Loading loading={true} />
-            <button type="submit">Change my details</button>
+            <Loading loading={loading} />
+            <small className={styles.settings__error__message}>{error}</small>
+            <button type="submit">Update Profile</button>
           </form>
         </div>
       )}
