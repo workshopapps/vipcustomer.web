@@ -5,12 +5,11 @@ import { login_a } from "store/actions/authActions";
 import { AuthStore } from "store/contexts/AuthContext";
 import Input from "../Input";
 import Checkbox from "../signup/Checkbox";
-import axios from "api/axios";
 import GoogleAuth from "../GoogleAuth";
 import BackBtn from "../BackBtn";
 
 const Login = () => {
-  const { dispatch } = AuthStore();
+  const { dispatch, _axios } = AuthStore();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isEmail, setIsEmail] = useState(true);
@@ -47,7 +46,7 @@ const Login = () => {
 
     try {
       setSpinnerClasses("spinner small");
-      const { data } = await axios.post("/api/user/login", {
+      const { data } = await _axios.post("/api/user/login", {
         email: email,
         password: password
       });

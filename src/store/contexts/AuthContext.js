@@ -1,17 +1,51 @@
-import React, { createContext, useContext, useReducer, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useReducer,
+  useEffect,
+  useState
+} from "react";
 import PropTypes from "prop-types";
 import reducer from "../reducers/AuthReducer";
-import axios from "../../api/axios";
 import { setApiKey_a } from "store/actions/authActions";
+import axios from "axios";
 
 const Context = createContext();
 const initialState = {
   user: JSON.parse(localStorage.getItem("user")) || false,
-  api_key: localStorage.getItem("api_key") || false
+  api_key: localStorage.getItem("api_key") || false,
+  headers: {}
 };
 
 const Authcontext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [headers, setHeaders] = useState({});
+
+  let accessToken;
+  let refreshToken;
+  let accessTokenHasBeenRefreshed = false;
+
+  useEffect(() => {
+    accessToken = state.user?.access_token;
+    refreshToken = state.user?.refresh_token;
+
+    if (state.api_key) {
+      setHeaders({
+        Authorization: "Bearer " + accessToken,
+        "X-API-KEY": state.api_key
+      });
+    } else {
+      setHeaders({
+        Authorization: "Bearer " + accessToken
+      });
+    }
+  }, [state.api_key, state.user]);
+  console.log(headers);
+
+  const _axios = axios.create({
+    baseURL: "https://api.starfinder.hng.tech",
+    headers: state.headers
+  });
 
   // get apiKey only if it doesnt exist and user is logged in
   useEffect(() => {
@@ -21,7 +55,7 @@ const Authcontext = ({ children }) => {
 
     async function get_api_keys() {
       try {
-        const resp = await axios.get("/api/user/get_api_keys");
+        const resp = await _axios.get("/api/user/get_api_keys");
         setApiKey_a(dispatch, resp.data.api_key);
       } catch (error) {
         setApiKey_a(dispatch, false);
@@ -31,8 +65,37 @@ const Authcontext = ({ children }) => {
     get_api_keys();
   }, [state.user]); //on user login/out
 
+  _axios.interceptors.response.use(
+    (response) => response,
+    async function (error) {
+      if (
+        error?.response?.status === 403 &&
+        refreshToken &&
+        !accessTokenHasBeenRefreshed
+      ) {
+        const previousRequest = error?.config;
+        const { data } = await _axios.post(
+          "/api/user/refresh_token",
+          {},
+          {
+            headers: { Authorization: "Bearer " + refreshToken }
+          }
+        );
+        const newAccessToken = data.access_token;
+        const user = state.user;
+        accessToken = user["access_token"] = newAccessToken;
+        localStorage.setItem("user", JSON.stringify(user));
+        previousRequest.headers["Authorization"] = "Bearer " + newAccessToken;
+        accessTokenHasBeenRefreshed = true;
+        return _axios(previousRequest);
+      }
+
+      accessTokenHasBeenRefreshed = false;
+      return Promise.reject(error);
+    }
+  );
   return (
-    <Context.Provider value={{ ...state, dispatch }}>
+    <Context.Provider value={{ ...state, dispatch, _axios }}>
       {children}
     </Context.Provider>
   );

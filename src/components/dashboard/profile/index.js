@@ -49,11 +49,19 @@ const index = () => {
                 <h4>API KEY</h4>
                 <p>A Private API Key to interact with the StarFinder API</p>
                 <div>
-                  <input
-                    type={keyIsVisible ? "text" : "password"}
-                    readOnly
-                    value={api_key || " "}
-                  />
+                  {api_key ? (
+                    <input
+                      type={keyIsVisible ? "text" : "password"}
+                      readOnly
+                      value={api_key}
+                    />
+                  ) : (
+                    <input
+                      type={keyIsVisible ? "text" : "password"}
+                      readOnly
+                      value={" "}
+                    />
+                  )}
                   <User
                     setKeyIsVisible={setKeyIsVisible}
                     keyIsVisible={keyIsVisible}

@@ -20,13 +20,12 @@ import {
 import { useNavigate } from "react-router-dom";
 import { AuthStore } from "../../../store/contexts/AuthContext";
 import { login_a } from "../../../store/actions/authActions";
-import axios from "api/axios";
 import GoogleAuth from "../GoogleAuth";
 import BackBtn from "../BackBtn";
 
 export default function index() {
   const navigate = useNavigate();
-  const { dispatch } = AuthStore();
+  const { dispatch, _axios } = AuthStore();
 
   //TRYING TO REPLICATE FORMIK FUNCTIONALITY
   const [enteredFirstName, setEnteredFirstName] = useState("");
@@ -72,14 +71,14 @@ export default function index() {
 
     try {
       setSpinnerClasses("spinner small");
-      await axios.post("/api/user/signup", {
+      await _axios.post("/api/user/signup", {
         first_name: enteredFirstName,
         last_name: enteredLastName,
         email: enteredEmail,
         password: enteredPassword
       });
 
-      const { data } = await axios.post("/api/user/login", {
+      const { data } = await _axios.post("/api/user/login", {
         email: enteredEmail,
         password: enteredPassword
       });

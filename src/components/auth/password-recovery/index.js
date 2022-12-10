@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthStore } from "store/contexts/AuthContext";
 import Input from "../Input";
 import Shell from "./Shell";
 import { Button, ErrorMessage } from "./shell.styled";
-import axios from "api/axios";
 const index = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [isError, setIsError] = useState(false);
@@ -12,6 +12,8 @@ const index = () => {
   const [spinnerClasses, setSpinnerClasses] = useState("spinner small stop");
 
   const navigate = useNavigate();
+  const { _axios } = AuthStore();
+
   async function handleSubmit(e) {
     e.preventDefault();
     // console.log(enteredEmail, typeof enteredEmail);
@@ -19,7 +21,7 @@ const index = () => {
     try {
       setSpinnerClasses("spinner small");
 
-      const { data } = await axios.post("/api/user/verify_email", {
+      const { data } = await _axios.post("/api/user/verify_email", {
         email: enteredEmail
       });
       // const message = data?.response?.data?.detail;

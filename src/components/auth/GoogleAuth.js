@@ -1,13 +1,12 @@
 import { GoogleLogin } from "@react-oauth/google";
 import React, { useState } from "react";
-import axios from "api/axios";
 import { login_a } from "../../store/actions/authActions";
 import { AuthStore } from "../../store/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export default function GoogleAuth({ text }) {
-  const { dispatch } = AuthStore();
+  const { dispatch, _axios } = AuthStore();
   const navigate = useNavigate();
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -18,7 +17,7 @@ export default function GoogleAuth({ text }) {
   async function onSuccess({ credential }) {
     try {
       setSpinnerClasses("spinner small");
-      const { data } = await axios.post("/api/user/google-auth/", {
+      const { data } = await _axios.post("/api/user/google-auth/", {
         jwt_token: credential
       });
 

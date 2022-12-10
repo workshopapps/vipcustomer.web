@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import axios from "api/axios";
 import PropTypes from "prop-types";
 import { UploadcsvWrapper } from "./csv.styled";
 import { AiOutlineCloudUpload } from "react-icons/ai";
@@ -8,8 +7,8 @@ import csvParser from "../utils";
 import { AuthStore } from "store/contexts/AuthContext";
 
 const Uploadcsv = ({ setVip }) => {
-  const { user } = AuthStore();
-  console.log(user);
+  const { _axios } = AuthStore();
+
   const input = useRef();
   const [fileName, setFileName] = useState("");
   const [file, setFile] = useState(null);
@@ -44,7 +43,7 @@ const Uploadcsv = ({ setVip }) => {
 
     // Post WITH AXIOS
     try {
-      const response = await axios.post("/api/search/search-many", {
+      const response = await _axios.post("/api/search/search-many", {
         data: array
       });
       setVip(response.data);

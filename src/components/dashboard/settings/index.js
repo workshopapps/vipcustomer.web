@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./index.module.css";
 import FormGroup from "./FormGroup";
 import { useState } from "react";
-import axios from "api/axios";
 import { useNavigate } from "react-router-dom";
 import ErrorModal from "./ErrorModal";
 import { AuthStore } from "store/contexts/AuthContext";
@@ -10,7 +9,7 @@ import { login_a } from "store/actions/authActions";
 import Loading from "../search/components/loading";
 
 const index = () => {
-  const { user, dispatch } = AuthStore();
+  const { user, _axios, dispatch } = AuthStore();
   const nav = useNavigate();
 
   // local states
@@ -31,8 +30,8 @@ const index = () => {
     setError("");
 
     try {
-      await axios.patch("/api/user/update_user_profie", userState);
-      const resp = await axios.get(
+      await _axios.patch("/api/user/update_user_profie", userState);
+      const resp = await _axios.get(
         `/api/user/get_single_user?user_id=${user?.user.id}`
       );
       const newUser = resp.data.data;
