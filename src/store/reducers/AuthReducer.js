@@ -7,10 +7,19 @@ function AuthReducer(state, action) {
       user: action.payload
     };
   }
+
   if (action.type === types.ON_LOGOUT) {
     return {
       ...state,
-      user: false
+      user: false,
+      api_key: false
+    };
+  }
+
+  if (action.type === types.SET_API_KEY) {
+    return {
+      ...state,
+      api_key: action.payload
     };
   }
 

@@ -8,8 +8,8 @@ let accessTokenHasBeenRefreshed = false; //vairable to prevent infinite loops in
 
 const request = axios.create({
   // baseURL: "http://50.18.54.50:8000",
-  baseURL: "https://api.starfinder.hng.tech",
-  headers: { Authorization: "Bearer " + accessToken }
+  baseURL: "https://api.starfinder.hng.tech"
+  // headers: { Authorization: "Bearer " + accessToken }
 });
 
 export default request;

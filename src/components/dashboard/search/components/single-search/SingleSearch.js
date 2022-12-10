@@ -28,7 +28,6 @@ const SingleSearch = () => {
       });
 
       const result = response.data[0];
-      console.log(response.data);
       return result;
     } catch (error) {
       return undefined;

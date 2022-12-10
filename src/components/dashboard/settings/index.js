@@ -1,55 +1,51 @@
 import React from "react";
 import styles from "./index.module.css";
 import FormGroup from "./FormGroup";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "api/axios";
 import { useNavigate } from "react-router-dom";
 import ErrorModal from "./ErrorModal";
+import { AuthStore } from "store/contexts/AuthContext";
+import { login_a } from "store/actions/authActions";
+import Loading from "../search/components/loading";
 
 const index = () => {
+  const { user, dispatch } = AuthStore();
   const [userState, setUserState] = useState({ first_name: "", last_name: "" });
-  const [errorMsg, setErrorMsg] = useState("");
-  const nav = useNavigate();
 
+  const nav = useNavigate();
   const getUserImg = (str1, str2) => {
     return str1.charAt(0) + str2.charAt(0);
   };
 
-  const getData = async (user) => {
-    try {
-      const data = await axios.get(
-        `/api/user/get_single_user?user_id=${user.id}`
-      );
-      setUserState(data.data.data);
-    } catch (error) {
-      setErrorMsg(error.message);
-    }
-  };
-
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) nav("/login");
-    getData(user.user);
-    console.log(errorMsg);
-  }, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const token = JSON.parse(localStorage.getItem("user")).access_token;
-
-    await axios.patch("/api/user/update_user_profie", userState, {
-      headers: {
-        Authorization: "bearer " + token
-      }
-    });
-    nav("/dashboard/profile");
+    if (!user || !userState.first_name || !userState.last_name) return;
+    try {
+      await axios.patch("/api/user/update_user_profie", userState);
+      const resp = await axios.get(
+        `/api/user/get_single_user?user_id=${user?.user.id}`
+      );
+      const newUser = resp.data.data;
+      const { first_name, last_name } = newUser;
+      login_a(dispatch, {
+        ...user,
+        user: {
+          ...user.user,
+          first_name,
+          last_name
+        }
+      });
+      nav("/dashboard/profile");
+    } catch (error) {
+      login_a(dispatch, user);
+    }
   };
 
   return (
     <>
-      {errorMsg !== "" ? (
-        <ErrorModal message={errorMsg} />
+      {user === false ? (
+        <ErrorModal message={"You are not logged in"} />
       ) : (
         <div className={styles.settings}>
           <div className={styles.settings__header}>
@@ -58,13 +54,10 @@ const index = () => {
               <a href="/dashboard/profile">cancel</a>
             </div>
             <div className={styles.settings__header_img}>
-              {getUserImg(userState.first_name, userState.last_name)}
+              {getUserImg(user?.user.first_name, user?.user.last_name)}
             </div>
           </div>
-          <form
-            action=""
-            onSubmit={handleSubmit}
-            className={styles.settings__form}>
+          <form onSubmit={handleSubmit} className={styles.settings__form}>
             <FormGroup
               label="First Name"
               id="fname"
@@ -83,6 +76,7 @@ const index = () => {
               }
               placeholder="Enter your last name"
             />
+            <Loading loading={true} />
             <button type="submit">Change my details</button>
           </form>
         </div>
