@@ -10,9 +10,9 @@ const NavWrapper = styled.nav`
   color: white;
   font-weight: 500;
   display: flex;
-  height: 50px;
+  height: 60px;
   padding-inline: ${({ mobile, tablet }) =>
-    mobile ? "40px" : tablet ? "78.9px" : "120px"};
+    mobile ? "20px" : tablet ? "78.9px" : "40px"};
   width: 100%;
   background: #091540;
   box-shadow: ${({ scroll, menuopen }) =>
@@ -38,7 +38,7 @@ const LogoWrapper = styled.div`
 
 const Items = styled.li`
   display: flex;
-  gap: 40px;
+  gap: 100px;
 
   align-items: center;
   &.nav--link--items {
