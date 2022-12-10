@@ -11,6 +11,7 @@ import LOGO from "../assests/icons/logo.svg";
 import MenuBtn from "./MenuBtn";
 import { Link } from "react-router-dom";
 import useScreenSize from "hooks/useScreenSize";
+import { AuthStore } from "store/contexts/AuthContext";
 
 const Navbar = () => {
   const [menuopen, setMenuOpen] = useState(false);
@@ -18,6 +19,7 @@ const Navbar = () => {
   const { screenWidth } = useScreenSize();
   const mobile = screenWidth <= 690;
   const tablet = screenWidth <= 1124;
+  const { user } = AuthStore();
 
   const scrollHeader = () => {
     if (window.scrollY >= 40) {
@@ -94,14 +96,23 @@ implementation should be changed
           {/* <Link>Contact Us</Link> */}
         </Items>
         <Items className="nav--link--items" tablet={tablet}>
-          <Link to="/login">Log in</Link>
-          <Link to="/signup">
-            {/* this a reusable button component */}
-            <Button
-              style={{ padding: "12px 24px", fontWeight: "700" }}
-              text="Get Started"
-            />
-          </Link>
+          {!user && (
+            <>
+              <Link to="/login">Log in</Link>
+              <Link to="/signup">
+                {/* this a reusable button component */}
+                <Button
+                  style={{ padding: "12px 24px", fontWeight: "700" }}
+                  text="Get Started"
+                />
+              </Link>
+            </>
+          )}
+          {user && (
+            <div style={{ textTransform: "capitalize" }}>
+              Hi {user?.user?.last_name || "user"}
+            </div>
+          )}
         </Items>
       </NavItemsWrapper>
       {tablet && (
@@ -115,8 +126,12 @@ implementation should be changed
           <Link to={"/team"}>The Team</Link>
           {/* <Link to="/">Resources</Link> */}
           <Link to="/about-us">About Us</Link>
-          <Link to="/login">Log in</Link>
-          <Link to="/signup">Get Started</Link>
+          {!user && (
+            <>
+              <Link to="/login">Log in</Link>
+              <Link to="/signup">Get Started</Link>
+            </>
+          )}
         </MobileNavWrapper>
       )}
     </NavWrapper>

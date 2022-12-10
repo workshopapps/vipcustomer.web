@@ -1,0 +1,13 @@
+.login{
+  width:150px;
+  height:50px;
+  padding:10px 12px 12px 15px;
+  color:white;
+  background-color:var(--color-darkBlue);
+  margin:70% auto;
+}
+@media (min-width:768px){
+  .login{
+    margin:25% auto;
+  }
+}

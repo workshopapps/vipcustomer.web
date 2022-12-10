@@ -71,7 +71,8 @@ const Login = () => {
         <div>
           <h1>Let&apos;s help you, identify VIPs</h1>
           <p>
-            We are closer than you can imagine, AXE VIP always at your service.
+            We are closer than you can imagine, Star Finder VIP always at your
+            service.
           </p>
         </div>
       </div>
@@ -106,12 +107,13 @@ const Login = () => {
           />
 
           <div className={styles.spaceBetween}>
-            <Checkbox
+            <div></div>
+            {/* <Checkbox
               value={isChecked}
               onChange={(e) => setIsChecked(e.target.checked)}
               id="checked">
               Remember me
-            </Checkbox>
+            </Checkbox> */}
             <p onClick={() => nav("/password-recovery")}>Forgot password?</p>
           </div>
 

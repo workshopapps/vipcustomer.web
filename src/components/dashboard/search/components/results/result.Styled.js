@@ -54,7 +54,7 @@ export const Mobile = styled.section`
 
 export const TabletRow = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  grid-template-columns: repeat(5,1fr); //6
 `;
 
 export const MobileWrapper = styled.div`

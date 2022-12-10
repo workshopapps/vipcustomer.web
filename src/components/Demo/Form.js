@@ -107,12 +107,7 @@ const Form = ({ params }) => {
     <FormWrapper ref={form} onSubmit={handleSubmit} className=" mt2">
       <div className="inputCon">
         <label htmlFor="name">Name</label>
-        <input
-          name="Name"
-          id="name"
-          placeholder="Enter Name here"
-          type="text"
-        />
+        <input name="Name" id="name" placeholder="Enter Name" type="text" />
         <small className="errorMsg"></small>
       </div>
 
@@ -121,7 +116,7 @@ const Form = ({ params }) => {
         <input
           type="email"
           name="Email"
-          placeholder="yourname@email.com"
+          placeholder="Name@gmail.com"
           id="email"
         />
         <small className="errorMsg"></small>
@@ -129,9 +124,9 @@ const Form = ({ params }) => {
 
       <div className="inputCon green">
         <label htmlFor="gender">Gender</label>
-        <select name="Gender" id="gender">
-          <option selected disabled value="">
-            Chose Gender
+        <select defaultValue={""} name="Gender" id="gender">
+          <option disabled value="">
+            Choose Gender
           </option>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -144,7 +139,7 @@ const Form = ({ params }) => {
         <input
           name="Occupation"
           id="occupation"
-          placeholder="Enter your occupation"
+          placeholder="Enter occupation"
           type="text"
         />
         <small className="errorMsg"></small>
@@ -155,7 +150,7 @@ const Form = ({ params }) => {
         <input
           name="Age"
           id="age"
-          placeholder="Enter your age eg 67"
+          placeholder="Enter Age e.g 67"
           type="number"
         />
         <small className="errorMsg"></small>

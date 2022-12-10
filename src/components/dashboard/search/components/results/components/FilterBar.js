@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
+import PropTypes from "prop-types";
 import {
   FilterBarWrapper,
   SortBarWrapper,
@@ -9,15 +10,13 @@ import {
 } from "./filtersBar.styled";
 
 // Filter Bar
-const FilterBar = () => {
+const FilterBar = ({filterHandle,selected}) => {
+
+
   const [showOptions, setShowOptions] = useState(false);
-  const [selected, setSelected] = useState("");
 
-  const _options = ["Gold vip", "Silver vip", "Bronze vip"];
+  const _options = ["All","Gold vip", "Silver vip", "Bronze vip"];
 
-  const handleSelectOption = (text) => {
-    setSelected(text);
-  };
 
   return (
     <>
@@ -40,7 +39,7 @@ const FilterBar = () => {
           {_options.map((option, index) => {
             return (
               <div
-                onClick={() => handleSelectOption(option)}
+                onClick={() => filterHandle(option)}
                 key={index}
                 className="options__select">
                 <span
@@ -64,16 +63,11 @@ const FilterBar = () => {
   );
 };
 
-const SortBar = () => {
+const SortBar = ({sortHandle,selected}) => {
   const [showOptions, setShowOptions] = useState(false);
-  const [selected, setSelected] = useState("");
+  
 
-  const _options = ["Last updated", "Ascending order", "Descending order"];
-
-  const handleSelectOption = (text) => {
-    setShowOptions(true);
-    setSelected(text);
-  };
+  const _options = ["Ascending order", "Descending order"];
 
   // app
   return (
@@ -96,7 +90,7 @@ const SortBar = () => {
         {_options.map((option, index) => {
           return (
             <div
-              onClick={() => handleSelectOption(option)}
+              onClick={() => sortHandle(option)}
               key={index}
               className="options__select">
               <span
@@ -120,3 +114,13 @@ const SortBar = () => {
 };
 
 export { FilterBar, SortBar };
+
+
+FilterBar.propTypes = {
+  filterHandle:PropTypes.func.isRequired,
+  selected:PropTypes.string.isRequired,
+};
+SortBar.propTypes = {
+  sortHandle:PropTypes.func.isRequired,
+  selected:PropTypes.string,
+};

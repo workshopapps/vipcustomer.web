@@ -1,0 +1,20 @@
+.ErrorModal h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
+}
+
+.ErrorModal p {
+  font-size: 18px;
+  color: black;
+}
+
+.ErrorModal a {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.ErrorModal a:hover {
+  text-shadow: 1px 1px;
+}

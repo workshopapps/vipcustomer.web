@@ -5,7 +5,7 @@ const Documents = () => {
   return (
     <div className="documents-div">
       <h1>Introduction</h1>
-      <h3>About Starfinder</h3>
+      <h3>About Star Finder</h3>
       <p>
         The StartFinder API can be used by virtually any companies or firms who
         wants to have a track of VIPs which involves peoples of fames, wealth
