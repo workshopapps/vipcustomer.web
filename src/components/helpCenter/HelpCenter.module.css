@@ -116,7 +116,9 @@
   justify-self: center;
   border-radius: 0.8rem;
 }
-
+.message_received {
+  color: green;
+}
 @media ((min-width: 481px) and  (max-width: 768px)) {
   .helpcenter_cards {
     width: 100%;

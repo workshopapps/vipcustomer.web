@@ -11,8 +11,7 @@ const NavWrapper = styled.nav`
   font-weight: 500;
   display: flex;
   height: 50px;
-  padding-inline: ${({ mobile, tablet }) =>
-    mobile ? "40px" : tablet ? "78.9px" : "120px"};
+  padding-inline: 40px;
   width: 100%;
   background: #091540;
   box-shadow: ${({ scroll, menuopen }) =>
@@ -27,19 +26,16 @@ const NavItemsWrapper = styled.ul`
   align-items: center;
 `;
 const LogoWrapper = styled.div`
-  width: 100%;
-  height: 50px;
-  & > img {
+  img {
     width: 100%;
-    height: 100%;
+    height: 45px;
     object-fit: cover;
   }
 `;
 
 const Items = styled.li`
   display: flex;
-  gap: 40px;
-
+  gap: 100px;
   align-items: center;
   &.nav--link--items {
     display: ${({ tablet }) => tablet && "none"};

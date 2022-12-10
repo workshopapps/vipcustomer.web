@@ -47,17 +47,6 @@ function Team() {
             position={"Project Manager"}
           />
         </div>
-
-        <div className="teams-btn">
-          <p>Our Teams</p>
-        </div>
-      </div>
-      <div className="vector-bottom">
-        <img
-          src={vectorLeft}
-          alt="for styling purposes only"
-          aria-hidden="true"
-        />
       </div>
       <div className="vector-bottom">
         <img

@@ -17,8 +17,8 @@ const Navbar = () => {
   const [menuopen, setMenuOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
   const { screenWidth } = useScreenSize();
-  const mobile = screenWidth <= 690;
-  const tablet = screenWidth <= 1124;
+  const mobile = screenWidth <= 500;
+  const tablet = screenWidth <= 900;
   const { user } = AuthStore();
 
   const scrollHeader = () => {
@@ -89,28 +89,26 @@ implementation should be changed
             <MenuBtn menuopen={menuopen} />
           </Items>
         )}
+
         <Items className="nav--link--items" tablet={tablet}>
           <Link to="/">Home</Link>
           <Link to={"/team"}>The Team</Link>
           <Link to="/about-us">About Us</Link>
-          {/* <Link>Contact Us</Link> */}
         </Items>
+
         <Items className="nav--link--items" tablet={tablet}>
           {!user && (
-            <>
-              <Link to="/login">Log in</Link>
-              <Link to="/signup">
-                {/* this a reusable button component */}
-                <Button
-                  style={{ padding: "12px 24px", fontWeight: "700" }}
-                  text="Get Started"
-                />
-              </Link>
-            </>
+            <Link to="/login">
+              <Button
+                style={{ padding: "12px 24px", fontWeight: "700" }}
+                text="Get Started"
+              />
+            </Link>
           )}
+
           {user && (
             <div style={{ textTransform: "capitalize" }}>
-              Hi {user?.user?.last_name || "user"}
+              Hi {user?.user?.first_name || "user"}
             </div>
           )}
         </Items>
@@ -124,13 +122,18 @@ implementation should be changed
           className={`${menuopen && "open"} nav--link--items`}>
           <Link to="/">Home</Link>
           <Link to={"/team"}>The Team</Link>
-          {/* <Link to="/">Resources</Link> */}
           <Link to="/about-us">About Us</Link>
+
           {!user && (
             <>
-              <Link to="/login">Log in</Link>
-              <Link to="/signup">Get Started</Link>
+              <Link to="/login">Get Started</Link>
             </>
+          )}
+
+          {!user && (
+            <div style={{ textTransform: "capitalize" }}>
+              Hi {user?.user?.first_name || "user"}
+            </div>
           )}
         </MobileNavWrapper>
       )}
