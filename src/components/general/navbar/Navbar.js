@@ -16,8 +16,8 @@ const Navbar = () => {
   const [menuopen, setMenuOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
   const { screenWidth } = useScreenSize();
-  const mobile = screenWidth <= 690;
-  const tablet = screenWidth <= 1124;
+  const mobile = screenWidth <= 500;
+  const tablet = screenWidth <= 900;
 
   const scrollHeader = () => {
     if (window.scrollY >= 40) {
@@ -87,16 +87,15 @@ implementation should be changed
             <MenuBtn menuopen={menuopen} />
           </Items>
         )}
+
         <Items className="nav--link--items" tablet={tablet}>
           <Link to="/">Home</Link>
           <Link to={"/team"}>The Team</Link>
           <Link to="/about-us">About Us</Link>
-          {/* <Link>Contact Us</Link> */}
         </Items>
+
         <Items className="nav--link--items" tablet={tablet}>
-          <Link to="/login">Log in</Link>
-          <Link to="/signup">
-            {/* this a reusable button component */}
+          <Link to="/login">
             <Button
               style={{ padding: "12px 24px", fontWeight: "700" }}
               text="Get Started"

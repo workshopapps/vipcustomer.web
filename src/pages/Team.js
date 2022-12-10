@@ -55,13 +55,6 @@ function Team() {
           aria-hidden="true"
         />
       </div>
-      <div className="vector-bottom">
-        <img
-          src={vectorLeft}
-          alt="for styling purposes only"
-          aria-hidden="true"
-        />
-      </div>
       <Footer />
     </>
   );
