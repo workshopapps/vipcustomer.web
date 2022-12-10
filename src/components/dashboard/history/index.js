@@ -8,8 +8,10 @@ import { BsCheckLg } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import Axios from "api/axios";
 import "components/dashboard/history/History.css";
-import Datetime from 'react-datetime';
-import "react-datetime/css/react-datetime.css";
+// import Datetime from 'react-datetime';
+// import "react-datetime/css/react-datetime.css";
+import Moment from 'react-moment';
+import moment from 'moment';
 
 import {
   ResultsWrapper,
@@ -115,42 +117,32 @@ const Result = ({ vip = [] }) => {
   }, [pageInfo.page]) 
   console.log(list)
 
+  // to get the time(momment)
+  const start = moment().add(-4, 'm');
 
-
-  // const newDate = useRef(new Date());
-
-  // const [currentHours, setCurrentHours] = useState(newDate.current.getHours());
-  // const [currentMinutes, setCurrentMinutes] = useState(newDate.current.getMinutes());
-  // setInterval(() => {
-  //   newDate.current = new Date();
-  //   setCurrentHours(newDate.current.getHours());
-  //   setCurrentMinutes(newDate.current.getMinutes());
-  // }, 1000);
-  // const nowTime = `${currentHours} : ${currentMinutes}`;
-  // useEffect(() => {
-  //   console.log(nowTime);
-  // });
   
   // app
   return (
     <>
+    <div className="history_top_div">
       <h1 className='history-index'>Search Histroy</h1>
+      <button style={{ textAlign: 'right' }} onClick={() => handleDeleteAll()} className="history_btn history_btn_danger history_btn_top">Delete All</button>
+    </div>
       {/* The results container or wrapper */}
       <ResultsWrapper ref={ResultsRef}>
         <Tablet>
           <section className="wrapper__container">
-            <ResultsNavBar />
-            <button style={{ textAlign: 'right' }} onClick={() => handleDeleteAll()} className="history_btn history_btn_danger history_btn_top">Delete All</button>
+            {/* <ResultsNavBar /> */}
             <TabletRow>
             <HeaderText text="Time" />
-              <HeaderText text="Name Query" />
+              <HeaderText text="Name" />
               <HeaderText text="Gender" />
               <HeaderText text="Age" />
               <HeaderText text=" " />
             </TabletRow>           
 
             {list.map((res, index) => {
-              const { result, search_input, history_id} = res;
+              const { result, history_id} = res;
 
 
               return (
@@ -159,10 +151,11 @@ const Result = ({ vip = [] }) => {
                     <h1>{nowTime}</h1>
                   </div> */}
                   
-                  <Datetime /> 
-                  <Text text={search_input.name}/>
-                  <Text text={search_input.gender ? search_input.gender : "-"} />
-                  <Text text={search_input.age ? search_input.age : "-" } />
+                  {/* <Datetime />  */}
+                  <Moment date={start} format="hh:mm:ss" trim durationFromNow />
+                  <Text text={result.name}/>
+                  <Text text={result.gender ? result.gender : "-"} />
+                  <Text text={result.age ? result.age : "-" } />
                   <div>
                     {/* <button className="history_btn history_btn_primary">View</button> */}
                     <button onClick={() => handleDelete(history_id)} className="history_btn history_btn_danger"><FiTrash2 /></button>

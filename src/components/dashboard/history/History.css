@@ -3,6 +3,11 @@
   text-align: center;
 }
 
+.history_top_div {
+  display: flex;
+  justify-content: space-between;
+}
+
 .history_btn {
   margin: 5px;
   padding: 5px 10px;
@@ -16,11 +21,11 @@
   color: white;
 }
 
-/* .history_btn_danger {
+.history_btn_danger {
   border: 1px solid red;
   color: red;
 
-} */
+}
 
 .history_btn_primary:hover {
   background-color: white;
@@ -28,7 +33,7 @@
 }
 
 .history_btn_danger:hover {
-  background-color: red;
+  background-color: rgb(247, 154, 154);
   color: white;
   border: none;
 }
