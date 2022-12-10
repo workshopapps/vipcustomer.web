@@ -22,9 +22,9 @@
 }
 
 .history_btn_danger {
-  border: 1px solid red;
+  border: 1px solid rgb(245, 187, 187);
   color: red;
-
+  margin-left: 200px;
 }
 
 .history_btn_primary:hover {
