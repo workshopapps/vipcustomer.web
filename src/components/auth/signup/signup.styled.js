@@ -100,7 +100,7 @@ export const Right = styled.div`
 
   & > div {
     width: 100%;
-    max-width: 45rem;
+    max-width: 40rem;
   }
 `;
 

@@ -107,12 +107,13 @@ const Login = () => {
           />
 
           <div className={styles.spaceBetween}>
-            <Checkbox
+            <div></div>
+            {/* <Checkbox
               value={isChecked}
               onChange={(e) => setIsChecked(e.target.checked)}
               id="checked">
               Remember me
-            </Checkbox>
+            </Checkbox> */}
             <p onClick={() => nav("/password-recovery")}>Forgot password?</p>
           </div>
 

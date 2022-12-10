@@ -11,6 +11,7 @@ import LOGO from "../assests/icons/logo.svg";
 import MenuBtn from "./MenuBtn";
 import { Link } from "react-router-dom";
 import useScreenSize from "hooks/useScreenSize";
+import { AuthStore } from "store/contexts/AuthContext";
 
 const Navbar = () => {
   const [menuopen, setMenuOpen] = useState(false);
@@ -18,6 +19,7 @@ const Navbar = () => {
   const { screenWidth } = useScreenSize();
   const mobile = screenWidth <= 500;
   const tablet = screenWidth <= 900;
+  const { user } = AuthStore();
 
   const scrollHeader = () => {
     if (window.scrollY >= 40) {
@@ -95,12 +97,20 @@ implementation should be changed
         </Items>
 
         <Items className="nav--link--items" tablet={tablet}>
-          <Link to="/login">
-            <Button
-              style={{ padding: "12px 24px", fontWeight: "700" }}
-              text="Get Started"
-            />
-          </Link>
+          {!user && (
+            <Link to="/login">
+              <Button
+                style={{ padding: "12px 24px", fontWeight: "700" }}
+                text="Get Started"
+              />
+            </Link>
+          )}
+
+          {user && (
+            <div style={{ textTransform: "capitalize" }}>
+              Hi {user?.user?.first_name || "user"}
+            </div>
+          )}
         </Items>
       </NavItemsWrapper>
       {tablet && (
@@ -112,10 +122,19 @@ implementation should be changed
           className={`${menuopen && "open"} nav--link--items`}>
           <Link to="/">Home</Link>
           <Link to={"/team"}>The Team</Link>
-          {/* <Link to="/">Resources</Link> */}
           <Link to="/about-us">About Us</Link>
-          <Link to="/login">Log in</Link>
-          <Link to="/signup">Get Started</Link>
+
+          {!user && (
+            <>
+              <Link to="/login">Get Started</Link>
+            </>
+          )}
+
+          {!user && (
+            <div style={{ textTransform: "capitalize" }}>
+              Hi {user?.user?.first_name || "user"}
+            </div>
+          )}
         </MobileNavWrapper>
       )}
     </NavWrapper>
