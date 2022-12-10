@@ -5,11 +5,12 @@ import ResultsNavBar from "components/dashboard/search/components/results/compon
 import Column from "components/dashboard/search/components/results/components/Column";
 // import { _vip } from "./data"; //tetst data
 import { BsCheckLg } from "react-icons/bs";
-import { FaTimes } from "react-icons/fa";
+import { FiTrash2 } from "react-icons/fi";
 import Axios from "api/axios";
 import "components/dashboard/history/History.css";
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
+
 import {
   ResultsWrapper,
   Tablet,
@@ -62,6 +63,8 @@ const Result = ({ vip = [] }) => {
     window.scrollTo(0, Number(ResultsRef.current.offsetTop));
   };
 
+  // to get search history
+
   const getHistory = async function(){
     const result = await Axios.get(`/api/history?page=${pageInfo.page}&size=${pageInfo.size}`, { headers: {'Authorization': `Bearer ${user.access_token}` } })
     setList(result.data.items) 
@@ -73,19 +76,29 @@ const Result = ({ vip = [] }) => {
     })
   }
 
+// to handle single delete
 
   const handleDelete = (history_id) => {
-     Axios.delete(`/api/history/${history_id}`, { headers: {'Authorization': `Bearer ${user.access_token}` } })
+    const history_ids = [history_id];
+    Axios.delete(`/api/history/delete/selected`,
+     {
+      headers: {'Authorization': `Bearer ${user.access_token}` }, 
+      data: {'history_ids': history_ids}
+    }
+    )
+
      .then(data => {
       setList((list) => list.filter(history => history.history_id !== history_id) );
      })
      .catch(error => console.log(error) 
      )
-    // console.log(history_id);
+    //console.log(history_id);
 
     // setList((list) => list.filter(history => history.history_id !== history_id) );
   };
   
+  // to delete all history
+
   const handleDeleteAll = () => {
     Axios.delete(`/api/history/delete/all`, { headers: {'Authorization': `Bearer ${user.access_token}` } })
      .then(data => {
@@ -103,6 +116,20 @@ const Result = ({ vip = [] }) => {
   console.log(list)
 
 
+
+  // const newDate = useRef(new Date());
+
+  // const [currentHours, setCurrentHours] = useState(newDate.current.getHours());
+  // const [currentMinutes, setCurrentMinutes] = useState(newDate.current.getMinutes());
+  // setInterval(() => {
+  //   newDate.current = new Date();
+  //   setCurrentHours(newDate.current.getHours());
+  //   setCurrentMinutes(newDate.current.getMinutes());
+  // }, 1000);
+  // const nowTime = `${currentHours} : ${currentMinutes}`;
+  // useEffect(() => {
+  //   console.log(nowTime);
+  // });
   
   // app
   return (
@@ -113,13 +140,13 @@ const Result = ({ vip = [] }) => {
         <Tablet>
           <section className="wrapper__container">
             <ResultsNavBar />
-            <button onClick={() => handleDeleteAll()} className="history_btn history_btn_danger history_btn_top">Delete All</button>
+            <button style={{ textAlign: 'right' }} onClick={() => handleDeleteAll()} className="history_btn history_btn_danger history_btn_top">Delete All</button>
             <TabletRow>
             <HeaderText text="Time" />
               <HeaderText text="Name Query" />
-              <HeaderText text="Gender Query" />
-              <HeaderText text="Age Query" />
-              <HeaderText text="Function" />
+              <HeaderText text="Gender" />
+              <HeaderText text="Age" />
+              <HeaderText text=" " />
             </TabletRow>           
 
             {list.map((res, index) => {
@@ -128,13 +155,17 @@ const Result = ({ vip = [] }) => {
 
               return (
                 <TabletRow key={index}>
-                  <Datetime />
+                  {/* <div>
+                    <h1>{nowTime}</h1>
+                  </div> */}
+                  
+                  <Datetime /> 
                   <Text text={search_input.name}/>
                   <Text text={search_input.gender ? search_input.gender : "-"} />
                   <Text text={search_input.age ? search_input.age : "-" } />
                   <div>
-                    <button className="history_btn history_btn_primary">View</button>
-                    <button onClick={() => handleDelete(history_id)} className="history_btn history_btn_danger">Delete</button>
+                    {/* <button className="history_btn history_btn_primary">View</button> */}
+                    <button onClick={() => handleDelete(history_id)} className="history_btn history_btn_danger"><FiTrash2 /></button>
                   </div>
                 </TabletRow>
               );

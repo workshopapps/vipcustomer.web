@@ -16,11 +16,11 @@
   color: white;
 }
 
-.history_btn_danger {
+/* .history_btn_danger {
   border: 1px solid red;
   color: red;
 
-}
+} */
 
 .history_btn_primary:hover {
   background-color: white;
