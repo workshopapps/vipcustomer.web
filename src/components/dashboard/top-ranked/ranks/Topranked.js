@@ -3,9 +3,8 @@ import classes from "./Topranked.module.css";
 import Paginate from "../paginate/Paginate";
 import Header from "../header/Header";
 import Modal from "../modal/Modal";
-import Login from "../util/Login";
 import Error from "../util/Error";
-import axios from "api/axios";
+// import axios from "api/axios";
 
 
 
@@ -22,12 +21,21 @@ const Topranked = () =>{
     descending:false
   })
   
-  const user = JSON.parse(localStorage.getItem("user")) || false
   
+  const user = JSON.parse(localStorage.getItem("user")) 
+
+
   const fetchRankData = (date="",sort = false) =>{
-    axios.get(`https://api.starfinder.hng.tech/api/history/top-search?date_sort=${date}&ascending_sort=${sort}`)
-    .then((res)=> {
-     setDatas(res.data)
+
+    fetch(`https://api.starfinder.hng.tech/api/history/top-search?date_sort=${date}&ascending_sort=${sort}`, {
+      headers:{
+        Accept:"application/json",
+        Authorization:`Bearer ${user.access_token}`
+      }
+    })
+    .then(res => res.json())
+    .then((data)=> {
+     setDatas(data)
      setError(false)
     })
     .catch(()=>{
@@ -37,7 +45,10 @@ const Topranked = () =>{
     )
   }
   useEffect(()=>{
-      fetchRankData()
+if(user){
+  fetchRankData()
+
+}
   },[])
 
   const handleChange = (e) =>{
@@ -83,10 +94,6 @@ const paginate =(number) =>{
 
 
   return (
- <div>
-  { !user  ? 
-  <Login /> 
- :
   <div>
     {error ? <Error fetchRankData={fetchRankData} /> : <div>
     <div>
@@ -105,7 +112,7 @@ const paginate =(number) =>{
       <div>
       {currentPost.map((data, index) => {
         const { name, age, gender, vip_score,timestamp} = data;
-        console.log(data)
+      
         return (
           <div key={index} className={classes.tabletContainer} >
              <p className={classes.text} >{!timestamp || timestamp === null? "None" : timestamp}</p>
@@ -154,8 +161,7 @@ const paginate =(number) =>{
   }
   <Paginate postPerPage={perPage} currentPage={currentPage} totalPost={datas.length} paginate={paginate} />
    </div>
-      </div>}
-  </div>
+      </div>
  
   }
 </div>
