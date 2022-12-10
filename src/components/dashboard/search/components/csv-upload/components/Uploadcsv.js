@@ -32,6 +32,7 @@ const Uploadcsv = ({ setVip }) => {
   }
 
   async function handleFetch(array) {
+    console.log(array);
     // check for name prop
     if (!array[0].name) {
       setError("Invalid CSV, Name prop is missing");
@@ -47,6 +48,7 @@ const Uploadcsv = ({ setVip }) => {
         data: array
       });
       setVip(response.data);
+      console.log(response.data.flat());
       setLoading(false);
       return;
     } catch (error) {

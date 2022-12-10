@@ -7,14 +7,13 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import reducer from "../reducers/AuthReducer";
-import { setApiKey_a } from "store/actions/authActions";
+import { login_a, setApiKey_a } from "store/actions/authActions";
 import axios from "axios";
 
 const Context = createContext();
 const initialState = {
   user: JSON.parse(localStorage.getItem("user")) || false,
-  api_key: localStorage.getItem("api_key") || false,
-  headers: {}
+  api_key: localStorage.getItem("api_key") || false
 };
 
 const Authcontext = ({ children }) => {
@@ -40,11 +39,12 @@ const Authcontext = ({ children }) => {
       });
     }
   }, [state.api_key, state.user]);
+
   console.log(headers);
 
   const _axios = axios.create({
     baseURL: "https://api.starfinder.hng.tech",
-    headers: state.headers
+    headers: headers
   });
 
   // get apiKey only if it doesnt exist and user is logged in
@@ -83,7 +83,8 @@ const Authcontext = ({ children }) => {
         );
         const newAccessToken = data.access_token;
         const user = state.user;
-        accessToken = user["access_token"] = newAccessToken;
+        user["access_token"] = newAccessToken;
+        login_a(dispatch, user);
         localStorage.setItem("user", JSON.stringify(user));
         previousRequest.headers["Authorization"] = "Bearer " + newAccessToken;
         accessTokenHasBeenRefreshed = true;
@@ -94,8 +95,9 @@ const Authcontext = ({ children }) => {
       return Promise.reject(error);
     }
   );
+
   return (
-    <Context.Provider value={{ ...state, dispatch, _axios }}>
+    <Context.Provider value={{ ...state, dispatch, _axios, headers }}>
       {children}
     </Context.Provider>
   );
