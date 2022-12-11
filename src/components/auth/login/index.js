@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 import { login_a } from "store/actions/authActions";
 import { AuthStore } from "store/contexts/AuthContext";
 import Input from "../Input";
-import Checkbox from "../signup/Checkbox";
+// import Checkbox from "../signup/Checkbox";
 import GoogleAuth from "../GoogleAuth";
 import BackBtn from "../BackBtn";
 
@@ -14,7 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [isEmail, setIsEmail] = useState(true);
   const [isPassword, setIsPassword] = useState(true);
-  const [isChecked, setIsChecked] = useState(true);
+  // const [isChecked, setIsChecked] = useState(true);
   const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
   const [errorMessage, setErrorMessage] = useState(
     "an unexpected error occured, please try again another time"
@@ -106,12 +106,13 @@ const Login = () => {
           />
 
           <div className={styles.spaceBetween}>
-            <Checkbox
+            <div></div>
+            {/* <Checkbox
               value={isChecked}
               onChange={(e) => setIsChecked(e.target.checked)}
               id="checked">
               Remember me
-            </Checkbox>
+            </Checkbox> */}
             <p onClick={() => nav("/password-recovery")}>Forgot password?</p>
           </div>
 

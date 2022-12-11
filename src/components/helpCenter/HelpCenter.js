@@ -5,10 +5,25 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { RiFileList2Line } from "react-icons/ri";
 import { TiMessages } from "react-icons/ti";
 import { MdOutlineSettings } from "react-icons/md";
+import { FaThumbsUp } from "react-icons/fa";
 
 import { Footer, Navbar } from "components/general";
 
 const HelpCenter = () => {
+  const [ReachUs, setReachUs] = React.useState(true);
+  const [MessageReceived, setMessageReceived] = React.useState(false);
+  function handleSubmit(e) {
+    e.preventDefault();
+    toggleForm();
+    // rerenderForm();
+  }
+  function toggleForm() {
+    setReachUs((prevState) => !prevState);
+    setMessageReceived((prevState) => !prevState);
+  }
+  // function rerenderForm() {
+  //   setTimeout(toggleForm, 4000);
+  // }
   return (
     <>
       <Navbar />
@@ -38,7 +53,9 @@ const HelpCenter = () => {
               <div className={styles.helpcenter_card}>
                 <TiMessages className={styles.helpcenter_icons} />
                 <h6>FAQs</h6>
-                <p>Get answers to questions frequently asked by users.</p>
+                <p>
+                  Get answers to questions frequently <br></br>asked by users.
+                </p>
               </div>
             </Link>
             <Link to="/docs">
@@ -51,11 +68,6 @@ const HelpCenter = () => {
                 </p>
               </div>
             </Link>
-            <div className={styles.helpcenter_card}>
-              <MdOutlineSettings className={styles.helpcenter_icons} />
-              <h6>Settings</h6>
-              <p>Answers to most configuration issues.</p>
-            </div>
           </div>
         </div>
         <div className={styles.helpcenter_question_div}>
@@ -65,24 +77,32 @@ const HelpCenter = () => {
           <p className={styles.helpcenter_paragraphs}>
             Get in touch with us for details on additional support and services
           </p>
-          <form className={styles.helpcenter_forms}>
-            <div className={styles.helpcenter_forms_div}>
-              <input type="text" placeholder="Full Name" required />
-              <input type="email" placeholder="Email Address" required />
-            </div>
-            <textarea
-              name="question"
-              id="questions"
-              cols="30"
-              rows="10"
-              placeholder="Enter your question here..."
-              required></textarea>
-            <input
-              type="submit"
-              value={"Get in Touch"}
-              className={styles.helpcenter_submit}
-            />
-          </form>
+
+          {ReachUs && (
+            <form onSubmit={handleSubmit} className={styles.helpcenter_forms}>
+              <div className={styles.helpcenter_forms_div}>
+                <input type="text" placeholder="Full Name" required />
+                <input type="email" placeholder="Email Address" required />
+              </div>
+              <textarea
+                name="question"
+                id="questions"
+                cols="30"
+                rows="10"
+                placeholder="Enter your question here..."
+                required></textarea>
+              <input
+                type="submit"
+                value={"Get in Touch"}
+                className={styles.helpcenter_submit}
+              />
+            </form>
+          )}
+          {MessageReceived && (
+            <p className={styles.message_received}>
+              Our team will reach out to you urgently. <FaThumbsUp />
+            </p>
+          )}
         </div>
       </div>
       <Footer />

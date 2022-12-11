@@ -1,9 +1,10 @@
 import { GoogleLogin } from "@react-oauth/google";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { login_a } from "../../store/actions/authActions";
 import { AuthStore } from "../../store/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import useScreenSize from "hooks/useScreenSize";
 
 export default function GoogleAuth({ text }) {
   const { dispatch, _axios } = AuthStore();
@@ -11,8 +12,15 @@ export default function GoogleAuth({ text }) {
 
   const [errorMessage, setErrorMessage] = useState("");
   const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
+  const { screenWidth } = useScreenSize();
 
   const [spinnerClasses, setSpinnerClasses] = useState("spinner small stop");
+  const googleAuthRef = useRef(null);
+  const [googleAuthWidth, setGoogleAuthWidth] = useState(400);
+
+  useEffect(() => {
+    setGoogleAuthWidth(googleAuthRef.current.offsetWidth);
+  }, [screenWidth]);
 
   async function onSuccess({ credential }) {
     try {
@@ -50,12 +58,21 @@ export default function GoogleAuth({ text }) {
         </div>
       )}
       <div className={spinnerClasses} style={{ marginBottom: "0.5rem" }}></div>
-      <GoogleLogin
-        text={text}
-        onError={onError}
-        onSuccess={onSuccess}
-        logo_alignment="center"
-      />
+      <div
+        ref={googleAuthRef}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
+        <GoogleLogin
+          text={text}
+          onError={onError}
+          onSuccess={onSuccess}
+          logo_alignment="center"
+          width={googleAuthWidth}
+        />
+      </div>
     </>
   );
 }

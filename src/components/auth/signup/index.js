@@ -43,7 +43,8 @@ export default function index() {
   const [conPassowrdIsError, setConPassowrdIsError] = useState(false);
   const [conPasswordIsTouched, setConPasswordIsTouched] = useState(false);
 
-  // const [termsIsChecked, setTermsIsChecked] = useState(false);
+  const [termsIsChecked, setTermsIsChecked] = useState(false);
+
   const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [spinnerClasses, setSpinnerClasses] = useState("spinner small stop");
@@ -65,6 +66,14 @@ export default function index() {
 
     if (conPassowrdIsError) {
       setErrorMessage("Passwords do not match");
+      setErrorMessageIsShown(true);
+      return;
+    }
+
+    if (!termsIsChecked) {
+      setErrorMessage(
+        "Please accept our Terms of Service and Privacy Policy to continue"
+      );
       setErrorMessageIsShown(true);
       return;
     }
@@ -212,7 +221,9 @@ export default function index() {
               required
             />
             <div style={{ marginTop: "0.7rem" }}>
-              <Checkbox id="check">
+              <Checkbox
+                id="check"
+                onClick={() => setTermsIsChecked((prev) => !prev)}>
                 I agree to the{" "}
                 <LinkStyles to="/terms">Terms of Service</LinkStyles> and{" "}
                 <LinkStyles to="/privacy">Privacy Notice</LinkStyles>

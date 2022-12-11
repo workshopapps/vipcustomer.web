@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const FooterWrapper = styled.main`
   background-color: #091540;
-  padding: 5rem 15rem;
+  padding: 5rem 5rem;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   display: flex;
