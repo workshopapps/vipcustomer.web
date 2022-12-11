@@ -2,9 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Text, HeaderText } from "components/dashboard/search/components/results/components/Text";
 import ResultsNavBar from "components/dashboard/search/components/results/components/ResultsNavBar";
-import Column from "components/dashboard/search/components/results/components/Column";
+// import Column from "components/dashboard/search/components/results/components/Column";
 // import { _vip } from "./data"; //tetst data
-import { BsCheckLg } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import Axios from "api/axios";
 import "components/dashboard/history/History.css";
@@ -18,7 +17,7 @@ import {
   Tablet,
   Mobile,
   MobileWrapper,
-  MobileRow,
+  // MobileRow,
   TabletRow
 } from "components/dashboard/search/components/results/result.Styled";
 
