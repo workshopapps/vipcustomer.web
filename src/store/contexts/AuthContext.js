@@ -82,7 +82,9 @@ const Authcontext = ({ children }) => {
         );
         const newAccessToken = data.access_token;
         const user = state.user;
+        console.log(user);
         user["access_token"] = newAccessToken;
+        console.log(user);
         login_a(dispatch, user);
         localStorage.setItem("user", JSON.stringify(user));
         previousRequest.headers["Authorization"] = "Bearer " + newAccessToken;
