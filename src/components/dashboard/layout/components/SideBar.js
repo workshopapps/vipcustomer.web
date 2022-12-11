@@ -75,15 +75,16 @@ const SideBar = (props) => {
             );
           })}
 
-          <div className="link__wrap">
+          <div
+            onClick={() => {
+              setOpenModal(true);
+            }}
+            className="link__wrap">
             <span className="icon">
               <AiOutlineLogout />
             </span>
 
-            <button
-              onClick={() => {
-                setOpenModal(true);
-              }}>
+            <button>
               <span data-text="Logout" className="text">
                 Logout
               </span>

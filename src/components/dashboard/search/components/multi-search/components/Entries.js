@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import axios from "api/axios";
+import { AuthStore } from "store/contexts/AuthContext";
 import PropTypes from "prop-types";
 import Loading from "../../loading";
 import { MdKeyboardArrowUp } from "react-icons/md";
@@ -9,6 +9,7 @@ import EntriesWrapper, { EntryWrapper } from "./entries.styled";
 
 // app
 const Entries = (props) => {
+  const { _axios } = AuthStore();
   const { entryList, setEntryList, storeList, setVip } = props;
 
   const buttonRef = useRef(null);
@@ -21,7 +22,7 @@ const Entries = (props) => {
     setError(false);
     // Post WITH AXIOS
     try {
-      const response = await axios.post("/api/search/search-many", {
+      const response = await _axios.post("/api/search/search-many", {
         data: list
       });
 

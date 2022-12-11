@@ -1,3 +1,7 @@
+// // Issues faced
+// // accessToken is undefined for a new user o for a logged out user
+// // thereby makin api call to get api keys fail.
+
 import axios from "axios";
 // import { AuthStore } from "store/contexts/AuthContext";
 
