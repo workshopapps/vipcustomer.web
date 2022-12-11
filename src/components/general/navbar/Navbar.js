@@ -107,9 +107,11 @@ implementation should be changed
           )}
 
           {user && (
-            <div style={{ textTransform: "capitalize" }}>
-              Hi {user?.user?.first_name || "user"}
-            </div>
+            <Link to="/dashboard">
+              <div style={{ textTransform: "capitalize" }}>
+                Hi {user?.user?.first_name || "user"}
+              </div>
+            </Link>
           )}
         </Items>
       </NavItemsWrapper>
@@ -130,10 +132,12 @@ implementation should be changed
             </>
           )}
 
-          {!user && (
-            <div style={{ textTransform: "capitalize" }}>
-              Hi {user?.user?.first_name || "user"}
-            </div>
+          {user && (
+            <Link to="/dashboard">
+              <div style={{ textTransform: "capitalize" }}>
+                Hi {user?.user?.first_name || "user"}
+              </div>
+            </Link>
           )}
         </MobileNavWrapper>
       )}

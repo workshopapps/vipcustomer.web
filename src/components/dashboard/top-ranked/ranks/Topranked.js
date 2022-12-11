@@ -7,7 +7,7 @@ import Modal from "../modal/Modal";
 import Error from "../util/Error";
 
 const Topranked = () => {
-  const { _axios } = AuthStore();
+  const { _axios, user, api_key } = AuthStore();
 
   const [datas, setDatas] = useState([]);
   const [error, setError] = useState(false);
@@ -19,19 +19,22 @@ const Topranked = () => {
     descending: false
   });
 
-  const fetchRankData = (date = "", sort = false) => {
+  const fetchRankData = (date = " ", sort = false) => {
+    if (!api_key) return;
     _axios
-      .get(`/api/history/top-search`, {
+      .get("/api/history/top-search", {
         params: {
-          date,
-          sort
+          date: date,
+          sort: sort
         }
       })
       .then((res) => {
         setDatas(res.data);
+        console.log(res);
         setError(false);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.log(err);
         setError(true);
         setDatas([]);
       });
@@ -39,7 +42,7 @@ const Topranked = () => {
 
   useEffect(() => {
     fetchRankData();
-  }, []);
+  }, [user, api_key]);
 
   const handleChange = (e) => {
     const date = e.target.value;
