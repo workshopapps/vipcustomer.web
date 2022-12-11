@@ -7,7 +7,7 @@ import Modal from "../modal/Modal";
 import Error from "../util/Error";
 
 const Topranked = () => {
-  const { _axios } = AuthStore();
+  const { _axios, user, api_key } = AuthStore();
 
   const [datas, setDatas] = useState([]);
   const [error, setError] = useState(false);
@@ -39,7 +39,7 @@ const Topranked = () => {
 
   useEffect(() => {
     fetchRankData();
-  }, []);
+  }, [user, api_key]);
 
   const handleChange = (e) => {
     const date = e.target.value;

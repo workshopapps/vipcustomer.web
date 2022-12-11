@@ -7,7 +7,8 @@ import csvParser from "../utils";
 import { AuthStore } from "store/contexts/AuthContext";
 
 const Uploadcsv = ({ setVip }) => {
-  const { _axios } = AuthStore();
+  const { _axios, headers } = AuthStore();
+  console.log(headers);
 
   const input = useRef();
   const [fileName, setFileName] = useState("");
