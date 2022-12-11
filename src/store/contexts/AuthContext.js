@@ -20,22 +20,20 @@ const Authcontext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [headers, setHeaders] = useState(false);
 
-  let accessToken;
   let refreshToken;
   let accessTokenHasBeenRefreshed = false;
 
   useEffect(() => {
-    accessToken = state.user?.access_token;
     refreshToken = state.user?.refresh_token;
 
     if (state.api_key) {
       setHeaders({
-        Authorization: "Bearer " + state.user.access_token,
+        Authorization: "Bearer " + state.user?.access_token,
         "X-API-KEY": state.api_key
       });
     } else {
       setHeaders({
-        Authorization: "Bearer " + accessToken
+        Authorization: "Bearer " + state.user?.access_token
       });
     }
   }, [state.api_key, state.user]);
