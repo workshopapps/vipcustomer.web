@@ -1,3 +1,7 @@
+// // Issues faced
+// // accessToken is undefined for a new user o for a logged out user
+// // thereby makin api call to get api keys fail.
+
 import axios from "axios";
 // import { AuthStore } from "store/contexts/AuthContext";
 
@@ -17,11 +21,9 @@ export default request;
 request.interceptors.response.use(
   (response) => response,
   async function (error) {
-    if (
-      error?.response?.status === 403 &&
-      refreshToken &&
-      !accessTokenHasBeenRefreshed
-    ) {
+    const isUnauthorizedError =
+      error?.response?.status === 403 || error?.response?.status === 401;
+    if (isUnauthorizedError && refreshToken && !accessTokenHasBeenRefreshed) {
       const previousRequest = error?.config;
       const { data } = await request.post(
         "/api/user/refresh_token",

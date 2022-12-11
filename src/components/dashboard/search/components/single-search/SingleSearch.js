@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Form from "components/Demo/Form";
-import axios from "api/axios";
 import SingleSearchWrapper from "./singlesearche.styled";
 import Modal from "components/Demo/Modal";
 import Loading from "../loading";
+import { AuthStore } from "store/contexts/AuthContext";
 
 const SingleSearch = () => {
+  // general state
+  const { _axios } = AuthStore();
+
   // states for the Form component
   const [response, setResponse] = useState(undefined);
   const [searchInputs, setSearchInputs] = useState({});
@@ -21,14 +24,13 @@ const SingleSearch = () => {
   const handleFetch = async (params = {}) => {
     // GET WITH AXIOS
     try {
-      const response = await axios.get("/api/search/", {
+      const response = await _axios.get("/api/search/", {
         params: {
           ...params
         }
       });
 
       const result = response.data[0];
-      console.log(response.data);
       return result;
     } catch (error) {
       return undefined;
@@ -50,7 +52,9 @@ const SingleSearch = () => {
       setLoading(true);
 
       // api call
-      const response = await handleFetch(searchInputs);
+      const response = await handleFetch({
+        name
+      });
 
       setResponse(response);
       setModal(true);

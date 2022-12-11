@@ -20,13 +20,12 @@ import {
 import { useNavigate } from "react-router-dom";
 import { AuthStore } from "../../../store/contexts/AuthContext";
 import { login_a } from "../../../store/actions/authActions";
-import axios from "api/axios";
 import GoogleAuth from "../GoogleAuth";
 import BackBtn from "../BackBtn";
 
 export default function index() {
   const navigate = useNavigate();
-  const { dispatch } = AuthStore();
+  const { dispatch, _axios } = AuthStore();
 
   //TRYING TO REPLICATE FORMIK FUNCTIONALITY
   const [enteredFirstName, setEnteredFirstName] = useState("");
@@ -44,7 +43,8 @@ export default function index() {
   const [conPassowrdIsError, setConPassowrdIsError] = useState(false);
   const [conPasswordIsTouched, setConPasswordIsTouched] = useState(false);
 
-  // const [termsIsChecked, setTermsIsChecked] = useState(false);
+  const [termsIsChecked, setTermsIsChecked] = useState(false);
+
   const [errorMessageIsShown, setErrorMessageIsShown] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [spinnerClasses, setSpinnerClasses] = useState("spinner small stop");
@@ -70,16 +70,24 @@ export default function index() {
       return;
     }
 
+    if (!termsIsChecked) {
+      setErrorMessage(
+        "Please accept our Terms of Service and Privacy Policy to continue"
+      );
+      setErrorMessageIsShown(true);
+      return;
+    }
+
     try {
       setSpinnerClasses("spinner small");
-      await axios.post("/api/user/signup", {
+      await _axios.post("/api/user/signup", {
         first_name: enteredFirstName,
         last_name: enteredLastName,
         email: enteredEmail,
         password: enteredPassword
       });
 
-      const { data } = await axios.post("/api/user/login", {
+      const { data } = await _axios.post("/api/user/login", {
         email: enteredEmail,
         password: enteredPassword
       });
@@ -213,7 +221,9 @@ export default function index() {
               required
             />
             <div style={{ marginTop: "0.7rem" }}>
-              <Checkbox id="check">
+              <Checkbox
+                id="check"
+                onClick={() => setTermsIsChecked((prev) => !prev)}>
                 I agree to the{" "}
                 <LinkStyles to="/terms">Terms of Service</LinkStyles> and{" "}
                 <LinkStyles to="/privacy">Privacy Notice</LinkStyles>

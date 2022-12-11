@@ -40,6 +40,7 @@ const Result = ({ vip = [] }) => {
       buttonArray
     };
   }
+
   //  filter selection
   const filterHandle = (text) => {
     setFilterSelected(text);
@@ -57,10 +58,12 @@ const Result = ({ vip = [] }) => {
       setVipList(filtered);
     }
   };
+
   // sort selection
   function sortedFn(a, b) {
     return a.vip_score - b.vip_score;
   }
+
   const sortHandle = (text) => {
     setSortSelected(text);
     if (text === "Ascending order") {
@@ -69,6 +72,7 @@ const Result = ({ vip = [] }) => {
       setVipList((prev) => prev.sort(sortedFn).reverse());
     }
   };
+
   // handle paginate .... changes the page content
   const handlePaginate = (val) => {
     const newList = paginateFn(vip, 9, val).items;
@@ -102,12 +106,10 @@ const Result = ({ vip = [] }) => {
               const { name, vip_score, is_vip, gender, age } = vip;
               return (
                 <TabletRow key={index}>
-                  <Text text={name.slice(0, 1).toUpperCase() + name.slice(1)} />
+                  <Text text={name} />
                   <Text text={is_vip ? <BsCheckLg /> : <FaTimes />} />
                   <Text text={`${Math.ceil(vip_score)}%`} />
-                  <Text
-                    text={gender.slice(0, 1).toUpperCase() + gender.slice(1)}
-                  />
+                  <Text text={gender} />
                   <Text text={age} />
                   {/* <Text text={category.slice(0,1).toUpperCase() + category.slice(1)} /> */}
                 </TabletRow>
@@ -130,19 +132,13 @@ const Result = ({ vip = [] }) => {
 
               return (
                 <MobileRow key={index}>
-                  <Column
-                    name="Name"
-                    value={name.slice(0, 1).toUpperCase() + name.slice(1)}
-                  />
+                  <Column name="Name" value={name} />
                   <Column
                     name="VIP?"
                     value={is_vip ? <BsCheckLg /> : <FaTimes />}
                   />
                   <Column name="Rating" value={`${Math.ceil(vip_score)}%`} />
-                  <Column
-                    name="Gender"
-                    value={gender.slice(0, 1).toUpperCase() + gender.slice(1)}
-                  />
+                  <Column name="Gender" value={gender} />
                   <Column name="Age" value={age} />
                   {/* <Column name="Category" value={category.slice(0,1).toUpperCase() + category.slice(1)} /> */}
                 </MobileRow>
@@ -165,8 +161,6 @@ const Result = ({ vip = [] }) => {
 };
 
 Result.propTypes = {
-  // responseData: PropTypes.object.isRequired
-  // array needed... currently api returns an empty object
   vip: PropTypes.array
 };
 
