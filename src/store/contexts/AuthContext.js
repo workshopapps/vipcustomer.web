@@ -10,6 +10,8 @@ import reducer from "../reducers/AuthReducer";
 import { login_a, setApiKey_a } from "store/actions/authActions";
 import axios from "axios";
 
+const TWENTYFIVE_MINUTES_IN_MILLISECONDS = 25 * 60 * 1000;
+
 const Context = createContext();
 const initialState = {
   user: JSON.parse(localStorage.getItem("user")) || false,
@@ -20,12 +22,7 @@ const Authcontext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [headers, setHeaders] = useState(false);
 
-  let refreshToken;
-  let accessTokenHasBeenRefreshed = false;
-
   useEffect(() => {
-    refreshToken = state.user?.refresh_token;
-
     if (state.api_key) {
       setHeaders({
         Authorization: "Bearer " + state.user?.access_token,
@@ -37,8 +34,6 @@ const Authcontext = ({ children }) => {
       });
     }
   }, [state.api_key, state.user]);
-
-  console.log(headers);
 
   const _axios = axios.create({
     baseURL: "https://api.starfinder.hng.tech",
@@ -64,38 +59,43 @@ const Authcontext = ({ children }) => {
     get_api_keys();
   }, [headers, state.user, state.api_key]); //on user login/out
 
-  _axios.interceptors.response.use(
-    (response) => response,
-    async function (error) {
-      if (
-        error?.response?.status === 403 &&
-        refreshToken &&
-        !accessTokenHasBeenRefreshed
-      ) {
-        const previousRequest = error?.config;
-        const { data } = await _axios.post(
-          "/api/user/refresh_token",
-          {},
-          {
-            headers: { Authorization: "Bearer " + refreshToken }
-          }
-        );
-        const newAccessToken = data.access_token;
-        const user = state.user;
-        console.log(user);
-        user["access_token"] = newAccessToken;
-        console.log(user);
-        login_a(dispatch, user);
-        localStorage.setItem("user", JSON.stringify(user));
-        previousRequest.headers["Authorization"] = "Bearer " + newAccessToken;
-        accessTokenHasBeenRefreshed = true;
-        return _axios(previousRequest);
-      }
+  useEffect(() => {
+    if (!state.user) return;
 
-      accessTokenHasBeenRefreshed = false;
-      return Promise.reject(error);
+    const lastTimeStamp = localStorage.getItem("access_token_timestamp");
+    const currentTime = new Date().getTime();
+    const timeSinceLastRefresh = currentTime - lastTimeStamp;
+    const accessTokenHasExpired =
+      timeSinceLastRefresh > TWENTYFIVE_MINUTES_IN_MILLISECONDS;
+
+    async function getNewAccessToken() {
+      const refreshToken = state.user?.refresh_token;
+      const { data } = await _axios.post(
+        "/api/user/refresh_token",
+        {},
+        {
+          headers: { Authorization: "Bearer " + refreshToken }
+        }
+      );
+
+      const newAccessToken = data.access_token;
+      const user = state.user;
+      user["access_token"] = newAccessToken;
+      login_a(dispatch, user);
+      console.log("access token refreshed");
     }
-  );
+
+    function startTimer() {
+      getNewAccessToken();
+      setInterval(getNewAccessToken, TWENTYFIVE_MINUTES_IN_MILLISECONDS);
+    }
+
+    const remainingTime =
+      TWENTYFIVE_MINUTES_IN_MILLISECONDS - timeSinceLastRefresh;
+
+    if (accessTokenHasExpired) startTimer();
+    else setTimeout(startTimer, remainingTime);
+  }, [state.user]);
 
   return (
     <Context.Provider value={{ ...state, dispatch, _axios, headers }}>
