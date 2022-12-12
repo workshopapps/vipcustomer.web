@@ -33,6 +33,7 @@ const Authcontext = ({ children }) => {
         Authorization: "Bearer " + state.user?.access_token
       });
     }
+    console.log("headers updating??");
   }, [state.api_key, state.user]);
 
   const _axios = axios.create({
@@ -79,7 +80,7 @@ const Authcontext = ({ children }) => {
       );
 
       const newAccessToken = data.access_token;
-      const user = state.user;
+      const user = { ...state.user };
       user["access_token"] = newAccessToken;
       login_a(dispatch, user);
       console.log("access token refreshed");
@@ -95,7 +96,7 @@ const Authcontext = ({ children }) => {
 
     if (accessTokenHasExpired) startTimer();
     else setTimeout(startTimer, remainingTime);
-  }, [state.user]);
+  }, []);
 
   return (
     <Context.Provider value={{ ...state, dispatch, _axios, headers }}>
