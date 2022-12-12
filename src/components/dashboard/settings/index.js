@@ -30,7 +30,7 @@ const index = () => {
     setError("");
 
     try {
-      await _axios.patch("/api/user/update_user_profie", userState);
+      await _axios.patch("/api/user/update_user_profile", userState);
       const resp = await _axios.get(
         `/api/user/get_single_user?user_id=${user?.user.id}`
       );
