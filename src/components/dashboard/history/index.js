@@ -1,18 +1,27 @@
-// please export your page here
-import React, { useCallback, useEffect, useState } from "react";
+import { LinkStyles } from "components/auth/signup/signup.styled";
+import React, { useEffect, useState } from "react";
 import { AuthStore } from "store/contexts/AuthContext";
 import styled from "styled-components";
+import Paginate from "../top-ranked/paginate/Paginate";
 
 function index() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState();
   const { _axios, headers } = AuthStore();
+  const [currentPage, setCurrentPage] = useState(1);
 
-  async function getHistory() {
+  async function getHistory(page = currentPage, start, end) {
     try {
-      const res = await _axios.get("/api/history/");
-      setData(res.data.items);
+      setIsLoading(true);
+      setIsError(false);
+      const { data } = await _axios.get(
+        `/api/history/?size=10&page=${page}${
+          start ? `&start_datetime=${start}` : ""
+        }${end ? `&end_datetime=${end}` : ""}`
+      );
+
+      setData(data);
       setIsLoading(false);
     } catch (err) {
       setIsError(true);
@@ -43,6 +52,17 @@ function index() {
       </SpinnerContainer>
     );
 
+  if (!isLoading && !isError && data.items.length === 0) {
+    return (
+      <SpinnerContainer>
+        <div>
+          You do not have any history at the moment.
+          <LinkStyles to=".."> Make a search?</LinkStyles>
+        </div>
+      </SpinnerContainer>
+    );
+  }
+
   return (
     <>
       <Container>
@@ -54,7 +74,7 @@ function index() {
           <div>Vip?</div>
         </TableHeading>
         {data &&
-          data.map((value) => (
+          data.items.map((value) => (
             <TableRow key={value.history_id}>
               <div>{value.created_at.substring(0, 10)}</div>
               <div>{value.search_input.name}</div>
@@ -68,6 +88,15 @@ function index() {
             </TableRow>
           ))}
       </Container>
+      <Paginate
+        postPerPage={10}
+        totalPost={data.total}
+        currentPage={currentPage}
+        paginate={(number) => {
+          setCurrentPage(number);
+          getHistory(number);
+        }}
+      />
     </>
   );
 }
@@ -116,7 +145,7 @@ const Container = styled.div`
 const TableRow = styled.div`
   color: black;
   font-size: 1.6rem;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-content: space-between;
