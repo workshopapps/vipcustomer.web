@@ -1,4 +1,4 @@
-const sampleData = [
+export const sampleData = [
   {
     history_id: "7018ae02-dbc1-4ebb-b094-806fbaca5e01",
     created_at: "2022-12-08T12:46:19.849310",
@@ -11,7 +11,7 @@ const sampleData = [
       vip_score: 95,
       name: "barack obama",
       gender: "male",
-      is_vip: true
+      is_vip: false
     }
   },
   {
