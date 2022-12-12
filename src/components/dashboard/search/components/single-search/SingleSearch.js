@@ -24,7 +24,7 @@ const SingleSearch = () => {
   const handleFetch = async (params = {}) => {
     // GET WITH AXIOS
     try {
-      const response = await _axios.get("/api/search/", {
+      const response = await _axios.get("/api/search", {
         params: {
           ...params
         }
