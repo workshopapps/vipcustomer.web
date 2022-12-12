@@ -4,7 +4,6 @@ import styles from "./HelpCenter.module.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RiFileList2Line } from "react-icons/ri";
 import { TiMessages } from "react-icons/ti";
-import { MdOutlineSettings } from "react-icons/md";
 import { FaThumbsUp } from "react-icons/fa";
 
 import { Footer, Navbar } from "components/general";

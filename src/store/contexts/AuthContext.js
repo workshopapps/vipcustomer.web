@@ -18,24 +18,22 @@ const initialState = {
 
 const Authcontext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [headers, setHeaders] = useState({});
+  const [headers, setHeaders] = useState(false);
 
-  let accessToken;
   let refreshToken;
   let accessTokenHasBeenRefreshed = false;
 
   useEffect(() => {
-    accessToken = state.user?.access_token;
     refreshToken = state.user?.refresh_token;
 
     if (state.api_key) {
       setHeaders({
-        Authorization: "Bearer " + accessToken,
+        Authorization: "Bearer " + state.user?.access_token,
         "X-API-KEY": state.api_key
       });
     } else {
       setHeaders({
-        Authorization: "Bearer " + accessToken
+        Authorization: "Bearer " + state.user?.access_token
       });
     }
   }, [state.api_key, state.user]);
@@ -49,10 +47,11 @@ const Authcontext = ({ children }) => {
 
   // get apiKey only if it doesnt exist and user is logged in
   useEffect(() => {
-    if (!localStorage.getItem("user")) return;
-    if (localStorage.getItem("user") && localStorage.getItem("api_key")) return;
-    console.log("I ran... no api key");
+    if (!state.user) return;
+    if (state.user && state.api_key) return;
+    if (!headers) return;
 
+    console.log("I ran... no api key");
     async function get_api_keys() {
       try {
         const resp = await _axios.get("/api/user/get_api_keys");
@@ -63,7 +62,7 @@ const Authcontext = ({ children }) => {
     }
 
     get_api_keys();
-  }, [state.user]); //on user login/out
+  }, [headers, state.user, state.api_key]); //on user login/out
 
   _axios.interceptors.response.use(
     (response) => response,
@@ -83,7 +82,9 @@ const Authcontext = ({ children }) => {
         );
         const newAccessToken = data.access_token;
         const user = state.user;
+        console.log(user);
         user["access_token"] = newAccessToken;
+        console.log(user);
         login_a(dispatch, user);
         localStorage.setItem("user", JSON.stringify(user));
         previousRequest.headers["Authorization"] = "Bearer " + newAccessToken;
