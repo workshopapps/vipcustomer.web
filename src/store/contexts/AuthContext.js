@@ -39,6 +39,7 @@ const Authcontext = ({ children }) => {
   const _axios = axios.create({
     baseURL: "https://api.starfinder.hng.tech",
     headers: headers
+    // timeout: 500000 //temporal
   });
 
   // get apiKey only if it doesnt exist and user is logged in
