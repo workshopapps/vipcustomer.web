@@ -5,7 +5,7 @@ const SearchMany = () => {
   return (
     <div className="documents-div">
       <h1>This is the multi search page.</h1>
-      <h3>Multi search in the starFinder app for VIPs</h3>
+      <h3>Multi search in the star Finder app for VIPs</h3>
       <p>
         By using this tool, we navigate using search-many bar, the name(s) of
         the VIP being searched for should be typed in the the search bar, and
@@ -21,7 +21,7 @@ const SearchMany = () => {
         style={{ width: "100%", height: "255px" }}
         frameBorder="0"></iframe>
       <p>
-        NOTE: An optional API key, should be passed to the request header to
+        NOTE: An optional api key, should be passed to the request header to
         attribute the search request to a user.{" "}
       </p>
 
