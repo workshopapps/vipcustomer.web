@@ -7,14 +7,14 @@ const QuickStart = () => {
       <h1>QuickStart</h1>
       <h3>How to use Star Finder</h3>
       <p>
-        The StartFinder API can be used by virtually any companies or firms who
+        The Star Finder api can be used by virtually any company or firm who
         wants to have a track of VIPs which involves peoples of fames, wealth
-        and importance. We offer a spectrum of models with differentiate the
+        and importance. We offer a spectrum of models which differentiate the
         levels of individuals and which can be suitable for different sales for
         company growth, as well as the ability to have the idea of people of
         power who have visited your website. These models can be used for
         everything from sales generation to customer appreciation and also to
-        customer classification.
+        classify customer.
       </p>
       <p className="list">
         <ul>
@@ -24,19 +24,19 @@ const QuickStart = () => {
           <li>Many more</li>
         </ul>
       </p>
-      <h3>Vip Identification</h3>
+      <h3>VIP Identification</h3>
       <p>
-        The StartFinder API can be used by virtually any company or firm who
+        The Star Finder api can be used by virtually any company or firm who
         wants to have a track of VIPs which involves peoples of fames, wealth
         and importance. We offer a spectrum of models with differentiate the
         levels of individuals and which can be suitable for different sales for
         company growth, as well as the ability to have the idea of people of
         power who have visited your website. These models can be used for
         everything from sales generation to customer appreciation and also to
-        customer classification.
+        classify customers.
       </p>
 
-      <h3>Vip Generation</h3>
+      <h3>VIP Generation</h3>
       <p>
         To generate a VIP identification, you need to search for the VIP by
         adding the neccesary parameters. That been done, click on the enter key
@@ -50,7 +50,7 @@ const QuickStart = () => {
       <h3>Many more.</h3>
 
       <p>
-        The StartFinder API can be used by virtually any companies or firms who
+        The Star Finder api can be used by virtually any companies or firms who
         wants to target a particular audience or persons, that been said, you
         can tour the app and find other amazing services.
       </p>

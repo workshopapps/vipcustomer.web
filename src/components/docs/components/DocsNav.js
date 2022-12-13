@@ -15,6 +15,9 @@ const DocsNav = () => {
   return (
     <div className={styles.navcontainer}>
       <div className={styles.nav}>
+        <div className={styles.menubar}>
+          <FiAlignJustify onClick={handleExpand} />
+        </div>{" "}
         <div className={styles.navlogo}>
           <a href="/">
             <img src={SF} alt="" className={styles.logo} />
@@ -28,9 +31,6 @@ const DocsNav = () => {
             name="search-bar"
             className={styles.navsearch}
           />
-        </div>
-        <div className={styles.menubar}>
-          <FiAlignJustify onClick={handleExpand} />
         </div>
         <div className={styles.navlinks}>
           <a
