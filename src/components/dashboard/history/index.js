@@ -14,6 +14,7 @@ function index() {
   const [currentPage, setCurrentPage] = useState(1);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   async function getHistory(
     page = currentPage,
@@ -47,6 +48,7 @@ function index() {
   async function clearHistory() {
     await _axios.delete("/api/history/delete/all");
     getHistory(1);
+    setModalIsOpen(false);
   }
 
   //delete select history
@@ -96,7 +98,7 @@ function index() {
   }
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <FilterContainer>
         <div>
           From:{" "}
@@ -128,9 +130,9 @@ function index() {
           <div>Date</div>
           <div>Search</div>
           <div>Occupation</div>
-          <div>Age</div>
-          <div>Gender</div>
-          <div>Vip?</div>
+          <div className="center">Age</div>
+          <div className="center">Gender</div>
+          <div className="center">Vip?</div>
         </TableHeading>
         {data &&
           data.items.map((value) => (
@@ -140,14 +142,16 @@ function index() {
               <div>
                 {value.result?.occupation[0]?.replaceAll("_", " ") || "-"}
               </div>
-              <div>{value.result?.age || "-"}</div>
-              <div>{value.result?.gender || "-"}</div>
-              <div>
+              <div className="center">{value.result?.age || "-"}</div>
+              <div className="center">{value.result?.gender || "-"}</div>
+              <div className="center">
                 <IsVip isVip={value.result.is_vip}>
                   {value.result.is_vip ? "Yes" : "No"}
                 </IsVip>
               </div>
-              <Delete onClick={() => deleteHistory(value.history_id)}>
+              <Delete
+                className="center"
+                onClick={() => deleteHistory(value.history_id)}>
                 <AiFillDelete />
               </Delete>
             </TableRow>
@@ -155,7 +159,7 @@ function index() {
       </Container>
 
       <BottomContainer>
-        <ClearBtn onClick={clearHistory}>
+        <ClearBtn onClick={() => setModalIsOpen(true)}>
           <div
             style={{
               fontSize: "2rem",
@@ -176,11 +180,71 @@ function index() {
           }}
         />
       </BottomContainer>
-    </>
+      {modalIsOpen && (
+        <Modal>
+          <div>
+            Are you sure you want to clear ALL your search history?
+            <div>
+              <button className="outline" onClick={() => setModalIsOpen(false)}>
+                Cancel
+              </button>
+              <button className="fill" onClick={clearHistory}>
+                Yes, Clear All
+              </button>
+            </div>
+          </div>
+        </Modal>
+      )}
+    </div>
   );
 }
 
 export default index;
+
+const Modal = styled.div`
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(1px);
+
+  & > div {
+    background-color: white;
+    padding: 2rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 40rem;
+    text-align: center;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        padding: 0.5rem 1.5rem;
+        border-radius: 3px;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+
+      .outline {
+        border: 1px solid #091540;
+        color: #091540;
+      }
+
+      .fill {
+        background-color: #ff414e;
+        color: white;
+      }
+    }
+  }
+`;
 
 const FilterContainer = styled.div`
   display: flex;
@@ -276,6 +340,10 @@ const TableRow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 1fr 0.5fr;
   justify-content: space-between;
+
+  & > .center {
+    justify-self: center;
+  }
 `;
 
 const TableHeading = styled(TableRow)`
