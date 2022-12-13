@@ -5,17 +5,15 @@ import { DemoWrapper, Header, Body } from "./demo.styled";
 import Modal from "./Modal";
 import Form from "./Form";
 import { AuthStore } from "store/contexts/AuthContext";
-import axios from "axios";
 
 const Demo = () => {
-  const { _axios, headers } = AuthStore();
+  const { _axios } = AuthStore();
 
   const [modal, setModal] = useState(false);
   const [response, setResponse] = useState(undefined);
   const [searchInputs, setSearchInputs] = useState({});
 
   const handleFetch = async (params) => {
-    console.log(headers);
     // GET WITH AXIOS
     try {
       const response = await _axios.get("/api/search", {
