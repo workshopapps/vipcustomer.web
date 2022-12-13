@@ -16,11 +16,11 @@ const _links = [
     icon: <IoSearchOutline />
   },
 
-  // {
-  //   path: "/dashboard/history",
-  //   name: "history",
-  //   icon: <FaAddressBook />
-  // },
+  {
+    path: "/dashboard/history",
+    name: "history",
+    icon: <FaAddressBook />
+  },
 
   {
     path: "/dashboard/top-rank",

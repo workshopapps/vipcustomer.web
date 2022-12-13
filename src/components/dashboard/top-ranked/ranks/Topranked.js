@@ -30,7 +30,7 @@ const Topranked = () => {
       })
       .then((res) => {
         setDatas(res.data);
-        console.log(res);
+        // console.log(res);
         setError(false);
       })
       .catch((err) => {
