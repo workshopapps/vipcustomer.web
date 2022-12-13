@@ -39,7 +39,7 @@ function index() {
       const { data } = await _axios.get(
         `/api/history/?size=10&page=${page}${
           start ? `&start_datetime=${start} 00:00:00.000000` : ""
-        }${end ? `&end_datetime=${end} 00:00:00.000000` : ""}`
+        }${end ? `&end_datetime=${end} 23:59:59.999999` : ""}`
       );
 
       setData(data);
