@@ -277,7 +277,7 @@ const Delete = styled.div`
 const ClearBtn = styled.div`
   padding: 0.5rem 1.5rem;
   background-color: #ff414e;
-  border-radius: 2px;
+  border-radius: 3px;
   color: white;
   cursor: pointer;
   display: flex;
@@ -290,7 +290,7 @@ const ClearBtn = styled.div`
 const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 const ErrorContainer = styled.div`
@@ -344,10 +344,26 @@ const TableRow = styled.div`
   & > .center {
     justify-self: center;
   }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+
+    & :nth-child(3) {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const TableHeading = styled(TableRow)`
   color: #b5b7c0;
   font-weight: 700;
   font-size: 2.2rem;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1.8rem;
+  }
 `;
