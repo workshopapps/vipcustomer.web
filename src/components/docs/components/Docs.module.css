@@ -1,11 +1,10 @@
 .navcontainer {
-  border-bottom: 1px solid #BEBEBE;
+  border-bottom: 1px solid #bebebe;
   position: fixed;
   top: 0;
   background: #fff;
   width: 100%;
   z-index: 1000;
-
 }
 
 .nav {
@@ -21,21 +20,17 @@
   display: none;
 }
 
-
 .navlogo {
   width: 33.3%;
-
 }
 
 .logo {
   height: 70px;
-
 }
 
 .navsearchdiv {
   margin: auto;
   width: 33.3%;
-
 }
 
 .navsearch::placeholder {
@@ -48,32 +43,26 @@
   border-radius: 5px;
   height: 45px;
   width: 100%;
-
 }
 
 .navlinks {
   margin: auto;
   width: 33.3%;
   text-align: center;
-
-
 }
 
 .navlink {
   color: #091540;
   right: auto;
-
 }
 
 .navlink:hover {
   color: #c7c8ca;
-
 }
 
 .linksdiv {
   color: #091540;
   font-size: 1.6rem;
-
 }
 
 .linksdiv :hover {
@@ -87,11 +76,10 @@
   left: 0;
   padding-top: 20px;
   margin-top: 101px;
-  border-right: 2px solid #BEBEBE;
+  border-right: 2px solid #bebebe;
   display: flex;
   flex-direction: column;
   color: #091540;
-
 }
 
 .linksdiv {
@@ -109,26 +97,23 @@
 
 .showrightsidebar {
   display: none;
-
 }
 
 .navlink {
-color: #091540;
+  color: #091540;
 }
 
 .rightsidebar {
   display: none;
   position: absolute;
-  right: 0;
+  left: 0;
 }
 
 @media only screen and (max-width: 1000px) {
-  .linksdiv>h2 {
+  .linksdiv > h2 {
     font-size: 1.5rem;
-
   }
 }
-
 
 @media only screen and (max-width: 768px) {
   .maindiv {
@@ -160,20 +145,19 @@ color: #091540;
   .rightsidebar {
     display: none;
     position: absolute;
-    right: 0;
+    left: 0;
     height: 100vh;
-    background-color: rgba(255, 255, 255, .90);
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .sidenav {
     display: none;
   }
 
-  .linksdiv>h2 {
+  .linksdiv > h2 {
     font-size: 1.5rem;
   }
 }
-
 
 .content {
   background-color: pink;

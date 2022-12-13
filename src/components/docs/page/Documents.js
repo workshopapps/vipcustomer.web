@@ -7,7 +7,7 @@ const Documents = () => {
       <h1>Introduction</h1>
       <h3>About Star Finder</h3>
       <p>
-        The StartFinder API can be used by virtually any companies or firms who
+        The Star Finder api can be used by virtually any companies or firms who
         wants to have a track of VIPs which involves peoples of fames, wealth
         and importance. We offer a spectrum of models with differentiate the
         levels of individuals and which can be suitable for different sales for
@@ -23,7 +23,7 @@ const Documents = () => {
         style={{ width: "100%", height: "268px" }}
         frameBorder="0"></iframe>
       <p>
-        The StartFinder API can be used by virtually any company or firm who
+        The Star Finder api can be used by virtually any company or firm who
         wants to have a track of VIPs which involves peoples of fames, wealth
         and importance. We offer a spectrum of models with differentiate the
         levels of individuals and which can be suitable for different sales for
