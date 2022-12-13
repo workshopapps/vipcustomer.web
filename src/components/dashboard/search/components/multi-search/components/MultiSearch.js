@@ -32,7 +32,7 @@ const MultiSearch = () => {
         </section>
 
         <section className="wrappers entry">
-          <h2 className="header">List of entries</h2>
+          <h2 className="header">List of entries ({entryList?.length})</h2>
           <Entries
             storeList={setListToStorage}
             setEntryList={setEntryList}

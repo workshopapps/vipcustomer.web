@@ -9,9 +9,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <div>
-
         <img src={starFinderLogo} alt="Star Finder" />
-
       </div>
       <div className="footbar">
         <div className="footbarone">
@@ -40,7 +38,7 @@ const Footer = () => {
         <div className="footbarone">
           <h4>Company</h4>
           <Linkbtn href="/about-us" child="About us" classname="footlink" />
-          <Linkbtn href="/meet" child="Meet our team" classname="footlink" />
+          <Linkbtn href="/team" child="Meet our team" classname="footlink" />
           <Linkbtn
             href="/mission"
             child="Vision & Mission"
