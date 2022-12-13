@@ -31,7 +31,11 @@ const Uploadcsv = ({ setVip }) => {
   }
 
   async function handleFetch(array) {
-    console.log(array);
+    if (array?.length > 20) {
+      setError("Error...CSV file is too large");
+      return;
+    }
+
     // check for name prop
     if (!array[0].name) {
       setError("Invalid CSV, Name prop is missing");
