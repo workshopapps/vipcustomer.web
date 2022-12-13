@@ -5,15 +5,17 @@ import { DemoWrapper, Header, Body } from "./demo.styled";
 import Modal from "./Modal";
 import Form from "./Form";
 import { AuthStore } from "store/contexts/AuthContext";
+import axios from "axios";
 
 const Demo = () => {
-  const { _axios } = AuthStore();
+  const { _axios, headers } = AuthStore();
 
   const [modal, setModal] = useState(false);
   const [response, setResponse] = useState(undefined);
   const [searchInputs, setSearchInputs] = useState({});
 
   const handleFetch = async (params) => {
+    console.log(headers);
     // GET WITH AXIOS
     try {
       const response = await _axios.get("/api/search", {
@@ -23,7 +25,21 @@ const Demo = () => {
       });
 
       const result = response.data[0];
+
       return result;
+
+      // Fetch
+      // let url = new URL("http://50.18.54.50:8000/api/search");
+      // let url = new URL("https://api.starfinder.hng.tech/api/search");
+      // url.search = new URLSearchParams({
+      //   ...params
+      // });
+
+      // const resp = await fetch(url.href);
+      // const data = await resp.json();
+      // console.log(data[0]);
+
+      // return data[0];
     } catch (error) {
       return undefined;
     }

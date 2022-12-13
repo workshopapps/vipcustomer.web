@@ -37,8 +37,8 @@ const Authcontext = ({ children }) => {
   }, [state.api_key, state.user]);
 
   const _axios = axios.create({
-    baseURL: "https://api.starfinder.hng.tech",
-    headers: headers
+    baseURL: "https://api.starfinder.hng.tech"
+    // headers: headers
   });
 
   // get apiKey only if it doesnt exist and user is logged in
