@@ -33,7 +33,7 @@ function Team() {
           />
           <Card
             img_url={require("../components/team/assets/team/IMG-20221119-WA0006.jpg")}
-            name={"Andrew Glado"}
+            name={"Andrew Glago"}
             position={"Backend"}
           />
           <Card
@@ -46,10 +46,6 @@ function Team() {
             name={"Iruoma Valerie Oby-Ezeani"}
             position={"Project Manager"}
           />
-        </div>
-
-        <div className="teams-btn">
-          <p>Our Teams</p>
         </div>
       </div>
       <div className="vector-bottom">

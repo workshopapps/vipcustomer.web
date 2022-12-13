@@ -12,18 +12,18 @@ const Mission = () => {
         <div className={styles.misssion}>
           <h2 className={styles.h2}>Our Mission</h2>
           <p className={styles.p}>
-            Our Mission is to provide businesses and brands with unique customer
+            Our mission is to provide businesses and brands with unique customer
             identification service which will help tailor sales and effort to
-            target specific User profiles.
+            target specific user profiles.
             <br />
             <br />
             <span className={styles.span}>
               {" "}
               We do this by filtering through the user profiles of those who
               visits your websites to know if a particular visitor is ranked as
-              a VIP customer. This API will scrap various social media platforms
+              a vip customer. This api will scrap various social media platforms
               and the internet to find out if the user fits into a preset
-              criteria of VIP guest
+              criteria of vip guest.
             </span>
           </p>
           <Link to="/demo">

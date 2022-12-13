@@ -1,20 +1,22 @@
 import React, { useState } from "react";
-import axios from "api/axios";
 import checkmark from "./assets/checkmark.png";
 import { Footer, Navbar } from "components/general";
 import { DemoWrapper, Header, Body } from "./demo.styled";
 import Modal from "./Modal";
 import Form from "./Form";
+import { AuthStore } from "store/contexts/AuthContext";
 
 const Demo = () => {
+  const { _axios } = AuthStore();
+
   const [modal, setModal] = useState(false);
   const [response, setResponse] = useState(undefined);
   const [searchInputs, setSearchInputs] = useState({});
 
-  const handleFetch = async (name, params) => {
+  const handleFetch = async (params) => {
     // GET WITH AXIOS
     try {
-      const response = await axios.get("/api/search/", {
+      const response = await _axios.get("/api/search", {
         params: {
           ...params
         }
@@ -47,14 +49,14 @@ const Demo = () => {
 
             <p className="sub__text mt2">
               Try out Star Finder with any VIP’s information and see how it
-              performs{" "}
+              performs.
             </p>
 
             <ul className="mt2">
               <li>
                 <img src={checkmark} />
                 Automatic VIP level tagging and categorization with relevant
-                keyword extraction
+                keyword extraction.
               </li>
               <li>
                 <img src={checkmark} />
@@ -64,17 +66,17 @@ const Demo = () => {
               <li>
                 <img src={checkmark} />
                 Automatic customer profiling methods and processes so teams can
-                focus on what matters the most
+                focus on what matters the most.
               </li>
             </ul>
           </article>
 
           <article className="form__wrapper">
-            <h2>Try Out A Live Demo</h2>
+            <h2>Try Out A Live Demo.</h2>
 
             <p className="mt2">
               Fill in the information below with a VIP’s details and hit analyze
-              to identify Vips
+              to identify {"VIP's"}.
             </p>
 
             <Form

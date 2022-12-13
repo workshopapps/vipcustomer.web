@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { AuthStore } from "store/contexts/AuthContext";
 import Shell from "./Shell";
 import { useLocation } from "react-router-dom";
 import Modal from "./Modal";
 import { Button, ErrorMessage, StyledInput, StyledDiv } from "./shell.styled";
-import axios from "api/axios";
 import { FaRegEyeSlash } from "react-icons/fa";
 
 export default function Change() {
+  const { _axios } = AuthStore();
   // Import the email passed to this page using useNavigate?
 
   const [importedEmail, setImportedEmail] = React.useState("");
@@ -52,7 +53,7 @@ export default function Change() {
         try {
           setSpinnerClasses("spinner small");
           console.log(state, password);
-          const { data } = await axios.post("/api/user/reset_password", {
+          const { data } = await _axios.post("/api/user/reset_password", {
             email: importedEmail,
             password: password
           });

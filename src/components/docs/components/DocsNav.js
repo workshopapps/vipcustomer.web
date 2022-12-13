@@ -16,7 +16,9 @@ const DocsNav = () => {
     <div className={styles.navcontainer}>
       <div className={styles.nav}>
         <div className={styles.navlogo}>
-          <img src={SF} alt="" className={styles.logo} />
+          <a href="/">
+            <img src={SF} alt="" className={styles.logo} />
+          </a>
         </div>
         <div className={styles.navsearchdiv}>
           <input
@@ -75,7 +77,7 @@ const DocsNav = () => {
               </p>
               <p>
                 <Link to="/docs/searchmany" className={styles.li}>
-                  Search-Many
+                  Multi Search
                 </Link>
               </p>
               <p>

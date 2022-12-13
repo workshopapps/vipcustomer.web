@@ -16,11 +16,11 @@ const _links = [
     icon: <IoSearchOutline />
   },
 
-  {
-    path: "/dashboard/history",
-    name: "history",
-    icon: <FaAddressBook />
-  },
+  // {
+  //   path: "/dashboard/history",
+  //   name: "history",
+  //   icon: <FaAddressBook />
+  // },
 
   {
     path: "/dashboard/top-rank",
@@ -45,8 +45,7 @@ const SideBar = (props) => {
   const { sideBarOpen, setSideBarOpen } = props;
   const { pathname } = useLocation();
 
-  const [openmodal, setOpenModal] = useState(false)
-
+  const [openmodal, setOpenModal] = useState(false);
 
   return (
     <>
@@ -76,14 +75,20 @@ const SideBar = (props) => {
             );
           })}
 
-          <div className="link__wrap">
+          <div
+            onClick={() => {
+              setOpenModal(true);
+            }}
+            className="link__wrap">
             <span className="icon">
               <AiOutlineLogout />
             </span>
 
-            <button onClick={() => { setOpenModal(true) }}><span data-text="Logout" className="text">
-              Logout
-            </span></button>
+            <button>
+              <span data-text="Logout" className="text">
+                Logout
+              </span>
+            </button>
           </div>
         </LinksContainer>
       </SideBarWrapper>

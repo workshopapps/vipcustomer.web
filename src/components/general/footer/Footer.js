@@ -1,13 +1,15 @@
 import React from "react";
 import FooterWrapper from "./footer.styled";
-import axeLogo from "./images/logos.svg";
+
+import starFinderLogo from "./images/logos.svg";
+
 import Linkbtn from "./LinkBtn";
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <div>
-        <img src={axeLogo} alt="Star Finder" />
+        <img src={starFinderLogo} alt="Star Finder" />
       </div>
       <div className="footbar">
         <div className="footbarone">
@@ -36,7 +38,7 @@ const Footer = () => {
         <div className="footbarone">
           <h4>Company</h4>
           <Linkbtn href="/about-us" child="About us" classname="footlink" />
-          <Linkbtn href="/meet" child="Meet our team" classname="footlink" />
+          <Linkbtn href="/team" child="Meet our team" classname="footlink" />
           <Linkbtn
             href="/mission"
             child="Vision & Mission"

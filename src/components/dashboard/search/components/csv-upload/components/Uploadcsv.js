@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import axios from "api/axios";
 import PropTypes from "prop-types";
 import { UploadcsvWrapper } from "./csv.styled";
 import { AiOutlineCloudUpload } from "react-icons/ai";
@@ -8,8 +7,8 @@ import csvParser from "../utils";
 import { AuthStore } from "store/contexts/AuthContext";
 
 const Uploadcsv = ({ setVip }) => {
-  const { user } = AuthStore();
-  console.log(user);
+  const { _axios } = AuthStore();
+
   const input = useRef();
   const [fileName, setFileName] = useState("");
   const [file, setFile] = useState(null);
@@ -26,13 +25,13 @@ const Uploadcsv = ({ setVip }) => {
       if (!file) return;
       setFileName(file.name);
       setFile(file);
-      console.log(file.type);
     });
 
     input.current.click();
   }
 
   async function handleFetch(array) {
+    console.log(array);
     // check for name prop
     if (!array[0].name) {
       setError("Invalid CSV, Name prop is missing");
@@ -44,10 +43,11 @@ const Uploadcsv = ({ setVip }) => {
 
     // Post WITH AXIOS
     try {
-      const response = await axios.post("/api/search/search-many", {
+      const response = await _axios.post("/api/search/search-many", {
         data: array
       });
       setVip(response.data);
+      console.log(response.data.flat());
       setLoading(false);
       return;
     } catch (error) {
@@ -113,3 +113,103 @@ Uploadcsv.propTypes = {
 };
 
 export default Uploadcsv;
+
+// const test = [
+//   { "name": "mark essien", "gender": "male" },
+
+//   { "name": "bernard arnault", "gender": "male", "age": 73 },
+
+//   { "name": "jeff bezos", "gender": "male", "age": 58 },
+
+//   { "name": "kanye west", "gender": "male" },
+
+//   { "name": "ronaldo", "gender": "male" },
+
+//   { "name": "messi", "gender": "male" },
+
+//   { "name": "elon musk", "gender": "male", "age": 51 },
+
+//   { "name": "jennifer lopez", "gender": "female" },
+
+//   { "name": "oprah winfrey", "gender": "female" },
+
+//   { "name": "joe biden", "gender": "male" },
+
+//   { "name": "barack obama", "gender": "male" },
+
+//   { "name": "michael jordan", "gender": "male" },
+
+//   { "name": "tiger woods", "gender": "male" },
+
+//   { "name": "lebron james", "gender": "male" },
+
+//   { "name": "david beckham", "gender": "male" },
+
+//   { "name": "bill gates", "gender": "male", "age": 67 },
+
+//   { "name": "warren buffet", "gender": "male", "age": 92 },
+
+//   { "name": "trevor noah", "gender": "male" },
+
+//   { "name": "rihanna", "gender": "female" },
+
+//   { "name": "beyonce", "gender": "female" },
+
+//   { "name": "jay z", "gender": "male" },
+
+//   { "name": "tyler perry", "gender": "male" },
+
+//   { "name": "jackie chan", "gender": "male" },
+
+//   { "name": "george clooney", "gender": "male" },
+
+//   { "name": "robert deniro", "gender": "male" },
+
+//   { "name": "jessica alba", "gender": "female" },
+
+//   { "name": "angelina jolie", "gender": "female" },
+
+//   { "name": "julia roberts", "gender": "female" },
+
+//   { "name": "wizkid", "gender": "male" },
+
+//   { "name": "burnaboy", "gender": "male" },
+
+//   { "name": "davido", "gender": "male" },
+
+//   { "name": "aliko dangote", "gender": "male" },
+
+//   { "name": "femi otedola", "gender": "male" },
+
+//   { "name": "tony elumelu", "gender": "male" },
+
+//   { "name": "kim kardashian", "gender": "female" },
+
+//   { "name": "larry p"age"", "gender": "male" },
+
+//   { "name": "alice walton", "gender": "female", "age": 73 },
+
+//   { "name": "michael bloomberg" },
+
+//   { "name": "amancio ortega" },
+
+//   { "name": "jim walton" },
+
+//   { "name": "j.k rowling" },
+
+//   { "name": "stephen kings" },
+
+//   { "name": "danielle steele" },
+
+//   { "name": "nora roberts" },
+
+//   { "name": "james patterson" },
+
+//   { "name": "chimamanda adichie" },
+
+//   { "name": "satoshi nakamato" },
+
+//   { "name": "giorgio armani" },
+
+//   { "name": "stefano gabbana" }
+// ];

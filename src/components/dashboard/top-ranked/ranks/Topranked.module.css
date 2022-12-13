@@ -7,7 +7,7 @@
    }
    .tabletContainer{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   
   }
     .header{
@@ -55,7 +55,22 @@
       justify-content:center;
       margin-top:70%;
     }
-    @media screen and (min-width: 500px) {
+    .error{
+      text-align:center;
+      margin-top:70%
+    }
+    .errormessage{
+      color:red;
+    }
+    .errorbutton{
+      width:max-content;
+      height:30px;
+      padding:7px 7px 8px 7px;
+      margin-top:5px;
+      border: 1px solid #adb1bf;
+
+    }
+    @media screen and (min-width: 541px) {
       .mobile{
         display: none;
       }
@@ -64,5 +79,9 @@
       }
       .container{
         border: 1px solid #adb1bf;
+      }
+      .error{
+        text-align:center;
+        margin-top:30%
       }
     }

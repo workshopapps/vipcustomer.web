@@ -8,9 +8,9 @@ const LandingCta = () => {
   const { user } = AuthStore();
   return (
     <LandingCtaWraper>
-      <CtaHeader>Ready to identify your website VIP’s?</CtaHeader>
+      <CtaHeader>Ready to identify your website VIPs?</CtaHeader>
       <CtaSubtext>
-        Sign up today and view all very important personalities on your website
+        Sign up today and view all very important personalities on your website.
       </CtaSubtext>
       {user ? (
         <Link to="/dashboard">

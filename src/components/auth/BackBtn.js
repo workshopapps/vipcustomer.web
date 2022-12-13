@@ -15,9 +15,8 @@ export default function BackBtn() {
 
 const Container = styled.div`
   cursor: pointer;
-  background-color: transparent;
-  color: white;
-  font-size: 2.4rem;
+  background-color: white;
+  color: #091540;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;

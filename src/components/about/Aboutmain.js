@@ -14,7 +14,7 @@ const Aboutmain = () => {
               </h2>
               <p className={styles.para}>
                 Our API helps users identify the highest ranking customers that
-                visit their website. It is easy to use and understand
+                visit their website. It is easy to use and understand.
               </p>
             </div>
             <div className={styles.textCont}>
@@ -29,7 +29,7 @@ const Aboutmain = () => {
               <h2 className={styles.h2Main}>Helping business generate sales</h2>
               <p className={styles.para}>
                 We give you all the information you need to better serve your
-                customers the type of special offers and services they require
+                customers the type of special offers and services they require.
               </p>
             </div>
           </div>
