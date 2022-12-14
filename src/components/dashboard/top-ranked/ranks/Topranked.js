@@ -66,7 +66,7 @@ const Topranked = () => {
       };
     });
 
-    fetchRankData("", true);
+    fetchRankData(date, true);
   };
 
   const descendingHandleChange = (e) => {
