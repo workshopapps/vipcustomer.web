@@ -19,7 +19,7 @@ const Topranked = () => {
     descending: false
   });
 
-  const fetchRankData = (date = " ", sort = false) => {
+  const fetchRankData = (date = "", sort = false) => {
     if (!headers) return;
     _axios
       .get("/api/history/top-search", {
