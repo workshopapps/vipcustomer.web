@@ -24,13 +24,13 @@ const Topranked = () => {
     _axios
       .get("/api/history/top-search", {
         params: {
-          date: date,
-          sort: sort
+          date_sort: date,
+          ascending_sort: sort
+
         }
       })
       .then((res) => {
         setDatas(res.data);
-        // console.log(res);
         setError(false);
       })
       .catch((err) => {
@@ -198,3 +198,4 @@ const Topranked = () => {
   );
 };
 export default Topranked;
+
