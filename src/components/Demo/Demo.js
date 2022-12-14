@@ -1,27 +1,43 @@
 import React, { useState } from "react";
-import axios from "api/axios";
 import checkmark from "./assets/checkmark.png";
 import { Footer, Navbar } from "components/general";
 import { DemoWrapper, Header, Body } from "./demo.styled";
 import Modal from "./Modal";
 import Form from "./Form";
+import { AuthStore } from "store/contexts/AuthContext";
 
 const Demo = () => {
+  const { _axios } = AuthStore();
+
   const [modal, setModal] = useState(false);
   const [response, setResponse] = useState(undefined);
   const [searchInputs, setSearchInputs] = useState({});
 
-  const handleFetch = async (name, params) => {
+  const handleFetch = async (params) => {
     // GET WITH AXIOS
     try {
-      const response = await axios.get("/api/search/", {
+      const response = await _axios.get("/api/search", {
         params: {
           ...params
         }
       });
 
       const result = response.data[0];
+
       return result;
+
+      // Fetch
+      // let url = new URL("http://50.18.54.50:8000/api/search");
+      // let url = new URL("https://api.starfinder.hng.tech/api/search");
+      // url.search = new URLSearchParams({
+      //   ...params
+      // });
+
+      // const resp = await fetch(url.href);
+      // const data = await resp.json();
+      // console.log(data[0]);
+
+      // return data[0];
     } catch (error) {
       return undefined;
     }
@@ -33,10 +49,7 @@ const Demo = () => {
       <DemoWrapper>
         <Header>
           <h1>
-
             Live Demo of <strong> Star Finder VIP </strong> recognition software
-
-
           </h1>
         </Header>
 
@@ -50,9 +63,7 @@ const Demo = () => {
 
             <p className="sub__text mt2">
               Try out Star Finder with any VIP’s information and see how it
-
               performs.
-
             </p>
 
             <ul className="mt2">

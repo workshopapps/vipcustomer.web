@@ -48,7 +48,7 @@ const LogoutModal = (props) => {
 };
 
 LogoutModal.propTypes = {
-  closeModal: PropTypes.bool
+  closeModal: PropTypes.func
   // setSideBarOpen: PropTypes.func
 };
 export default LogoutModal;

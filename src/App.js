@@ -28,8 +28,8 @@ import RequireAuth from "components/auth/RequireAuth";
 import Documentation from "pages/Documentation";
 
 //devops added this module for web monitoring purposes with atatus only
-// import * as atatus from 'atatus-spa';
-// atatus.config('201dfd3b1a1e47df8b02d27333ac00eb').install();
+import * as atatus from "atatus-spa";
+atatus.config("201dfd3b1a1e47df8b02d27333ac00eb").install();
 
 function App() {
   const { theme } = Store();

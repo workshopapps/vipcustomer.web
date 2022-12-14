@@ -145,7 +145,7 @@ const Form = (props) => {
         </div>
 
         <button type="submit" className="mt25" id="btn__submit">
-          Submit
+          Add Entry
         </button>
       </form>
     </FormWrapper>

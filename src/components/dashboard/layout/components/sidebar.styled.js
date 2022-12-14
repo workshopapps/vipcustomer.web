@@ -63,6 +63,7 @@ export const LinksContainer = styled.div`
     padding: 5px 10px;
     height: 44px;
     margin-bottom: 25px;
+    cursor: pointer;
 
     .icon {
       display: flex;

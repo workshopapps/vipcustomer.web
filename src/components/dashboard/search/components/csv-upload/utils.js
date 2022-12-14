@@ -12,7 +12,17 @@ function parseToArray(string) {
 
     let object = {};
     firstRow.forEach((val, index) => {
-      object[val.trim().toLowerCase()] = rowAsArray[index].trim().toLowerCase();
+      if (!rowAsArray[index].trim()) {
+        return;
+      }
+
+      if (val.trim().toLowerCase() === "age") {
+        object[val.trim().toLowerCase()] = Number(rowAsArray[index].trim());
+      } else {
+        object[val.trim().toLowerCase()] = rowAsArray[index]
+          .trim()
+          .toLowerCase();
+      }
     });
 
     return object;
