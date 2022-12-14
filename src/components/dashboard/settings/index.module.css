@@ -1,5 +1,5 @@
 .settings {
-  width: 50%;
+  width: 95%;
   margin: auto;
 }
 
@@ -20,8 +20,8 @@
 
 .settings__header_details a {
   text-transform: capitalize;
-  padding: 8px 16px;
-  border-radius: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
   border: 1px solid #091540;
 }
 
@@ -47,8 +47,8 @@
   display: block;
   margin: auto;
   text-transform: capitalize;
-  padding: 12px 24px;
-  border-radius: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
   border: 1px solid #091540;
 }
 
@@ -65,4 +65,15 @@
   text-align: center;
   margin-bottom: -1px;
   font-size: 1.4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .settings {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .settings {
+    width: 60%;
+  }
 }
