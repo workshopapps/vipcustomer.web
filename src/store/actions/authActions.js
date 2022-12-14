@@ -1,11 +1,8 @@
 import * as types from "../actiontypes/authTypes";
 
-export const login_a = (dispatch, payload, saveTimeStamp = true) => {
+export const login_a = (dispatch, payload) => {
   dispatch({ type: types.ON_LOGIN_SUCCESSFUL, payload });
   localStorage.setItem("user", JSON.stringify(payload));
-
-  if (saveTimeStamp)
-    localStorage.setItem("access_token_timestamp", new Date().getTime());
 };
 
 export const logout_a = (dispatch) => {

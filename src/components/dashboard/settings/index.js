@@ -36,18 +36,14 @@ const index = () => {
       );
       const newUser = resp.data.data;
       const { first_name, last_name } = newUser;
-      login_a(
-        dispatch,
-        {
-          ...user,
-          user: {
-            ...user.user,
-            first_name,
-            last_name
-          }
-        },
-        false
-      ); //resetting user object
+      login_a(dispatch, {
+        ...user,
+        user: {
+          ...user.user,
+          first_name,
+          last_name
+        }
+      }); //resetting user object
       nav("/dashboard/profile");
     } catch (error) {
       setLoading(false);

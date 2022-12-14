@@ -18,7 +18,7 @@ const _links = [
 
   {
     path: "/dashboard/history",
-    name: "history",
+    name: "History",
     icon: <FaAddressBook />
   },
 

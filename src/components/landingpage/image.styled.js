@@ -15,7 +15,6 @@ const VideoContainer = styled.div`
   aspect-ratio: 16/9;
   height: 100%;
   position: relative;
-  color: white;
   & > video {
     width: 100%;
     height: 100%;
@@ -35,8 +34,9 @@ const VideoContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     visibility: visible;
-    opacity: 1;
+    z-index: 2;
     transition: all 0.3s linear;
+    color: white;
 
     button {
       height: 100px;
@@ -72,6 +72,17 @@ const VideoContainer = styled.div`
   .video__overlay.close {
     opacity: 0;
     visibility: hidden;
+  }
+
+  .vid__link {
+    color: teal;
+    font-size: 1.6rem;
+  }
+
+  .vid__text {
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--color-dark);
   }
 `;
 

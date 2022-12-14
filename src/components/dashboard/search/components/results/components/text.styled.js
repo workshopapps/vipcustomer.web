@@ -5,6 +5,7 @@ export const HeaderTextWrapper = styled.p`
   padding-bottom: 15px;
   font-size: 2.2rem;
   color: #b5b7c0;
+  font-weight: 600;
   text-transform: capitalize;
 `;
 

@@ -1,20 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { VideoWrapper, VideoContainer } from "./image.styled";
 import PlayImage from "./assets/play.png";
 
 const Image = () => {
   const [overlay, setOverlay] = useState(true);
-  // temp function
+  const videoRef = useRef(null);
 
   function handleWatchVideo() {
     setOverlay(false);
-    console.log("I was clicked");
+    videoRef.current.play();
   }
 
   return (
     <VideoWrapper>
       <VideoContainer>
-        <video></video>
+        <video ref={videoRef} controls>
+          <source src={require("./assets/starfinder.webm")} type="video/webm" />
+
+          <p className="vid__text">
+            Your browser does not support webm video formats <br />
+            Please{" "}
+            <a
+              className="vid__link"
+              href={require("./assets/starfinder.webm")}
+              download="Star finder">
+              Downlod
+            </a>{" "}
+            Video instead
+          </p>
+        </video>
+
         <div
           aria-hidden="true"
           className={`video__overlay ${overlay ? "" : "close"}`}>

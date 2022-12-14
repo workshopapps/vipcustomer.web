@@ -19,14 +19,13 @@ const Topranked = () => {
     descending: false
   });
 
-  const fetchRankData = (date = " ", sort = false) => {
+  const fetchRankData = (date = "", sort = false) => {
     if (!headers) return;
     _axios
       .get("/api/history/top-search", {
         params: {
           date_sort: date,
           ascending_sort: sort
-
         }
       })
       .then((res) => {
@@ -198,4 +197,3 @@ const Topranked = () => {
   );
 };
 export default Topranked;
-
