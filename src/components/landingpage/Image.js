@@ -9,6 +9,15 @@ const Image = () => {
   function handleWatchVideo() {
     setOverlay(false);
     videoRef.current.play();
+
+    function onVideoEnd() {
+      if (videoRef.current.ended) {
+        setOverlay(true);
+      }
+    }
+
+    videoRef.current.removeEventListener("timeupdate", onVideoEnd);
+    videoRef.current.addEventListener("timeupdate", onVideoEnd);
   }
 
   return (

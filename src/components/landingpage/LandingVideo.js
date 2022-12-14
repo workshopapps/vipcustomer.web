@@ -6,7 +6,6 @@ const LandingVideo = () => {
     <div className={styles.demo}>
       <div className={styles.wrapper}>
         <div>
-
           <h4>Get a free demo of Star Finder VIP recognition software.</h4>
 
           <p>
@@ -14,7 +13,6 @@ const LandingVideo = () => {
             button.
           </p>
         </div>
-        <button>Watch live video</button>
       </div>
     </div>
   );
