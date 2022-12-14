@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react";
+import { AuthStore } from "store/contexts/AuthContext";
 import classes from "./Topranked.module.css";
 import Paginate from "../paginate/Paginate";
 import Header from "../header/Header";
@@ -6,52 +7,44 @@ import Modal from "../modal/Modal";
 import Error from "../util/Error";
 // import axios from "api/axios";
 
+const Topranked = () => {
+  const { _axios, user, headers } = AuthStore();
 
+  const [datas, setDatas] = useState([]);
+  const [error, setError] = useState(false);
+  const [date, setDate] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage] = useState(9);
+  const [isChecked, setIsChecked] = useState({
+    ascending: false,
+    descending: false
+  });
 
+  const fetchRankData = (date = " ", sort = false) => {
+    if (!headers) return;
+    _axios
+      .get("/api/history/top-search", {
+        params: {
+          date_sort: date,
+          ascending_sort: sort
+        }
+      })
+      .then((res) => {
+        setDatas(res.data);
+        setError(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(true);
+        setDatas([]);
+      });
+  };
 
+  useEffect(() => {
+    fetchRankData();
+  }, [user, headers]);
 
-const Topranked = () =>{
-  const [datas,setDatas] = useState([]);
-  const [error,setError] = useState(false)
-  const [date, setDate] = useState("")
-  const [currentPage,setCurrentPage] = useState(1)
-  const [perPage] = useState(9)
-  const [isChecked,setIsChecked]= useState({
-    ascending:false,
-    descending:false
-  })
-  
-  
-  const user = JSON.parse(localStorage.getItem("user")) 
-
-
-  const fetchRankData = (date="",sort = false) =>{
-
-    fetch(`https://api.starfinder.hng.tech/api/history/top-search?date_sort=${date}&ascending_sort=${sort}`, {
-      headers:{
-        Accept:"application/json",
-        Authorization:`Bearer ${user.access_token}`
-      }
-    })
-    .then(res => res.json())
-    .then((data)=> {
-     setDatas(data)
-     setError(false)
-    })
-    .catch(()=>{
-     setError(true)
-     setDatas([])
-    }
-    )
-  }
-  useEffect(()=>{
-if(user){
-  fetchRankData()
-
-}
-  },[])
-
-  const handleChange = (e) =>{
+  const handleChange = (e) => {
     const date = e.target.value;
     setDate(date)
     fetchRankData(date)
