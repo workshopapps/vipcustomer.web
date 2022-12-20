@@ -39,7 +39,7 @@ const Authcontext = ({ children }) => {
 
   // axios instance
   const _axios = axios.create({
-    baseURL: "https://api.starfinder.hng.tech",
+    baseURL: "https://api.starfinder.dev",
     headers: headers
   });
 
@@ -60,7 +60,7 @@ const Authcontext = ({ children }) => {
     }
 
     get_api_keys();
-  }, [headers, state.user, state.api_key]); //on user login/out
+  }, [headers, state.user]); //on user login/out
 
   // legacy refresh access token effect
   // useEffect(() => {
