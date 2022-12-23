@@ -8,10 +8,8 @@ pipeline {
 	
 		stage("Check Frontend Service"){
 			steps{
-				dir('vipcustomer.web/') {
 					sh "npm install"
 					sh "npm start&"
-				}
 			}
 		}
 
