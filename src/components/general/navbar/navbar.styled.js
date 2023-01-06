@@ -68,7 +68,7 @@ const MobileNavWrapper = styled.div`
   padding-inline: ${({ mobile, tablet }) =>
     mobile ? "40px" : tablet ? "78.9px" : "120px"};
   &.open {
-    height: 225px;
+    height: 150px;
     max-height: fit-content;
   }
   & > a.active {

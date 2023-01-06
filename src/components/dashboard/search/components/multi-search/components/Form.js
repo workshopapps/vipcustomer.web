@@ -38,7 +38,7 @@ const Form = (props) => {
           inputEl.classList.remove("error");
           name = inputEl.value
             .split(" ")
-            .filter((text) => text !== Boolean)
+            .filter((text) => text.length > 1)
             .join(" ");
         }
       } else {

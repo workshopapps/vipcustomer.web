@@ -43,7 +43,7 @@ const Form = ({ params }) => {
             ...searchParams,
             [inputEl.name.toLowerCase()]: inputEl.value
               .split(" ")
-              .filter((text) => text !== Boolean)
+              .filter((text) => text.length > 1)
               .join(" ")
           };
         }
