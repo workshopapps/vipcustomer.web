@@ -42,7 +42,7 @@ const SingleSearch = () => {
 
     const name = inputName
       .split(" ")
-      .filter((text) => text !== Boolean)
+      .filter((text) => text.length > 1)
       .join(" ");
 
     if (name) {
